@@ -5,13 +5,22 @@ In this guide we will take you through setting up your Oasis dev environment, te
 ## Set Up the Oasis SDK
 
 1. [Install Rust using rustup](https://rustup.rs)
-2. `rustup default nightly-2019-07-11`
+2. `rustup default nightly-2019-07-04`
 3. `rustup target add wasm32-wasi`
-4. `cargo install oasis-cli oasis-build oasis-chain`
-5. Ensure that the `$HOME/.cargo/bin` is in your `$PATH`
+4. `cargo install oasis-cli oasis-build`
+5. `RUSTFLAGS='-C target-feature=+aes,+ssse3' cargo install --git https://github.com/oasislabs/oasis-chain`
+6. Ensure that the `$HOME/.cargo/bin` is in your `$PATH`
 
 Note: If you change your Rust toolchain to another nightly, you'll need to `cargo install --force oasis-build`.
 We're working on automating this!
+
+### Dependencies
+
+You need the following dependencies installed for our set up steps to work,
+
+1. C compiler and libraries
+2. git
+3. openssl dev
 
 ## Unit Test the "Hello World" Service Using Cargo
 
@@ -52,7 +61,7 @@ In this step we will use the Javascript based test in the test directory. This s
 2. Install app dependencies using `npm install`
 3. In a separate terminal, run the local chain using `oasis-chain`
 
-You can now test on the local chain using `npm run test:local`. `cd You will see the following output,
+You can now test on the local chain using `OASIS_PROFILE=local oasis test -- test`. You will see the following output,
 
 ```
   Hello World Test
@@ -67,7 +76,7 @@ In Samaon: alofa fiafia i le lalolagi!
 
 ## Test Using Devnet 2.0
 
-To test your service on Devnet 2.0, run `npm run test:devnet`.
+To test your service on Devnet 2.0, run `OASIS_PROFILE=devnet oasis test -- test`.
 This will run the test on Devnet 2.0.
 If everything goes according to plan, you should see the tests pass, once again.
 
