@@ -64,14 +64,23 @@ In this step we will use the Javascript based test in the test directory. This s
 You can now test on the local chain using `OASIS_PROFILE=local oasis test -- test`. You will see the following output,
 
 ```
-  Hello World Test
-    ✓ deploy a non-confidential service (1253ms)
-In slovenian: Pozdravljen, svet!
-    ✓ test known greeting (226ms)
-In Samoan: null
-    ✓ test unknown greeting (67ms)
-In Samaon: alofa fiafia i le lalolagi!
-    ✓ insert new greeting in Samoan (130ms)
+> hello-world@1.0.0 test /Users/vishwa/dev/oasis-tutorials/hello-world/app
+> jest
+
+  console.log node_modules/@oasislabs/client/dist/index.umd.js:46009
+    WARNING: Missing strong random number source; using weak randomBytes
+
+  console.log node_modules/@oasislabs/client/dist/index.umd.js:46009
+    Warning: XMLHttpRequest is not defined
+
+ PASS  test/service.spec.ts (5.965s)
+  HelloWorld Test
+    ✓ deployed (2ms)
+    ✓ known greeting (409ms)
+    ✓ insert new greeting in Samoan (400ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
 ```
 
 ## Test Using Devnet 2.0
