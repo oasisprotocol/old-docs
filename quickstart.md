@@ -19,8 +19,7 @@ We're working on automating this!
 You need the following dependencies installed for our set up steps to work,
 
 1. C compiler and libraries
-2. git
-3. openssl dev
+2. curl, git
 
 ## Unit Test the "Hello World" Service Using Cargo
 
@@ -64,15 +63,6 @@ In this step we will use the Javascript based test in the test directory. This s
 You can now test on the local chain using `OASIS_PROFILE=local oasis test -- test`. You will see the following output,
 
 ```
-> hello-world@1.0.0 test /Users/vishwa/dev/oasis-tutorials/hello-world/app
-> jest
-
-  console.log node_modules/@oasislabs/client/dist/index.umd.js:46009
-    WARNING: Missing strong random number source; using weak randomBytes
-
-  console.log node_modules/@oasislabs/client/dist/index.umd.js:46009
-    Warning: XMLHttpRequest is not defined
-
  PASS  test/service.spec.ts (5.965s)
   HelloWorld Test
     ✓ deployed (2ms)
