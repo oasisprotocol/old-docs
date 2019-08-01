@@ -9,9 +9,9 @@ In this guide we will take you through setting up your Oasis dev environment, te
 To run the local Oasis blockchain (`oasis-chain`), you will need a C compiler like`clang` or `gcc`.
 If you're reading these docs, you probably already have one, but if you don't, you can run one of
 
-- `xcode-select --install`
-- `sudo apt-get install build-essential`
-- `sudo yum groupinstall "Development Tools" "Development Libraries"`
+- macOS: `xcode-select --install`
+- Ubuntu/Debian: `sudo apt-get install build-essential`
+- CentOS/Amazon Linux/Fedora: `sudo yum groupinstall "Development Tools" "Development Libraries"`
 
 ### Installing the Oasis toolchain
 
@@ -32,11 +32,11 @@ We're working on automating this!
 
 The test will do the following:
 
-1. Retrieve Hello World! in Slovenian
-2. Attempt to retrieve Hello World! in Samoan, but fail because it doesn't exist
+1. Retrieve "Hello World!" in Slovenian
+2. Attempt to retrieve "Hello World!" in Samoan, but fail because it doesn't exist
 3. Attempt to insert a duplicate greeting (this will fail)
-4. Insert Hello World! in Samoan
-5. Retrieve Hello World! successfully in Samoan
+4. Insert "Hello World!" in Samoan
+5. Retrieve "Hello World!"" successfully in Samoan
 
 You should see the following console output:
 
@@ -80,6 +80,6 @@ Tests:       3 passed, 3 total
 
 ## Where to go from here?
 
-- Check out the [tutorials](/tutorials)!
+- Check out the [tutorials](/tutorials/ballot)!
 - [Learn Rust!](https://doc.rust-lang.org/book/) (protip: if you use DuckDuckGo, you can search the Rust docs with `!rust <query>`)
 - Browse [crates.io](https://crates.io) for libraries to use in your services
