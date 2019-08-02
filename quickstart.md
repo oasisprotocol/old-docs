@@ -65,6 +65,10 @@ This script uses [oasis.js](https://github.com/oasislabs/oasis.js) to interact w
 2. `cd ../app`
 3. Install app dependencies using `npm install` (or `yarn install` if that's more your style)
 4. In a separate terminal, run the local chain using `oasis-chain`
+5. Login to the [Oasis developer dashboard](https://dashboard.oasiscloud-staging.net) and visit `My Account`. Navigate to the `Payments` tab.
+_Note:_ If you are a first-time user, you may be prompted to generate an Oasis-managed wallet, which you should do. Your wallet is what serves as your identity and enables you to interact with Oasis services.
+6. Make sure you are in a secure location, and then `Click to reveal`. This will reveal your _private key_, which is used to access your wallet should never be shared with anyone.
+7. Open `test/service.spec.ts`. Replace `<your private key>` with your private key.
 
 You can now test on the local chain using `oasis test`.
 Note that the `app` tests will run when in a subdirectory of `app`.
