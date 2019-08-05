@@ -86,7 +86,7 @@ _Note:_ If you are a first-time user, you may be prompted to generate an Oasis-m
 2. Make sure you are in a secure location, and then `Click to reveal`. This will reveal your _private key_, which is used to access your wallet should never be shared with anyone
 3. Set your private key for use by the client using `oasis config profile.default private_key[=]"private key"`
 
-You can now test on Devnet 2.0, similar to the way you tested on the local chain but this time using `oasis test`.
+You can now deploy to Devnet 2.0, using `oasis deploy`.
 You will see the following output,
 
 ```
