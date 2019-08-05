@@ -66,7 +66,8 @@ This script uses [oasis.js](https://github.com/oasislabs/oasis.js) to interact w
 3. Install app dependencies using `npm install` (or `yarn install` if that's more your style)
 4. In a separate terminal, run the local chain using `oasis-chain`
 
-You can now test on the local chain using `oasis test --profile local`. Note that the `app` tests will run when in a subdirectory of `app`. You will see the following output,
+You can now test on the local chain using `oasis test`.
+Note that the `app` tests will run when in a subdirectory of `app`. You will see the following output,
 
 ```
  PASS  test/service.spec.ts (5.965s)
