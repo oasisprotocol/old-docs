@@ -82,7 +82,7 @@ Tests:       3 passed, 3 total
 
 ## Integration Test Using Devnet 2.0
 
-1. Login to the [Oasis developer dashboard](https://dashboard.oasiscloud-staging.net) and visit `My Account`. Navigate to the `Payments` tab
+1. Login to the [Oasis developer dashboard](https://dashboard.oasiscloud.io) and visit `My Account`. Navigate to the `Payments` tab
 _Note:_ If you are a first-time user, you may be prompted to generate an Oasis-managed wallet, which you should do. Your wallet is what serves as your identity and enables you to interact with Oasis services
 2. Make sure you are in a secure location, and then `Click to reveal`. This will reveal your _private key_, which is used to access your wallet should never be shared with anyone
 3. Set your private key for use by the client using `oasis config profile.default private_key[=]"private key"`
