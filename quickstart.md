@@ -87,19 +87,6 @@ _Note:_ If you are a first-time user, you may be prompted to generate an Oasis-m
 2. Make sure you are in a secure location, and then `Click to reveal`. This will reveal your _private key_, which is used to access your wallet should never be shared with anyone
 3. Set your private key for use by the client using `oasis config profile.default private_key[=]"private key"`
 
-You can now deploy to Devnet 2.0, using `oasis deploy`.
-You will see the following output,
-
-```
- PASS  test/service.spec.ts (5.965s)
-  HelloWorld Test
-    ✓ deployed (2ms)
-    ✓ known greeting (409ms)
-    ✓ insert new greeting in Samoan (400ms)
-
-Test Suites: 1 passed, 1 total
-Tests:       3 passed, 3 total
-```
 
 ## Where to go from here?
 
