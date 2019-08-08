@@ -8,7 +8,7 @@ Along with this release, we're also launching an upgraded developer network: Dev
 
 Our new development experience allows seasoned blockchain developers, developers learning to build on blockchain platforms, and even cloud developers, to seamlessly build and take advantage of integrity, confidentiality, and privacy built into the Oasis Network.
 
-Thanks to all the developers who provided meaningful feedback via phone calls, Gitter, GitHub and more-––your feedback to make our platform better has been critical to understand the updates we should make to our platform.
+Thanks to all the developers who provided meaningful feedback via phone calls, Gitter, GitHub and more—your feedback  has been critical to understanding how we can make the platform better.
 
 Here’s a summary of what’s changing:
 
@@ -52,8 +52,8 @@ Compared to previous client libraries, oasis.js is easier to use because it is a
 
 Prior to this release, the developer flow for funds to deploy and run transactions was by visiting our faucet and funding a wallet.
 This has been replaced by an auto-funding model that automatically funds each developer up to 1 DEV a day with automatic top-off.
-If the developer needs more funds they can send a request to support@oasislabs.com and we will increase their limits.
 This reduces friction, taking us a step closer to making our platform accessible to both blockchain and non-blockchain developers.
+Developers who need more additional funds can send a request to [support@oasislabs.com](mailto:support@oasislabs.com).
 
 #### Streamline Deployment With the Developer Gateway
 
@@ -124,7 +124,7 @@ Here are a few things that are on our priority list to drive this goal.
 
 With the change to WASI for the system interface in our WASM runtime, we have the ability to support languages that can be compiled to WASI.
 his opens the possibility to support languages like C, C++, JavaScript, and Go.
-If you have a specific need for your use-case, please send us a note at devrel@oasislabs.com to help us prioritize.
+If you have a specific need for your use-case, please send us a note at [devrel@oasislabs.com](mailto:devrel@oasislabs.com) to help us prioritize.
 
 ### Enhancements to the Local Developer Toolchain
 
@@ -150,7 +150,7 @@ ore on this to come in future releases and blog posts.
 
 ### Feedback
 Lastly, our priorities are driven by developer needs and would love to hear from you.
-If there are any particular needs for your use-cases that you would like to see in future releases, please reach out to us at devrel@oasislabs.com.
+If there are any particular needs for your use-cases that you would like to see in future releases, please reach out to us at [devrel@oasislabs.com](mailto:devrel@oasislabs.com).
 
 ## Where Next
 
