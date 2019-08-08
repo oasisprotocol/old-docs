@@ -6,13 +6,22 @@ At Oasis Labs we’re building a platform that brings the benefits of confidenti
 To make our platform more accessible, our next release, includes a few fundamental changes to the core experience with our new Oasis Development SDK.
 Along with this release, we're also launching an upgraded developer network: Devnet 2.0.
 
-Our new development experience allows seasoned blockchain developers, developers learning to build on blockchain platforms, and even cloud developers, to seamlessly build and take advantage of integrity, confidentiality, and privacy built into the Oasis network.
+Our new development experience allows seasoned blockchain developers, developers learning to build on blockchain platforms, and even cloud developers, to seamlessly build and take advantage of integrity, confidentiality, and privacy built into the Oasis Network.
 
 Thanks to all the developers who provided meaningful feedback via phone calls, Gitter, GitHub and more-––your feedback to make our platform better has been critical to understand the updates we should make to our platform.
 
 Here’s a summary of what’s changing:
 
-![Differences between Devnet 1.0 and 2.0](/whats_new/devnet_diff.png)
+| Features | Devnet 1.0 | Devnet 2.0 |
+|----------|------------|------------|
+| Nomenclature | Smart Contract | Service |
+| Runtime | WASM, EVM | WASM (+WASI), EVM
+| Solidity | Ethereum standard | Ethereum standard |
+| Rust | – | oasis-rs v0.2 |
+| Local dev tools | contract-kit, Truffle | oasis-cli |
+| Deployment tools | Web3 gatway | oasis-gateway |
+| Platform credits | Faucet | Auto-funding via<br>Oasis Dashboard |
+| Dashboard | &bull; External block explorer<br>&bull; Per-contract analytics<br>&bull; Google SSO | &bull; Oasis Explorer<br>&bull; Project-wide analytics<br>&bull; SSO with Google,<br>&nbsp;&nbsp;&nbsp;Github, and WeChat |
 
 ### From Smart Contracts to Services
 
