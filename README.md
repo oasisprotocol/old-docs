@@ -79,7 +79,7 @@ This is the first step in a series of releases that will turn the dashboard into
 
 In this release we are deprecating web3c.
 As a result, Solidity contracts will no longer have the same confidentiality guarantees going forward.
-Otherwise, all Solidity contracts will be non-confidential while continuing to benefit from better performance compared to other Solidity platforms.
+In other words, all Solidity contracts will be non-confidential while continuing to benefit from better performance compared to other Solidity platforms.
 Existing services and clients using web3 will continue to work in Devnet 2.0 against the web3 gateway.
 For future Ethereum contracts, we recommend either web3.js or ether.js.
 
