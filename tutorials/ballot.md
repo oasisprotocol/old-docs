@@ -36,7 +36,9 @@ ballot
 │   └───src
 │   │   │   index.ts
 │   └───test
-│       │   service.spec.ts
+│   |   │   service.spec.ts
+|   └───scripts
+|       |   deploy_service.js
 └───service
     │   Cargo.toml
     └───src
