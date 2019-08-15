@@ -74,7 +74,7 @@ Enough exposition, though: on to the main event!
 ### Defining events
 
 Events are defined similarly to service state in that they're (de)serializable structs that derive a particular trait.
-For events, they derive `Event` instead of `Service`.
+For events, they derive [`Event`](https://docs.rs/oasis-std/latest/oasis_std/exe/trait.Event.html) instead of [`Service`](https://docs.rs/oasis-std/latest/oasis_std/exe/trait.Service.html).
 Aptly named, yes?
 
 The message board helpfully notifies participants of a new post or direct message using the `MessagePosted` event on [line 61](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/main.rs#L61) (reproduced below).
