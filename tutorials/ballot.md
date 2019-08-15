@@ -94,7 +94,7 @@ Let's start with some scaffolding.
 If you pop open `main.rs`, you'll notice that a service named `Ballot` has already been initialized for you with some bare-bones starter code.
 We'll now analyze this service piece-by-piece and extend it to act as the voting service we envision it to be.
 
-The top of our Oasis services will always contain relevant imports. By default, we only have one:
+The top of our Oasis services contains relevant imports. By default, we only have one:
 
 ```rust
 use oasis_std::Context;
@@ -383,7 +383,7 @@ When testing, you can explicitly set the `sender` (the method invoker), but this
 Testing accounts are created using `oasis_test::create_account`.
 
 You can now run the test using `oasis test`.
-(protip: use `oasis test -- --nocapture` to pass through stdout and stderr).
+(Protip: use `oasis test -- --nocapture` to pass through stdout and stderr.)
 This will run your tests using the blockchain simulator in `oasis-test`.
 If all goes well, you should see your test pass.
 Okay, so maybe there was no bug, but at least you now know how to test your service!
