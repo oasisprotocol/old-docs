@@ -17,7 +17,7 @@ Any item of state or RPC argument can be made optional by wrapping it in [`Optio
 `Option` is comparable to `null`/`None`/`Maybe` in other languages.
 You will hopefully find this very unsurprising.
 
-You'll find the first use of `Option` in the definition of the `MessageBoard` service state on [line 17](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/lib.rs#L17):
+You'll find the first use of `Option` in the definition of the `MessageBoard` service state on [line 17](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/main.rs#L17):
 
 ```rust
 #[derive(Service)]
@@ -28,15 +28,15 @@ pub struct MessageBoard {
 }
 ```
 
-and, on [line 228](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/lib.rs#L228), an example of setting the character limit to one: `Some(1)`.
+and, on [line 228](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/main.rs#L228), an example of setting the character limit to one: `Some(1)`.
 
-On [line 145](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/lib.rs#L145) a tuple of optional types are observed in the context of an RPC function signature: `range: (Option<PostId>, Option<PostId>)`.
+On [line 145](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/main.rs#L145) a tuple of optional types are observed in the context of an RPC function signature: `range: (Option<PostId>, Option<PostId>)`.
 
 ### User-defined types
 
 Any composition of RPC types is an RPC type.
 So basically things like `HashMap<Vec<(u8, i8)>, Option<String>>` and any `struct` containing things like that.
-As a concrete example, on [line 48](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/lib.rs#L48), we define a `Message` with the fields `user: UserId` and `text: String`.
+As a concrete example, on [line 48](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/main.rs#L48), we define a `Message` with the fields `user: UserId` and `text: String`.
 
 ```rust
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq)]
@@ -50,7 +50,7 @@ There's no special syntax for this; the new type is just a Rust struct.
 Like any struct you can add methods and trait implementations using `impl` and `#[derive(..)]`.
 Indeed, we derive `PartialEq` on we `Message` so that we can `assert_eq!` in the tests.
 
-Then, on [line 36](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/lib.rs#L36) we increase the level of abstraction by creating a `Post` type that contains a stores a list of comments as `Vec<Message>`.
+Then, on [line 36](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/main.rs#L36) we increase the level of abstraction by creating a `Post` type that contains a stores a list of comments as `Vec<Message>`.
 
 ```rust
 pub struct Post {
@@ -77,8 +77,8 @@ Events are defined similarly to service state in that they're (de)serializable s
 For events, they derive [`Event`](https://docs.rs/oasis-std/0.1.0/oasis-std/exe/trait.Event.html) instead of `Service`.
 Aptly named, yes?
 
-The message board helpfully notifies participants of a new post or direct message using the `MessagePosted` event on [line 64](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/lib.rs#L64) (reproduced below).
-The [comment above the definition](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/lib.rs#L58-L62) explains how events might be used safely in a confidential context.
+The message board helpfully notifies participants of a new post or direct message using the `MessagePosted` event on [line 64](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/main.rs#L64) (reproduced below).
+The [comment above the definition](https://github.com/oasislabs/oasis-rs/blob/master/examples/messaging/src/main.rs#L58-L62) explains how events might be used safely in a confidential context.
 
 ```rust
 #[derive(Serialize, Deserialize, Event)]
