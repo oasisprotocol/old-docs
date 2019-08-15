@@ -100,7 +100,7 @@ The top of our Oasis services contain relevant imports. By default, we only have
 use oasis_std::Context;
 ```
 
-[`Context`](https://docs.rs/oasis-std/0.1.0/oasis-std/exe/struct.Context.html) is a construct that you'll need in mostly every service, and serves as an object that we'll use to keep track of the -- you guessed it -- context of invoked service methods (e.g. the method caller).
+`Context` is a construct that you'll need in mostly every service, and serves as an object that we'll use to keep track of the -- you guessed it -- context of invoked service methods (e.g. the method caller).
 Let's also include the `Address` construct from `oasis_std`, which we will later use to verify ballot participants' identities, and the `map_vec` object we decided we needed above. Now we should have two imports:
 
 ```rust
