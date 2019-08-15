@@ -23,4 +23,5 @@ jobs:
         git config --global user.email "ryscheng-bot@oasislabs.com"
         git add docs/
         git commit -m "Build docs"
-        git push
+        git remote set-url origin https://$GITHUB_TOKEN@github.com/oasislabs/docs.git
+        git push origin HEAD:$GITHUB_REF
