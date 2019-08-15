@@ -1,15 +1,4 @@
 const fs = require('fs');
-const promisify = require('util').promisify;
-
-fs.stat('.git/hooks/pre-push', function(err, stats) {
-  if (stats) return;
-  fs.copyFile('.vuepress/pre-push', '.git/hooks/pre-push', function(err) {
-    if (err) {
-      console.error('Could not install docs build hook:', err);
-      process.exit(1);
-    }
-  });
-});
 
 module.exports = {
   title: 'Oasis Dev Docs',
