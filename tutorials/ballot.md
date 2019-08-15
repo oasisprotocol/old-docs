@@ -58,7 +58,7 @@ The [Creating a New Package](https://doc.rust-lang.org/nightly/cargo/guide/creat
 ## Setting up dependencies
 
 Dependencies are specified in the _package manifest_: `Cargo.toml`.
-If you open `Cargo.toml`, you'll see a line at the bottom of the file that says [dependencies], which is the syntax for a TOML table called dependencies.
+If you open `Cargo.toml`, you'll see a line at the bottom of the file that says `[dependencies]`, which is the syntax for a TOML table called dependencies.
 Two of the three required dependencies for building your voting service should already be initialized for you by default, and all you need to do is add one for `map_vec`.
 This should make your dependencies look as follows:
 
