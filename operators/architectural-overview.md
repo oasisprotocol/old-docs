@@ -34,5 +34,5 @@ The Oasis Network uses 3 main protocols for communication:
 
 Confidentiality is achieved in the Oasis Network by relying on trusted execution
 environments (TEEs) to secure the execution of any given smart contract.
-Initially, the Oasis Network will utilize Intel SGX. As time goes on we expect
-to support more TEEs.
+Initially, the Oasis Network will utilize Intel SGX. As more TEE technologies
+mature, we expect to support more than TEEs than Intel SGX.
