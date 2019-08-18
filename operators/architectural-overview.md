@@ -4,8 +4,8 @@ As an operator of a Node on the Oasis Network, it is suggested that you have an
 understanding of the system architecture of the Oasis Network. Here we will
 provide a high level overview of the Oasis Network's architecture. This overview
 is used to provide enough guidance to be useful for the purposes of getting
-started as a Node Operator. In the future, our blockchain paper with more in-depth
-information will be made available.
+started as a Node Operator. In the future, our blockchain paper, which contains
+much more in-depth information, will be made available.
 
 ## Modular Architecture
 
@@ -18,9 +18,9 @@ different layers: Consensus, Compute (Confidential and Non-confidential),
 Storage, and Key Management. For a Node Operator, these layers map distinctly to
 different classes Nodes and potentially to different hardware.
 
-### System Architecture Diagram
+### Transaction Processing Diagram
 
-![Oasis Network System Architecture](/operator_images/web3_diagram_v2.png)
+![Transaction Processing](/operator_images/web3_diagram_v2.png)
 
 ## Networking Protocols
 
