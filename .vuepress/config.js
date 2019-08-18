@@ -4,7 +4,7 @@ module.exports = {
   title: 'Oasis Dev Docs',
   description: 'Oasis Developer Documentation',
   head: [
-    ['link', {rel: 'icon', href: '/favicon.ico'}],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     [
       'script',
       {
