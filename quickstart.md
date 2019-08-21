@@ -80,8 +80,18 @@ Tests:       3 passed, 3 total
    ```
    oasis config profile.default.private_key "<private key>"
    ```
+4. Update web3 gateway for the deployment. Eventually, we would replace this with our new Oasis Gateway. 
+   ```
+   oasis config profile.default.endpoint "wss://web3.devnet.oasiscloud.io/ws"
+   ```
+   
+   Note: All your configuration is saved in the file: ~/.config/oasis/config.toml 
 
-You can now deploy your service to Devnet 2.0, using `oasis deploy`.
+You can now deploy your service to Devnet 2.0, using 
+```
+oasis deploy
+```
+
 When you run that command, with any luck, you'll see something like the following:
 
 ```
@@ -89,6 +99,7 @@ When you run that command, with any luck, you'll see something like the followin
          ...
     Deployed HelloWorld at 0xf8b476862dd4bcaaabb988aa5a459d95e319ac0e
 ```
+
 
 You can now point an app at `0xf8b476862dd4bcaaabb988aa5a459d95e319ac0e` using the client's [Service.at](https://oasis-labs-oasis-client.readthedocs-hosted.com/en/latest/service.html#service-at) constructor and interact with the spiffy decentralized backend you just deployed!
 
