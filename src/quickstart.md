@@ -78,7 +78,7 @@ Tests:       3 passed, 3 total
    You must never lose your private key nor share it with anyone—unless, of course, you want to lose control of your wallet!
 3. Give your local toolchain access to your wallet by running
    ```
-   oasis config profile.default.credential "<private key>"
+   oasis config profile.default.credential -
    ```
 
 You can now deploy your service to Devnet 2.0, using `oasis deploy`.
