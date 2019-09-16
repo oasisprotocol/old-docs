@@ -82,7 +82,7 @@ Oasis is a proof of stake platform. Unlike many other proof of stake networks ho
 
 Oasis is a unique platform and is not built on top of Ethereum or any other protocol. 
 
-To learn more about our platform read our white paper!
+To learn more about our platform read our [white paper](https://www.oasis-protocol.org/whitepapers)!
 
 #### Q: How does this compare to a private blockchain like Hyperledger?
 
