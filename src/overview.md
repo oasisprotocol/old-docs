@@ -80,7 +80,9 @@ Please send a note to devrel@oasislabs.com and we would be happy to assist you.
 
 #### Are you a proof of stake or proof of work platform?
 
-Oasis is a proof of stake platform. Unlike many other proof of stake networks however, we have a different architectural design that separates compute from consensus and allows the system to scale to support transactions with greater complexity than many traditional sharding platforms.
+Oasis is a proof of stake platform. 
+
+Unlike many other proof of stake networks however, we have a different architectural design that separates compute from consensus and allows the system to scale to support transactions with greater complexity than many traditional sharding platforms.
 
 #### Is Oasis a unique platform or built on top of Ethereum? 
 
