@@ -52,7 +52,9 @@ With our recent runtime change to WASM we also have the ability to support langu
 
 #### Q: How do I debug transactions on the network? 
 
-Use Oasis Explorer: https://dashboard.oasiscloud.io/explorer. You can search network logs for wallet address or transaction id or a block address. 
+Use Oasis Explorer: https://dashboard.oasiscloud.io/explorer. 
+
+You can search network logs for wallet address or transaction id or a block address. 
 
 For your deployed service, you can also view Logs tab on the dashboard for recent transactions.
 
@@ -60,7 +62,9 @@ For your deployed service, you can also view Logs tab on the dashboard for recen
 
 With the current release of Devnet 2.0 confidential smart contracts can only be written in Rust. 
 
-We hope to support Solidity confidential smart contracts in the future.  Currently Solidity does not expose confidential semantics, making it difficult to take existing solidity contracts and translating them to run in a confidential environment without making inappropriate inferences as to what should run confidentially and what should not.
+We hope to support Solidity confidential smart contracts in the future.  
+
+Currently Solidity does not expose confidential semantics, making it difficult to take existing solidity contracts and translating them to run in a confidential environment without making inappropriate inferences as to what should run confidentially and what should not.
 
 #### Q: Is there way to make confidential call between services (Rust > Rust) ?
 
@@ -76,7 +80,9 @@ Oasis is a proof of stake platform. Unlike many other proof of stake networks ho
 
 #### Q: Is Oasis a unique platform or built on top of Ethereum? 
 
-Oasis is a unique platform and is not built on top of Ethereum or any other protocol. To learn more about our platform read our white paper!
+Oasis is a unique platform and is not built on top of Ethereum or any other protocol. 
+
+To learn more about our platform read our white paper!
 
 #### Q: How does this compare to a private blockchain like Hyperledger?
 
@@ -84,10 +90,12 @@ At Oasis our goal is to build a public decentralized network that offers additio
 
 #### Q: When will you open source your code?
 
-We’ve open sourced different pieces of our code which you can find at www.github.com/oasislabs.
+We’ve open sourced different pieces of our code which you can find at [https://github.com/oasislabs](https://github.com/oasislabs).
 
 #### Q: How can I become a node operator or a validator on Oasis Network?
 
-The Oasis network is a proof of stake system and we’ll look to community members to run nodes for everything from storage to computation to consensus. While our network is not quite ready for node operators, we should be getting there soon! 
+The Oasis network is a proof of stake system and we’ll look to community members to run nodes for everything from storage to computation to consensus. 
 
-If you’re interested in signing up to run a node, please go to https://www.oasis-protocol.org/node and we’ll be in touch as soon as we’re ready.
+While our network is not quite ready for node operators, we should be getting there soon! 
+
+If you’re interested in signing up to run a node, please go to [https://oasis-protocol.org/node](https://oasis-protocol.org/node) and we’ll be in touch as soon as we’re ready.
