@@ -39,9 +39,11 @@ Currently we support Rust for confidential and non-confidential smart contracts 
 With HTTPS: 
 
 https://web3.devnet.oasiscloud.io
+
 With WebSockets over SSL/TLS:
 
 wss://web3.devnet.oasiscloud.io/ws
+
 For solidity development, you can continue to use your usual tools/libraries such as truffle, web3.js and ethers.js.
 
 #### Q: What languages do you plan to support in the future?
