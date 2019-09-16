@@ -30,11 +30,11 @@ Oasis provides a number of tools and SDKs to rapidly build privacy-preserving ap
 
 ### FAQ
 
-#### Q: What languages do you support now?
+#### What languages do you support now?
 
 Currently we support Rust for confidential and non-confidential smart contracts and Solidity for non-confidential smart contracts. 
 
-#### Q: For solidity contracts, what is the URL for web3 gateway? 
+#### For solidity contracts, what is the URL for web3 gateway? 
 
 With HTTPS: 
 
@@ -46,7 +46,7 @@ wss://web3.devnet.oasiscloud.io/ws
 
 For solidity development, you can continue to use your usual tools/libraries such as truffle, web3.js and ethers.js.
 
-#### Q: What languages do you plan to support in the future?
+#### What languages do you plan to support in the future?
 
 With our recent runtime change to WASM we also have the ability to support languages that can be compiled to WASI. 
 
@@ -54,7 +54,7 @@ This opens the possibility to support languages like C, C++, Java, and Go.
 
 If you have a specific need for your use-case, please send us a note at devrel@oasislabs.com to help us prioritize.  
 
-#### Q: How do I debug transactions on the network? 
+#### How do I debug transactions on the network? 
 
 Use Oasis Explorer: https://dashboard.oasiscloud.io/explorer. 
 
@@ -62,7 +62,7 @@ You can search network logs for wallet address or transaction id or a block addr
 
 For your deployed service, you can also view Logs tab on the dashboard for recent transactions.
 
-#### Q: Can I write a confidential smart contract in Solidity?
+#### Can I write a confidential smart contract in Solidity?
 
 With the current release of Devnet 2.0 confidential smart contracts can only be written in Rust. 
 
@@ -70,25 +70,25 @@ We hope to support Solidity confidential smart contracts in the future.
 
 Currently Solidity does not expose confidential semantics, making it difficult to take existing solidity contracts and translating them to run in a confidential environment without making inappropriate inferences as to what should run confidentially and what should not.
 
-#### Q: Is there way to make confidential call between services (Rust > Rust) ?
+#### Is there way to make confidential call between services (Rust > Rust) ?
 
 Yes.  Look at the tests inside oasis-rs github repo to see this in action. 
 
-#### Q: How do I get more credits for increased consumption beyond 1 DEV per day?
+#### How do I get more credits for increased consumption beyond 1 DEV per day?
 
 Please send a note to devrel@oasislabs.com and we would be happy to assist you.
 
-#### Q: Are you a proof of stake or proof of work platform?
+#### Are you a proof of stake or proof of work platform?
 
 Oasis is a proof of stake platform. Unlike many other proof of stake networks however, we have a different architectural design that separates compute from consensus and allows the system to scale to support transactions with greater complexity than many traditional sharding platforms.
 
-#### Q: Is Oasis a unique platform or built on top of Ethereum? 
+#### Is Oasis a unique platform or built on top of Ethereum? 
 
 Oasis is a unique platform and is not built on top of Ethereum or any other protocol. 
 
 To learn more about our platform read our [white paper](https://www.oasis-protocol.org/whitepapers)!
 
-#### Q: How does this compare to a private blockchain like Hyperledger?
+#### How does this compare to a private blockchain like Hyperledger?
 
 At Oasis our goal is to build a public decentralized network that offers additional properties of confidentiality and privacy for your data. 
 
@@ -96,11 +96,11 @@ Conversely, Hyperledger is a siloed network typically run and owned by one entit
 
 It does not support confidentiality across a public network.
 
-#### Q: When will you open source your code?
+#### When will you open source your code?
 
 We’ve open sourced different pieces of our code which you can find at [https://github.com/oasislabs](https://github.com/oasislabs).
 
-#### Q: How can I become a node operator or a validator on Oasis Network?
+#### How can I become a node operator or a validator on Oasis Network?
 
 The Oasis network is a proof of stake system and we’ll look to community members to run nodes for everything from storage to computation to consensus. 
 
