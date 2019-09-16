@@ -48,7 +48,11 @@ For solidity development, you can continue to use your usual tools/libraries suc
 
 #### Q: What languages do you plan to support in the future?
 
-With our recent runtime change to WASM we also have the ability to support languages that can be compiled to WASI. This opens the possibility to support languages like C, C++, Java, and Go. If you have a specific need for your use-case, please send us a note at devrel@oasislabs.com to help us prioritize.  
+With our recent runtime change to WASM we also have the ability to support languages that can be compiled to WASI. 
+
+This opens the possibility to support languages like C, C++, Java, and Go. 
+
+If you have a specific need for your use-case, please send us a note at devrel@oasislabs.com to help us prioritize.  
 
 #### Q: How do I debug transactions on the network? 
 
@@ -86,7 +90,11 @@ To learn more about our platform read our [white paper](https://www.oasis-protoc
 
 #### Q: How does this compare to a private blockchain like Hyperledger?
 
-At Oasis our goal is to build a public decentralized network that offers additional properties of confidentiality and privacy for your data. Conversely, Hyperledger is a siloed network typically run and owned by one entity that retains some of the properties often found in blockchain computing systems. It does not support confidentiality across a public network.
+At Oasis our goal is to build a public decentralized network that offers additional properties of confidentiality and privacy for your data. 
+
+Conversely, Hyperledger is a siloed network typically run and owned by one entity that retains some of the properties often found in blockchain computing systems. 
+
+It does not support confidentiality across a public network.
 
 #### Q: When will you open source your code?
 
