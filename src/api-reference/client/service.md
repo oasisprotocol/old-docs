@@ -16,7 +16,7 @@ new oasis.Service(idl, address [, options])
 
 ### options
 
-* `gateway` - :ref:`OasisGateway <gateways>` (optional): The client backend to communicate with an oasis gateway
+* `gateway` - [OasisGateway](./gateways#OasisGateway) (optional): The client backend to communicate with an oasis gateway
 * `db` - ``Db`` (optional): The persistent storage interface for the client's key manager.
 
 ### Returns
@@ -24,9 +24,7 @@ new oasis.Service(idl, address [, options])
 
 ## at
 
-A more convenient api to attach to a previously deployed service is the
-`Service.at` method, which will fetch the on-chain code and extract the idl
-automatically.
+A more convenient api to attach to a previously deployed service is the `Service.at` method, which will fetch the on-chain code and extract the idl automatically.
 
 Note: this method should only be with oasis-rs services.
 
@@ -66,13 +64,12 @@ const returnValue = await service.myMethod(argument, options);
 ```
 
 ::: tip
-The client will ensure all Service api methods are camelCase, as is idiomatic JavaScript,
-even if your on-chain service uses snake_case, as is idiomatic Rust.
+The client will ensure all Service api methods are camelCase, as is idiomatic JavaScript, even if your on-chain service uses snake_case, as is idiomatic Rust.
 :::
 
 The positional arguments for a given rpc should be passed directly into the method.
-In addition, one can **optionally** specify ``RpcOptions``. When used, these options
-must be the last argument given to a method.
+In addition, one can **optionally** specify ``RpcOptions``.
+When used, these options must be the last argument given to a method.
 
 ::: tip
 When making RPCs to **confidential** services, one **must** specify the ``gasLimit`` option.
@@ -100,8 +97,7 @@ service.addEventListener(event, function listener(event) {
 An event is emitted only after the block containing it has been finalized by the Oasis network.
 
 ::: tip
-In the same way rpc method names are camelCase, event object keys are camelCase, even if the
-corresponding service is snake_case.
+In the same way rpc method names are camelCase, event object keys are camelCase, even if the corresponding service is snake_case.
 :::
 
 ### Parameters
@@ -111,7 +107,8 @@ corresponding service is snake_case.
 
 ## removeEventListener
 
-To stop listening to events emitted by the service, use the `removeEventListener` method. It's suggested to use this method to properly cleanup gateway subscriptions that result from creating event listeners.
+To stop listening to events emitted by the service, use the `removeEventListener` method.
+It's suggested to use this method to properly cleanup gateway subscriptions that result from creating event listeners.
 
 ```javascript
 service.removeEventListener(event, listener);

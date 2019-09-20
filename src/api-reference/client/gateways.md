@@ -2,7 +2,9 @@
 
 ## namespace
 
-The ``oasis.gateways`` namespace provides objects implementing the ``OasisGateway`` interface, defining the client's backend used to send transactions to the Oasis network. It should be rare to need to directly implementthis interface; however, the definition is provided for those who'd like to implement it.
+The ``oasis.gateways`` namespace provides objects implementing the ``OasisGateway`` interface, defining the client's backend used to send transactions to the Oasis network.
+It should be rare to need to directly implementthis interface.
+However, the definition is provided for those who'd like to implement it.
 
 ## OasisGateway
 

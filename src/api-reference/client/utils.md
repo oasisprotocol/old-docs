@@ -30,7 +30,7 @@ utils.encrypt(
 
 ## utils.decrypt
 
-Decrypts the given ciphertext using `Deoxysii.js`_ and the wire format specified above.
+Decrypts the given ciphertext using [deoxysii.js](https://github.com/oasislabs/deoxysii.js) and the wire format specified above.
 
 ```javascript
 utils.decrypt(encryption, secretKey);
@@ -168,7 +168,8 @@ oasis.utils.idl.fromWasm(bytecode);
 
 ### Parameters
 
-1. ``bytecode`` - ``Uint8Array``: Raw wasi bytecode compiled with ``oasis build``. See the `oasis-cli <https://github.com/oasislabs/oasis-cli>`_.
+1. ``bytecode`` - ``Uint8Array``: Raw wasi bytecode compiled with ``oasis build``.
+See the [oasis-cli](https://github.com/oasislabs/oasis-cli).
 
 ### Returns
 

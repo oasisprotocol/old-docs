@@ -8,8 +8,10 @@ oasis.deploy(...args, options)
 
 ### Parameters
 
-1. ``args`` - The positional constructor arguments for the service. Note that the type and number of these arguments depend on the service being constructed.
-2. ``options`` - ``Object`` (optional): The service deploy options. Must be the last argument in the deploy function call.
+1. ``args`` - The positional constructor arguments for the service.
+Note that the type and number of these arguments depend on the service being constructed.
+2. ``options`` - ``Object`` (optional): The service deploy options.
+Must be the last argument in the deploy function call.
 
 ### options
 
@@ -21,9 +23,11 @@ oasis.deploy(...args, options)
 
 ### header
 
-* ``confidential`` - ``boolean`` (optional): True if the service should be confidential. Defaults to true.
-* ``expiry`` - ``number`` (optional): Unix timestamp defining when the service expirs. Defaults to 100 years from the current timestamp.
+* ``confidential`` - ``boolean`` (optional): True if the service should be confidential.
+Defaults to true.
+* ``expiry`` - ``number`` (optional): Unix timestamp defining when the service expires.
+Defaults to 100 years from the current timestamp.
 
 ### Returns
 
-:ref:`Service <service>`: The deployed service instance with all rpc endpoints attached.
+[Service](./service): The deployed service instance with all rpc endpoints attached.

@@ -69,11 +69,6 @@ module.exports = {
 			title: 'Web Client',
 			collapsable: true,
 			children: [
-			  {
-				title: 'oasis.gateways.Web3Gateway',   // required
-				collapsable: true,
-				path: '/api-reference/client/web3-gateway',
-			  },
 			  ['/api-reference/client/getting-started', 'Getting Started'],
 			  ['/api-reference/client/set-gateway', 'oasis.setGateway'],
 			  ['/api-reference/client/deploy', 'oasis.deploy'],
@@ -81,6 +76,11 @@ module.exports = {
   			  ['/api-reference/client/wallet', 'oasis.Wallet'],
 			  ['/api-reference/client/gateways', 'oasis.gateways'],
 			  ['/api-reference/client/developer-gateway', 'oasis.gateways.Gateway'],
+			  {
+				title: 'oasis.gateways.Web3Gateway',
+				collapsable: true,
+				path: '/api-reference/client/web3-gateway',
+			  },
 			  ['/api-reference/client/workspace', 'oasis.workspace'],
  			  ['/api-reference/client/disconnect', 'oasis.disconnect'],
  			  ['/api-reference/client/utils', 'oasis.utils'],

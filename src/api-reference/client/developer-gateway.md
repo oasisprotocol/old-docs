@@ -14,7 +14,8 @@ new oasis.gateways.Gateway(url, httpHeaders);
 
 1. ``url`` - ``String``: The url of the gateway.
 2. `apiToken` - `String`: Api token created by the [dashboard](https://dashboard.oasiscloud.io/login).
-2. ``httpHeaders`` - ``Object``: The http headers to use for authentiication with the gateway. For example, `{ headers: new Map([['X-OASIS-INSECURE-AUTH', 'VALUE']]) }`.
+2. ``httpHeaders`` - ``Object``: The http headers to use for authentiication with the gateway.
+For example, `{ headers: new Map([['X-OASIS-INSECURE-AUTH', 'VALUE']]) }`.
 
 ::: warning
 The ``oasis.gateways.Gateway`` server is not yet readily availiable in public Oasis infrastructure.

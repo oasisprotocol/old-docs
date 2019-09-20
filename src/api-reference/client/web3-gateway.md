@@ -1,8 +1,7 @@
 # oasis.gateways.Web3Gateway
 
 ``oasis.gateways.Web3Gateway`` provides an implementation of ``OasisGateway`` that communicates with a web3 gateway.
-It's suggested to use this package if you want the client to sign transactions with its own
-wallet and specify transaction options like gas limit and additional authenticated data.
+It's suggested to use this package if you want the client to sign transactions with its own wallet and specify transaction options like gas limit and additional authenticated data.
 
 It currently only supports WebSockets and can be instantiated as follows:
 
@@ -18,11 +17,10 @@ new oasis.gateways.Web3Gateway(url, wallet);
 ### Parameters
 
 1. ``url`` - ``String``: The url of the gateway.
-2. ``wallet`` - ``Wallet``: The wallet to sign transactions. For convenience, we package and suggest using the ethers.js `wallet`_.
+2. ``wallet`` - ``Wallet``: The wallet to sign transactions. For convenience, we package and suggest using the ethers.js [wallet](./wallet).
 
 ::: tip
-In addition to implementing the ``OasisGateway`` interface, the ``Web3Gateway`` exposes a subset of the
-Web3 JSON RPC [spec](https://github.com/ethereum/wiki/wiki/JSON-RPC) along with Oasis extensions.
+In addition to implementing the ``OasisGateway`` interface, the ``Web3Gateway`` exposes a subset of the Web3 JSON RPC [spec](https://github.com/ethereum/wiki/wiki/JSON-RPC) along with Oasis extensions.
 
 Supported namespaces are
 
@@ -46,7 +44,7 @@ To get the expiration of a given service using ``oasis_getExpiry``,
 await gateway.oasis.getExpiry(address);
 ```
 
-The full list of methods is specified below.
+The full list of methods is specified below. For the authoritative reference, see the [spec](https://github.com/ethereum/wiki/wiki/JSON-RPC).
 :::
 
 ## eth.protocolVersion
@@ -156,16 +154,18 @@ sending it to the remote gateway.
 1. Object - The transaction object
 
 * to: ``String`` - (optional when creating new contract) The address the transaction is directed to.
-* gas: ``String`` - (optional, default: 90000) Integer of the gas provided for the transaction execution. It will return unused gas.
+* gas: ``String`` - (optional, default: 90000) Integer of the gas provided for the transaction execution.
+It will return unused gas.
 * gasPrice: ``String`` - (optional) Integer of the gasPrice used for each paid gas
 * value: ``String``  - (optional) Integer of the value sent with this transaction
 * data: ``String`` - (optional) The data field of the transaction.
-* nonce: ``String`` - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
+* nonce: ``String`` - (optional) Integer of a nonce.
+This allows to overwrite your own pending transactions that use the same nonce.
 
 ### Returns
 ``String`` - the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use :ref:`eth.getTransactionReceipt <getTransactionReceipt>` to get the contract address, after the transaction was validated, when you created a contract.
+Use [eth.getTransactionReceipt](#eth-gettransactionreceipt) to get the contract address, after the transaction was validated, when you created a contract.
 
 ## eth.sendRawTransaction
 
@@ -177,13 +177,12 @@ Use :ref:`eth.getTransactionReceipt <getTransactionReceipt>` to get the contract
 
 ``String`` - hex string of the 32 byte transaction hash, or the zero hash if the transaction is not yet available.
 
-Use :ref:`eth.getTransactionReceipt <getTransactionReceipt>` to get the contract address, after the transaction was validated, when you created a contract.
+Use [eth.getTransactionReceipt](#eth-gettransactionreceipt) to get the contract address, after the transaction was validated, when you created a contract.
 
 ## eth.call
 
 Executes a transaction at the gateway without creating a transaction on the block chain.
-Note that this feature is not available for confidential contracts, because Web3 gateways
-don't have access to confidential state.
+Note that this feature is not available for confidential contracts, because Web3 gateways don't have access to confidential state.
 
 ### Parameters
 
@@ -191,11 +190,13 @@ don't have access to confidential state.
 
 * from: ``String`` - (optional) The address the transaction is sent from.
 * to: ``String`` -  when creating new contract) The address the transaction is directed to.
-* gas: ``String`` - (optional, default: 90000) Integer of the gas provided for the transaction execution. It will return unused gas.
+* gas: ``String`` - (optional, default: 90000) Integer of the gas provided for the transaction execution.
+It will return unused gas.
 * gasPrice: ``String`` - (optional) Integer of the gasPrice used for each paid gas
 * value: ``String``  - (optional) Integer of the value sent with this transaction
 * data: ``String`` - (optional) The data field of the transaction.
-* nonce: ``String`` - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
+* nonce: ``String`` - (optional) Integer of a nonce.
+This allows to overwrite your own pending transactions that use the same nonce.
 
 ### Returns
 
@@ -205,8 +206,7 @@ don't have access to confidential state.
 
 Estimates gas for a given transaction by executing a transaction at the gateway and recording the gas used.
 The transaction is not added to the blockchain and so doesnt not affect state.
-Note that this feature is not available for confidential contracts, because Web3 gateways
-don't have access to confidential state.
+Note that this feature is not available for confidential contracts, because Web3 gateways don't have access to confidential state.
 
 ### Parameters
 
@@ -214,17 +214,17 @@ don't have access to confidential state.
 
 * from: ``String`` - (optional) The address the transaction is sent from.
 * to: ``String`` -  (optional) when creating new contract) The address the transaction is directed to.
-* gas: ``String`` - (optional) hex string of the gas provided for the transaction execution. It will return unused gas.
-* gasPrice: ``String`` - (optional) hex string of the gasPrice used for each paid gas
-* value: ``String``  - (optional) hex string of the value sent with this transaction
+* gas: ``String`` - (optional) hex string of the gas provided for the transaction execution.
+It will return unused gas.
+* gasPrice: ``String`` - (optional) hex string of the gasPrice used for each paid gas.
+* value: ``String``  - (optional) hex string of the value sent with this transaction.
 * data: ``String`` - (optional) the data field of the transaction.
-* nonce: ``String`` - (optional) hex stirng of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
+* nonce: ``String`` - (optional) hex stirng of a nonce.
+sThis allows to overwrite your own pending transactions that use the same nonce.
 
 ### Returns
 
 ``String`` - hex string of the amount of gas used for executing a transaction at the gateway.
-
-.. _getBlockByHash:
 
 ## eth.getBlockByHash
 
@@ -267,9 +267,7 @@ don't have access to confidential state.
 
 ### Returns
 
-See :ref:`eth.getBlockByHash <getBlockByHash>`.
-
-.. _getTransactionByHash:
+See [eth.getBlockByHash](#eth-getblockbyhash)
 
 ## eth.getTransactionByHash
 
@@ -307,7 +305,7 @@ Returns information about a transaction by block hash and transaction index posi
 
 ### Returns
 
-See :ref:`eth.getTransactionByHash <getTransactionByHash>`.
+See [eth.getTransactionByHash](#eth-gettransactionbyhash).
 
 ## eth.getTransactionByBlockNumberAndIndex
 
@@ -320,7 +318,7 @@ Returns information about a transaction by block number and transaction index po
 
 ### Returns
 
-See :ref:`eth.getTransactionByHash <getTransactionByHash>`.
+See [eth.getTransactionByHash](#eth-gettransactionbyhash).
 
 ## eth.getTransactionReceipt
 
@@ -348,7 +346,7 @@ Returns the receipt of a transaction by transaction hash.
 
 ## eth.newFilter
 
-Creates a filter object, based on filter options, to notify when the state changes (logs). To check if the state has changed, call :ref:`eth.getFilterChanges <getFilterChanges>`.
+Creates a filter object, based on filter options, to notify when the state changes (logs). To check if the state has changed, call [eth.getFilterChanges](#eth-getfilterchanges).
 
 A note on specifying topic filters:
 Topics are order-dependent. A transaction with a log with topics [A, B] will be matched by the following topic filters:
@@ -385,7 +383,8 @@ gateway.eth.newFilter({
 
 ## eth.newBlockFilter
 
-Creates a filter in the gateway, to notify when a new block arrives. To check if the state has changed, call :ref:`eth.getFilterChanges <getFilterChanges>`.
+Creates a filter in the gateway, to notify when a new block arrives.
+To check if the state has changed, call [eth.getFilterChanges](#eth-getfilterchanges).
 
 ### Parameters
 
@@ -397,7 +396,8 @@ None
 
 ## eth.newPendingTransactionFilter
 
-Creates a filter in the node, to notify when new pending transactions arrive. To check if the state has changed, call eth_getFilterChanges.
+Creates a filter in the node, to notify when new pending transactions arrive.
+To check if the state has changed, call eth_getFilterChanges.
 
 ### Parameters
 
@@ -409,7 +409,8 @@ None
 
 ## eth.uninstallFilter
 
-Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additonally Filters timeout when they aren't requested with eth_getFilterChanges for a period of time.
+Uninstalls a filter with given id. Should always be called when watch is no longer needed.
+Additonally Filters timeout when they aren't requested with eth_getFilterChanges for a period of time.
 
 ### Parameters
 
@@ -418,8 +419,6 @@ Uninstalls a filter with given id. Should always be called when watch is no long
 ### Returns
 
 ``Boolean`` - true if the filter was successfully uninstalled, otherwise false.
-
-.. _getFilterChanges:
 
 ## eth.getFilterChanges
 
@@ -445,7 +444,8 @@ Array - Array of log objects, or an empty array if nothing has changed since las
   * blockNumber: ``String`` (hex) - the block number where this log was in. null when its pending. null when its pending log.
   * address: ``String`` (hex), 20 Bytes - address from which this log originated.
   * data: ``String`` (hex) - contains the non-indexed arguments of the log.
-  * topics: Array of ``String`` (hex) - Array of 0 to 4 32 Bytes ``String`` (hex) of indexed log arguments. (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you declared the event with the anonymous specifier.)
+  * topics: Array of ``String`` (hex) - Array of 0 to 4 32 Bytes ``String`` (hex) of indexed log arguments.
+  (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you declared the event with the anonymous specifier.)
 
 ## eth.getFilterLogs
 
@@ -457,7 +457,7 @@ Returns an array of all logs matching filter with given id.
 
 ### Returns
 
-See :ref:`eth_getFilterChanges <getFilterChanges>`.
+See [eth.getFilterChanges](#eth-getfilterchanges).
 
 ## eth.getLogs
 
@@ -471,11 +471,12 @@ Returns an array of all logs matching a given filter object.
 * toBlock: ``String`` - (optional, default: "latest") Integer block number, or "latest" for the last mined block or "pending", "earliest" for not yet mined transactions.
 * address: ``String`` (hex) | Array, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
 * topics: Array of ``String`` (hex), - (optional) Array of 32 Bytes ``String`` (hex) topics. Topics are order-dependent. Each topic can also be an array of ``String`` (hex) with "or" options.
-* blockhash: ``String`` (hex), 32 Bytes - (optional) With the addition of EIP-234 (Geth >= v1.8.13 or Parity >= v2.1.0), blockHash is a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash blockHash. If blockHash is present in the filter criteria, then neither fromBlock nor toBlock are allowed.
+* blockhash: ``String`` (hex), 32 Bytes - (optional) With the addition of EIP-234 (Geth >= v1.8.13 or Parity >= v2.1.0), blockHash is a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash blockHash.
+If blockHash is present in the filter criteria, then neither fromBlock nor toBlock are allowed.
 
 ### Returns
 
-See :ref:`eth_getFilterChanges <getFilterChanges>`.
+See [eth.getFilterChanges](#eth-getfilterchanges).
 
 ## eth.subscribe
 
@@ -555,8 +556,7 @@ the expiration timestamp for the service.
 
 ### Parameters
 
-1. Address: 0x prefixed 20-byte hex string representing the address of the service for
-   which to retrieve the public key.
+1. Address: 0x prefixed 20-byte hex string representing the address of the service for which to retrieve the public key.
 
 ### Returns
 

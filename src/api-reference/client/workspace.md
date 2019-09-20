@@ -6,11 +6,8 @@ This feature is for node.js only.
 
 ## namespace
 
-The ``oasis.workspace`` namespace provides easy access to the build artifacts
-in your local project workspace for **deployment**. This is particularly useful
-when testing and is meant to be used when developing [oasis-rs](https://github.com/oasislabs/oasis-rs)
-services with [oasis-cli](https://github.com/oasislabs/oasis-cli), as it
-relies on the oasis-cli configuration file.
+The ``oasis.workspace`` namespace provides easy access to the build artifacts in your local project workspace for **deployment**.
+This is particularly useful when testing and is meant to be used when developing [oasis-rs](https://github.com/oasislabs/oasis-rs) services with [oasis-cli](https://github.com/oasislabs/oasis-cli), as it relies on the oasis-cli configuration file.
 
 
 ### Examples
@@ -36,16 +33,15 @@ Then you can deploy it with ``oasis.workspace`` as follows:
 oasis.workspace.MyService.deploy(arg1, arg2, options);
 ```
 
-Where ``arg1`` and ``arg2`` refer to the positional constructor arguments of ``MyService``
-and ``options`` is an (optional) instance of :ref:`RpcOptions <rpc-options>`.
+Where ``arg1`` and ``arg2`` refer to the positional constructor arguments of ``MyService`` and ``options`` is an (optional) instance of :ref:`RpcOptions <rpc-options>`.
 
-Note that the number of arguments will vary per service and the ``options`` must be the **last**
-argument given.
+Note that the number of arguments will vary per service and the ``options`` must be the **last** argument given.
 
 ### Using a gateway
 
-You can also fetch the gateway specified in your configuration file and set that as your
-default gateway. For example,
+You can also fetch the gateway specified in your configuration file and set that as your default gateway.
+
+For example,
 
 ```javascript
 // Build the gateway object from the workspace configuration file.
@@ -57,8 +53,7 @@ oasis.setGateway(gateway);
 
 ### Configuration
 
-The workspace can be configured using a config.toml file to define the gateway and
-an optional mnemonic or private key. For example,
+The workspace can be configured using a config.toml file to define the gateway and an optional mnemonic or private key. For example,
 
 ```toml
 [profile.default]
@@ -72,8 +67,7 @@ mnemonic = 'range drive remove bleak mule satisfy mandate east lion minimum unfo
 
 ### Environment Variables
 
-Although not recommended (because they are meant to be configured with [oasis-cli](https://github.com/oasislabs/oasis-cli>),
-one can also override the following environment variables.
+Although not recommended (because they are meant to be configured with [oasis-cli](https://github.com/oasislabs/oasis-cli>), one can also override the following environment variables.
 
 * ``OASIS_WORKSPACE`` - Path to the workspace root directory. Defaults to the root directory of the local git repository.
 * ``OASIS_PROFILE`` - The config profile to use. Defaults to ``default``.
@@ -82,9 +76,6 @@ one can also override the following environment variables.
 
 ### How it works
 
-When ``oasis.workspace`` is first accessed, e.g., via ``oasis.workspace.MyService`` the
-client lazily populates the namespace by searching for ``target/service/*.wasm`` files
-in your local git repository directory subtree, constructing and attaching the found
-service definitions to the namespace.
+When ``oasis.workspace`` is first accessed, e.g., via ``oasis.workspace.MyService`` the client lazily populates the namespace by searching for ``target/service/*.wasm`` files in your local git repository directory subtree, constructing and attaching the found service definitions to the namespace.
 
 For an example workspace, see the [template](https://github.com/oasislabs/template).
