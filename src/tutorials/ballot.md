@@ -188,7 +188,7 @@ pub fn new(ctx: &Context, description: String, candidates: Vec<String>) -> Self
 ```
 
 The `pub` is the visibility modifier and denotes that the function is an RPC method.
-As we discussed above, `ctx: &Context` is a reference to a `Context` object that contains the invoked method context.
+As we discussed above, `ctx: &Context` is a reference to a `Context` object that contains the invoked method context. Every RPC you define must have a `Context` object as the first parameter, and it's not used by convention we name it `_ctx`.
 `description` and `candidates` are `String` arguments that are passed in by the client.
 `-> Self` denotes that the function returns a `Self`, and `Self` is just an alias to the `<Thing>` in `impl <Thing>`.
 The constructor must return either `Self` or `<Thing>`.
