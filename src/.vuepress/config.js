@@ -40,6 +40,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: 'https://oasislabs.com' },
       { text: 'Dashboard', link: 'https://dashboard.oasiscloud.io' },
+      { text: 'Forum', link: 'https://join.slack.com/t/oasiscommunity/shared_invite/enQtNjQ5MTA3NTgyOTkzLWIxNTg1ZWZmOTIwNmQ2MTg1YmU0MzgyMzk3OWM2ZWQ4NTQ0ZDJkNTBmMTdlM2JhODllYjg5YmJkODc2NzgwNTg' },
     ],
     sidebar: [
       '/overview',
@@ -50,6 +51,13 @@ module.exports = {
         children: [
           ['/tutorials/ballot', 'Beginner: Secret Ballot'],
           ['/tutorials/messaging', 'Intermediate: Private Chat'],
+        ],
+      },
+      {
+        title: 'Rust Docs',
+        collapsable: true,
+        children: [
+          ['https://docs.rs/oasis-std', 'oasis_std'],
         ],
       },
       {
