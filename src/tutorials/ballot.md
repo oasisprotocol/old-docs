@@ -188,7 +188,7 @@ pub fn new(ctx: &Context, description: String, candidates: Vec<String>) -> Self
 ```
 
 The `pub` is the visibility modifier and denotes that the function is an RPC method.
-As we discussed above, `ctx: &Context` is a reference to a `Context` object that contains the invoked method context. Every RPC you define must have a `Context` object as the first parameter, and it's not used by convention we name it `_ctx`.
+As we discussed above, `ctx: &Context` is a reference to a `Context` object that contains the invoked method context.
 `description` and `candidates` are `String` arguments that are passed in by the client.
 `-> Self` denotes that the function returns a `Self`, and `Self` is just an alias to the `<Thing>` in `impl <Thing>`.
 The constructor must return either `Self` or `<Thing>`.
@@ -217,6 +217,8 @@ pub fn voting_open(&self, _ctx: &Context) -> bool {
 ```
 
 These are similar to the constructor but a bit different. In non-constructor RPC methods, we have access to the state of the service, as provided by a reference to `self`. We can pick the items out of `self` that we want and return them to the user. Note that _all_ RPC methods -- even those that do not use `self` and `Context` -- receive these two arguments, but you are free to ignore them.
+
+_Note_: The first parameter of every RPC must be a `Context`, and by convention the underscore prefix is used to indicate that it is unused.
 
 ### Mutating state
 
