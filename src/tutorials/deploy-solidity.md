@@ -84,7 +84,7 @@ const MNEMONIC = "range drive remove bleak mule satisfy mandate east lion minimu
 ```
 Make sure you install the HDWallet Provider:
 
-```js
+```bash
 npm install truffle-hdwallet-provider
 ```
 
@@ -153,8 +153,6 @@ const web3 = new Web3(provider);
 When you compile your contract, there should be a JSON representation of the contract in your project's `./build/contracts` folder. You need the ABI and bytecode of your contract to deploy it; retrieve it like so:
 
 ```js
-json = fs.readFileSync('./path/to/file.json', 'utf8');
-abi = JSON.parse(json)["abi"];
 const json = fs.readFileSync('./path/to/file.json', 'utf8');
 const abi = JSON.parse(json)["abi"];
 const bytecode = JSON.parse(json)["bytecode"];
@@ -184,4 +182,3 @@ contract.deploy({
 ```
 
 Now you can deploy any Solidity contract on Oasis!
-
