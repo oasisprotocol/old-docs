@@ -1,6 +1,6 @@
 # Deploying Vyper Contracts on Oasis (Uniswap)
 
-[Uniswap](https://uniswap.io/) is a decentralized exchange (DEX) for ERC20 tokens built on Ethereum. Here, it is configured for deployment on Oasis. This tutorial's methods for deploying Solidity contracts using Truffle and Web3.js are applicable to any Ethereum contract written in Solidity. For contracts written in Vyper, see the Uniswap tutorial.
+[Uniswap](https://uniswap.io/) is a decentralized exchange (DEX) for ERC20 tokens built on Ethereum. Here, it is configured for deployment on Oasis. This tutorial's methods for deploying Solidity contracts using Truffle and Web3.js are applicable to any Ethereum contract written in Vyper. For contracts written in Solidity, see the Compound tutorial.
 
 ## Quickstart
 
@@ -156,8 +156,8 @@ const exchange_bytecode = JSON.parse(exchange_json)["bytecode"];
 Initialize your contract objects.
 
 ```js
-factory_contract = new web3.eth.Contract(factory_abi);
-exchange_contract = new web3.eth.Contract(exchange_abi);
+const factory_contract = new web3.eth.Contract(factory_abi);
+const exchange_contract = new web3.eth.Contract(exchange_abi);
 ```
 
 Finally, deploy your contracts and save their addresses for future use.
@@ -211,10 +211,10 @@ Once you've deployed your contracts, you can interact with them! Try initializin
 Assuming you have your factory and exchange contracts already deployed, fill these in with their corresponding addresses:
 
 ```js
-factory_address = '0x...'; 
-exchange_address = '0x...';
-factory_contract = new web3.eth.Contract(factory_abi, factory_address);
-exchange_contract = new web3.eth.Contract(exchange_abi, exchange_address);
+const factory_address = '0x...'; 
+const exchange_address = '0x...';
+const factory_contract = new web3.eth.Contract(factory_abi, factory_address);
+const exchange_contract = new web3.eth.Contract(exchange_abi, exchange_address);
 ```
 
 To initialize the factory:
@@ -252,4 +252,3 @@ factory_contract.methods.createExchange(token_address).send({
 ```
 
 Now you can deploy and interact with any Vyper contract on the Oasis platform!
-
