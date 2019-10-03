@@ -13,7 +13,7 @@ If you have the Oasis toolchain installed and just want to deploy right away:
 
 ## Prerequisites
 
-You will need to have installed the Oasis Toolchain and a know your public address. Click [here](./deploy-solidity.md#prerequisites) for more information.
+You will need to have installed the Oasis Toolchain and know your public address. Click [here](./deploy-solidity.md#prerequisites) for more information.
 
 ## Compiling the Contracts
 
