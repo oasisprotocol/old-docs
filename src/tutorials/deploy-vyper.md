@@ -2,15 +2,6 @@
 
 [Uniswap](https://uniswap.io/) is a decentralized exchange (DEX) for ERC20 tokens built on Ethereum. Here, it is configured for deployment on Oasis. This tutorial's methods for deploying Solidity contracts using Truffle and Web3.js are applicable to any Ethereum contract written in Vyper. For contracts written in Solidity, see the Compound tutorial.
 
-## Quickstart
-
-If you have the Oasis toolchain installed and just want to deploy right away:
-
-1. Clone this repo.
-2. Install dependencies with `npm install`.
-3. Run a local oasis network with `oasis chain` in a separate terminal window.
-4. Run `node deploy-uniswap` to deploy the contracts.
-
 ## Prerequisites
 
 You will need to have installed the Oasis Toolchain and know your public address. Click [here](./deploy-solidity.md#prerequisites) for more information.
