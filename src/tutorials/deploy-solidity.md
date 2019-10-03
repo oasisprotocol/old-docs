@@ -161,13 +161,6 @@ const bytecode = JSON.parse(json)["bytecode"];
 Initialize the new contract object. Deploy the contract and save its address.
 
 ```js
-contract = new web3.eth.Contract(abi);
-contract.deploy({data:bytecode})
-.send( { from: my_address }) 
-.on('error', function(err){ console.log("error: " + err)})
-.then(function(newContractInstance){
-    console.log("Factory Deployed successfully:" + newContractInstance.options.address);
-    contract.options.address = newContractInstance.options.address;
 const contract = new web3.eth.Contract(abi);
 contract.deploy({
     data: bytecode,
