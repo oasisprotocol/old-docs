@@ -4,7 +4,7 @@
 
 ## Quickstart
 
-If you have the Oasis Toolchain installed and just want to deploy right away:
+If you have the Oasis toolchain installed and just want to deploy right away:
 
 1. Clone this repo.
 2. Install dependencies with `npm install`.
@@ -92,7 +92,7 @@ which python3
 ```
 Start a virtualenv.
 ```
-virtualenv -p <PATH/TO/PYTHON3.6> my_project
+virtualenv -p /path/to/python3.6 my_project
 source my_project/bin/activate
 ```
 Then, run `make` in your `vyper` directory. You may need to use `sudo` if on mac:
@@ -101,14 +101,14 @@ sudo make
 ```
 Vyper should be installed now and you should be able to compile contracts. The [Vyper Documentation](https://vyper.readthedocs.io/en/latest/installing-vyper.html) has more installation information.
 
-Uniswap Vyper contracts can be found at [this repository](https://github.com/Uniswap/contracts-vyper). 
-You can compile using the `vyper` command or using truffle. 
+Uniswap Vyper contracts can be found [here](https://github.com/Uniswap/contracts-vyper). 
+You can compile using the `vyper` command or using Truffle. 
 
 ## Deploying the Contracts
 
 ### Deploy Using Truffle
 
-If you choose to deploy using truffle, you'll need to create migrations contracts. 
+If you choose to deploy using Truffle, you'll need to create migrations contracts. 
 
 The first are a `Migrations.sol` in your project's `./contracts` folder and `1_initial_migrations` in your project's `./migrations` folder, both of which can be automatically generated using `truffle init`. 
 
@@ -122,11 +122,11 @@ module.exports = function(deployer, network, accounts) {
   deployer.deploy(uniswap_factory);
 }
 ```
-Use `truffle migrate` to deploy.
+Run `truffle migrate` to deploy.
 
 ### Deploy Using Web3
 
-First, connect to Web3 using a `truffle-hdwallet-provider`. You can run `oasis-chain` to start up a local network and retrieve your mnemonic and url. 
+First, connect to Web3 using a `truffle-hdwallet-provider`. You can run `oasis chain` to start up a local blockchain server and retrieve your mnemonic and URL. 
 
 ```js
 const Web3 = require('web3');
@@ -145,7 +145,12 @@ factory_abi = JSON.parse(factory_json)["abi"];
 factory_bytecode = JSON.parse(factory_json)["bytecode"];
 exchange_json = fs.readFileSync('./path/to/file.json', 'utf8');
 exchange_abi = JSON.parse(exchange_json)["abi"];
-exchange_bytecode = JSON.parse(exchange_json)["bytecode"];
+const factory_json = fs.readFileSync('./path/to/file.json', 'utf8');
+const factory_abi = JSON.parse(factory_json)["abi"];
+const factory_bytecode = JSON.parse(factory_json)["bytecode"];
+const exchange_json = fs.readFileSync('./path/to/file.json', 'utf8');
+const exchange_abi = JSON.parse(exchange_json)["abi"];
+const exchange_bytecode = JSON.parse(exchange_json)["bytecode"];
 ```
 
 Initialize your contract objects.
@@ -171,10 +176,29 @@ exchange_contract.deploy({data:exchange_bytecode})
 .then(function(newContractInstance){
     console.log("Exchange Deployed successfully:" + newContractInstance.options.address);
     exchange_contract.options.address = newContractInstance.options.address;
+factory_contract.deploy({
+    data: factory_bytecode,
+}).send({
+    from: my_address,
+}).on('error', (err) => {
+    console.log(`Deploy failed with error: ${err}`)
+}).then((deployment) => {
+    console.log(`Factory deployed successfully, at address: ${deployment.options.address}`);
+    factory_contract.options.address = deployment.options.address;
+});
+exchange_contract.deploy({
+    data: exchange_bytecode,
+}).send({
+    from: my_address,
+}).on('error', (err) => {
+    console.log(`Deploy failed with error: ${err}`)
+}).then((deployment) => {
+    console.log(`Exchange deployed successfully: ${deployment.options.address}`);
+    exchange_contract.options.address = deployment.options.address;
 });
 ```
 
-The HD Wallet Provider may continue running and cause execution to "hang" at the end. To gracefully exit, use the stop function:
+The HD Wallet Provider may continue running and cause execution to hang at the end. To gracefully exit, use the stop function:
 
 ```js
 provider.engine.stop();
@@ -196,7 +220,13 @@ exchange_contract = new web3.eth.Contract(exchange_abi, exchange_address);
 To initialize the factory:
 
 ```js
-factory_contract.methods.initializeFactory(exchange_address).send( {from: my_address}).then( () => {
+factory_contract.methods.initializeFactory(exchange_address).send({
+    from: my_address,
+}).then(() => {
+    factory_contract.methods.exchangeTemplate().call((err, result) => {
+        console.log(`\n\nSuccessfully initialized Uniswap factory with template: ${result}`);
+    });
+}).catch(console.log);
     factory_contract.methods.exchangeTemplate().call((err, result) => {
       console.log("\n\nSuccessfully initialized Uniswap factory with template: " + result)
     });
@@ -211,7 +241,14 @@ factory_contract.methods.createExchange(token_address).send( {from: my_address})
     factory_contract.methods.getExchange( token_contract.options.address).call((err, result) => {
       console.log("Successfully created a new exchange for token at " + result);
     });
-  })
+const token_address = '0x...';
+factory_contract.methods.createExchange(token_address).send({
+    from: my_address,
+}).then(() => {
+  factory_contract.methods.getExchange( token_contract.options.address).call((err, result) => {
+      console.log(`Successfully created a new exchange for token at ${result}`);
+  });
+})
 ```
 
 Now you can deploy and interact with any Vyper contract on the Oasis platform!

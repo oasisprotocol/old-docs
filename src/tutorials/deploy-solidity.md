@@ -4,22 +4,22 @@
 
 ## Quickstart
 
-If you have the Oasis Toolchain installed and just want to deploy right away:
+If you have the Oasis toolchain installed and just want to deploy right away:
 
 1. Clone this repo.
 2. Install dependencies with `npm install`.
-3. Run a local oasis network with `oasis chain` in a separate terminal window.
+3. Run a local blockchain server with `oasis chain` in a separate terminal window.
 4. Run `truffle deploy` or `node deploy-compound`. 
 
 ## Prerequisites
 
-If you haven't already installed the Oasis Toolchain, these docs will help you do so. You can test your installation using oasis commands:
+This tutorial assumes that you have [already installed the Oasis toolchain](https://docs.oasis.dev/quickstart.html#install-the-oasis-toolchain). Your installation was successful if the following command works without error:
 
 ```bash
 oasis --version
 ```
 
-Using the Oasis Toolchain, you can create a local network (or "personal blockchain") very similar to the truffle develop command or Ganache. Run the following:
+Using the Oasis toolchain, you can run a local blockchain server, just like you can with [`truffle develop`](https://www.trufflesuite.com/docs/truffle/getting-started/using-truffle-develop-and-the-console) or [Ganache](https://github.com/trufflesuite/ganache-cli), as follows:
 
 ```bash
 oasis chain
@@ -63,11 +63,11 @@ Base HD Path:  m/44'/60'/0'/0/{account_index}
 
 Save the Mnemonic; you will need it later. 
 
-Note that the port :8546 corresponds to ws. You will need to use the port :8545 for http connections. 
+_Note_: The port :8546 corresponds to ws. You will need to use the port :8545 for http connections. 
 You might also want to save one of the public addresses to serve as your account to deploy contracts with. For example you can copy-paste an account like so:
 
 ```js
-my_address = '0xb8b3666d8fea887d97ab54f571b8e5020c5c8b58'
+const my_address = '0xb8b3666d8fea887d97ab54f571b8e5020c5c8b58';
 ```
 
 ## Deploy Using Truffle
@@ -76,7 +76,7 @@ The Oasis Network supports the deployment of Solidity contracts using Truffle, a
 
 ### Truffle Configuration File 
 
-The configuration file is typically called `truffle.js` or `truffle-config.js`. You will add the Truffle HDWallet Provider, a Hierarchical Deterministic (HD) Wallet that uses a mnemonic to extract your keys. Take the mnemonic you saved earlier from running oasis-chain and input it here.
+The configuration file is typically called `truffle.js` or `truffle-config.js`. You will add the Truffle HDWallet Provider, a Hierarchical Deterministic (HD) Wallet that uses a mnemonic to extract your keys. Take the mnemonic you saved earlier from running `oasis chain` and input it here.
 
 ```js
 const HDWalletProvider = require("truffle-hdwallet-provider");
@@ -88,7 +88,7 @@ Make sure you install the HDWallet Provider:
 npm install truffle-hdwallet-provider
 ```
 
-Add the Oasis Network as one of the networks (within module.exports) in your configuration file. If you want the default network to be the Oasis Network, call it the development network. Otherwise, you will need to specify it  with a flag later on.
+Add the Oasis Network as one of the networks (listed under `module.exports`) in your configuration file. If you want the default network to be the Oasis Network, call it the development network. Otherwise, you will need to specify it with a flag later on.
 
 ```js
 module.exports = {
@@ -106,7 +106,7 @@ If you want to use the Oasis Devnet, you will need to use the following URL:
 provider: () => new HDWalletProvider(MNEMONIC, "https://web3.devnet.oasiscloud.io")
 ```
 
-If it doesn't exist already, you need to include the version of the Solidity compiler solc you need for the Compound contracts, which is likely not your installed Truffle's configured default. You'll need the highest version used by the contracts, which is stated at the top (e.g.` pragma solidity ^0.4.24`). Add to `module.exports`:
+If it doesn't exist already, you need to include the version of the Solidity compiler, `solc`, you need for the Compound contracts, which is likely not your installed Truffle's configured default. You'll need the highest version used by the contracts, which is stated at the top (e.g.` pragma solidity ^0.4.24`). Add to `module.exports`:
 
 ```js
 compilers: {
@@ -134,12 +134,11 @@ truffle migrate
 truffle deploy
 ```
 
-
 ## Deploy Using Web3
 
 The Oasis Network also has support for [Web3.js](https://web3js.readthedocs.io/en/v1.2.0/getting-started.html), a Javascript module to help build frontends for contracts on Ethereum. This method is more involved, but useful in creating your frontend application.
 
-First, you'll want to initialize `web3` with a URL and `truffle-hdwallet-provider` as the provider - the same one used to deploy on Truffle earlier. If you are using a local oasis chain, your URL will be `'http://localhost:8545'`. If you want to use the devnet, the URL will be `'https://web3.devnet.oasiscloud.io'`.
+First, you'll want to initialize `web3` with a URL and `truffle-hdwallet-provider` as the provider - the same one used to deploy on Truffle earlier. If you are using a local Oasis chain, your URL will be `'http://localhost:8545'`. If you want to use the devnet, the URL will be `'https://web3.devnet.oasiscloud.io'`.
 
 ```js
 const Web3 = require('web3');
@@ -156,7 +155,9 @@ When you compile your contract, there should be a JSON representation of the con
 ```js
 json = fs.readFileSync('./path/to/file.json', 'utf8');
 abi = JSON.parse(json)["abi"];
-bytecode = JSON.parse(json)["bytecode"];
+const json = fs.readFileSync('./path/to/file.json', 'utf8');
+const abi = JSON.parse(json)["abi"];
+const bytecode = JSON.parse(json)["bytecode"];
 ```
 
 Initialize the new contract object. Deploy the contract and save its address.
@@ -169,6 +170,16 @@ contract.deploy({data:bytecode})
 .then(function(newContractInstance){
     console.log("Factory Deployed successfully:" + newContractInstance.options.address);
     contract.options.address = newContractInstance.options.address;
+const contract = new web3.eth.Contract(abi);
+contract.deploy({
+    data: bytecode,
+}).send({
+    from: my_address,
+}).on('error', (err) => {
+    console.log(`Deploy failed with error: ${err}`)
+}).then((deployment) => {
+    console.log(`Factory deployed successfully, at address: ${deployment.options.address}`);
+    contract.options.address = deployment.options.address;
 });
 ```
 
