@@ -65,12 +65,25 @@ web3.eth.net.isListening()
    .catch(e => console.log('Something went wrong.'));
 ```
 
-With your web3 instance, you should be able to sign and send transactions without inputting private keys or nonces. 
+With your web3 instance, you should be able to sign and send transactions without the laborious process of calculating a nonce, creating a raw transaction object, signing it, etc. 
+For example, try querying an account balance:
+
+```js
+web3.eth.sendTransaction({from: '0xb8b3666d8fea887d97ab54f571b8e5020c5c8b58',to: '0xff8c7955506c8f6ae9df7efbc3a26cc9105e1797', value: 10})
+  .then( () => {
+    web3.eth.getBalance('0xff8c7955506c8f6ae9df7efbc3a26cc9105e1797')
+      .then(console.log)
+      .catch(console.log);
+  })
+  .catch(console.log);
+```
 
 ## Connecting Wallets
 
 Oasis supports Web3, so any wallet compatible with Web3 (such as the [Metamask](https://metamask.io/) browser extension) can be used to sign and send transactions. 
 If you want to use your Metamask wallet, just use your seed phrase (you can get it by going to Settings > Security and Privacy > Reveal Seed Words). 
+You can send a transaction on a local `oasis chain` network directly from the Metamask interface. 
+Just select `Localhost 8545` from the Networks dropdown menu.
 
 
 ## Getting Funded
