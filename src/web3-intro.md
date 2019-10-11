@@ -2,7 +2,8 @@
 
 ## Summary
 
-This document will walk you through how to use Web3 on Oasis, including how to connect your Web3-enabled wallet and interact with smart contracts through Web3. For tutorials on deploying contracts on Web3, visit our other docs ([Solidity](./tutorials/deploy-solidity.md) and [Vyper](./tutorials/deploy-vyper.md)). 
+This document will walk you through how to use Web3 on Oasis, including how to connect your Web3-enabled wallet and interact with smart contracts through Web3. 
+For tutorials on deploying contracts on Web3, visit our other docs ([Solidity](./tutorials/deploy-solidity.md) and [Vyper](./tutorials/deploy-vyper.md)). 
 
 - [Intro to Web3](#intro-to-web3)
 - [Connecting Wallets](#connecting-wallets)
@@ -35,7 +36,7 @@ const Tx = require('ethereumjs-tx').Transaction;
 ```
 **Connecting to Local Oasis Chain:** Initializing the HD Wallet provider requires a seed phrase (or mnemonic) from which it extracts your accounts (private keys and public addresses). 
 It also requires a URL to create a connection through which all communication to the network will be done. 
-To connect to your local `oasis chain`, use `'http://localhost:8545'` and the menmonic provided to you there. 
+To connect to your local `oasis chain`, use `'http://localhost:8545'` and the `menmonic` provided to you there. 
 
 ```js
 const MNEMONIC = 'range drive remove bleak mule satisfy mandate east lion minimum unfold ready';
@@ -43,9 +44,9 @@ const URL = 'http://localhost:8545';
 const provider = new HDWalletProvider(MNEMONIC, URL);
 ```
 
-**Connecting to Oasis Devnet:** To connect to the Oasis devnet, use the link `'wss://web3.devnet.oasiscloud.io/ws'`. 
+**Connecting to Oasis Devnet:** To connect to the Oasis Devnet, use the link `wss://web3.devnet.oasiscloud.io/ws`. 
 You will likely want to connect your own account; do this by providing your mnemonic (if you're using an HD wallet), private key, or array of private keys.
-Unforunately, the [Oasis Dashboard](https://dashboard.oasiscloud.io) accounts are not compatible with Web3. 
+The [Oasis Dashboard](https://dashboard.oasiscloud.io) accounts are not compatible with Web3. 
 In this case, since you likely want to keep your mnemonic or private key secret, instead of including it in your code you may want to input it at runtime as an environment variable.
 
 ```js
@@ -91,10 +92,11 @@ Oasis supports Web3, so any wallet compatible with Web3 (such as the [Metamask](
 If you want to use your Metamask wallet, just use your seed phrase as the `MNEMONIC` when setting up your provider. 
 You can obtain your seed phrase by going to Settings > Security and Privacy > Reveal Seed Words. 
 You can also send a transaction on a local `oasis chain` network directly from the Metamask interface. 
-Just select `Localhost 8545` from the Networks dropdown menu.
-Then, send a transaction like you would normally on the Ethereum network.
+Just select `Localhost 8545` from the Networks dropdown menu, then send a transaction like you would normally on the Ethereum network.
 
 For any other wallet, just make sure you are able to provide a mnemonic (if you're using an HD wallet), private key, or array of private keys.
+Most wallets will tell you your mnemonic or private key when you first create your account, and/or give you an option to view it later.
+Check your wallet provider's docs to see what options you have.
 
 Here is an example with a private key, represented as a string (no need to make it a `Buffer`). 
 Note that your private key should not have the '0x' in front. 
@@ -112,7 +114,7 @@ let provider = new HDWalletProvider(private_keys, URL, 0, num_keys);
 
 ## Getting Funded
 
-Unfortunately, our faucet is now deprecated. 
+Our faucet is now deprecated. 
 The best way to get funded is to email <support@oasislabs.com> with your public address. 
 
 ## Connecting to Oasis.js
