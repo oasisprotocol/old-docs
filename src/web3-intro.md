@@ -36,7 +36,7 @@ const Tx = require('ethereumjs-tx').Transaction;
 ```
 **Connecting to Local Oasis Chain:** Initializing the HD Wallet provider requires a seed phrase (or mnemonic) from which it extracts your accounts (private keys and public addresses). 
 It also requires a URL to create a connection through which all communication to the network will be done. 
-To connect to your local `oasis chain`, use `'http://localhost:8545'` and the `menmonic` provided to you there. 
+To connect to your local `oasis chain`, use `'http://localhost:8545'` and the `mnemonic` provided to you there. 
 
 ```js
 const MNEMONIC = 'range drive remove bleak mule satisfy mandate east lion minimum unfold ready';
@@ -66,6 +66,7 @@ const web3 = new Web3(provider);
 ```
 
 Test your connection:
+
 ```js
 web3.eth.net.isListening()
    .then(() => console.log('Web3 is connected.'))
@@ -120,6 +121,6 @@ The best way to get funded is to email <support@oasislabs.com> with your public 
 ## Connecting to Oasis.js
 
 [`oasis.js`](https://oasis-labs-oasis-client.readthedocs-hosted.com/en/latest/index.html) is our version of Web3, a Javascript SDK for building applications on top of Oasis platform services. 
-In `oasis.js`, you use a `wallet` and a `gateway`, similarly to how you needed a `mnemonic` and `URL` in Web3. 
+In `oasis.js`, you use a `wallet` and a `gateway`, similarly to how you needed a `MNEMONIC` and `URL` in Web3. 
 Once you've deployed contracts or sent transactions on an Oasis network via `Web3` or `oasis.js`, everything is accessible from either endpoint. 
 
