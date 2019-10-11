@@ -23,16 +23,15 @@ npm install web3
 ```
 
 You're ready to create an application that interacts with the Oasis network. 
-In your application, you'll need to include three new dependencies.
-1. Web3, obviously.
-2. A provider. Web3 requires you to specify a [provider](https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html#providers), which can be a `WebsocketProvider`, `IpcProvider` or, in our case, a Hierarchical Deterministic Wallet Provider `truffle-hdwallet-provider`. 
+In your application, you'll need to include two new dependencies.
+The first is Web3, obviously.
+Secondly, Web3 requires you to specify a [provider](https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html#providers). 
+A provider can be a `WebsocketProvider`, `IpcProvider` or, in our case, a Hierarchical Deterministic Wallet Provider `truffle-hdwallet-provider`. 
 This particular provider manages a set of keys derived from a seed. 
-3. The Ethereum Transactions module, `ethereumjs-tx`.
 
 ```js
 const Web3 = require('web3');
 const HDWalletProvider = require('truffle-hdwallet-provider');
-const Tx = require('ethereumjs-tx').Transaction;
 ```
 **Connecting to Local Oasis Chain:** Initializing the HD Wallet provider requires a seed phrase (or mnemonic) from which it extracts your accounts (private keys and public addresses). 
 It also requires a URL to create a connection through which all communication to the network will be done. 
