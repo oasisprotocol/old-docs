@@ -8,7 +8,7 @@ For tutorials on deploying contracts on Web3, visit our other docs ([Solidity](.
 - [Intro to Web3](#intro-to-web3)
 - [Connecting Wallets](#connecting-wallets)
 - [Getting Funded](#getting-funded)
-- [Connecting to Oasis.js](#connecting-to-oasis.js)
+- [Connecting to Oasis.js](#connecting-to-oasisjs)
 
 ## Intro to Web3
 
@@ -35,7 +35,7 @@ const HDWalletProvider = require('truffle-hdwallet-provider');
 ```
 **Connecting to Local Oasis Chain:** Initializing the HD Wallet provider requires a seed phrase (or mnemonic) from which it extracts your accounts (private keys and public addresses). 
 It also requires a URL to create a connection through which all communication to the network will be done. 
-To connect to your local `oasis chain`, use `'http://localhost:8545'` and the `mnemonic` provided to you there. 
+To connect to your local `oasis chain`, use `http://localhost:8545` and the `mnemonic` provided to you there. 
 
 ```js
 const MNEMONIC = 'range drive remove bleak mule satisfy mandate east lion minimum unfold ready';
@@ -46,7 +46,8 @@ const provider = new HDWalletProvider(MNEMONIC, URL);
 **Connecting to Oasis Devnet:** To connect to the Oasis Devnet, use the link `wss://web3.devnet.oasiscloud.io/ws`. 
 You will likely want to connect your own account; do this by providing your mnemonic (if you're using an HD wallet), private key, or array of private keys.
 The [Oasis Dashboard](https://dashboard.oasiscloud.io) accounts are not compatible with Web3. 
-In this case, since you likely want to keep your mnemonic or private key secret, instead of including it in your code you may want to input it at runtime as an environment variable.
+
+To keep your mnemonic or private key secret, instead of including them in your code, you may want to input them at runtime as  environment variables.
 
 ```js
 const MNEMONIC = process.env.MNEMONIC;
@@ -95,7 +96,7 @@ You can also send a transaction on a local `oasis chain` network directly from t
 Just select `Localhost 8545` from the Networks dropdown menu, then send a transaction like you would normally on the Ethereum network.
 
 For any other wallet, just make sure you are able to provide a mnemonic (if you're using an HD wallet), private key, or array of private keys.
-Most wallets will tell you your mnemonic or private key when you first create your account, and/or give you an option to view it later.
+Most wallets will tell you your mnemonic or private key when you first create your account, and/or let you view it later.
 Check your wallet provider's docs to see what options you have.
 
 Here is an example with a private key, represented as a string (no need to make it a `Buffer`). 
@@ -117,7 +118,7 @@ let provider = new HDWalletProvider(private_keys, URL, 0, num_keys);
 Our faucet is now deprecated. 
 The best way to get funded is to email <support@oasislabs.com> with your public address. 
 
-## Connecting to Oasis.js
+## Connecting to Oasisjs
 
 [`oasis.js`](https://oasis-labs-oasis-client.readthedocs-hosted.com/en/latest/index.html) is our version of Web3, a Javascript SDK for building applications on top of Oasis platform services. 
 In `oasis.js`, you use a `wallet` and a `gateway`, similarly to how you needed a `MNEMONIC` and `URL` in Web3. 
