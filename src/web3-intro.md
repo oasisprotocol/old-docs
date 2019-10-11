@@ -14,6 +14,7 @@ This document will walk you through how to use Web3 on Oasis, including how to c
 [Web3.js](https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html) is a Javascript module used by many Ethereum developers to deploy and interact with deployed smart contracts on various Ethereum networks. 
 The Oasis network fully supports Web3 interactions, so you can use it to deploy your contracts (read the docs for deploying [Solidity](./tutorials/deploy-solidity.md) and [Vyper](./tutorials/deploy-vyper.md) contracts) and interact with them. 
 
+### Using Web3 in an Application
 To use Web3, install it as you would any other module. 
 
 ```
@@ -32,8 +33,7 @@ const Web3 = require('web3');
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const Tx = require('ethereumjs-tx').Transaction;
 ```
-
-Initializing the HD Wallet provider requires a seed phrase (or mnemonic) from which it extracts your accounts (private keys and public addresses). 
+**Connecting to Local Oasis Chain:** Initializing the HD Wallet provider requires a seed phrase (or mnemonic) from which it extracts your accounts (private keys and public addresses). 
 It also requires a URL to create a connection through which all communication to the network will be done. 
 To connect to your local `oasis chain`, use `'http://localhost:8545'` and the menmonic provided to you there. 
 
@@ -43,13 +43,19 @@ const URL = 'http://localhost:8545';
 const provider = new HDWalletProvider(MNEMONIC, URL);
 ```
 
-To connect to the Oasis devnet, use the link `'wss://web3.devnet.oasiscloud.io/ws'`. 
-You will likely want to connect your own account, i.e. the one you opened through the [Oasis Dashboard](https://dashboard.oasiscloud.io).
-You can get your seed phrase like this.
+**Connecting to Oasis Devnet:** To connect to the Oasis devnet, use the link `'wss://web3.devnet.oasiscloud.io/ws'`. 
+You will likely want to connect your own account; do this by providing your mnemonic (if you're using an HD wallet), private key, or array of private keys.
+Unforunately, the [Oasis Dashboard](https://dashboard.oasiscloud.io) accounts are not compatible with Web3. 
+In this case, since you likely want to keep your mnemonic or private key secret, instead of including it in your code you may want to input it at runtime as an environment variable.
 
 ```js
+const MNEMONIC = process.env.MNEMONIC;
 const URL = 'wss://web3.devnet.oasiscloud.io/ws';
 const provider = new HDWalletProvider(MNEMONIC, URL);
+```
+
+```
+MNEMONIC="<MNEMONIC>" node my_web3_project.js
 ```
 
 Finally, create your web3 instance.
@@ -66,12 +72,12 @@ web3.eth.net.isListening()
 ```
 
 With your web3 instance, you should be able to sign and send transactions without the laborious process of calculating a nonce, creating a raw transaction object, signing it, etc. 
-For example, try querying an account balance:
+For example, try querying an account balance and sending tokens from one account to the other:
 
 ```js
-web3.eth.sendTransaction({from: '0xb8b3666d8fea887d97ab54f571b8e5020c5c8b58',to: '0xff8c7955506c8f6ae9df7efbc3a26cc9105e1797', value: 10})
+web3.eth.sendTransaction({from: my_addr, to: other_addr, value: 10})
   .then( () => {
-    web3.eth.getBalance('0xff8c7955506c8f6ae9df7efbc3a26cc9105e1797')
+    web3.eth.getBalance(other_addr)
       .then(console.log)
       .catch(console.log);
   })
@@ -81,17 +87,37 @@ web3.eth.sendTransaction({from: '0xb8b3666d8fea887d97ab54f571b8e5020c5c8b58',to:
 ## Connecting Wallets
 
 Oasis supports Web3, so any wallet compatible with Web3 (such as the [Metamask](https://metamask.io/) browser extension) can be used to sign and send transactions. 
-If you want to use your Metamask wallet, just use your seed phrase (you can get it by going to Settings > Security and Privacy > Reveal Seed Words). 
-You can send a transaction on a local `oasis chain` network directly from the Metamask interface. 
-Just select `Localhost 8545` from the Networks dropdown menu.
 
+If you want to use your Metamask wallet, just use your seed phrase as the `MNEMONIC` when setting up your provider. 
+You can obtain your seed phrase by going to Settings > Security and Privacy > Reveal Seed Words. 
+You can also send a transaction on a local `oasis chain` network directly from the Metamask interface. 
+Just select `Localhost 8545` from the Networks dropdown menu.
+Then, send a transaction like you would normally on the Ethereum network.
+
+For any other wallet, just make sure you are able to provide a mnemonic (if you're using an HD wallet), private key, or array of private keys.
+
+Here is an example with a private key, represented as a string (no need to make it a `Buffer`). 
+Note that your private key should not have the '0x' in front. 
+
+```js
+// single private key
+const priv_key = '...';
+let provider = new HDWalletProvider(priv_key, URL);
+
+// multiple private keys
+const private_keys = ['...', '...', '...']
+const num_keys = 3;
+let provider = new HDWalletProvider(private_keys, URL, 0, num_keys); 
+```
 
 ## Getting Funded
 
-Unfortunately, our faucet is now deprecated. The best way to get funded is to email <support@oasislabs.com> with your public address. 
+Unfortunately, our faucet is now deprecated. 
+The best way to get funded is to email <support@oasislabs.com> with your public address. 
 
 ## Connecting to Oasis.js
 
 [`oasis.js`](https://oasis-labs-oasis-client.readthedocs-hosted.com/en/latest/index.html) is our version of Web3, a Javascript SDK for building applications on top of Oasis platform services. 
 In `oasis.js`, you use a `wallet` and a `gateway`, similarly to how you needed a `mnemonic` and `URL` in Web3. 
+Once you've deployed contracts or sent transactions on an Oasis network via `Web3` or `oasis.js`, everything is accessible from either endpoint. 
 
