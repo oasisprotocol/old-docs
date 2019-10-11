@@ -59,7 +59,8 @@ const provider = new HDWalletProvider(MNEMONIC, URL);
 MNEMONIC="<MNEMONIC>" node my_web3_project.js
 ```
 
-Finally, create your web3 instance.
+Finally, create your Web3 instance.
+Conventionally, we call it (lowercase) `web3`, not to be confused with the (uppercase) module `Web3`.
 
 ```js
 const web3 = new Web3(provider);
