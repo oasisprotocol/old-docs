@@ -122,6 +122,9 @@ The best way to get funded is to email <support@oasislabs.com> with your public 
 ## Connecting to Oasisjs
 
 [`oasis.js`](https://oasis-labs-oasis-client.readthedocs-hosted.com/en/latest/index.html) is our version of Web3, a Javascript SDK for building applications on top of Oasis platform services. 
+It features confidentiality and support for confidential Rust contracts built on the Oasis platform; Web3 does not. 
 In `oasis.js`, you use a `wallet` and a `gateway`, similarly to how you needed a `MNEMONIC` and `URL` in Web3. 
-Once you've deployed contracts or sent transactions on an Oasis network via `Web3` or `oasis.js`, everything is accessible from either endpoint. 
+An example using `oasis.js` can be found [here](https://oasis-labs-oasis-client.readthedocs-hosted.com/en/latest/examples.html).
+
+Once you've deployed contracts or sent transactions on an Oasis network via `Web3` or `oasis.js`, everything is accessible from either endpoint, but remember that Web3 interactions do not make the same confidentiality guarantees.
 
