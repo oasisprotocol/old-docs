@@ -166,7 +166,7 @@ $ mkdir -p /serverdir/{etc,node/entity}
 
 In order for the node registration to work properly, as defined in
 `/localhostdir/entity.json`, you must copy the node's artifacts you generated in
-the [Initializing a Node](https://github.com/) section. To do so upload the
+the [Initializing a Node](#initialzing-a-Node) section. To do so upload the
 following files from `/localhostdir/node1` to `/serverdir/node` over a secure channel:
 
 * `consensus.pem`
@@ -366,7 +366,7 @@ your node is not yet registered as a validator on the Oasis Testnet.
 ## Signing up for Testnet Tokens
 
 _This won't be necessary if you are in the genesis file or already have tokens
-through some other means. For most people this, will not be true._
+through some other means. For most people, this will not be true._
 
 In order to participate on the Testnet you'll need to have tokens. You'll use
 these tokens to register your entity and stake on the network. To get tokens,
