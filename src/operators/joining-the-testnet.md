@@ -20,12 +20,12 @@ The reason for this is to ensure protection of the keys used to
 setup your node. This guide does not include the use of HSMs, but
 should be used in the future.
 
-## Creating your entity
+## Creating Your Entity
 
 Everything in this section should be done on the `localhost` as there are
 sensitive items that will be created.
 
-### Creating a working directory
+### Creating a Working Directory
 
 During this entity initialization process, we will create keys and other
 important artifacts that are necessary for the deployment of nodes on the
@@ -50,7 +50,7 @@ To create the directory structure, use the following command:
 $ mkdir -m700 -p {entity,node}
 ```
 
-### Copy the genesis file
+### Copying the Genesis File
 
 The latest genesis file can be found [here](./current-testnet-parameters.md).
 You should download the latest `genesis.json` file, copy it to the working
@@ -125,7 +125,7 @@ The command will generate the following files:
 * `tls_identity.pem` - The node's TLS key for grpc's TLS . **DO NOT SHARE**
 * `tls_identity_cert.pem` - The node's TLS cert for grpc's TLS.
 
-#### Add the node to the Entity descriptor
+#### Adding the Node to the Entity Descriptor
 
 Once the node has been initialized, we need to add it to the entity descriptor
 so that it can properly register itself when the node starts up.
@@ -141,7 +141,7 @@ $ oasis-node registry entity update \
 This will update the entity descriptor `entity.json` and subsequently the
 `entity_genesis.json` file that contains the signed entity descriptor payload.
 
-#### Initializing additional nodes
+#### Initializing Additional Nodes
 
 At the time of Public Testnet, the network will only have validators and no
 other committees (no compute, no key management, no storage, etc.). At this time
@@ -153,13 +153,13 @@ defined minimum staking amount (at this time this is 100 tokens).
 
 ## Running an Oasis Node on the `server`
 
-### Setting up the Oasis Node's working directory
+### Setting up the Oasis Node's Working Directory
 
 Before we run the node on the `server` we need to ensure that we have a place to
 store necessary files for the node. For this guide, we will call this working
 directory `/serverdir` directory.
 
-#### Setting up the the `/serverdir` directory
+#### Setting up the the `/serverdir` Directory
 
 In the `/serverdir` directory we will create the following subdirectories:
 
@@ -173,7 +173,7 @@ You can make this directory structure by calling the following command:
 $ mkdir -p /serverdir/{etc,node/entity}
 ```
 
-#### Copy the Node artifacts from `/localhostdir`
+#### Copying the Node Artifacts from `/localhostdir`
 
 In order for the node registration to work properly, as defined in
 `/localhostdir/entity.json`, you must copy the node's artifacts you generated in
@@ -194,13 +194,13 @@ _You may notice that some of these files were listed as **DO NOT SHARE**. In the
 future these keys should be generated and referenced from HSM. Before we have
 HSM support, these keys should be kept as secure as possible on the `server`.
 
-#### Copy the public Entity artifacts from `/localhostdir`
+#### Copying the Public Entity Artifacts from `/localhostdir`
 
 We will also need to have public entity artifacts from the `/localhostdir`. Copy
 the file from `/localhostdir/entity/entity.json` to
 `/serverdir/node/entity/entity.json`.
 
-#### Copy the genesis files
+#### Copying the Genesis Files
 
 The latest genesis files can be found [here](./current-testnet-parameters.md).
 You should download the latest `genesis.json` file and copy it to
@@ -351,7 +351,7 @@ foreground. You will need to use a process supervisor like
 $ oasis-node --config /serverdir/etc/config.yml
 ```
 
-### Verifying the connection to the network
+### Verifying the Connection to the Network
 
 As part of the starting the server process, the `oasis-node` binary will, by
 default, setup an internal unix socket in the `datadir` of the Node. This socket
@@ -410,7 +410,7 @@ _This won't be necessary if your Entity is in the genesis file._
 Once you have been funded, you can now complete the process of connecting your
 node by staking so that you can register your entity and register your node.
 
-### Generate a Staking (Escrow) transaction on the `localhost`
+### Generating a Staking (Escrow) Transaction on the `localhost`
 
 Your Entity private key should ideally be disconnected from the internet on the
 `localhost`. You want this because the Entity private key is used to authorize
@@ -454,7 +454,7 @@ Note that the option `--stake.transaction.amount` looks like a very large
 number. This is actually equivalent to 100 tokens on the Testnet as each unit
 value used to track the account balance is 1x10^-18 tokens.
 
-### Submitting your transaction on the `server`
+### Submitting Your Transaction on the `server`
 
 To complete the staking process we need to submit your escrow transaction:
 
@@ -478,14 +478,14 @@ To complete the staking process we need to submit your escrow transaction:
     -a /serverdir/node/internal.sock
   ```
 
-### Registering you entity
+### Registering Your Entity
 
 As a final step, you now need to register your entity onto the network.
 
 **TEMPORARY FIX**: At this time many of these instructions are a temporary fix
 due to missing features on the current `oasis-node` cli.
 
-#### Port Forward
+#### Port Forwarding
 
 On one instance of a terminal on the `localhost` execute the following to handle
 a port forwarding so you can make entity requests. _Unfortunately, if you're
@@ -497,7 +497,7 @@ temporary measure._
 $ ssh $USER@$SERVER_IP -L 42261:127.0.0.1:42261 -N
 ```
 
-#### Register your node onto the network
+#### Registering Your Node on the Network
 
 On a different terminal from your ssh port forward above, execute the following:
 
@@ -507,7 +507,7 @@ $ oasis-node registry entity register --datadir /localhostdir/entity
 
 If everything is successful you will get a zero exit code.
 
-### Checking that your node is properly registered
+### Checking that Your Node is Properly Registered
 
 _We understand these instructions for verification need to improve. Any
 assistance is welcome ;)_
@@ -516,7 +516,7 @@ To ensure that your node is properly connected as a Validator on the network, We
 can check to see the node's identity on in the registry's node list.
 Unfortunately, at this time this is a bit of a manual process.
 
-### Get the node's consensus_pub.pem identity
+### Getting the Node's consensus_pub.pem Identity
 
 ```
 cat /serverdir/node/consensus_pub.pem
@@ -532,7 +532,7 @@ s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=
 
 We will use `s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=`. As the key to search for.
 
-### grep for the node's identity
+### grepping for the Node's Identity
 
 Finally to see if the node is properly registered, run the command (you may need
 to be in a docker container if you are using that):
