@@ -36,7 +36,7 @@ The Oasis Network uses a modular architecture similar to that of a Service
 Oriented Architecture or a Microservices Architecture. Any given Node
 participates in one of many different committees. These committees each have
 different responsibilities in the execution of smart contracts on the Oasis
-Network. The responsibilities of these committees can be mapped to a set of 4
+Network. The responsibilities of these committees can be mapped to a set of four
 different layers: Consensus, Compute (Confidential and Non-confidential),
 Storage, and Key Management. For a Node Operator, these layers map distinctly to
 different classes Nodes and potentially to different hardware.
@@ -71,13 +71,13 @@ will assign it a single job during a given lifetime.
 
 #### Consensus Committee
 
-The Consensus Committee is the BFT consensus layer. It's primary function during
+The Consensus Committee is the BFT consensus layer. Its primary function during
 transaction processing is to reach consensus on the final state of the
 application that it receives from the Compute layer.
 
 ## Networking Protocols
 
-The Oasis Network uses 3 different protocols for communication:
+The Oasis Network uses three different protocols for communication:
 
 * [Tendermint](https://github.com/tendermint/tendermint)
 * [grpc](https://grpc.io/)
