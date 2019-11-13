@@ -425,6 +425,8 @@ In the following example `entity.json`, the Entity Public Key is
 }
 ```
 
+After filling out this form, wait for an email notifying you that you've been funded before moving forward. The following sections assume that you have already been funded. 
+
 ## Staking and Registering
 
 _This won't be necessary if your Entity is in the genesis file._
