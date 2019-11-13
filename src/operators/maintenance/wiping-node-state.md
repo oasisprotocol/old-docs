@@ -1,4 +1,4 @@
-# Wiping node state
+# Wiping Node State
 
 In some cases you might want (or need) to do a full redeploy with clean state
 before deploying a new version of the network. This should never actually be
