@@ -389,7 +389,7 @@ JSON file, the Entity Public Key is the `id` field.
 
 ### Example
 
-In the following example `entity.json`, the Entity Public key is
+In the following example `entity.json`, the Entity Public Key is
 `TszGIrC1X08czcik0DgAnmGPzjf8pfQ47bgrjpTmbro=`.
 
 ```json
@@ -471,7 +471,8 @@ To complete the staking process we need to submit your escrow transaction:
     -a /serverdir/node/internal.sock
   ```
 
-  Without docker
+  Without docker:
+  
   ```
   $ oasis-node stake account submit \
     --stake.transaction.file /serverdir/signed-escrow.tx \
