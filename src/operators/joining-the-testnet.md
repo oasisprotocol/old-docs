@@ -378,8 +378,9 @@ As part of the starting the server process, the `oasis-node` binary will, by
 default, setup an internal unix socket in the `datadir` of the Node. This socket
 can be used to communicate to the node and query details about the network.
 
+The following should be run from inside the docker container or the server, depending on how you chose to start the node.
 ```bash
-$ oasis-node registry entity list -a /serverdir/node/internal.sock
+$ oasis-node registry entity list -a unix:/serverdir/node/internal.sock
 ```
 
 If this command fails, you'll receive a non-zero exit code and there's a high
