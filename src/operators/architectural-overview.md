@@ -36,8 +36,10 @@ The Oasis Network uses a modular architecture similar to that of a Service
 Oriented Archiecture or a Microservices Architecture. Any given Node
 participates in one of many different committees. These committees each have
 different responsibilities in the execution of smart contracts on the Oasis
-Network. In this section, we explore the different committees and their
-responsibilities.
+Network. The responsibilities of these committees can be mapped to a set of 4
+different layers: Consensus, Compute (Confidential and Non-confidential),
+Storage, and Key Management. For a Node Operator, these layers map distinctly to
+different classes Nodes and potentially to different hardware.
 
 ### Committee Responsibilities
 
@@ -67,37 +69,11 @@ efficient use of hardware. If, for instance, a Node registers with the
 possibility of operating as a Storage or Compute Node, the Committee Scheduler
 will assign it a single job during a given lifetime.
 
-#### Transaction Scheduler Committee
-
-The Transaction Scheduler Committee schedules batches of transactions into the
-Compute Committee. In order to ensure maximum throughput, the Transaction
-Scheduler batches transactions for execution that should be conflict free.
-
-#### Compute Committee
-
-The Compute Committee executes transactions.
-
-#### Merge Committee
-
-The output from the Compute Committee are merged into a single application state
-and submitted to the Consensus Committee to agree upon the final application
-state after a batch of transactions execute.
-
-#### Storage Committee
-
-Stores application state from the compute and merge committee.
-
 #### Consensus Committee
 
 The Consensus Committee is the BFT consensus layer. It's primary function during
 transaction processing is to reach consensus on the final state of the
-application that it receives from the Merge Committees.
-
-_As a note, the MainNet Beta will only be released with a Consensus Committee._
-
-#### Key Manager Committee
-
-Provides a key management for Confidential Compute Committees.
+application that it receives from the Compute layer.
 
 ## Networking Protocols
 
