@@ -4,8 +4,8 @@ As an operator of a Node on the Oasis Network, it is suggested that you have an
 understanding of the system architecture of the Oasis Network. Here we will
 provide a high level overview of the Oasis Network's architecture. This overview
 is used to provide enough guidance to be useful for the purposes of getting
-started as a Node Operator. For more information, see
-[our whitepaper](https://www.oasislabs.com/whitepaper).
+started as a Node Operator. Note that not all of these features are available in the Public Testnet, and their design may change in later phases. For more information on our proposed design, see
+[our research papers](https://www.oasis-protocol.org/researchpapers).
 
 ## Definitions
 
@@ -19,7 +19,7 @@ information.
 ### Node
 
 A Node is a device (VM, Bare Metal, Container, etc.) that is participating in a
-committee on the network. Each Node has a private key that is used for signing
+committee on the Network. Each Node has a private key that is used for signing
 operations during block production and a public key, or Node Identity, used for
 identification. See [Entities and Key Management](#entities-and-key-management)
 for further information.
@@ -27,13 +27,13 @@ for further information.
 ### Committee
 
 A Committee is a set of Nodes that are participating in the same service layer
-of oasis. Committees are described in more detail in the [Modular
-Architecture](#modular-architecture) Section.
+of the Oasis Network. Committees are described in more detail in the [Modular
+Architecture](#modular-architecture) section.
 
 ## Modular Architecture
 
 The Oasis Network uses a modular architecture similar to that of a Service
-Oriented Architecture or a Microservices Architecture. Any given Node
+Oriented Archiecture or a Microservices Architecture. Any given Node
 participates in one of many different committees. These committees each have
 different responsibilities in the execution of smart contracts on the Oasis
 Network. The responsibilities of these committees can be mapped to a set of 4
@@ -46,8 +46,8 @@ different classes Nodes and potentially to different hardware.
 ![Transaction Processing](./operator_images/web3_diagram_v2.png)
 
 In the figure above, we see the flow of transactions in each committee. The
-details of each committee is best described in our [blockchain
-paper](https://www.oasislabs.com/whitepaper), but we provide this section here
+details of each committee is best described in our [research
+paper](https://www.oasis-protocol.org/researchpapers), but we provide this section here
 as a high level introduction. It should be noted that some aspects of the system
 are yet to be completed. So the testnet that you might deploy in the [Quick
 Start Guide](./quick-start.md) won't yet function as it is described here.
