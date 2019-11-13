@@ -1,6 +1,6 @@
 # Joining the Testnet
 
-This guide will cover setting up your nodes on the public testnet. There is some
+This guide will cover setting up your nodes on the Public Testnet. There is some
 assumption of knowledge on the use of basic command line tools and docker.
 
 ## Prerequisites
@@ -69,7 +69,7 @@ operating nodes on the network as it controls the stake attached to a given
 individual or organization on the network. In the future we will support using
 entity keys through HSMs to ensure that entity keys cannot be easily
 compromised. We strongly suggest that you do not use any entity that is generated
-with the current process on the Mainnet. During the public testnet and staking
+with the current process on the Mainnet. During the Public Testnet and staking
 competition we would also suggest that you generate the entity on a system that has
 no network connection to provide rudimentary protection for the entity key.
 However, it is up to you to determine your own security practices.
@@ -547,7 +547,7 @@ If `grep` found the key, then you're properly connected!
 ## You're a Validator!
 
 If you've made it this far you've properly connected your node to the network
-and you're now a Validator on the public testnet.
+and you're now a Validator on the Public Testnet.
 
 ### Maintenance Guides
 
