@@ -177,7 +177,7 @@ $ mkdir -p /serverdir/{etc,node/entity}
 
 In order for the node registration to work properly, as defined in
 `/localhostdir/entity.json`, you must copy the node's artifacts you generated in
-the [Initializing a Node](#initialzing-a-Node) section. To do so upload the
+the [Initializing a Node](#initializing-a-node) section. To do so upload the
 following files from `/localhostdir/node1` to `/serverdir/node` over a secure channel:
 
 * `consensus.pem`
