@@ -50,6 +50,17 @@ To create the directory structure, use the following command:
 $ mkdir -m700 -p {entity,node}
 ```
 
+### Copy the genesis file
+
+The latest genesis file can be found [here](./current-testnet-parameters.md).
+You should download the latest `genesis.json` file, copy it to the working
+directory and save its path into an environment variable:
+```bash
+$ export GENESIS_FILE_PATH=/localhostdir/genesis.json
+```
+
+This will be needed later when generating transactions.
+
 ### Initializing an Entity
 
 The entity, as [described
@@ -412,6 +423,7 @@ on your own Entity.
 
 ```
 $ oasis-node stake account gen_escrow \
+    --genesis.file $GENESIS_FILE_PATH \
     --entity $ENTITY_DIR_PATH \
     --stake.escrow.account $ACCOUNT_ID \
     --stake.transaction.amount 100000000000000000000 \
