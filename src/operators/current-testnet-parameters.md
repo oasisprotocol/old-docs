@@ -12,4 +12,5 @@ testnet.
 * [oasis-core](https://github.com/oasislabs/oasis-core) commit (_This will be
   improved when we have proper versioning_)
   * Commit-Sha: `1f6d2de0688998712cba3f642e68ae70075b4d93`
-* docker container: `oasislabs/oasis-node:master-20191113164754`
+* [docker container](https://hub.docker.com/layers/oasislabs/oasis-node/master-20191113164754/images/sha256-b0b79c9988cf38a3214d63008c4861048acd0c5ebbf5fc163e2c673b8ffc60b3)
+    * `$ docker pull oasislabs/oasis-node:master-20191113164754`
