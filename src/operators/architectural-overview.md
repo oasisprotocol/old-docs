@@ -33,7 +33,7 @@ Architecture](#modular-architecture) section.
 ## Modular Architecture
 
 The Oasis Network uses a modular architecture similar to that of a Service
-Oriented Archiecture or a Microservices Architecture. Any given Node
+Oriented Architecture or a Microservices Architecture. Any given Node
 participates in one of many different committees. These committees each have
 different responsibilities in the execution of smart contracts on the Oasis
 Network. The responsibilities of these committees can be mapped to a set of 4
