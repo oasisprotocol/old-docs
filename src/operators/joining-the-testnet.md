@@ -190,6 +190,11 @@ following files from `/localhostdir/node1` to `/serverdir/node` over a secure ch
 * `tls_identity.pem`
 * `tls_identity_cert.pem`
 
+After copying, make sure that all of these files have `0600` permissions:
+```
+chmod -R 600 /serverdir/node/*.pem
+```
+
 _You may notice that some of these files were listed as **DO NOT SHARE**. In the
 future these keys should be generated and referenced from HSM. Before we have
 HSM support, these keys should be kept as secure as possible on the `server`.
@@ -340,7 +345,7 @@ $ docker run --entrypoint /oasis/bin/oasis-node \
     -p 26656:26656 \
     -p 42261:42261 \
     oasislabs/oasis-node:$OASIS_NODE_TAG \
-    --config /servernode/etc/config.yml
+    --config /serverdir/etc/config.yml
 ```
 
 _Note: the `-p 42261:42261` port binding is temporary. We will notify all of you
