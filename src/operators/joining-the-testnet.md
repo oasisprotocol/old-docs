@@ -38,7 +38,7 @@ following directories:
 * `entity` - This will store your entity. The private contents in this directory
   are safest if used on a machine kept disconnected from the internet. The
   directory permissions should be `rwx------`
-* `node` - This will store a node we are calling "node1". The name is not
+* `node` - This will store a node we are calling "node". The name is not
   important. It simply represents one of your nodes. You can rename it to whatever you
   wish. The private contents of this directory will be used on the node itself.
   You should initialize this information on a system with access to the entity's
