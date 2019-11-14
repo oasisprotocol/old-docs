@@ -96,7 +96,7 @@ A node registers itself to the network when the node starts up. However, in
 order to validate itself, the entity signs a public key associated to the
 node. This allows the node registration to happen without the uploading entity key
 to the internet. To initialize a validator node, run the following from
-the `/localhostdir/node1` directory.
+the `/localhostdir/node` directory.
 
 ```bash
 $ export STATIC_IP=<YOUR_STATIC_IP>
@@ -130,7 +130,7 @@ The command will generate the following files:
 Once the node has been initialized, we need to add it to the entity descriptor
 so that it can properly register itself when the node starts up.
 
-Execute the following command in the `/localhostdir/node1` directory:
+Execute the following command in the `/localhostdir/node` directory:
 
 ```
 $ oasis-node registry entity update \
@@ -178,7 +178,7 @@ $ mkdir -p /serverdir/{etc,node/entity}
 In order for the node registration to work properly, as defined in
 `/localhostdir/entity.json`, you must copy the node's artifacts you generated in
 the [Initializing a Node](#initializing-a-node) section. To do so upload the
-following files from `/localhostdir/node1` to `/serverdir/node` over a secure channel:
+following files from `/localhostdir/node` to `/serverdir/node` over a secure channel:
 
 * `consensus.pem`
 * `consensus_pub.pem`
