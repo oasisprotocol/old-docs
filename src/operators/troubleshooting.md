@@ -45,6 +45,14 @@ You can use the following command to stick to go:
 make go
 ```
 
+### Alternative: Docker Binary
+
+If you're having lots of trouble building from source, you can try pulling the docker image, then copy the contained binary to your local machine with the following command:
+
+```bash
+docker cp oasis_node:/oasis/bin/oasis_node
+```
+
 ## Running a Node
 
 ### Invalid Permissions
