@@ -75,13 +75,16 @@ You can set the permissions for all `.pem` files in a directory using the follow
 chmod -R 600 /path/*.pem
 ```
 
-#### Docker host ownership
+#### Serverdir Ownership
 
-Another possible cause of permission issues is not giving ownership of your `serverdir` to the docker host:
+Another possible cause of permission issues is not giving ownership of your `serverdir` to the user running the node (e.g. `docker-host` or replace with your user):
 
 ```bash
 chown -R docker-host:docker-host /serverdir
 ```
+
+In general, to avoid problems when running docker, specify the user when running `docker` commands by adding the flag `--user $(id -u):$(id -g)`.
+
 ### Cannot Find File
 
 Error Message examples:
@@ -111,8 +114,10 @@ The docs are now updated to show that you need to add `--stake.transaction.fee.g
 
 ### SSH Tunnel
 
-Error message from trying to create ssh tunnel from localhost's docker:
+Note that this portion may not be relevant in future versions.
+
+Error message example:
 ```
 bind: Cannot assign requested address
 ```
-Error was fixed by making the `oasis-node` binary from source instead of using the docker image.
+This error was encountered while trying to create ssh tunnel from localhost's docker container, and was fixed by making the `oasis-node` binary from source instead of using the docker image.
