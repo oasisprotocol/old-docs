@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Stake Management in detail using CLI | Oasis Dev Docs</title>
+    <meta name="description" content="Oasis Developer Documentation">
+    <link rel="icon" href="/favicon.ico">
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-116576458-1"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'UA-116576458-1');</script>
+  <script>var APP_ID = "scny7003";
+
+       window.intercomSettings = {
+         app_id: APP_ID
+       };
+
+       function intercom(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + APP_ID;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}};
+       intercom();
+      </script>
+    
+    <link rel="preload" href="/assets/css/0.styles.9592061e.css" as="style"><link rel="preload" href="/assets/js/app.f332563e.js" as="script"><link rel="preload" href="/assets/js/2.6d425c26.js" as="script"><link rel="preload" href="/assets/js/25.881785cb.js" as="script"><link rel="prefetch" href="/assets/js/10.05b61b86.js"><link rel="prefetch" href="/assets/js/11.c0e5d703.js"><link rel="prefetch" href="/assets/js/12.4783884e.js"><link rel="prefetch" href="/assets/js/13.bf00cc46.js"><link rel="prefetch" href="/assets/js/14.ee54a380.js"><link rel="prefetch" href="/assets/js/15.740a3740.js"><link rel="prefetch" href="/assets/js/16.416f7dca.js"><link rel="prefetch" href="/assets/js/17.d15912f1.js"><link rel="prefetch" href="/assets/js/18.8e37b6fa.js"><link rel="prefetch" href="/assets/js/19.b57f0df5.js"><link rel="prefetch" href="/assets/js/20.1175f0b2.js"><link rel="prefetch" href="/assets/js/21.cfbdc3cb.js"><link rel="prefetch" href="/assets/js/22.f27cc749.js"><link rel="prefetch" href="/assets/js/23.5474211a.js"><link rel="prefetch" href="/assets/js/24.b6e45a2f.js"><link rel="prefetch" href="/assets/js/26.78b1a0af.js"><link rel="prefetch" href="/assets/js/27.6a06508d.js"><link rel="prefetch" href="/assets/js/28.8d1acef7.js"><link rel="prefetch" href="/assets/js/29.f8cad814.js"><link rel="prefetch" href="/assets/js/3.ea6c71e0.js"><link rel="prefetch" href="/assets/js/30.4bfbb70b.js"><link rel="prefetch" href="/assets/js/31.5ec88d11.js"><link rel="prefetch" href="/assets/js/32.03478d37.js"><link rel="prefetch" href="/assets/js/33.e451bd7c.js"><link rel="prefetch" href="/assets/js/4.0e14c492.js"><link rel="prefetch" href="/assets/js/5.199a93c0.js"><link rel="prefetch" href="/assets/js/6.48ad08d5.js"><link rel="prefetch" href="/assets/js/7.ca59d78d.js"><link rel="prefetch" href="/assets/js/8.5f015886.js"><link rel="prefetch" href="/assets/js/9.fcac8449.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9592061e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.svg" alt="Oasis Dev Docs" class="logo"> <span class="site-name can-hide">Oasis Dev Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://oasislabs.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://dashboard.oasiscloud.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Dashboard
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://join.slack.com/t/oasiscommunity/shared_invite/enQtNjQ5MTA3NTgyOTkzLWIxNTg1ZWZmOTIwNmQ2MTg1YmU0MzgyMzk3OWM2ZWQ4NTQ0ZDJkNTBmMTdlM2JhODllYjg5YmJkODc2NzgwNTg" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Support
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/oasislabs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://oasislabs.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://dashboard.oasiscloud.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Dashboard
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://join.slack.com/t/oasiscommunity/shared_invite/enQtNjQ5MTA3NTgyOTkzLWIxNTg1ZWZmOTIwNmQ2MTg1YmU0MzgyMzk3OWM2ZWQ4NTQ0ZDJkNTBmMTdlM2JhODllYjg5YmJkODc2NzgwNTg" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Support
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/oasislabs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/overview.html" class="sidebar-link">Overview</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>App Developer Docs</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Operator Docs</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/operators/overview.html" class="sidebar-link">Node Operator Overview</a></li><li><a href="/operators/prerequisites.html" class="sidebar-link">Prerequisites Guide</a></li><li><a href="/operators/joining-the-testnet.html" class="sidebar-link">Joining the Testnet</a></li><li><a href="/operators/current-testnet-parameters.html" class="sidebar-link">Current Testnet Parameters</a></li><li><a href="/operators/architectural-overview.html" class="sidebar-link">Architectural Overview</a></li><li><a href="/operators/hardware-recommendations.html" class="sidebar-link">Node Hardware Recommendations</a></li><li><a href="/operators/stake-management.html" class="active sidebar-link">Stake Management</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/operators/stake-management.html#staking-basics" class="sidebar-link">Staking basics</a></li><li class="sidebar-sub-header"><a href="/operators/stake-management.html#example-burning-tokens" class="sidebar-link">Example: Burning tokens</a></li><li class="sidebar-sub-header"><a href="/operators/stake-management.html#example-transferring-tokens" class="sidebar-link">Example: Transferring tokens</a></li><li class="sidebar-sub-header"><a href="/operators/stake-management.html#example-escrowing-tokens-and-reclaiming-them" class="sidebar-link">Example: Escrowing tokens and reclaiming them</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>API Reference</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="stake-management-in-detail-using-cli"><a href="#stake-management-in-detail-using-cli" class="header-anchor">#</a> Stake Management in detail using CLI</h1> <p>For node operators Oasis node binary offers command line interface tooling for
+various native token stake operations.</p> <p>The following commands are available for running <strong>online</strong> Oasis node on server:</p> <ul><li><code>oasis-node stake info</code> shows the native token information,</li> <li><code>oasis-node stake list</code> lists all accounts with positive balance,</li> <li><code>oasis-node stake account info</code> shows detailed account information,</li> <li><code>oasis-node stake account submit</code> submits a pregenerated transaction given the
+filename.</li></ul> <p>In addition the following transaction generation commands are meant to be run
+offline, because signing a transaction requires a private key which <strong>should not
+be accessible</strong> from outside in any way:</p> <ul><li><code>oasis-node stake account gen_transfer</code></li> <li><code>oasis-node stake account gen_burn</code></li> <li><code>oasis-node stake account gen_escrow</code></li> <li><code>oasis-node stake account gen_reclaim_escrow</code></li></ul> <h2 id="staking-basics"><a href="#staking-basics" class="header-anchor">#</a> Staking basics</h2> <p>We will run the staking operations in a local testing environment. If you are
+already a validator on a testnet, you can skip this step. All required
+parameters will be passed directly using CLI, so there is no need for a config
+file. To spin up the Oasis network locally, move to your oasis-core folder and
+run</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-net-runner/oasis-net-runner <span class="token punctuation">\</span>
+ --net.node.binary go/oasis-node/oasis-node <span class="token punctuation">\</span>
+ --net.runtime.binary target/debug/simple-keyvalue <span class="token punctuation">\</span>
+ --net.runtime.loader target/debug/oasis-core-runtime-loader <span class="token punctuation">\</span>
+ --net.keymanager.binary target/debug/oasis-core-keymanager-runtime
+</code></pre></div><p>Shortly, three compute nodes, storage nodes and a key manager will start. If you
+track the output on the terminal, it should contain a similar line to this:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">level</span><span class="token operator">=</span>info <span class="token assign-left variable">module</span><span class="token operator">=</span>net-runner <span class="token assign-left variable">caller</span><span class="token operator">=</span>root.go:145 <span class="token assign-left variable">ts</span><span class="token operator">=</span><span class="token number">2019</span>-10-25T10:54:09.198642162Z <span class="token assign-left variable">msg</span><span class="token operator">=</span><span class="token string">&quot;client node socket available&quot;</span> <span class="token assign-left variable">path</span><span class="token operator">=</span>/tmp/oasis-net-runner236357163/net-runner/network/client-0/internal.sock
+</code></pre></div><p>In our case <code>unix:/tmp/oasis-net-runner236357163/net-runner/network/client-0/internal.sock</code>
+is the path to the local unix socket of the Oasis node. If you are running a
+testnet validator node, a similar <code>internal.sock</code> unix socket exists in your
+server directory. We will use this address for performing online stake
+operations, so let's store it as <code>ADDR</code> environmental variable:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">ADDR</span><span class="token operator">=</span>unix:/tmp/oasis-net-runner236357163/net-runner/network/client-0/internal.sock
+</code></pre></div><p>First, let's see what is the native token of our platform:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake info -a <span class="token variable">$ADDR</span>
+Name: <span class="token string">&quot;Buffycoin&quot;</span>
+Symbol: <span class="token string">&quot;BUF&quot;</span>
+Total supply: <span class="token number">200000000000</span>
+Common pool: <span class="token number">0</span>
+Staking threshold <span class="token punctuation">(</span>entity<span class="token punctuation">)</span>: <span class="token number">0</span>
+Staking threshold <span class="token punctuation">(</span>validator<span class="token punctuation">)</span>: <span class="token number">0</span>
+Staking threshold <span class="token punctuation">(</span>compute<span class="token punctuation">)</span>: <span class="token number">0</span>
+Staking threshold <span class="token punctuation">(</span>storage<span class="token punctuation">)</span>: <span class="token number">0</span>
+</code></pre></div><p>There is a native token named <code>Buffycoin</code> with symbol <code>BUF</code> in our environment
+with total supply of 200 billion. All tokens are allocated in their respective
+accounts and no tokens are in the <em>common pool</em>. Finally we see no staking
+thresholds for any node kind (entity, validator, compute, storage).</p> <p>Let's list all accounts with positive balance:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake list -a <span class="token variable">$ADDR</span>
+4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35
+</code></pre></div><p>There exists one account <code>4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35</code>
+with positive balance. In our case, this is the so called <em>test entity</em> account
+for debugging. Let's get more information about the account:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account info <span class="token punctuation">\</span>
+    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 <span class="token punctuation">\</span>
+    -a <span class="token variable">$ADDR</span>
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;TqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;100000000000&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;100000000000&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:0<span class="token punctuation">}</span>
+</code></pre></div><p>We notice that:</p> <ul><li><code>id</code> stores the Base4 encoded address of the account.</li> <li><code>general_balance</code> is the number of tokens which can be spent by a transfer
+transaction signed by the account's private key.</li> <li>Each account can also serve as an escrow. <code>escrow_balance</code> is the number of
+tokens this account contains as an escrow and which can be reclaimed by the
+depositor. In our environment, both balances have 100 billion tokens.</li> <li>Any outgoing transaction of the account must have an incremental <code>nonce</code>. In
+our case, the next outgoing transaction of the account will have <code>nonce: 0</code>.</li></ul> <h2 id="example-burning-tokens"><a href="#example-burning-tokens" class="header-anchor">#</a> Example: Burning tokens</h2> <p>We will generate and sign our first transaction. Let's start with <em>burn</em>
+transaction which destroys the given number of account's tokens. To generate a
+burn transaction of 2000 tokens, sign and store the transaction to file <code>b.json</code>,
+type:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account gen_burn <span class="token punctuation">\</span>
+    --stake.transaction.amount <span class="token number">2000</span> <span class="token punctuation">\</span>
+    --stake.transaction.file b.json <span class="token punctuation">\</span>
+    --stake.transaction.nonce <span class="token number">0</span> <span class="token punctuation">\</span>
+    --stake.transaction.fee.gas <span class="token number">1000</span> <span class="token punctuation">\</span>
+    --stake.transaction.fee.amount <span class="token number">1</span> <span class="token punctuation">\</span>
+    --debug.test_entity
+</code></pre></div><p>We used the following parameters:</p> <ul><li><code>--stake.transaction.amount</code> specifies the number of tokens,</li> <li><code>--stake.transaction.file</code> the output filename of the transaction stored in
+JSON format,</li> <li><code>--stake.transaction.nonce</code> the incremental nonce. Since this is our first
+transaction which changes the account balance, <code>nonce</code> equals <code>0</code>,</li> <li><code>--stake.transaction.fee.gas</code> is the maximum amount of gas we allow this
+transaction to spend,</li> <li><code>--stake.transaction.fee.amount</code> is the fee in tokens we will pay for this
+transaction,</li> <li><code>--debug.test_entity</code> will sign the transaction using the test entity account.
+If you are running a validator node, you should use <code>--entity</code> instead and the
+directory containing <code>entity.json</code> with your private key.</li></ul> <p>The above generation and signing of the transaction is done offline.</p> <p>To submit our transaction, we need to copy <code>b.json</code> where the online Oasis node
+has access to (e.g. via ssh) and run on server:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account submit <span class="token punctuation">\</span>
+    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 <span class="token punctuation">\</span>
+    --stake.transaction.file b.json <span class="token punctuation">\</span>
+    -a <span class="token variable">$ADDR</span>
+</code></pre></div><p>The submit operation above requires two parameters:</p> <ul><li><code>--stake.transaction.file</code> is the input filename of the transaction,</li> <li><code>--stake.account.id</code> is the staking account which pays the transaction fee and
+serves as an escrow. This accounts gets slashed, if invalid transaction is
+submitted.</li></ul> <p>Finally, let's check the new balance of the account:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account info <span class="token punctuation">\</span>
+    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 <span class="token punctuation">\</span>
+    -a <span class="token variable">$ADDR</span>
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;TqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;99999998000&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;100000000000&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:0<span class="token punctuation">}</span>
+</code></pre></div><p>Usually, the new balance is seen immediately, but some transactions (for example
+escrow reclaiming) requires a debonding period so you might need to wait a few
+blocks for the balances to update. Notice that <code>2000</code> tokens have been deducted
+from the <code>general_balance</code> in our case.</p> <h2 id="example-transferring-tokens"><a href="#example-transferring-tokens" class="header-anchor">#</a> Example: Transferring tokens</h2> <p>Token transfer transaction transfers tokens from the signer's account to the
+given destination account. Let's generate a transfer transaction of 1000 tokens
+to account <code>5ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account gen_transfer <span class="token punctuation">\</span>
+ --stake.transaction.amount <span class="token number">1000</span> <span class="token punctuation">\</span>
+ --stake.transaction.file t.json <span class="token punctuation">\</span>
+ --stake.transaction.nonce <span class="token number">1</span> <span class="token punctuation">\</span>
+ --stake.transfer.destination 5ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 <span class="token punctuation">\</span>
+ --stake.transaction.fee.gas <span class="token number">1000</span> <span class="token punctuation">\</span>
+ --stake.transaction.fee.amount <span class="token number">1</span> <span class="token punctuation">\</span>
+ --debug.test_entity
+</code></pre></div><p>We used similar parameters to the ones used for generating the burn transaction:</p> <ul><li><code>--stake.transaction.amount</code> is the number of tokens to transfer,</li> <li><code>--stake.transaction.file</code> is the output filename,</li> <li><code>--stake.transaction.nonce</code> is the incremental nonce. In our case, this is the
+second transaction on the account, thus <code>nonce</code> equals <code>1</code>,</li> <li><code>--stake.transfer.destination</code> is a hex-encoded address of the receiving
+account of tokens,</li> <li><code>--debug.test_entity</code>, <code>--stake.transaction.fee.gas</code>, and <code>--stake.transaction.fee.amount</code>
+behave the same as before.</li></ul> <p>Let's submit the transaction stored in <code>t.json</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account submit <span class="token punctuation">\</span>
+    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35<span class="token punctuation">\</span>
+    --stake.transaction.file t.json <span class="token punctuation">\</span>
+    -a <span class="token variable">$ADDR</span>
+</code></pre></div><p>Finally let's list all the accounts and their balances by adding <code>-v</code> flag for
+increased verbosity:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake list -a <span class="token variable">$ADDR</span>
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;TqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;99999997000&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;100000000000&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:2<span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;XqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;1000&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;0&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:0<span class="token punctuation">}</span>
+</code></pre></div><p>Notice another 1000 tokens have been deducted from the first account and
+transferred to the second one.</p> <h2 id="example-escrowing-tokens-and-reclaiming-them"><a href="#example-escrowing-tokens-and-reclaiming-them" class="header-anchor">#</a> Example: Escrowing tokens and reclaiming them</h2> <p>In the third example we will put 3000 tokens to an escrow account
+<code>6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35</code> and then
+reclaim them. First, let's generate an escrow transaction and store it to <code>e.json</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account gen_escrow <span class="token punctuation">\</span>
+ --stake.transaction.amount <span class="token number">3000</span> <span class="token punctuation">\</span>
+ --stake.transaction.file e.json <span class="token punctuation">\</span>
+ --stake.transaction.nonce <span class="token number">2</span> <span class="token punctuation">\</span>
+ --stake.escrow.account 6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 <span class="token punctuation">\</span>
+ --stake.transaction.fee.gas <span class="token number">1000</span> <span class="token punctuation">\</span>
+ --stake.transaction.fee.amount <span class="token number">1</span> <span class="token punctuation">\</span>
+ --debug.test_entity
+</code></pre></div><p>Let's submit the escrow transaction and list the accounts:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account submit <span class="token punctuation">\</span>
+    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 <span class="token punctuation">\</span>
+    --stake.transaction.file e.json <span class="token punctuation">\</span>
+    -a <span class="token variable">$ADDR</span>
+$ ./go/oasis-node/oasis-node stake list -a <span class="token variable">$ADDR</span> -v
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;TqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;99999994000&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;100000000000&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:3<span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;XqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;1000&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;0&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:0<span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;bqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;0&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;3000&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:0<span class="token punctuation">}</span>
+</code></pre></div><p>Notice 3000 tokens have been deducted from the first account's <code>general_balance</code>
+and added to an <code>escrow_balance</code> of the third account.</p> <p>We reclaim 3000 escrowed tokens by generating the reclaim escrow transaction:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account gen_reclaim_escrow <span class="token punctuation">\</span>
+    --stake.transaction.amount <span class="token number">3000</span> <span class="token punctuation">\</span>
+    --stake.transaction.file r.json <span class="token punctuation">\</span>
+    --stake.transaction.nonce <span class="token number">3</span> <span class="token punctuation">\</span>
+    --stake.escrow.account 6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 <span class="token punctuation">\</span>
+    --stake.transaction.fee.gas <span class="token number">1000</span> <span class="token punctuation">\</span>
+    --stake.transaction.fee.amount <span class="token number">1</span> <span class="token punctuation">\</span>
+    --debug.test_entity
+</code></pre></div><p>Let's submit it and in a few moments list the accounts:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ./go/oasis-node/oasis-node stake account submit <span class="token punctuation">\</span>
+    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 <span class="token punctuation">\</span>
+    --stake.transaction.file r.json <span class="token punctuation">\</span>
+    -a <span class="token variable">$ADDR</span>
+$ ./go/oasis-node/oasis-node stake list -a <span class="token variable">$ADDR</span> -v
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;TqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;99999997000&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;100000000000&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:4<span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;XqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;1000&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;0&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:0<span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;bqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=&quot;</span>,<span class="token string">&quot;general_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;0&quot;</span>,<span class="token string">&quot;escrow_balance&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;0&quot;</span>,<span class="token string">&quot;nonce&quot;</span>:0<span class="token punctuation">}</span>
+</code></pre></div><p>Notice 3000 tokens have been reclaimed by the first account from the third
+account's <code>escrow_balance</code>. The <code>general_balance</code> of the first accound is
+correctly updated and the <code>escrow_balance</code> of the third account is now empty.</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/oasislabs/docs/edit/master/src/operators/stake-management.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/operators/hardware-recommendations.html" class="prev">Node Hardware Recommendations</a></span> <span class="next"><a href="/operators/https://docs.rs/oasis-std">oasis_std</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f332563e.js" defer></script><script src="/assets/js/2.6d425c26.js" defer></script><script src="/assets/js/25.881785cb.js" defer></script>
+  </body>
+</html>
