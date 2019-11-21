@@ -1,18 +1,18 @@
-# Stake Management in detail using CLI
+# Stake Management
 
-For node operators Oasis node binary offers command line interface tooling for
-various native token stake operations.
+For node operators the `oasis-node` binary offers a command line interface for
+various staking token operations.
 
-The following commands are available for running **online** Oasis node on server:
-* `oasis-node stake info` shows the native token information,
+The following commands are intended to be run **online**:
+* `oasis-node stake info` shows the token information,
 * `oasis-node stake list` lists all accounts with positive balance,
 * `oasis-node stake account info` shows detailed account information,
-* `oasis-node stake account submit` submits a pregenerated transaction given the
+* `oasis-node stake account submit` submits a pregenerated transaction given a
 filename.
 
-In addition the following transaction generation commands are meant to be run
-offline, because signing a transaction requires a private key which **should not
-be accessible** from outside in any way:
+In addition, the following commands generate transactions and are meant to be
+run offline, because signing transactions requires a private key which **should
+not be accessible** from outside in any way:
 * `oasis-node stake account gen_transfer`
 * `oasis-node stake account gen_burn`
 * `oasis-node stake account gen_escrow`
@@ -20,11 +20,11 @@ be accessible** from outside in any way:
 
 ## Staking basics
 
-We will run the staking operations in a local testing environment. If you are
-already a validator on a testnet, you can skip this step. All required
-parameters will be passed directly using CLI, so there is no need for a config
-file. To spin up the Oasis network locally, move to your oasis-core folder and
-run
+We will describe how to run the staking operations in a local testing
+environment. If you are already a validator on a testnet, you can skip this
+step. All required parameters will be passed directly using the CLI, so there is
+no need for a config file. To spin up a local Oasis test network, move to your
+`oasis-core` folder and run:
 
 ```bash
 $ ./go/oasis-net-runner/oasis-net-runner \
@@ -34,8 +34,8 @@ $ ./go/oasis-net-runner/oasis-net-runner \
  --net.keymanager.binary target/debug/oasis-core-keymanager-runtime
 ```
 
-Shortly, three compute nodes, storage nodes and a key manager will start. If you
-track the output on the terminal, it should contain a similar line to this:
+Shortly, an Oasis test network will start. If you track the output on the
+terminal, it should contain a similar line to this:
 
 ```bash
 level=info module=net-runner caller=root.go:145 ts=2019-10-25T10:54:09.198642162Z msg="client node socket available" path=/tmp/oasis-net-runner236357163/net-runner/network/client-0/internal.sock
@@ -50,7 +50,7 @@ operations, so let's store it as `ADDR` environmental variable:
 $ export ADDR=unix:/tmp/oasis-net-runner236357163/net-runner/network/client-0/internal.sock
 ```
 
-First, let's see what is the native token of our platform:
+First, let's check out the native token of our platform:
 
 ```bash
 $ ./go/oasis-node/oasis-node stake info -a $ADDR
@@ -77,8 +77,8 @@ $ ./go/oasis-node/oasis-node stake list -a $ADDR
 ```
 
 There exists one account `4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35`
-with positive balance. In our case, this is the so called *test entity* account
-for debugging. Let's get more information about the account:
+with positive balance. In our case, this is the so-called *test entity* account
+used for testing. Let's get more information about the account:
 ```bash
 $ ./go/oasis-node/oasis-node stake account info \
     --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
@@ -87,19 +87,19 @@ $ ./go/oasis-node/oasis-node stake account info \
 ```
 
 We notice that:
-* `id` stores the Base4 encoded address of the account.
+* `id` stores the Base64-encoded address of the account.
 * `general_balance` is the number of tokens which can be spent by a transfer
   transaction signed by the account's private key.
 * Each account can also serve as an escrow. `escrow_balance` is the number of
   tokens this account contains as an escrow and which can be reclaimed by the
   depositor. In our environment, both balances have 100 billion tokens.
-* Any outgoing transaction of the account must have an incremental `nonce`. In
-  our case, the next outgoing transaction of the account will have `nonce: 0`.
+* Any outgoing transaction from the account must have an incremental `nonce`. In
+  our case, the next outgoing transaction of the account should have `nonce: 0`.
 
 ## Example: Burning tokens
 
-We will generate and sign our first transaction. Let's start with *burn*
-transaction which destroys the given number of account's tokens. To generate a
+Next, we will generate and sign our first transaction. Let's start with a *burn*
+transaction, which destroys the given number of tokens. To generate a
 burn transaction of 2000 tokens, sign and store the transaction to file `b.json`,
 type:
 ```bash
@@ -113,7 +113,7 @@ $ ./go/oasis-node/oasis-node stake account gen_burn \
 ```
 
 We used the following parameters:
-* `--stake.transaction.amount` specifies the number of tokens,
+* `--stake.transaction.amount` specifying the number of tokens,
 * `--stake.transaction.file` the output filename of the transaction stored in
 JSON format,
 * `--stake.transaction.nonce` the incremental nonce. Since this is our first
@@ -126,10 +126,10 @@ transaction which changes the account balance, `nonce` equals `0`,
   If you are running a validator node, you should use `--entity` instead and the
   directory containing `entity.json` with your private key.
 
-The above generation and signing of the transaction is done offline.
+The above generation and signing of the transaction can be done offline.
 
-To submit our transaction, we need to copy `b.json` where the online Oasis node
-has access to (e.g. via ssh) and run on server:
+To submit our transaction, we need to copy `b.json` to a location accessible by
+the online Oasis node (e.g. via ssh) and run on the server:
 ```bash
 $ ./go/oasis-node/oasis-node stake account submit \
     --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
@@ -140,8 +140,7 @@ $ ./go/oasis-node/oasis-node stake account submit \
 The submit operation above requires two parameters:
 * `--stake.transaction.file` is the input filename of the transaction,
 * `--stake.account.id` is the staking account which pays the transaction fee and
-serves as an escrow. This accounts gets slashed, if invalid transaction is
-submitted.
+serves as an escrow.
 
 Finally, let's check the new balance of the account:
 
@@ -153,13 +152,13 @@ $ ./go/oasis-node/oasis-node stake account info \
 ```
 
 Usually, the new balance is seen immediately, but some transactions (for example
-escrow reclaiming) requires a debonding period so you might need to wait a few
-blocks for the balances to update. Notice that `2000` tokens have been deducted
-from the `general_balance` in our case.  
+escrow reclaiming) do not take effect until after a debonding period has elapsed,
+so you might need to wait a few blocks for the balances to update. Notice that
+`2000` tokens have been deducted from the `general_balance` in our case.  
 
 ## Example: Transferring tokens
 
-Token transfer transaction transfers tokens from the signer's account to the
+Token transfer transactions transfer tokens from the signer's account to the
 given destination account. Let's generate a transfer transaction of 1000 tokens
 to account `5ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35`:
 ```bash
