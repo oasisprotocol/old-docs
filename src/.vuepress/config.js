@@ -85,6 +85,7 @@ module.exports = {
             '/operators/hardware-recommendations',
             'Node Hardware Recommendations',
           ],
+          ['/operators/stake-management', 'Stake Management'],
         ],
       },
       {
