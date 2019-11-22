@@ -109,7 +109,8 @@ $ ./go/oasis-node/oasis-node stake account gen_burn \
     --stake.transaction.nonce 0 \
     --stake.transaction.fee.gas 1000 \
     --stake.transaction.fee.amount 1 \
-    --debug.test_entity
+    --debug.test_entity \
+    --debug.allow_test_keys
 ```
 
 We used the following parameters:
@@ -125,6 +126,8 @@ transaction which changes the account balance, `nonce` equals `0`,
 * `--debug.test_entity` will sign the transaction using the test entity account.
   If you are running a validator node, you should use `--entity` instead and the
   directory containing `entity.json` with your private key.
+* `--debug.allow_test_keys` will allow the CLI to use the test entity. This option
+  should only be used for testing.
 
 The above generation and signing of the transaction can be done offline.
 
@@ -169,7 +172,8 @@ $ ./go/oasis-node/oasis-node stake account gen_transfer \
  --stake.transfer.destination 5ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
  --stake.transaction.fee.gas 1000 \
  --stake.transaction.fee.amount 1 \
- --debug.test_entity
+ --debug.test_entity \
+ --debug.allow_test_keys
 ```
 
 We used similar parameters to the ones used for generating the burn transaction:
@@ -179,8 +183,8 @@ We used similar parameters to the ones used for generating the burn transaction:
 second transaction on the account, thus `nonce` equals `1`,
 * `--stake.transfer.destination` is a hex-encoded address of the receiving
 account of tokens,
-* `--debug.test_entity`, `--stake.transaction.fee.gas`, and `--stake.transaction.fee.amount`
-  behave the same as before.
+* `--debug.test_entity`, `--debug.allow_test_keys`, `--stake.transaction.fee.gas`,
+and `--stake.transaction.fee.amount` behave the same as before.
 
 Let's submit the transaction stored in `t.json`:
 
@@ -216,7 +220,8 @@ $ ./go/oasis-node/oasis-node stake account gen_escrow \
  --stake.escrow.account 6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
  --stake.transaction.fee.gas 1000 \
  --stake.transaction.fee.amount 1 \
- --debug.test_entity
+ --debug.test_entity \
+ --debug.allow_test_keys
 ```
 
 Let's submit the escrow transaction and list the accounts:
@@ -243,7 +248,8 @@ $ ./go/oasis-node/oasis-node stake account gen_reclaim_escrow \
     --stake.escrow.account 6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
     --stake.transaction.fee.gas 1000 \
     --stake.transaction.fee.amount 1 \
-    --debug.test_entity
+    --debug.test_entity \
+    --debug.allow_test_keys
 ```
 
 Let's submit it and in a few moments list the accounts:
