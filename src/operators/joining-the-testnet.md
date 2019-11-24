@@ -483,7 +483,10 @@ value used to track the account balance is 1x10^-18 tokens.
 
 ### Generating Entity Registration Transaction
 
-After you submit your escrow account.
+After you submit your escrow account, you'll need to register your entity so
+that it your node register properly. You could do this process _after_ you
+submit the escrow transaction, however, to save steps we prepare everything
+before hand.
 
 ```bash
 $ oasis-node registry entity gen_register \
