@@ -170,7 +170,7 @@ In the `/serverdir` directory we will create the following subdirectories:
 You can make this directory structure by calling the following command:
 
 ```bash
-$ mkdir -p /serverdir/{etc,node/entity}
+$ mkdir -m700 -p /serverdir/{etc,node/entity}
 ```
 
 #### Copying the Node Artifacts from `/localhostdir`
@@ -315,6 +315,23 @@ tendermint:
   seed:
     - "[[ seed_node_address ]]"
 ```
+
+#### Ensuring proper permissions
+
+Only the owner of the process that runs node should have access to the files in
+the directory. We suggest running the following to remove all non-owner
+read/write/execute permissions:
+
+```bash
+chmod -R g-r,g-w,g-x,o-r,o-w,o-x /serverdir
+```
+
+However just so it's clear, the following permissions are expected by the
+`oasis-node` command:
+
+* `700` for the `/serverdir/node` directory
+* `700` for the `/serverdir/node/entity` directory
+* `600` for all `*.pem` files
 
 ### Starting the Oasis Node
 
@@ -466,7 +483,7 @@ The parameters are as follows:
 * `$ACCOUNT_ID` - This is the hex encoding of the Entity Public Key. To derive this you
   can use the following python3 code:
 
-  ```
+  ```python
   import binascii, base64
 
   def account_id_from_b64(base64_id):
@@ -499,7 +516,6 @@ $ oasis-node registry entity gen_register \
   transaction file. For this guide we will use
   `/localhostdir/signed-register.tx`
 
-
 ### Submitting Your Transactions on the `server`
 
 To complete the staking process we need to submit your escrow transaction:
@@ -512,7 +528,7 @@ To complete the staking process we need to submit your escrow transaction:
 
   If you're using docker use:
 
-  ```
+  ```bash
   $ docker exec -it oasis_node /bin/bash
   $ oasis-node stake account submit \
     --stake.transaction.file /serverdir/signed-escrow.tx \
@@ -524,7 +540,7 @@ To complete the staking process we need to submit your escrow transaction:
 
   Without docker:
 
-  ```
+  ```bash
   $ oasis-node stake account submit \
     --stake.transaction.file /serverdir/signed-escrow.tx \
     -a unix:/serverdir/node/internal.sock
@@ -544,8 +560,8 @@ Unfortunately, at this time this is a bit of a manual process.
 
 ### Getting the Node's consensus_pub.pem Identity
 
-```
-cat /serverdir/node/consensus_pub.pem
+```bash
+$ cat /serverdir/node/consensus_pub.pem
 ```
 
 This will look like:
@@ -563,7 +579,7 @@ We will use `s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=`. As the key to search
 Finally to see if the node is properly registered, run the command (you may need
 to be in a docker container if you are using that):
 
-```
+```bash
 $ export NODE_PUB_KEY="s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI="
 $ oasis-node registry node list -v -a unix:/serverdir/node/internal.sock | grep $NODE_PUB_KEY
 ```
