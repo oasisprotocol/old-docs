@@ -8,6 +8,15 @@ repository's `go/` path. This binary contains both the logic for running an
 Oasis node and also provides a CLI for handling registry and staking
 operations.
 
+### Downloading the binary
+
+For convenience we provide binaries that have been built by Oasis Labs. It is
+suggested, however, that you build from source yourself in a production
+deployment.
+
+Links to the binaries are provided in the [Current Testnet
+Parameters](./current-testnet-parameters.md) page
+
 ### Building from source
 
 Although highly suggested, building from source is currently beyond the scope
