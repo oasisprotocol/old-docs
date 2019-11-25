@@ -521,7 +521,8 @@ $ oasis-node registry entity gen_register \
 
 ### Submitting Your Transactions on the `server`
 
-To complete the staking process we need to submit your escrow transaction:
+To complete the staking process we need to submit your escrow and registry
+transactions:
 
 1. Copy the file `/localhostdir/signed-escrow.tx` on the `localhost` to
    `/serverdir/signed-escrow.tx` on the `server`.
@@ -533,10 +534,10 @@ To complete the staking process we need to submit your escrow transaction:
 
   ```bash
   $ docker exec -it oasis_node /bin/bash
-  $ oasis-node stake account submit \
-    --stake.transaction.file /serverdir/signed-escrow.tx \
+  $ oasis-node consensus submit_tx \
+    --transaction.file /serverdir/signed-escrow.tx \
     -a unix:/serverdir/node/internal.sock
-  $ oasis-node registry entity submit \
+  $ oasis-node consensus submit_tx \
     --entity.transaction.file /serverdir/signed-register.tx \
     -a unix:/serverdir/node/internal.sock
   ```
@@ -544,11 +545,11 @@ To complete the staking process we need to submit your escrow transaction:
   Without docker:
 
   ```bash
-  $ oasis-node stake account submit \
-    --stake.transaction.file /serverdir/signed-escrow.tx \
+  $ oasis-node consensus submit_tx \
+    --transaction.file /serverdir/signed-escrow.tx \
     -a unix:/serverdir/node/internal.sock
-  $ oasis-node registry entity submit \
-    --entity.transaction.file /serverdir/signed-register.tx \
+  $ oasis-node consensus submit_tx \
+    --transaction.file /serverdir/signed-register.tx \
     -a unix:/serverdir/node/internal.sock
   ```
 
