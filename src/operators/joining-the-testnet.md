@@ -353,8 +353,8 @@ $ docker run --entrypoint /oasis/bin/oasis-node \
 ::: danger WARNING
 In a previous version of docs we asked you to open `-p 42261:42261` port. This
 is no longer needed and should be removed immediately. Keeping that port open
-was a temporary measure and is unsafe generally. Please close that port and do
-not bind to it in any way.
+was a temporary measure and is unsafe generally. Please close that port to the
+public and do not bind to it in any way.
 :::
 
 This will create a docker container named `oasis_node`. This is useful to have a
@@ -469,9 +469,9 @@ $ oasis-node stake account gen_escrow \
     --stake.escrow.account $ACCOUNT_ID \
     --stake.transaction.amount 100000000000000000000 \
     --stake.transaction.file $OUTPUT_TX_FILE_PATH \
-    --stake.transaction.fee.gas 1000 \
-    --stake.transaction.fee.amount 1 \
-    --stake.transaction.nonce 0
+    --transaction.fee.gas 1000 \
+    --transaction.fee.amount 1 \
+    --transaction.nonce 0
 ```
 
 The parameters are as follows:
@@ -506,8 +506,12 @@ before hand.
 
 ```bash
 $ oasis-node registry entity gen_register \
+  --genesis.file $GENESIS_FILE_PATH \
   --datadir $ENTITY_DIR_PATH \
-  --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH
+  --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH \
+  --transaction.fee.gas 1000 \
+  --transaction.fee.amount 1 \
+  --transaction.nonce 0
 ```
 
 * `$ENTITY_DIR_PATH` - For this guide this would be `/localhostdir/entity/`
