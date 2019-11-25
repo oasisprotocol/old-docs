@@ -2,51 +2,65 @@
 
 ## Installing/Using oasis-node
 
-Any time the `oasis-node` binary is referenced, we are refering to the binary
-that is created from the [oasis-core](https://github.com/oasislabs/oasis-core)
-repository's `go/` path. This binary contains both the logic for running a
-validator node and also provides a CLI for handling registry and staking
+Any time the `oasis-node` binary is referenced, we are referring to the binary
+that is created from the [Oasis Core](https://github.com/oasislabs/oasis-core)
+repository's `go/` path. This binary contains both the logic for running an
+Oasis node and also provides a CLI for handling registry and staking
 operations.
 
 ### Building from source
 
-Although highly suggested, building from source is currently beyond the scope of
-the documentation. See [oasis-core](https://github.com/oasislabs/oasis-core) for
-details. Note, however, that the current working branch may not be the master branch. 
-The current working version can be found [here](./current-testnet-parameters.md). Be sure to 
-checkout the working branch before building. E.g. 
+Although highly suggested, building from source is currently beyond the scope
+of this documentation. See [Oasis Core's building instructions][core-build] for
+details.
+
+::: warning
+The code in the [`master` branch] might be incompatible with the code used by
+other Nodes in the Public Testnet.
+
+Make sure to use the version specified in the [Current Testnet Parameters][
+params].
+:::
+
+[core-build]: https://github.com/oasislabs/oasis-core#developing-and-building-the-system
+[`master` branch]: https://github.com/oasislabs/oasis-core/tree/master/
+[params]: ./current-testnet-parameters.md
+
+### Using inside Docker
+
+For those that wish to use the Oasis-provided Docker image, the `oasis-node`
+binary can be found inside the [oasis-node][oasis-node-docker] Docker image.
+
+To start a Docker container from this image, set the appropriate version by
+replacing `<DOCKER-IMAGE-VERSION>` with the version specified in the [Current
+Testnet Parameters][params] and run:
 
 ```bash
-$ git checkout 1f6d2de0688998712cba3f642e68ae70075b4d93
+VERSION=<DOCKER-IMAGE-VERSION>
+docker run -it --rm \
+  --entrypoint /bin/bash \
+  --volume $(pwd):/workdir \
+  --workdir /workdir \
+  oasislabs/oasis-node:$VERSION
 ```
 
-As the release management of our open source repositories improves, we will
-provide further details to so that building a specific version can be done in a
-coordinated way across the network.
+This invocation will set `/workdir` in the Docker container to the current
+working directory of the host.
 
-### Using inside docker
+::: tip NOTE
+It is up to you to set this working directory correctly.
+If there are any strange errors, this is a common source of problems.
+:::
 
-For those that wish to use the Oasis provided docker container, the `oasis-node`
-binary can be accessed by running inside the context of a the
-[oasis-node](https://hub.docker.com/r/oasislabs/oasis-node) docker container.
+Inside the container, you can use the `oasis-node` command as you would
+locally on your host.
 
-You will need to have docker v18.x.y installed. Once you have docker, you can
-execute inside the docker container by using the following:
+::: warning
+While the `latest` tag is available for the `oasis-node` Docker image, we
+suggest using the tag specified in the [Current Testnet Parameters][params] of
+the form `master-YYYYMMDDHHMMSS` to ensure that your node is compatible in case
+the `latest` tag doesn't match the tag specified in the [Current Testnet
+Parameters][params].
+:::
 
-```
-$ docker run -it --rm \
-   --entrypoint /bin/bash \
-   --volume $(pwd):/workdir \
-   --workdir /workdir \
-    oasislabs/oasis-node:$VERSION
-$ oasis-node --help
-```
-
-This invocation will set `/workdir` in the docker container to the current
-working directory of the host. It is up to you to set this working directory
-correctly. If there are any strange errors, this is a common source of problems.
-
-While the `latest` tag is available with the `oasis-node`, we suggest currently
-using one of the `master-YYYYMMDDHHMMSS` tags so that your node doesn't drift.
-Also, when deploying nodes on the testnet Oasis will publish the correct version
-of the node to use on [this documentation](./current-testnet-parameters.md).
+[oasis-node-docker]: https://hub.docker.com/r/oasislabs/oasis-node
