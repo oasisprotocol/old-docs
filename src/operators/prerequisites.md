@@ -38,7 +38,7 @@ $ docker run -it --rm \
    --entrypoint /bin/bash \
    --volume $(pwd):/workdir \
    --workdir /workdir \
-    oasislabs/oasis-node:$VERSION
+    oasislabs/oasis-node:$OASIS_NODE_TAG
 $ oasis-node --help
 ```
 
