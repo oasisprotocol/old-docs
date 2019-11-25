@@ -1,6 +1,6 @@
 # Troubleshooting
 
-## oasis-core Binary
+## `oasis-node` Binary
 
 ### Building from Source: Go Errors
 
