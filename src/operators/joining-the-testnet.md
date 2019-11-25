@@ -508,7 +508,7 @@ before hand.
 ```bash
 $ oasis-node registry entity gen_register \
   --datadir $ENTITY_DIR_PATH \
-  --entity.transaction.file $OUTPUT_REGISTER_TX_FILE_PATH
+  --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH
 ```
 
 * `$ENTITY_DIR_PATH` - For this guide this would be `/localhostdir/entity/`
