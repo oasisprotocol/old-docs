@@ -316,7 +316,7 @@ tendermint:
     - "[[ seed_node_address ]]"
 ```
 
-#### Ensuring proper permissions
+#### Ensuring Proper Permissions
 
 Only the owner of the process that runs node should have access to the files in
 the directory. We suggest running the following to remove all non-owner
