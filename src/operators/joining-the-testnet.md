@@ -214,7 +214,7 @@ You should download the latest `genesis.json` file and copy it to
 #### Configuring the Oasis Node
 
 ::: warning NOTE
-If you deployed with us on 2019-11-13, the configuration has changed. Please
+If you deployed a node on the 2019-11-13 Public Testnet, the configuration has changed. Please
 update your configuration or your node will fail to connect.
 :::
 
