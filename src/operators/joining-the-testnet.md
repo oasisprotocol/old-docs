@@ -223,15 +223,14 @@ following YAML file is a basic configuration for a validator node on the
 network.
 
 Before using this configuration you should collect the following information to
-replace the `[[ var ]]` variables present in the configuration file:
+replace the variables present in the configuration file:
 
-* `[[ external_address ]]`: This is the external IP you wish to use when
+* `external_address`: This is the external IP you wish to use when
   registering this node. If you are using a Sentry Node, you should use the
   public IP of that machine.
 
-* `[[ seed_node_address ]]`:  This the seed node address in the form `[[ ID
-  ]]@[[ IP ]]:[[ PORT ]]` this is published
-  [here](./current-testnet-parameters.md)
+* `seed_node_address`:  This the seed node address in the form
+  `<id>@<host>:<port>` this is published [here](./current-testnet-parameters.md)
 
 Create a file, `/serverdir/etc/config.yml`, with the following
 contents:
@@ -313,7 +312,7 @@ tendermint:
   # You can add additional seeds to this list of seed addresses if you know of
   # additional seeds
   seed:
-    - "[[ seed_node_address ]]"
+    - "{{ seed_node_address }}"
 ```
 
 #### Ensuring Proper Permissions
