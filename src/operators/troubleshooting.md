@@ -62,7 +62,7 @@ Error Message:
 ```
 common/Mkdir: path '/serverdir/node' has invalid permissions: -rwxr-xr-x
 ```
-The `entity` and `node` directories in your `serverdir` diretory both need to have permissions `rwx------` in order to deploy the node.
+The `entity` and `node` directories both need to have permissions `rwx------`.
 Make sure you initialize the directory with correct permissions or change them using `chmod`:
 ```bash
 mkdir -m700 -p {entity,node}
