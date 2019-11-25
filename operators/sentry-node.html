@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sentry Node Architecture | Oasis Dev Docs</title>
+    <meta name="description" content="Oasis Developer Documentation">
+    <link rel="icon" href="/favicon.ico">
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-116576458-1"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'UA-116576458-1');</script>
+  <script>var APP_ID = "scny7003";
+
+       window.intercomSettings = {
+         app_id: APP_ID
+       };
+
+       function intercom(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + APP_ID;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}};
+       intercom();
+      </script>
+    
+    <link rel="preload" href="/assets/css/0.styles.47f71413.css" as="style"><link rel="preload" href="/assets/js/app.68ac04ff.js" as="script"><link rel="preload" href="/assets/js/2.c0bac94e.js" as="script"><link rel="preload" href="/assets/js/25.b510659d.js" as="script"><link rel="prefetch" href="/assets/js/10.45c0622c.js"><link rel="prefetch" href="/assets/js/11.08704149.js"><link rel="prefetch" href="/assets/js/12.1b1180ce.js"><link rel="prefetch" href="/assets/js/13.eed71064.js"><link rel="prefetch" href="/assets/js/14.98ad6753.js"><link rel="prefetch" href="/assets/js/15.400ad3ac.js"><link rel="prefetch" href="/assets/js/16.ac72dd59.js"><link rel="prefetch" href="/assets/js/17.fecb8ab5.js"><link rel="prefetch" href="/assets/js/18.8c8c9a09.js"><link rel="prefetch" href="/assets/js/19.a834c4fb.js"><link rel="prefetch" href="/assets/js/20.959be11f.js"><link rel="prefetch" href="/assets/js/21.71275906.js"><link rel="prefetch" href="/assets/js/22.55bb021c.js"><link rel="prefetch" href="/assets/js/23.397f680c.js"><link rel="prefetch" href="/assets/js/24.2d60755c.js"><link rel="prefetch" href="/assets/js/26.63411980.js"><link rel="prefetch" href="/assets/js/27.12e533dd.js"><link rel="prefetch" href="/assets/js/28.607f4c37.js"><link rel="prefetch" href="/assets/js/29.30cca743.js"><link rel="prefetch" href="/assets/js/3.714ba8b9.js"><link rel="prefetch" href="/assets/js/30.059e27f2.js"><link rel="prefetch" href="/assets/js/31.c3e9f0ff.js"><link rel="prefetch" href="/assets/js/32.ba447880.js"><link rel="prefetch" href="/assets/js/33.a5c623cf.js"><link rel="prefetch" href="/assets/js/34.58a9c640.js"><link rel="prefetch" href="/assets/js/4.f4b6902b.js"><link rel="prefetch" href="/assets/js/5.2df2a9ae.js"><link rel="prefetch" href="/assets/js/6.d21e6451.js"><link rel="prefetch" href="/assets/js/7.51bfdff7.js"><link rel="prefetch" href="/assets/js/8.168c2909.js"><link rel="prefetch" href="/assets/js/9.be9f864a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.47f71413.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.svg" alt="Oasis Dev Docs" class="logo"> <span class="site-name can-hide">Oasis Dev Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://oasislabs.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://dashboard.oasiscloud.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Dashboard
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://join.slack.com/t/oasiscommunity/shared_invite/enQtNjQ5MTA3NTgyOTkzLWIxNTg1ZWZmOTIwNmQ2MTg1YmU0MzgyMzk3OWM2ZWQ4NTQ0ZDJkNTBmMTdlM2JhODllYjg5YmJkODc2NzgwNTg" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Support
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/oasislabs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://oasislabs.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://dashboard.oasiscloud.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Dashboard
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://join.slack.com/t/oasiscommunity/shared_invite/enQtNjQ5MTA3NTgyOTkzLWIxNTg1ZWZmOTIwNmQ2MTg1YmU0MzgyMzk3OWM2ZWQ4NTQ0ZDJkNTBmMTdlM2JhODllYjg5YmJkODc2NzgwNTg" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Support
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/oasislabs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/overview.html" class="sidebar-link">Overview</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>App Developer Docs</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Operator Docs</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/operators/overview.html" class="sidebar-link">Node Operator Overview</a></li><li><a href="/operators/prerequisites.html" class="sidebar-link">Prerequisites Guide</a></li><li><a href="/operators/joining-the-testnet.html" class="sidebar-link">Joining the Testnet</a></li><li><a href="/operators/current-testnet-parameters.html" class="sidebar-link">Current Testnet Parameters</a></li><li><a href="/operators/sentry-node.html" class="active sidebar-link">Sentry Node Architecture</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/operators/sentry-node.html#prerequisites" class="sidebar-link">Prerequisites</a></li><li class="sidebar-sub-header"><a href="/operators/sentry-node.html#configuring-the-oasis-sentry-node" class="sidebar-link">Configuring the Oasis Sentry Node</a></li><li class="sidebar-sub-header"><a href="/operators/sentry-node.html#configuring-the-oasis-validator-node" class="sidebar-link">Configuring the Oasis Validator Node</a></li></ul></li><li><a href="/operators/architectural-overview.html" class="sidebar-link">Architectural Overview</a></li><li><a href="/operators/hardware-recommendations.html" class="sidebar-link">Node Hardware Recommendations</a></li><li><a href="/operators/stake-management.html" class="sidebar-link">Stake Management</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>API Reference</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="sentry-node-architecture"><a href="#sentry-node-architecture" class="header-anchor">#</a> Sentry Node Architecture</h1> <p>This guide provides instructions for a deployment using the Sentry node
+architecture to protect validator nodes from being directly exposed on the
+public network.</p> <p>This guide assumes a setup where an Oasis validator node is only accessible
+over a private network, with sentry nodes having access to it.
+The guide does not cover setting this infrastructure up.
+Knowledge of <a href="https://cosmos.network/docs/cosmos-hub/validators/security.html#sentry-nodes-ddos-protection" target="_blank" rel="noopener noreferrer">Tendermint's Sentry Node architecture<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> is assumed as
+well.</p> <div class="custom-block danger"><p class="custom-block-title">WARNING</p> <p>This is only an example of a Sentry node deployment, and we take no responsibility
+for mistakes contained therein.
+Make sure you understand what you are doing.</p></div> <h2 id="prerequisites"><a href="#prerequisites" class="header-anchor">#</a> Prerequisites</h2> <p>Before following this guide, make sure you've read the <a href="/operators/prerequisites.html">Prerequisites</a> and
+<a href="/operators/joining-the-testnet.html">Joining the Testnet</a> guides and created your Entity.</p> <h2 id="configuring-the-oasis-sentry-node"><a href="#configuring-the-oasis-sentry-node" class="header-anchor">#</a> Configuring the Oasis Sentry Node</h2> <h3 id="initializing-sentry-node"><a href="#initializing-sentry-node" class="header-anchor">#</a> Initializing Sentry Node</h3> <p>Sentry node identity keys can be initialized with:</p> <div class="language- extra-class"><pre class="language-text"><code>$ oasis-node registry node init --entity /localhostdir/entity
+</code></pre></div><p>The generated <code>tls_identity_cert.pem</code> (which is the node's TLS cert for
+securing gRPC connections) needs to be available on any node that will be
+running behind the sentry node.</p> <div class="custom-block tip"><p class="custom-block-title">NOTE</p> <p>We plan to simplify this step in the future so that it won't involve Entity at
+all since Sentry node's identity keys are in no way linked to the Entity
+itself.
+See <a href="https://github.com/oasislabs/oasis-core/issues/2413" target="_blank" rel="noopener noreferrer">Oasis Core #2413<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> for
+more details.</p></div> <h3 id="configuring-sentry-node"><a href="#configuring-sentry-node" class="header-anchor">#</a> Configuring Sentry Node</h3> <p>An Oasis node can be configured to run as a sentry node by setting the
+<code>--worker.sentry.enabled</code> flag. Additionally, the
+<code>--tendermint.private_peer_id</code> flag can be used to configure a list of
+Tendermint private peers, which should be set to Tendermint IDs of validator
+nodes, protected by this sentry node.</p> <p>An example of full <code>YAML</code> configuration of a sentry node is below.</p> <p>Before using this configuration you should collect the following information to
+replace the <code>{{ var }}</code> variables present in the configuration
+file:</p> <ul><li><p><code>external_address</code>: This is the external IP you wish to use when registering
+this node.</p></li> <li><p><code>seed_node_address</code>: This the seed node address of the form <code>ID@IP:port</code>.
+You can find the current Oasis Seed Node address in the <a href="/operators/current-testnet-parameters.html">Current Testnet
+Parameters</a>.</p></li> <li><p><code>validator_tendermint_id</code>: This is the Tendermint ID of the Oasis validator
+node that will be protected by the sentry node. This ID can be obtained by
+running:</p> <div class="language- extra-class"><pre class="language-text"><code>$ oasis-node debug tendermint show-node-id --datadir /serverdir/node
+</code></pre></div><p>on the validator node.</p></li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment">##</span>
+<span class="token comment"># Oasis Sentry Node Configuration</span>
+<span class="token comment">#</span>
+<span class="token comment"># This file's configurations are derived from the command line args found in the</span>
+<span class="token comment"># root command of the oasis-node binary. For more information execute:</span>
+<span class="token comment">#</span>
+<span class="token comment">#     oasis-node --help</span>
+<span class="token comment">#</span>
+<span class="token comment"># Settings on the command line that are separated by a dot all belong to the</span>
+<span class="token comment"># same nested object. So &quot;--foo.bar.baz hello&quot; would translate to:</span>
+<span class="token comment">#</span>
+<span class="token comment">#     foo:</span>
+<span class="token comment">#       bar:</span>
+<span class="token comment">#         baz: hello</span>
+<span class="token comment">##</span>
+
+<span class="token comment"># Set this to where you wish to store node data. The node artifacts</span>
+<span class="token comment"># should also be located in this directory (for us this is /serverdir/node)</span>
+<span class="token key atrule">datadir</span><span class="token punctuation">:</span> /serverdir/node
+
+<span class="token comment"># Logging.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Per-module log levels are defined below. If you prefer just one unified log</span>
+<span class="token comment"># level, you can use:</span>
+<span class="token comment">#</span>
+<span class="token comment"># log:</span>
+<span class="token comment">#   level: debug</span>
+<span class="token key atrule">log</span><span class="token punctuation">:</span>
+  <span class="token key atrule">level</span><span class="token punctuation">:</span>
+    <span class="token comment"># Per-module log levels. Longest prefix match will be taken. Fallback to</span>
+    <span class="token comment"># &quot;default&quot;, if no match.</span>
+    <span class="token key atrule">default</span><span class="token punctuation">:</span> debug
+    <span class="token key atrule">tendermint</span><span class="token punctuation">:</span> warn
+    <span class="token key atrule">tendermint/context</span><span class="token punctuation">:</span> error
+  <span class="token key atrule">format</span><span class="token punctuation">:</span> JSON
+  <span class="token comment"># By default logs are output to stdout. If you're running this in docker keep</span>
+  <span class="token comment"># the default</span>
+  <span class="token comment">#file: /var/log/oasis-node.log</span>
+
+<span class="token comment"># Path to the genesis file for the current version of the network.</span>
+<span class="token key atrule">genesis</span><span class="token punctuation">:</span>
+  <span class="token key atrule">file</span><span class="token punctuation">:</span> /serverdir/etc/genesis.json
+
+<span class="token comment"># Worker configuration.</span>
+<span class="token key atrule">worker</span><span class="token punctuation">:</span>
+  <span class="token key atrule">sentry</span><span class="token punctuation">:</span>
+    <span class="token comment"># Enable sentry node.</span>
+    <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># Port used by validator nodes to query sentry node for registry</span>
+    <span class="token comment"># information.</span>
+    <span class="token comment"># IMPORTANT: Only validator nodes protected by the sentry node should have</span>
+    <span class="token comment"># access to this port. This port should not be exposed on the public</span>
+    <span class="token comment"># network.</span>
+    <span class="token key atrule">control_port</span><span class="token punctuation">:</span> <span class="token number">9009</span>
+
+<span class="token comment"># Tendermint backend configuration.</span>
+<span class="token key atrule">tendermint</span><span class="token punctuation">:</span>
+  <span class="token key atrule">core</span><span class="token punctuation">:</span>
+    <span class="token key atrule">listen_address</span><span class="token punctuation">:</span> tcp<span class="token punctuation">:</span>//0.0.0.0<span class="token punctuation">:</span><span class="token number">26656</span>
+    <span class="token key atrule">external_address</span><span class="token punctuation">:</span> tcp<span class="token punctuation">:</span>//<span class="token punctuation">{</span><span class="token punctuation">{</span> external_address <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">:</span><span class="token number">26656</span>
+
+  <span class="token key atrule">seeds</span><span class="token punctuation">:</span> <span class="token string">&quot;{{ seed_node_address }}&quot;</span>
+
+  <span class="token comment"># Sentry node should set validator IDs as private peer IDs.</span>
+  <span class="token key atrule">private_peer_id</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;{{ validator_tendermint_id }}&quot;</span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">NOTE</p> <p>Multiple sentry nodes can be provisioned following the above steps.</p></div> <h2 id="configuring-the-oasis-validator-node"><a href="#configuring-the-oasis-validator-node" class="header-anchor">#</a> Configuring the Oasis Validator Node</h2> <p>In this setup the Oasis validator node should not be exposed directly on the public
+network. The Oasis validator only needs to be able to connect to its sentry nodes, preferably
+via a private network.</p> <h3 id="initializing-validator-node"><a href="#initializing-validator-node" class="header-anchor">#</a> Initializing Validator Node</h3> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>If your validator node is already registered and running in a non-sentry setup,
+this step can be skipped as the Oasis validator will update its address in the
+Registry automatically once we redeploy it with new configuration.</p></div> <p>When you are <a href="/operators/joining-the-testnet.html#initializing-a-node">initializing a validator node</a>, you should use the
+sentry node's external address in the <code>--node.consensus_address</code> flag.
+If you are running multiple sentry nodes, you can specify the
+<code>--node.consensus_address</code> flag multiple times.</p> <p>To initialize a validator node with 2 sentry nodes' external addresses, run the
+following commands from the <code>/localhostdir/node</code> directory:</p> <div class="language- extra-class"><pre class="language-text"><code>$ export SENTRY1_STATIC_IP=&lt;YOUR_SENTRY1_STATIC_IP&gt;
+$ export SENTRY2_STATIC_IP=&lt;YOUR_SENTRY2_STATIC_IP&gt;
+$ oasis-node registry node init \
+  --entity /localhostdir/entity \
+  --node.consensus_address $SENTRY1_STATIC_IP:26656 \
+  --node.consensus_address $SENTRY2_STATIC_IP2:26656 \
+  --node.is_self_signed \
+  --node.role validator
+</code></pre></div><h3 id="configuring-validator-node"><a href="#configuring-validator-node" class="header-anchor">#</a> Configuring Validator Node</h3> <p>There are some configuration changes needed for the Oasis validator node to
+enable proxying through its sentry node. Most of these flags should be familiar
+from the Tendermint sentry node architecture.</p> <p>Since the validator node will not have an external address, the
+<code>--tendermint.core.external_address</code> flag should be skipped. Similarly, the
+<code>--tendermint.seed</code> flag can be skipped, as the <code>oasis-node</code> won't be directly
+connecting to any of the seed nodes.</p> <p>Tendermint Peer Exchange should be disabled on the validator with the
+<code>--tendermint.disable_peer_exchange</code> flag.</p> <p>Sentry nodes should be configured as Tendermint Persistent-Peers with the
+<code>--tendermint.persistent_peer</code> flag.</p> <p>In addition to the familiar Tendermint setup above, the node needs to be
+configured to query sentry nodes for external addresses every time the validator
+preforms a re-registration. This is configured with <code>--worker.sentry.address</code>
+and <code>--worker.sentry.cert_file</code> flags.</p> <p>The <code>--worker.sentry.address</code> flag should be set to the (private) address of
+the sentry node's control endpoint.</p> <p>The <code>--worker.sentry.cert_file</code> flag should be set to the sentry node's client
+certificate (named <code>tls_identity_cert.pem</code> by default) created when
+provisioning the sentry node's identity.</p> <p>Putting it all together, an example configuration of a validator node in the
+sentry node architecture is given below.</p> <p>Before using this configuration you should collect the following information to
+replace the <code>{{ var }}</code> variables present in the configuration
+file:</p> <ul><li><p><code>sentry_node_private_ip</code>: This is the private IP address of the sentry node
+over which sentry node should be accessible to the validator.</p></li> <li><p><code>sentry_node_certificate</code>: For each sentry node address, a path to its gRPC
+TLS certificate is required (named <code>tls_identity_cert.pem</code> by default).</p> <p>This file is generated when provisioning the sentry node.
+This certificate needs to be accessible on any node that's connecting to the
+sentry node's control endpoint and is used for securing the communication
+between the validator and the sentry node.</p></li> <li><p><code>sentry_node_tendermint_id</code>: This is the Tendermint ID of the sentry node
+that will be configured as a Persistent Peer. This ID can be obtained by
+running:</p> <div class="language- extra-class"><pre class="language-text"><code>$ oasis-node debug tendermint show-node-id --datadir /serverdir/node
+</code></pre></div><p>on the sentry node.</p></li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment">##</span>
+<span class="token comment"># Oasis Node Configuration</span>
+<span class="token comment">#</span>
+<span class="token comment"># This file's configurations are derived from the command line args found in</span>
+<span class="token comment"># the root command of the oasis-node binary. For more information execute:</span>
+<span class="token comment">#</span>
+<span class="token comment">#     oasis-node --help</span>
+<span class="token comment">#</span>
+<span class="token comment"># Settings on the command line that are separated by a dot all belong to the</span>
+<span class="token comment"># same nested object. So &quot;--foo.bar.baz hello&quot; would translate to:</span>
+<span class="token comment">#</span>
+<span class="token comment">#     foo:</span>
+<span class="token comment">#       bar:</span>
+<span class="token comment">#         baz: hello</span>
+<span class="token comment">##</span>
+
+<span class="token comment"># Set this to where you wish to store node data. The node artifacts</span>
+<span class="token comment"># should also be located in this directory (for us this is /serverdir/node)</span>
+<span class="token key atrule">datadir</span><span class="token punctuation">:</span> /serverdir/node
+
+<span class="token comment"># Logging.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Per-module log levels are defined below. If you prefer just one unified log</span>
+<span class="token comment"># level, you can use:</span>
+<span class="token comment">#</span>
+<span class="token comment"># log:</span>
+<span class="token comment">#   level: debug</span>
+<span class="token key atrule">log</span><span class="token punctuation">:</span>
+  <span class="token key atrule">level</span><span class="token punctuation">:</span>
+    <span class="token comment"># Per-module log levels. Longest prefix match will be taken. Fallback to</span>
+    <span class="token comment"># &quot;default&quot;, if no match.</span>
+    <span class="token key atrule">default</span><span class="token punctuation">:</span> debug
+    <span class="token key atrule">tendermint</span><span class="token punctuation">:</span> warn
+    <span class="token key atrule">tendermint/context</span><span class="token punctuation">:</span> error
+  <span class="token key atrule">format</span><span class="token punctuation">:</span> JSON
+  <span class="token comment"># By default logs are output to stdout. If you're running this in docker keep</span>
+  <span class="token comment"># the default</span>
+  <span class="token comment">#file: /var/log/oasis-node.log</span>
+
+<span class="token comment"># Path to the genesis file for the current version of the network.</span>
+<span class="token key atrule">genesis</span><span class="token punctuation">:</span>
+  <span class="token key atrule">file</span><span class="token punctuation">:</span> /serverdir/etc/genesis.json
+
+<span class="token comment"># Worker configuration.</span>
+<span class="token key atrule">worker</span><span class="token punctuation">:</span>
+  <span class="token key atrule">registration</span><span class="token punctuation">:</span>
+    <span class="token comment"># In order for the node to register itself the entity.json of the entity used to</span>
+    <span class="token comment"># provision the node must be available on the node</span>
+    <span class="token key atrule">entity</span><span class="token punctuation">:</span> /serverdir/node/entity/entity.json
+  <span class="token key atrule">sentry</span><span class="token punctuation">:</span>
+    <span class="token key atrule">address</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;{{ sentry_node_private_ip }}:9009&quot;</span>
+    <span class="token key atrule">cert_file</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;{{ sentry_node_certificate }}&quot;</span>
+
+<span class="token comment"># Consensus backend.</span>
+<span class="token key atrule">consensus</span><span class="token punctuation">:</span>
+  <span class="token comment"># Setting this to true will mean that the node you're deploying will attempt</span>
+  <span class="token comment"># to register as a validator.</span>
+  <span class="token key atrule">validator</span><span class="token punctuation">:</span> <span class="token boolean important">True</span>
+
+<span class="token comment"># Tendermint backend configuration.</span>
+<span class="token key atrule">tendermint</span><span class="token punctuation">:</span>
+  <span class="token key atrule">abci</span><span class="token punctuation">:</span>
+    <span class="token key atrule">prune</span><span class="token punctuation">:</span>
+      <span class="token key atrule">strategy</span><span class="token punctuation">:</span> keep_n
+      <span class="token key atrule">num_kept</span><span class="token punctuation">:</span> <span class="token number">86400</span>
+  <span class="token key atrule">core</span><span class="token punctuation">:</span>
+    <span class="token key atrule">listen_address</span><span class="token punctuation">:</span> tcp<span class="token punctuation">:</span>//0.0.0.0<span class="token punctuation">:</span><span class="token number">26656</span>
+  <span class="token key atrule">persistent_peer</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;{{ sentry_node_tendermint_id }}@{{ sentry_node_private_ip }}:26656&quot;</span>
+  <span class="token key atrule">disable_peer_exchange</span><span class="token punctuation">:</span> <span class="token boolean important">True</span>
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">backend</span><span class="token punctuation">:</span> boltdb
+  <span class="token key atrule">debug</span><span class="token punctuation">:</span>
+    <span class="token key atrule">addr_book_lenient</span><span class="token punctuation">:</span> <span class="token boolean important">False</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/oasislabs/docs/edit/master/src/operators/sentry-node.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/operators/current-testnet-parameters.html" class="prev">Current Testnet Parameters</a></span> <span class="next"><a href="/operators/architectural-overview.html">Architectural Overview</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.68ac04ff.js" defer></script><script src="/assets/js/2.c0bac94e.js" defer></script><script src="/assets/js/25.b510659d.js" defer></script>
+  </body>
+</html>
