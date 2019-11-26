@@ -170,7 +170,7 @@ In the `/serverdir` directory we will create the following subdirectories:
 You can make this directory structure by calling the following command:
 
 ```bash
-$ mkdir -m700 -p /serverdir/{etc,node/entity}
+$ mkdir -m700 -p /serverdir/{etc,node,node/entity}
 ```
 
 #### Copying the Node Artifacts from `/localhostdir`
@@ -317,8 +317,9 @@ tendermint:
 #### Ensuring Proper Permissions
 
 Only the owner of the process that runs node should have access to the files in
-the directory. We suggest running the following to remove all non-owner
-read/write/execute permissions:
+the directory. The `oasis-node` binary is built to ensure, that the files used
+by the node are as secure as possible.  We suggest running the following to
+remove all non-owner read/write/execute permissions:
 
 ```bash
 chmod -R g-r,g-w,g-x,o-r,o-w,o-x /serverdir
