@@ -24,6 +24,9 @@ artifacts) in this document.
   * Commit-Sha: `9d5e30082a5f3df065fc52a404e048decb9adac9`
 * [docker container](https://hub.docker.com/layers/oasislabs/oasis-node/master-20191125134702/images/sha256-4e35b3bb8d9116cfcd6ff7d4f3d84e0753f7f441b48dad6d2129eb32897a3f9b)
     * `$ docker pull oasislabs/oasis-node:master-20191125134702`
+* `oasis-node` Binary (Please unzip before use)
+  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/oasis-node-linux-amd64.zip)
+  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/oasis-node-macos-amd64.zip)
 
 ## Deployment Change Log
 
