@@ -445,13 +445,22 @@ already been funded.
 This won't be necessary if your Entity is in the genesis file.
 :::
 
-::: warning CAUTION
-If your node is NOT caught up to the network you will most likely fail to submit
-these transactions.
-:::
-
 Once you have been funded, you can now complete the process of connecting your
 node by staking so that you can register your entity and register your node.
+
+### Check that your node is synced
+
+Before you can make any transactions you'll have to make sure that node is
+synced. To do so call this command on the server:
+
+```bash
+$ oasis-node control is-synced \
+  -a unix:/serverdir/node/internal.sock
+```
+
+If the command exits with a status code of `0` then you're fully synced and you
+can continue. If not, you will need to wait until it is before you can move
+forward.
 
 ### Generating a Staking (Escrow) Transaction on the `localhost`
 
