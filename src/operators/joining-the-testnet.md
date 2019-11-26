@@ -468,7 +468,7 @@ $ oasis-node stake account gen_escrow \
     --entity $ENTITY_DIR_PATH \
     --stake.escrow.account $ACCOUNT_ID \
     --stake.amount 100000000000000000000 \
-    --stake.transaction.file $OUTPUT_TX_FILE_PATH \
+    --transaction.file $OUTPUT_TX_FILE_PATH \
     --transaction.fee.gas 1000 \
     --transaction.fee.amount 1 \
     --transaction.nonce 0
