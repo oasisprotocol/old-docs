@@ -81,4 +81,4 @@ deployment.
 
 ### 2019-11-13
 
-This is the initial deployment
+This is the initial deployment.
