@@ -513,7 +513,7 @@ $ oasis-node registry entity gen_register \
   --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 1 \
-  --transaction.nonce 0
+  --transaction.nonce 1
 ```
 
 * `$ENTITY_DIR_PATH` - For this guide this would be `/localhostdir/entity/`
