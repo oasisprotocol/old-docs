@@ -538,7 +538,7 @@ transactions:
     --transaction.file /serverdir/signed-escrow.tx \
     -a unix:/serverdir/node/internal.sock
   $ oasis-node consensus submit_tx \
-    --entity.transaction.file /serverdir/signed-register.tx \
+    --transaction.file /serverdir/signed-register.tx \
     -a unix:/serverdir/node/internal.sock
   ```
 
