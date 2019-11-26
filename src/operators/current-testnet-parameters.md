@@ -15,8 +15,8 @@ artifacts) in this document.
 :::
 
 * [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/genesis.json)
-    * sha1: `<< todo update >>`
-    * sha256: `<< todo update >>`
+    * sha1: `bed77f6433e607f7073a48dbf27f8cf5d9a8c2e1`
+    * sha256: `ee38b53a2e8acd785d279e4c8d3af38b832f120d9a85bf0173e94878f45bc718`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
 * [oasis-core](https://github.com/oasislabs/oasis-core) commit (_This will be
