@@ -87,6 +87,13 @@ module.exports = {
             'Node Hardware Recommendations',
           ],
           ['/operators/stake-management', 'Stake Management'],
+          {
+            title: "Maintenance Guides",
+            collapsable: true,
+            children: [
+              ['/operators/maintenance/wiping-node-state', 'Wiping Node State'],
+            ],
+          },
         ],
       },
       {
