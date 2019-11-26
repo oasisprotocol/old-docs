@@ -18,14 +18,21 @@ The following instructions assume that your `datadir` is defined as
     $ rm -rf /serverdir/node/tendermint
     $ rm -rf /serverdir/node/bleve-tag-index.bleve.db
     $ rm /serverdir/node/abci-mux-state.bolt.db
+    $ rm /serverdir/node/persistent-store.db
     ```
 
 3. Restart the oasis-node server process
 
 ## Full State Wipe
 
+::: danger WARNING
+This is likely not what you want to do. This is destructive and might result in
+losing private state required to operate the given node. **USE AT YOUR OWN
+RISK.**
+:::
+
 A full state wipe will also mean that you'll need to generate a new node
-identity (or copy the old one). This is likely not what you want.
+identity (or copy the old one).
 
 1. Stop the `oasis-node` server process (this will depend on your own deployment
    setup)

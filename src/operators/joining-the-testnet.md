@@ -1,7 +1,18 @@
 # Joining the Testnet
 
 This guide will cover setting up your nodes on the Public Testnet. There is some
-assumption of knowledge on the use of basic command line tools and docker.
+assumption of knowledge on the use of basic command line tools.
+
+::: tip NOTE
+If you joined the Testnet prior to 11/26, use the following steps to upgrade:
+1. [Stop your node and wipe state (keep node identity)](./maintenance/wiping-node-state.md)
+1. [Download the current genesis file and `oasis-node` to your
+   server](./current-testnet-parameters.md)
+1. See the [Deployment Change
+   Log](./current-testnet-parameters.md#2019-11-26-latest) for a list of
+   changes. _Please ensure that you update your node configuration._
+1. Start your node
+:::
 
 ## Prerequisites
 
@@ -170,7 +181,7 @@ In the `/serverdir` directory we will create the following subdirectories:
 You can make this directory structure by calling the following command:
 
 ```bash
-$ mkdir -p /serverdir/{etc,node/entity}
+$ mkdir -m700 -p /serverdir/{etc,node,node/entity}
 ```
 
 #### Copying the Node Artifacts from `/localhostdir`
@@ -184,14 +195,14 @@ following files from `/localhostdir/node` to `/serverdir/node` over a secure cha
 * `consensus_pub.pem`
 * `identity.pem`
 * `identity_pub.pem`
-* `node_genesis.json`
 * `p2p.pem`
 * `p2p_pub.pem`
 * `tls_identity.pem`
 * `tls_identity_cert.pem`
 
 After copying, make sure that all of these files have `0600` permissions:
-```
+
+```bash
 chmod -R 600 /serverdir/node/*.pem
 ```
 
@@ -213,35 +224,24 @@ You should download the latest `genesis.json` file and copy it to
 
 #### Configuring the Oasis Node
 
+::: warning NOTE
+If you deployed a node on the 2019-11-13 Public Testnet, the configuration has
+changed. Please update your configuration or your node will fail to connect.
+:::
+
 There are a variety of options available when running an Oasis node. The
 following YAML file is a basic configuration for a validator node on the
 network.
 
 Before using this configuration you should collect the following information to
-replace the
-::: v-pre
-`{{ var }}`
-:::
+replace the variables present in the configuration file:
 
-variables present in the configuration file:
-
-::: v-pre
-`{{ external_address }}`
-:::
-
-This is the external IP you wish to use when
+* `external_address`: This is the external IP you wish to use when
   registering this node. If you are using a Sentry Node, you should use the
   public IP of that machine.
 
-::: v-pre
-`{{ seed_node_address }}`
-:::
-
-This the seed node address in the form
-::: v-pre
-`{{ ID }}@{{ IP }}:{{ PORT }}`
-:::
-this is published [here](./current-testnet-parameters.md)
+* `seed_node_address`:  This the seed node address in the form
+  `<id>@<host>:<port>` this is published [here](./current-testnet-parameters.md)
 
 Create a file, `/serverdir/etc/config.yml`, with the following
 contents:
@@ -266,11 +266,6 @@ contents:
 # Set this to where you wish to store node data. The node artifacts
 # should also be located in this directory (for us this is /serverdir/node)
 datadir: /serverdir/node
-
-## THESE NEXT 3 LINES ARE TEMPORARY YOU SHOULD NOT EXPOSE THIS PORT IN ANY WAY
-grpc:
-  debug:
-    port: "42261"
 
 # Logging.
 #
@@ -325,49 +320,47 @@ tendermint:
     backend: boltdb
   debug:
     addr_book_lenient: False
-  seeds: "{{ seed_node_address }}"
+  # You can add additional seeds to this list of seed addresses if you know of
+  # additional seeds
+  seed:
+    - "{{ seed_node_address }}"
 ```
+
+#### Ensuring Proper Permissions
+
+Only the owner of the process that runs node should have access to the files in
+the directory. The `oasis-node` binary ensures that the files used by the node
+are as least privileged as possible so that you don't accidentally shoot
+yourself in the foot while operating a node. To ensure the proper permissions,
+we suggest running the following to remove all non-owner read/write/execute
+permissions:
+
+```bash
+chmod -R go-r,go-w,go-x /serverdir
+```
+
+However just so it's clear, the following permissions are expected by the
+`oasis-node` command:
+
+* `700` for the `/serverdir/node` directory
+* `700` for the `/serverdir/node/entity` directory
+* `600` for all `*.pem` files
 
 ### Starting the Oasis Node
 
-#### Starting with docker
+::: danger WARNING
+In a previous version of docs we asked you to open `-p 42261:42261` port. This
+is no longer needed and should be removed immediately. Keeping that port open
+was a temporary measure and is unsafe generally. Please close that port to the
+public and do not bind to it in any way.
+:::
 
-For those of you who are relying on the
-[oasis-node](https://hub.docker.com/r/oasislabs/oasis-node) docker container,
-the command to start the oasis-node is:
-
-```bash
-$ docker run --entrypoint /oasis/bin/oasis-node \
-    --name oasis_node \
-    --volume /serverdir:/serverdir \
-    --workdir /serverdir/node \
-    -p 26656:26656 \
-    -p 42261:42261 \
-    oasislabs/oasis-node:$OASIS_NODE_TAG \
-    --config /serverdir/etc/config.yml
-```
-
-_Note: the `-p 42261:42261` port binding is temporary. We will notify all of you
-when this no longer needs to be bound._
-
-This will create a docker container named `oasis_node`. This is useful to have a
-named container so it can be referenced later. If you name it something else,
-then be aware that the docs will reference `oasis_node` for this docker
-container.
-
-_It is up to you to configure these options how you see fit. This invocation of
-the server process will not restart automatically. If you'd like to run this in
-the background add the docker flag `--detach`_
-
-#### Starting without docker
-
-If you have built the `oasis-node` binary on your own, you can start the server
-by running the command below. Please note, the node is, by default, configured to run in the
-foreground. You will need to use a process supervisor like
-[supervisord](http://supervisord.org/),
+You can start the server by running the command below. Please note, the node is
+configured to run in the foreground. We suggest you daemonize this with a
+process supervisor like [supervisord](http://supervisord.org/),
 [systemd](https://github.com/systemd/systemd), etc.
 
-```
+```bash
 $ oasis-node --config /serverdir/etc/config.yml
 ```
 
@@ -377,7 +370,8 @@ As part of the starting the server process, the `oasis-node` binary will, by
 default, setup an internal unix socket in the `datadir` of the Node. This socket
 can be used to communicate to the node and query details about the network.
 
-The following should be run from inside the docker container or the server, depending on how you chose to start the node.
+Run the following command:
+
 ```bash
 $ oasis-node registry entity list -a unix:/serverdir/node/internal.sock
 ```
@@ -430,10 +424,33 @@ already been funded.
 
 ## Staking and Registering
 
-_This won't be necessary if your Entity is in the genesis file._
+::: tip NOTE
+This won't be necessary if your Entity is in the genesis file.
+:::
+
+::: warning NOTE
+If you've submitted staking or registry transactions before, your nonce is
+likely different than the nonce used in the examples. If you're uncertain,
+please check your account nonce by using [this
+guide](./maintenance/checking-account-nonce.md)
+:::
 
 Once you have been funded, you can now complete the process of connecting your
 node by staking so that you can register your entity and register your node.
+
+### Check that your node is synced
+
+Before you can make any transactions you'll have to make sure that node is
+synced. To do so call this command on the server:
+
+```bash
+$ oasis-node control is-synced \
+  -a unix:/serverdir/node/internal.sock
+```
+
+If the command exits with a status code of `0` then you're fully synced and you
+can continue. If not, you will need to wait until it is before you can move
+forward.
 
 ### Generating a Staking (Escrow) Transaction on the `localhost`
 
@@ -451,11 +468,11 @@ $ oasis-node stake account gen_escrow \
     --genesis.file $GENESIS_FILE_PATH \
     --entity $ENTITY_DIR_PATH \
     --stake.escrow.account $ACCOUNT_ID \
-    --stake.transaction.amount 100000000000000000000 \
-    --stake.transaction.file $OUTPUT_TX_FILE_PATH \
-    --stake.transaction.fee.gas 1000 \
-    --stake.transaction.fee.amount 1 \
-    --stake.transaction.nonce 0
+    --stake.amount 100000000000000000000 \
+    --transaction.file $OUTPUT_TX_FILE_PATH \
+    --transaction.fee.gas 1000 \
+    --transaction.fee.amount 1 \
+    --transaction.nonce 0
 ```
 
 The parameters are as follows:
@@ -466,7 +483,7 @@ The parameters are as follows:
 * `$ACCOUNT_ID` - This is the hex encoding of the Entity Public Key. To derive this you
   can use the following python3 code:
 
-  ```
+  ```python
   import binascii, base64
 
   def account_id_from_b64(base64_id):
@@ -481,59 +498,47 @@ Note that the option `--stake.transaction.amount` looks like a very large
 number. This is actually equivalent to 100 tokens on the Testnet as each unit
 value used to track the account balance is 1x10^-18 tokens.
 
-### Submitting Your Transaction on the `server`
+### Generating Entity Registration Transaction
 
-To complete the staking process we need to submit your escrow transaction:
+After you submit your escrow account, you'll need to register your entity so
+that your node registers properly. You could do this process _after_ you
+submit the escrow transaction, however, to save steps we prepare everything
+before hand.
+
+```bash
+$ oasis-node registry entity gen_register \
+  --genesis.file $GENESIS_FILE_PATH \
+  --entity $ENTITY_DIR_PATH \
+  --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH \
+  --transaction.fee.gas 1000 \
+  --transaction.fee.amount 1 \
+  --transaction.nonce 1
+```
+
+* `$ENTITY_DIR_PATH` - For this guide this would be `/localhostdir/entity/`
+* `$OUTPUT_REGISTER_TX_FILE_PATH` - This is where you wish to output the signed
+  transaction file. For this guide we will use
+  `/localhostdir/signed-register.tx`
+
+### Submitting Your Transactions on the `server`
+
+To complete the staking process we need to submit your escrow and registry
+transactions:
 
 1. Copy the file `/localhostdir/signed-escrow.tx` on the `localhost` to
    `/serverdir/signed-escrow.tx` on the `server`.
-2. Call `oasis-node` like so:
+2. Copy the file `/localhostdir/signed-register.tx` on the `localhost` to
+   `/serverdir/signed-register.tx` on the `server`.
+3. Call `oasis-node` like so:
 
-  If you're using docker use:
-
-  ```
-  $ docker exec -it oasis_node /bin/bash
-  $ oasis-node stake account submit \
-    --stake.transaction.file /serverdir/signed-escrow.tx \
+  ```bash
+  $ oasis-node consensus submit_tx \
+    --transaction.file /serverdir/signed-escrow.tx \
+    -a unix:/serverdir/node/internal.sock
+  $ oasis-node consensus submit_tx \
+    --transaction.file /serverdir/signed-register.tx \
     -a unix:/serverdir/node/internal.sock
   ```
-
-  Without docker:
-
-  ```
-  $ oasis-node stake account submit \
-    --stake.transaction.file /serverdir/signed-escrow.tx \
-    -a unix:/serverdir/node/internal.sock
-  ```
-
-### Registering Your Entity
-
-As a final step, you now need to register your entity onto the network.
-
-**TEMPORARY FIX**: At this time many of these instructions are a temporary fix
-due to missing features on the current `oasis-node` cli.
-
-#### Port Forwarding
-
-On one instance of a terminal on the `localhost` execute the following to handle
-a port forwarding so you can make entity requests. _Unfortunately, if you're
-using docker on your `localhost` you will also have to ssh to your `server`
-within your the docker container. We apologize for the inconvenience this is a
-temporary measure._
-
-```
-$ ssh $USER@$SERVER_IP -L 42261:127.0.0.1:42261 -N
-```
-
-#### Registering Your Node on the Network
-
-On a different terminal from your ssh port forward above, execute the following:
-
-```
-$ oasis-node registry entity register --datadir /localhostdir/entity
-```
-
-If everything is successful you will get a zero exit code.
 
 ### Checking that Your Node is Properly Registered
 
@@ -546,8 +551,8 @@ Unfortunately, at this time this is a bit of a manual process.
 
 ### Getting the Node's consensus_pub.pem Identity
 
-```
-cat /serverdir/node/consensus_pub.pem
+```bash
+$ cat /serverdir/node/consensus_pub.pem
 ```
 
 This will look like:
@@ -562,10 +567,9 @@ We will use `s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=`. As the key to search
 
 ### grepping for the Node's Identity
 
-Finally to see if the node is properly registered, run the command (you may need
-to be in a docker container if you are using that):
+Finally to see if the node is properly registered, run the command:
 
-```
+```bash
 $ export NODE_PUB_KEY="s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI="
 $ oasis-node registry node list -v -a unix:/serverdir/node/internal.sock | grep $NODE_PUB_KEY
 ```
@@ -576,7 +580,3 @@ If `grep` found the key, then you're properly connected!
 
 If you've made it this far you've properly connected your node to the network
 and you're now a Validator on the Public Testnet.
-
-### Maintenance Guides
-
-* [Wiping Node State](./maintenance/wiping-node-state.md)
