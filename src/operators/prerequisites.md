@@ -15,7 +15,7 @@ suggested, however, that you build from source yourself in a production
 deployment.
 
 Links to the binaries are provided in the [Current Testnet
-Parameters](./current-testnet-parameters.md) page
+Parameters](./current-testnet-parameters.md) page.
 
 ### Building from source
 
