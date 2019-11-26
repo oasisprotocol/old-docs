@@ -324,7 +324,7 @@ we suggest running the following to remove all non-owner read/write/execute
 permissions:
 
 ```bash
-chmod -R g-r,g-w,g-x,o-r,o-w,o-x /serverdir
+chmod -R go-r,go-w,go-x /serverdir
 ```
 
 However just so it's clear, the following permissions are expected by the
