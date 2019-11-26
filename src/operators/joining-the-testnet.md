@@ -3,6 +3,14 @@
 This guide will cover setting up your nodes on the Public Testnet. There is some
 assumption of knowledge on the use of basic command line tools and docker.
 
+::: tip NOTE
+If you joined the Testnet prior to 11/26, use the following steps to upgrade:
+1. [Stop your node and wipe state](./maintenance/wiping-node-state.md)
+1. [Download the current genesis file and `oasis-node`](./current-testnet-parameters.md)
+1. [Update your node config](#configuring-the-oasis-node)
+1. Restart your node
+:::
+
 ## Prerequisites
 
 Before following this guide, make sure you've followed the [Prerequisites
