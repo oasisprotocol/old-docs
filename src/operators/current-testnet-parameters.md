@@ -72,6 +72,13 @@ The CLI for creating and submitting staking and registration transactions have
 changed. If you've already staked and registered your entity, then there's no
 need to make any changes.
 
+#### Docker Support
+
+We no longer document using the docker container for setup or deployment as we
+now distribute `oasis-node` binaries. You may still use the docker container,
+and we will, for now, document the current docker image tag for a given
+deployment.
+
 ### 2019-11-13
 
 This is the initial deployment

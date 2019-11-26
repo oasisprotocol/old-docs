@@ -1,7 +1,7 @@
 # Joining the Testnet
 
 This guide will cover setting up your nodes on the Public Testnet. There is some
-assumption of knowledge on the use of basic command line tools and docker.
+assumption of knowledge on the use of basic command line tools.
 
 ::: tip NOTE
 If you joined the Testnet prior to 11/26, use the following steps to upgrade:
@@ -345,22 +345,6 @@ However just so it's clear, the following permissions are expected by the
 
 ### Starting the Oasis Node
 
-#### Starting with docker
-
-For those of you who are relying on the
-[oasis-node](https://hub.docker.com/r/oasislabs/oasis-node) docker container,
-the command to start the oasis-node is:
-
-```bash
-$ docker run --entrypoint /oasis/bin/oasis-node \
-    --name oasis_node \
-    --volume /serverdir:/serverdir \
-    --workdir /serverdir/node \
-    -p 26656:26656 \
-    oasislabs/oasis-node:$OASIS_NODE_TAG \
-    --config /serverdir/etc/config.yml
-```
-
 ::: danger WARNING
 In a previous version of docs we asked you to open `-p 42261:42261` port. This
 is no longer needed and should be removed immediately. Keeping that port open
@@ -368,21 +352,9 @@ was a temporary measure and is unsafe generally. Please close that port to the
 public and do not bind to it in any way.
 :::
 
-This will create a docker container named `oasis_node`. This is useful to have a
-named container so it can be referenced later. If you name it something else,
-then be aware that the docs will reference `oasis_node` for this docker
-container.
-
-_It is up to you to configure these options how you see fit. This invocation of
-the server process will not restart automatically. If you'd like to run this in
-the background add the docker flag `--detach`_
-
-#### Starting without docker
-
-If you have built the `oasis-node` binary on your own, you can start the server
-by running the command below. Please note, the node is, by default, configured
-to run in the foreground. You will need to use a process supervisor like
-[supervisord](http://supervisord.org/),
+You can start the server by running the command below. Please note, the node is
+configured to run in the foreground. We suggest you daemonize this with a
+process supervisor like [supervisord](http://supervisord.org/),
 [systemd](https://github.com/systemd/systemd), etc.
 
 ```bash
@@ -395,8 +367,7 @@ As part of the starting the server process, the `oasis-node` binary will, by
 default, setup an internal unix socket in the `datadir` of the Node. This socket
 can be used to communicate to the node and query details about the network.
 
-The following should be run from inside the docker container or the server,
-depending on how you chose to start the node.
+Run the following command:
 
 ```bash
 $ oasis-node registry entity list -a unix:/serverdir/node/internal.sock
@@ -550,20 +521,6 @@ transactions:
    `/serverdir/signed-register.tx` on the `server`.
 3. Call `oasis-node` like so:
 
-  If you're using docker use:
-
-  ```bash
-  $ docker exec -it oasis_node /bin/bash
-  $ oasis-node consensus submit_tx \
-    --transaction.file /serverdir/signed-escrow.tx \
-    -a unix:/serverdir/node/internal.sock
-  $ oasis-node consensus submit_tx \
-    --transaction.file /serverdir/signed-register.tx \
-    -a unix:/serverdir/node/internal.sock
-  ```
-
-  Without docker:
-
   ```bash
   $ oasis-node consensus submit_tx \
     --transaction.file /serverdir/signed-escrow.tx \
@@ -600,8 +557,7 @@ We will use `s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=`. As the key to search
 
 ### grepping for the Node's Identity
 
-Finally to see if the node is properly registered, run the command (you may need
-to be in a docker container if you are using that):
+Finally to see if the node is properly registered, run the command:
 
 ```bash
 $ export NODE_PUB_KEY="s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI="
