@@ -201,7 +201,8 @@ following files from `/localhostdir/node` to `/serverdir/node` over a secure cha
 * `tls_identity_cert.pem`
 
 After copying, make sure that all of these files have `0600` permissions:
-```
+
+```bash
 chmod -R 600 /serverdir/node/*.pem
 ```
 
@@ -425,6 +426,13 @@ already been funded.
 
 ::: tip NOTE
 This won't be necessary if your Entity is in the genesis file.
+:::
+
+::: warning NOTE
+If you've submitted staking or registry transactions before, your nonce is
+likely different than the nonce used in the examples. If you're uncertain,
+please check your account nonce by using [this
+guide](./maintenance/checking-account-nonce.md)
 :::
 
 Once you have been funded, you can now complete the process of connecting your
