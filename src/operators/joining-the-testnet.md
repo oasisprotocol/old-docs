@@ -184,7 +184,6 @@ following files from `/localhostdir/node` to `/serverdir/node` over a secure cha
 * `consensus_pub.pem`
 * `identity.pem`
 * `identity_pub.pem`
-* `node_genesis.json`
 * `p2p.pem`
 * `p2p_pub.pem`
 * `tls_identity.pem`
