@@ -88,11 +88,14 @@ module.exports = {
           ],
           ['/operators/stake-management', 'Stake Management'],
           {
-            title: "Maintenance Guides",
+            title: 'Maintenance Guides',
             collapsable: true,
             children: [
               ['/operators/maintenance/wiping-node-state', 'Wiping Node State'],
-              ['/operators/maintenance/checking-account-nonce', 'Checking your Account nonce'],
+              [
+                '/operators/maintenance/checking-account-nonce',
+                'Checking your Account nonce',
+              ],
             ],
           },
         ],
