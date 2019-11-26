@@ -1,8 +1,8 @@
 # Checking Your Account nonce
 
-If you need to submit new transactions to the network you will need to pull your
+If you need to submit new transactions to the network you will need to know your
 latest account nonce in order for the transaction submission to succeed. To
-determine your current nonce execute the following on your testnet node:
+determine your current nonce, execute the following on your testnet node:
 
 ```bash
 $ oasis-node stake account info \
@@ -10,7 +10,7 @@ $ oasis-node stake account info \
   -a unix:/serverdir/node/internal.sock
 ```
 
-The output will be json that look something like this (the output will be
+The output will be json that looks something like this (the output will be
 unformatted):
 
 ```json
