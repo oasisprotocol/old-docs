@@ -507,7 +507,7 @@ before hand.
 ```bash
 $ oasis-node registry entity gen_register \
   --genesis.file $GENESIS_FILE_PATH \
-  --datadir $ENTITY_DIR_PATH \
+  --entity $ENTITY_DIR_PATH \
   --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 1 \
