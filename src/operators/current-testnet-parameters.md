@@ -4,6 +4,16 @@ This page is meant to be kept up to date with the information from the currently
 released testnet. Use the information here to deploy or upgrade your node on the
 testnet.
 
+::: tip NOTE
+Feel free to use other seed nodes than the one provided here.
+:::
+
+::: tip NOTE
+As the release management of our open source repositories improves, we will
+refer to more human-friendly versions of Oasis Core (and related built
+artifacts) in this document.
+:::
+
 * [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/genesis.json)
     * sha1: `<< todo update >>`
     * sha256: `<< todo update >>`
