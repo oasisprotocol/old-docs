@@ -580,7 +580,3 @@ If `grep` found the key, then you're properly connected!
 
 If you've made it this far you've properly connected your node to the network
 and you're now a Validator on the Public Testnet.
-
-### Maintenance Guides
-
-* [Wiping Node State](./maintenance/wiping-node-state.md)
