@@ -29,7 +29,7 @@ artifacts) in this document.
 
 ### 2019-11-26 (Latest)
 
-#### `/serverdir/etc/config.yml` Changes
+#### `/serverdir/etc/config.yml` Required Changes
 
 ##### Changed
 

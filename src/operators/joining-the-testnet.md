@@ -7,8 +7,11 @@ assumption of knowledge on the use of basic command line tools.
 If you joined the Testnet prior to 11/26, use the following steps to upgrade:
 1. [Stop your node and wipe state (keep node identity)](./maintenance/wiping-node-state.md)
 
-1. [Download the current genesis file and `oasis-node`](./current-testnet-parameters.md)
-1. [Update your node config](#configuring-the-oasis-node)
+1. [Download the current genesis file and `oasis-node` to your
+   server](./current-testnet-parameters.md)
+1. See the [Deployment Change
+   Log](./current-testnet-parameters.md#2019-11-26-latest) for a list of
+   changes. _Please ensure that you update your node configuration._
 1. Start your node
 :::
 
