@@ -19,7 +19,7 @@ testnet.
 
 ### 2019-11-26 (Latest)
 
-#### `/serverdir/node/config.yml` Changes
+#### `/serverdir/etc/config.yml` Changes
 
 ##### Changed
 
