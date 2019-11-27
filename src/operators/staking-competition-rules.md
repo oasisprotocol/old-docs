@@ -1,15 +1,12 @@
-# The Quest: Round 1
-
-## Rules of the Road for the Oasis Staking Competition
+# Rules and Guidelines for the Quest: Round 1
 
 Welcome to the Quest -- a multi-round staking competition (aka incentivized
 testnet) run on the Oasis Network.
 
 ## Overview
 
-Below are a set of guidelines and rewards that we hope will help you prepare for
-the competition and help to set some parameters around what’s in scope and
-what’s not. These guidelines are a framework for how we’re thinking about Round
+Below are a set of guidelines  that we hope will help you prepare for
+the competition. These guidelines are a framework for how we’re thinking about Round
 1 of the competition. We expect this to span anywhere from 1-2 months in time.
 
 ### Goal of The Quest
@@ -31,8 +28,8 @@ explicit as we can. We want to have as diverse and broad a community of node
 operators as possible. That said, citizens and residents of certain
 jurisdictions may not be eligible to receive rewards due to legal requirements.
 Your participation and eligibility to receive rewards are also subject to
-**KYC** and depending on your country of residence accredited investor
-verification. Before joining, be sure to read the official rules
+**KYC** and depending on your country of residence **accredited investor
+verification**. Before joining, be sure to read the official rules
 **[here][eligibility-rules]**.
 
 ## How to join
@@ -48,8 +45,7 @@ There are two basic steps to joining:
 
 ## Competition Kickoff
 
-The competition is expected to start in early January. While we haven’t set a
-specific date yet, we will give a 5 day notice to start time so everyone has
+The competition is expected to start **in early January**. We will give at least 5 day notice to start time so everyone has
 plenty of time to prepare.
 
 The competition will begin with a new genesis block that includes all
@@ -59,17 +55,17 @@ operator will receive the same amount of test tokens to start the competition.
 5 days before the competition starts we’ll reach out to get your preferred
 public key. Please have this ready.
 
-We will let additional entities join after the start of the competition though
-this will put you at a disadvantage for the most blocks signed reward but could
-still keep them in the running for best attack and most staked.
+We will let additional entities join after the start of the competition. 
+This will put you at a disadvantage for the most blocks signed reward but could
+still keep you in the running for best attack and most staked.
 
 ## Types of challenges
 
 The main goal of the Quest is to ensure that the Oasis Network -- and the
 community that runs it -- are ready for a Mainnet launch. Our hope and plan is
 that the challenges we’ve set forward align to this goal as well. Challenges
-will vary in length and token rewards depending on what it is that we’re trying
-to test on the network. Some more info below by length of challenge.
+will vary in length and token rewards depending on what it is that is being tested. 
+Some more info below by length of challenge.
 
 Before diving into your strategy for all items listed below, we also encourage
 you to read through the [proposed incentive structure][incentives-proposal]
@@ -99,7 +95,7 @@ Time-based competitions will focus on testing specific features and also
 incentivizing early community coordination. To the extent we can, we’ll announce
 these rewards in real time. Examples of these competitions include:
 
-* **Most Stake**: We will likely run this for a month of the competition. During
+* **Most Stake**: We will run this for about a month of the competition. During
   this time delegation and transfers will be turned off. Staking will primarily
   be based on your ability to join the consensus committee for block rewards,
   transaction fees (we’ll submit transactions of synthetic data through the system at
@@ -119,18 +115,13 @@ these rewards in real time. Examples of these competitions include:
 
 ### Other competitions / ways to win rewards
 
-* **Best team player**: run a seed node, answer people’s questions on slack,
-  provide PRs and doc edits
-* **Community**: Rewards will be granted to the best team player and best
-  community content creation. Best team player could be an engaged
-  troubleshooter on the #nodeoperator channel or someone who helps problem solve
-  when challenges are tough. And content could be anything from engaged social
-  media to Quest swag designs, and more. Please be creative. **_NOTE: When
-  you submit content or support please use the hashtag #OasisQuest so we can see
+* **Best team player**: This reward is qualitative and will go to the team that is the most engaged and most supportive of the Oasis community during the competition. This could include running a seed node, troubleshooting on slack, and filing issues, among other things.
+* **Community**: Rewards will be granted to the best community content producer. This could anything from a weekly blog recapping the competition to active social media engagement to Quest swag designs, and more. Please be creative. **_NOTE: When
+  you submit content or support via social media please use the hashtag #OasisQuest so we can see
   what you’re up to._**
 * **Participation**: We also want to reward everyone who participates and
   engages in the network. To do this we’ll provide small rewards for the first
-  30 nodes to join the network (starting today) and participate through the end
+  30 nodes to join the network (starting when the public testnet launched) and participate through the end
   of the staking competition without double-signing; and for participation on
   the network for the entirety of the competition without double-signing.
 * **[Grants][grants]**: There are a fair number of
@@ -148,7 +139,7 @@ Throughout the competition there are a few specific ways that you can expect to 
    [#nodeoperator](https://oasiscommunity.slack.com/archives/CMUSJCRFA) and
    [#nodeannouncement](https://oasiscommunity.slack.com/archives/CQK5NPXDX)
    channels.
-2. **Weekly updates**: We’ll send a weekly update every week outlining what to
+2. **Weekly updates**: We’ll send a weekly update outlining what to
    expect in the following week and highlight any other questions/issues that
    have come up in the community. We’ll share this via email and slack.
 3. **Weekly office hours**: We’ll host office hours every Thursday to answer
@@ -174,6 +165,8 @@ can tell you that we’ll provide plenty of pre warning beforehand.
 * [Slack channel][slack]
 * Check out the top open sourced repos including [Oasis
   Core](https://github.com/oasislabs/oasis-core).
+* [Eligibility rules][eligibility-rules]
+* [Sign-up form][sign-up-form]
 
 [eligibility-rules]: http://www.oasis-protocol.org/grants
 [sign-up-form]: https://oasisfoundation.typeform.com/to/dlcekq
