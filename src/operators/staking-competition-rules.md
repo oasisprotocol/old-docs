@@ -113,7 +113,7 @@ these rewards in real time. Examples of these competitions include:
 * There may be more like the above. As they come we’ll share our plans and try
   to give you ample time to prepare.
 
-### Other competitions / ways to win rewards
+### Other Challenges / Ways to Win Rewards
 
 * **Best team player**: This reward is qualitative and will go to the team that is the most engaged and most supportive of the Oasis community during the competition. This could include running a seed node, troubleshooting on slack, and filing issues, among other things.
 * **Community**: Rewards will be granted to the best community content producer. This could anything from a weekly blog recapping the competition to active social media engagement to Quest swag designs, and more. Please be creative. **_NOTE: When
