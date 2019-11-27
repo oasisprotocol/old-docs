@@ -158,7 +158,7 @@ proves to be, how active you all are, and what we learn about our incentive
 proposal during this competition. So while we can’t share an end date today, we
 can tell you that we’ll provide plenty of pre warning beforehand.
 
-## Resources to learn more
+## Resources to Learn More
 
 * Read [documentation][setup-docs] on how to get a node set up.
 * [Incentives proposal][incentives-proposal]
