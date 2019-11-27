@@ -21,7 +21,7 @@ We hope to use a staking competition to do a few things:
 4. Expand and further empower a community of data privacy advocates around the
    Oasis Network.
 
-### Eligibility for the competition
+### Eligibility for the Competition
 
 We’ve received a number of questions about who can join, and we want to be as
 explicit as we can. We want to have as diverse and broad a community of node
