@@ -25,7 +25,7 @@ The system will disincentivize bad behavior via slashing for double-signing, as 
 ### Staking Conditions
 As a public, permissionless blockchain platform, our goal is to make the experience of setting up a node as seamless as possible for any member of our community who wants to contribute to the Oasis Network. To that end, we’ve put a lot of thought into ensuring our staking conditions minimize barriers to entry and encourage meaningful engagement on the network. A few key parameters:
 
-* **Number of validators to participate in consensus committee (and receive staking rewards) at launch:**: Up to 100 validators
+* **Number of validators to participate in consensus committee (and receive staking rewards) at launch**: Up to 100 validators
 
 * **Minimum stake**: 100 tokens
 
