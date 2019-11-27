@@ -30,7 +30,7 @@ We’ve received a number of questions about who can join, and we want to be as
 explicit as we can. We want to have as diverse and broad a community of node
 operators as possible. That said, citizens and residents of certain
 jurisdictions may not be eligible to receive rewards due to legal requirements.
-**Your participation and eligibility to receive rewards are also subject to
+Your participation and eligibility to receive rewards are also subject to
 **KYC** and depending on your country of residence accredited investor
 verification. Before joining, be sure to read the official rules
 **[here][eligibility-rules]**.
