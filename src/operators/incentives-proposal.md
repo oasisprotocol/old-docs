@@ -2,7 +2,7 @@
 
 *NOTE: This is a draft proposal and is subject to change pending the outcome of an economic audit, feedback from the community, and the results of the Oasis Foundation’s staking competition.* 
 
-Below is a proposal of the initial incentive model for the Oasis Network at the time of Mainnet launch. To submit your feedback and comments to the proposal please reach out to us on [slack](https://www.oasis-protocol.org/slack) or via [github](https://github.com/oasislabs/docs). When designing and running stress tests, audits, and simulations, the underlying goal has been to develop an incentive model that encourages both the development of a healthy and active developer ecosystem as well as a secure, decentralized network through an engaged and diverse node operator community.
+Below is a proposal of the initial incentive model for the Oasis Network at the time of Mainnet launch. To submit your feedback and comments to the proposal please reach out to us on [Slack](https://www.oasis-protocol.org/slack) or via [GitHub](https://github.com/oasislabs/docs). When designing and running stress tests, audits, and simulations, the underlying goal has been to develop an incentive model that encourages both the development of a healthy and active developer ecosystem as well as a secure, decentralized network through an engaged and diverse node operator community.
 
 The core focus of this incentive documentation is to outline a proposal for parameters and rewards around staking and delegation. In future documentation we will provide more detail on the proposed roadmap and rewards that expand beyond this activity.
 
