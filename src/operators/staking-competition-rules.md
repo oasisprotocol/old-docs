@@ -17,7 +17,7 @@ what’s not. These guidelines are a framework for how we’re thinking about Ro
 We hope to use a staking competition to do a few things:
 
 1. Stress test the beta version of the Oasis Network before it Mainnets and give
-   feedback on what’s working––and what’s not.
+   feedback on what’s working - and what’s not.
 2. Give operators a chance to test drive the network and their setups.
 3. Give a diverse group of operators an opportunity to earn rewards that can be
    used to stake on the Oasis Network Mainnet.
