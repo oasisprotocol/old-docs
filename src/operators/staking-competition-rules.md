@@ -136,6 +136,29 @@ these rewards in real time. Examples of these competitions include:
   have something you’d like to build, integrate, or add to the network that’s
   node and testnet related, please apply! We’re excited to see the network
   flourish and want to support those who are as well!
+  
+### Summary of Rewards
+As a whole, the Foundation aims to allot ~1% of total tokens to the various phases of The Quest, across challenge winners, community engagement awards, grants, and more. Top rewards (although there may be more based on the time-based challenges noted above) include:
+
+**Attacks**: 
+* Best Attack: up to 1,000,000 tokens
+* Top 5 Attacks: up to 500,000 tokens
+
+**Most staked**:
+* 1st place: 750,000 tokens
+* Top 5 spots: up to 500,000 tokens
+
+**Most blocks signed**:
+* 1st place: 750,000 tokens
+* Top 5 spots: up to 500,000 tokens
+
+**Community**:
+* Best team player: up to 100,000 tokens
+* Community content: up to 100,000 tokens
+
+**Participation**:
+* All participants (who don't double-sign): 5,000 tokens
+* First 30 entities on the network (who stay through the end with no double-signing): 10,000 tokens
 
 ## Communication
 
