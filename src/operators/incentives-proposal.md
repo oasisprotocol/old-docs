@@ -29,7 +29,7 @@ As a public, permissionless blockchain platform, our goal is to make the experie
 
 * **Minimum stake**: 100 tokens
 
-* **Selection to the consensus committee**:Each entity can only have one node elected to the consensus committee at a time. The probability of selection to the consensus committee is proportional to the stake of all nodes run by one entity.
+* **Selection to the consensus committee**: Each entity can have at most one node elected to the consensus committee at a time. The probability of selection to the consensus committee is proportional to the stake of all nodes run by one entity.
 
 * **Annual rewards**: The network is targeted to hit ~15% APR at launch (based on the number of blocks produced, so timing could vary) and then taper down to 10% by end of year. This will happen over a gradual taper rather than a step function change to avoid creating some sort of cliff. 
 
