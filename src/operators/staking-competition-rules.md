@@ -59,7 +59,7 @@ We will let additional entities join after the start of the competition.
 This will put you at a disadvantage for the most blocks signed reward but could
 still keep you in the running for best attack and most staked.
 
-## Types of challenges
+## Types of Challenges
 
 The main goal of the Quest is to ensure that the Oasis Network -- and the
 community that runs it -- are ready for a Mainnet launch. Our hope and plan is
