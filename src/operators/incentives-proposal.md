@@ -14,7 +14,7 @@ The core focus of this incentive documentation is to outline a proposal for para
 * **Minimum stake**: 100 tokens
 
 ## Overview of the Oasis Consensus Layer
-The Oasis Network is based on a Proof-of-Stake (PoS) consensus model. Tokens can be self-delegated directly by each node operator or delegated to a node operator by other token holders. While the Oasis Network is designed with a modular architecture that can use any consensus system that satisfies these properties, it currently uses Tendermint PBFT as its consensus algorithm. 
+The Oasis Network is based on a Proof-of-Stake (PoS) consensus model. Tokens can be self-delegated directly by each node operator or delegated to a node operator by other token holders. While the Oasis Network is designed with a modular architecture that can use any consensus system that satisfies these properties, it currently uses [Tendermint](https://github.com/tendermint/tendermint) as its consensus algorithm. 
 
 At the time of the initial Mainnet launch, node operators will primarily serve as validators for this consensus layer. They will have the ability to sign blocks, earn transaction fees, stake, and receive delegation. Similar to the PoS design implemented by Cosmos, up to 100 validators with the most stake will be active validators participating in the consensus process. 
 
