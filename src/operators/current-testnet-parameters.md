@@ -1,12 +1,8 @@
 # Current Testnet Parameters
 
 This page is meant to be kept up to date with the information from the currently
-released testnet. Use the information here to deploy or upgrade your node on the
-testnet.
-
-::: tip NOTE
-Feel free to use other seed nodes than the one provided here.
-:::
+released Testnet. Use the information here to deploy or upgrade your node on the
+Testnet.
 
 ::: tip NOTE
 As the release management of our open source repositories improves, we will
@@ -14,19 +10,24 @@ refer to more human-friendly versions of Oasis Core (and related built
 artifacts) in this document.
 :::
 
-* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/genesis.json)
-    * sha1: `bed77f6433e607f7073a48dbf27f8cf5d9a8c2e1`
-    * sha256: `ee38b53a2e8acd785d279e4c8d3af38b832f120d9a85bf0173e94878f45bc718`
+* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/genesis.json):
+  * sha1: `bed77f6433e607f7073a48dbf27f8cf5d9a8c2e1`
+  * sha256: `ee38b53a2e8acd785d279e4c8d3af38b832f120d9a85bf0173e94878f45bc718`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
-* [oasis-core](https://github.com/oasislabs/oasis-core) commit (_This will be
-  improved when we have proper versioning_)
-  * Commit-Sha: `9d5e30082a5f3df065fc52a404e048decb9adac9`
-* [docker container](https://hub.docker.com/layers/oasislabs/oasis-node/master-20191125134702/images/sha256-4e35b3bb8d9116cfcd6ff7d4f3d84e0753f7f441b48dad6d2129eb32897a3f9b)
-    * `$ docker pull oasislabs/oasis-node:master-20191125134702`
-* `oasis-node` Binary (Please unzip before use)
+  ::: tip NOTE
+  Feel free to use other seed nodes than the one provided here.
+  :::
+* [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/9d5e30082a5f3df065fc52a404e048decb9adac9):
+  * `9d5e30082a5f3df065fc52a404e048decb9adac9`
+* `oasis-node` Binaries:
   * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/oasis-node-linux-amd64.zip)
   * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/oasis-node-macos-amd64.zip)
+* [Docker image](https://hub.docker.com/layers/oasislabs/oasis-node/master-20191125134702/images/sha256-4e35b3bb8d9116cfcd6ff7d4f3d84e0753f7f441b48dad6d2129eb32897a3f9b):
+  * `oasislabs/oasis-node:master-20191125134702`
+  ::: warning DEPRECATED
+  We no longer recommend or support using Oasis-provided Docker images.
+  :::
 
 ## Deployment Change Log
 
@@ -77,9 +78,9 @@ need to make any changes.
 
 #### Docker Support
 
-We no longer document using the docker container for setup or deployment as we
-now distribute `oasis-node` binaries. You may still use the docker container,
-and we will, for now, document the current docker image tag for a given
+We no longer document using the Docker container for setup or deployment as we
+now distribute `oasis-node` binaries. You may still use the Docker container,
+and we will, for now, document the current Docker image tag for a given
 deployment.
 
 ### 2019-11-13
