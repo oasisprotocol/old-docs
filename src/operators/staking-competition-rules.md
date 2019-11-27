@@ -1,5 +1,7 @@
 # Rules and Guidelines for The Quest: Round 1
 
+![The Quest](/operator_images/the_quest.png)
+
 Welcome to The Quest -- a multi-round staking competition (aka incentivized
 testnet) run on the Oasis Network.
 
