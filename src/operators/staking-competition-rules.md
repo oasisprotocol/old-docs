@@ -99,19 +99,19 @@ Time-based competitions will focus on testing specific features and also
 incentivizing early community coordination. To the extent we can, we’ll announce
 these rewards in real time. Examples of these competitions include:
 
-* **Most Stake:** We will likely run this for a month of the competition. During
+* **Most Stake**: We will likely run this for a month of the competition. During
   this time delegation and transfers will be turned off. Staking will primarily
   be based on your ability to join the consensus committee for block rewards,
   transaction fees (we’ll submit transactions of synthetic data through the system at
   random times to test this) and your ability to hack and steal from others on
   the network. We will give a week’s notice before this portion of the
   competition ends.
-* **System upgrades:** In order to test upgrades -- and community timeliness in
+* **System upgrades**: In order to test upgrades -- and community timeliness in
   supporting them -- we will likely incentivize a few specific upgrade cycles
   where all who upgrade in a given time period receive a token reward. Initially
   we’ll let you know when we’re doing this and may also do a bit more
   unannounced to keep everyone honest :).
-* **Delegation:** For one upgrade we’ll plan to turn delegation on. We’ll do
+* **Delegation**: For one upgrade we’ll plan to turn delegation on. We’ll do
   this after rewarding the most staked competition and will then ask people to
   stress test our delegation mechanisms. More on the challenge later.
 * There may be more like the above. As they come we’ll share our plans and try
@@ -143,19 +143,19 @@ these rewards in real time. Examples of these competitions include:
 
 Throughout the competition there are a few specific ways that you can expect to hear from us:
 
-1. **Upgrades and big updates:** Please plan on checking
+1. **Upgrades and big updates**: Please plan on checking
    [slack][slack] and join the
    [#nodeoperator](https://oasiscommunity.slack.com/archives/CMUSJCRFA) and
    [#nodeannouncement](https://oasiscommunity.slack.com/archives/CQK5NPXDX)
    channels.
-2. **Weekly updates:** We’ll send a weekly update every week outlining what to
+2. **Weekly updates**: We’ll send a weekly update every week outlining what to
    expect in the following week and highlight any other questions/issues that
    have come up in the community. We’ll share this via email and slack.
 3. **Weekly office hours**: We’ll host office hours every Thursday to answer
    questions in real time. Feel free to join as you see useful. We’ll also post
    all notes from those calls
    [here][office-hours-doc].
-4. **Weekly leaderboard:** While we don’t have a block explorer just yet, as we
+4. **Weekly leaderboard**: While we don’t have a block explorer just yet, as we
    get something up and running we will share out a weekly static leaderboard so
    you all have a sense of where each node stands in terms of stake and blocks
    signed. We’ll share this via email, slack and on our blog.
