@@ -1,4 +1,4 @@
-# Oasis Network Incentives: A proposal for the network at time of launch
+# Oasis Network Incentives: A Proposal for the Network at Time of Launch
 
 *NOTE: This is a draft proposal and is subject to change pending the outcome of an economic audit, feedback from the community, and the results of the Oasis Foundation’s staking competition.* 
 
@@ -20,9 +20,9 @@ At the time of the initial Mainnet launch, node operators will primarily serve a
 
 The system will disincentivize bad behavior via slashing for double-signing, as well as via the cost to dominate the network, in terms of the number of staked tokens. 
 
-## Nuts and bolts of staking rewards
+## Nuts and Bolts of Staking Rewards
 
-### Staking conditions
+### Staking Conditions
 As a public, permissionless blockchain platform, our goal is to make the experience of setting up a node as seamless as possible for any member of our community who wants to contribute to the Oasis Network. To that end, we’ve put a lot of thought into ensuring our staking conditions minimize barriers to entry and encourage meaningful engagement on the network. A few key parameters:
 
 * **Number of validators to participate in any given consensus committee at launch:**: Up to 100 validators
@@ -48,15 +48,15 @@ As the Oasis Network gets closer to Mainnet, we’ll continue to share with our 
 
 * **Reward disbursement**: Rewards from delegated funds are distributed directly to the delegator. More specifically, the rewards are automatically added to their stakes (i.e. reinvested), so the rewards will have to go through the ~14 unbonding period.
 
-### Commission rates
+### Commission Rates
 There is currently no plan to require a minimum or maximum commission rate for delegation, but we would like to set parameters around the transparency and notification of commission rates. 
 
 When a node is set up on the Mainnet, it will share its current commission rate, as well as the range with which that rate could change (e.g. + / - 10%). Commission rates can be adjusted once per day.
 
-### Transaction fee distribution
+### Transaction Fee Distribution
 Most likely, transaction fees will be distributed equally among validators who signed the block containing that specific transaction.
 
-## Glossary of commonly used terms
+## Glossary of Commonly Used Terms
 
 * **Entity**: That’s you! (Or your organization.) On the Oasis Network, you’re identified by your public key. Your private key controls your wallet, which maintains a token balance. Each entity can also have a token amount staked, which is a separate balance that permits it to run *nodes*. See [Entities and Key Management](https://docs.oasis.dev/operators/architectural-overview.html#entities-and-key-management) for further information.
 
