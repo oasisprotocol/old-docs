@@ -358,10 +358,12 @@ However just so it's clear, the following permissions are expected by the
 ### Starting the Oasis Node
 
 ::: danger WARNING
-In a previous version of docs we asked you to open `-p 42261:42261` port. This
-is no longer needed and should be removed immediately. Keeping that port open
-was a temporary measure and is unsafe generally. Please close that port to the
-public and do not bind to it in any way.
+In a previous version of docs, we asked you to open port `42261` on a running
+docker container. In some configurations we noticed that this port was being
+exposed to the outside world. This is no longer needed and should be removed
+immediately. Keeping that port open was a temporary measure and is unsafe
+generally. Please close that port to the public and do not bind to it in any
+way.
 :::
 
 You can start the server by running the command below. Please note, the node is
