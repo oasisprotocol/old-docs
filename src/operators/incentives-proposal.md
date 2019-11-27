@@ -70,7 +70,7 @@ Most likely, transaction fees will be distributed equally among validators who s
 
 * **Top K**: The top-ranked entities by token amount staked. These entities’ nodes are eligible to participate in the consensus committee and receive staking rewards.
 
-* **Transaction fee**:  The reward that a validator receives from processing a transaction that runs on the network (separate from staking rewards).
+* **Transaction fee**: The reward that a validator receives from processing a transaction that runs on the network (separate from staking rewards).
 
 * **Commission rate**: The fee that a validator chooses to charge to delegators.
 
