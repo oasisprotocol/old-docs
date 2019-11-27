@@ -89,7 +89,7 @@ github repo, etc) and submit it to us on the #attacks channel on
 [slack][slack]. The Oasis team will review and choose the
 top 5 attacks based on the criteria above at the end of the competition.
 
-### Time-based competitions
+### Time-based Challenges
 
 Time-based challenges will focus on testing specific features and also
 incentivizing early community coordination. To the extent we can, we’ll announce
