@@ -71,7 +71,7 @@ Before diving into your strategy for all items listed below, we also encourage
 you to read through the [proposed incentive structure][incentives-proposal]
 for the Oasis Network.
 
-### Challenges spanning the full length of the competition
+### Challenges Spanning the Entire Competition
 
 * **Most Blocks Signed:** This reward will be given to the top 5 operators based
   on blocks signed. This will be announced at the end of the competition.
