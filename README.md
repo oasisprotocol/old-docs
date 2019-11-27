@@ -4,7 +4,10 @@ These docs are hosted at [docs.oasis.dev](https://docs.oasis.dev) and are built 
 
 You can help make these docs excellent by submitting issues and PRs for things that are unclear or need improvement.
 
-When adding new files, be sure to add the paths to [this file](./src/.vuepress/config.js), otherwise the files will not be displayed. 
+Before submitting a pull request, make sure to run `npx markdownlint-cli src/`
+and fix the reported Markdown issues.
+
+When adding new files, be sure to add the paths to [this file](./src/.vuepress/config.js), otherwise the files will not be displayed.
 
 ## Generating the docs
 
