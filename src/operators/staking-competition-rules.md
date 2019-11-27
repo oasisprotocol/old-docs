@@ -172,7 +172,7 @@ can tell you that we’ll provide plenty of pre warning beforehand.
 * [Eligibility rules][eligibility-rules]
 * [Sign-up form][sign-up-form]
 
-[eligibility-rules]: http://www.oasis-protocol.org/grants
+[eligibility-rules]: https://docsend.com/view/zv5cfia
 [sign-up-form]: https://oasisfoundation.typeform.com/to/dlcekq
 [slack]: https://www.oasis-protocol.org/slack
 [incentives-proposal]: ./incentives-proposal.md
