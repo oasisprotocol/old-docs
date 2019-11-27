@@ -32,7 +32,7 @@ Your participation and eligibility to receive rewards are also subject to
 verification**. Before joining, be sure to read the official rules
 **[here][eligibility-rules]**.
 
-## How to join
+## How to Join
 
 There are two basic steps to joining:
 
