@@ -88,6 +88,7 @@ module.exports = {
           ],
           ['/operators/stake-management', 'Stake Management'],
           ['/operators/incentives-proposal', 'Network Incentives Proposal'],
+          ['/operators/staking-competition-rules', 'Staking Competition Rules'],
           {
             title: 'Maintenance Guides',
             collapsable: true,
