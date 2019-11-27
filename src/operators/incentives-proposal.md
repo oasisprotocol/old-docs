@@ -2,7 +2,7 @@
 
 *NOTE: This is a draft proposal and is subject to change pending the outcome of an economic audit, feedback from the community, and the results of the Oasis Foundation’s staking competition.* 
 
-Below is a proposal of the initial incentive model for the Oasis Network at the time of Mainnet launch. To submit your feedback and comments to the proposal please reach out to us on [slack](www.oasis-protocol.org/slack) or via [github](https://github.com/oasislabs/docs). When designing and running stress tests, audits, and simulations, the underlying goal has been to develop an incentive model that encourages both the development of a healthy and active developer ecosystem as well as a secure, decentralized network through an engaged and diverse node operator community.
+Below is a proposal of the initial incentive model for the Oasis Network at the time of Mainnet launch. To submit your feedback and comments to the proposal please reach out to us on [slack](https://www.oasis-protocol.org/slack) or via [github](https://github.com/oasislabs/docs). When designing and running stress tests, audits, and simulations, the underlying goal has been to develop an incentive model that encourages both the development of a healthy and active developer ecosystem as well as a secure, decentralized network through an engaged and diverse node operator community.
 
 The core focus of this incentive documentation is to outline a proposal for parameters and rewards around staking and delegation. In future documentation we will provide more detail on the proposed roadmap and rewards that expand beyond this activity.
 
@@ -79,8 +79,8 @@ Most likely, transaction fees will be distributed equally among validators who s
 *****
 For more information and for the latest updates, please visit our website. We also invite you to join our Slack community to share your feedback and help shape the future of our network. 
 If you’re new to Oasis, here are some resources you may find useful:
-* [Oasis Foundation Website](www.oasis-protocol.org) 
+* [Oasis Foundation Website](https://www.oasis-protocol.org) 
 * [Testnet Documentation](https://docs.oasis.dev/operators/joining-the-testnet.html)
 * [Operator Documentation](https://docs.oasis.dev/operators/overview.html)
-* [GitHub](www.github.com/oasislabs)
+* [GitHub](https://www.github.com/oasislabs)
 * [Blog](https://medium.com/oasis-protocol-project)
