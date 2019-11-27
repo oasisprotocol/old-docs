@@ -1,12 +1,12 @@
-# Rules and Guidelines for the Quest: Round 1
+# Rules and Guidelines for The Quest: Round 1
 
-Welcome to the Quest -- a multi-round staking competition (aka incentivized
+Welcome to The Quest -- a multi-round staking competition (aka incentivized
 testnet) run on the Oasis Network.
 
 ## Overview
 
-Below are a set of guidelines  that we hope will help you prepare for
-the competition. These guidelines are a framework for how we’re thinking about Round
+Below are a set of guidelines that we hope will help you prepare for the
+competition. These guidelines are a framework for how we’re thinking about Round
 1 of the competition. We expect this to span anywhere from 1-2 months in time.
 
 ### Goal of The Quest
@@ -61,7 +61,7 @@ still keep you in the running for best attack and most staked.
 
 ## Types of Challenges
 
-The main goal of the Quest is to ensure that the Oasis Network -- and the
+The main goal of The Quest is to ensure that the Oasis Network -- and the
 community that runs it -- are ready for a Mainnet launch. Our hope and plan is
 that the challenges we’ve set forward align to this goal as well. Challenges
 will vary in length and token rewards depending on what it is that is being tested.
@@ -75,7 +75,6 @@ for the Oasis Network.
 
 * **Most Blocks Signed:** This reward will be given to the top 5 operators based
   on blocks signed. This will be announced at the end of the competition.
-
 * **Best Attacks**: Best attacks is a qualitative reward but certainly one we
   will judge impartially. The goal of this reward is really to see if you can
   hack the system, steal someone’s tokens, cause a sybil attack, etc. Specific
@@ -85,9 +84,9 @@ for the Oasis Network.
   * Impact to network stability
 
 After the attack is complete, we ask you to write up your attack(s) (blog post,
-github repo, etc) and submit it to us on the #attacks channel on
-[slack][slack]. The Oasis team will review and choose the
-top 5 attacks based on the criteria above at the end of the competition.
+github repo, etc) and submit it to us on the #attacks channel on [slack][slack].
+The Oasis team will review and choose the top 5 attacks based on the criteria
+above at the end of the competition.
 
 ### Time-based Challenges
 
@@ -98,9 +97,9 @@ these rewards in real time. Examples of these competitions include:
 * **Most Stake**: We will run this for about a month of the competition. During
   this time delegation and transfers will be turned off. Staking will primarily
   be based on your ability to join the consensus committee for block rewards,
-  transaction fees (we’ll submit transactions of synthetic data through the system at
-  random times to test this) and your ability to hack and steal from others on
-  the network. We will give a week’s notice before this portion of the
+  transaction fees (we’ll submit transactions of synthetic data through the
+  system at random times to test this) and your ability to hack and steal from
+  others on the network. We will give a week’s notice before this portion of the
   competition ends.
 * **System upgrades**: In order to test upgrades -- and community timeliness in
   supporting them -- we will likely incentivize a few specific upgrade cycles
@@ -115,15 +114,21 @@ these rewards in real time. Examples of these competitions include:
 
 ### Other Challenges / Ways to Win Rewards
 
-* **Best team player**: This reward is qualitative and will go to the team that is the most engaged and most supportive of the Oasis community during the competition. This could include running a seed node, troubleshooting on slack, and filing issues, among other things.
-* **Community**: Rewards will be granted to the best community content producer. This could anything from a weekly blog recapping the competition to active social media engagement to Quest swag designs, and more. Please be creative. **_NOTE: When
-  you submit content or support via social media please use the hashtag #OasisQuest so we can see
-  what you’re up to._**
+* **Best team player**: This reward is qualitative and will go to the team that
+  is the most engaged and most supportive of the Oasis community during the
+  competition. This could include running a seed node, troubleshooting on slack,
+  and filing issues, among other things.
+* **Community**: Rewards will be granted to the best community content producer.
+  This could anything from a weekly blog recapping the competition to active
+  social media engagement to The Quest swag designs, and more. Please be
+  creative. **_NOTE: When you submit content or support via social media please
+  use the hashtag #OasisQuest so we can see what you’re up to._**
 * **Participation**: We also want to reward everyone who participates and
   engages in the network. To do this we’ll provide small rewards for the first
-  30 nodes to join the network (starting when the public testnet launched) and participate through the end
-  of the staking competition without double-signing; and for participation on
-  the network for the entirety of the competition without double-signing.
+  30 nodes to join the network (starting when the public testnet launched) and
+  participate through the end of the staking competition without double-signing;
+  and for participation on the network for the entirety of the competition
+  without double-signing.
 * **[Grants][grants]**: There are a fair number of
   tokens put aside for [grants][grants]. If you
   have something you’d like to build, integrate, or add to the network that’s
@@ -132,20 +137,19 @@ these rewards in real time. Examples of these competitions include:
 
 ## Communication
 
-Throughout the competition there are a few specific ways that you can expect to hear from us:
+Throughout the competition there are a few specific ways that you can expect to
+hear from us:
 
-1. **Upgrades and big updates**: Please plan on checking
-   [slack][slack] and join the
-   [#nodeoperator](https://oasiscommunity.slack.com/archives/CMUSJCRFA) and
+1. **Upgrades and big updates**: Please plan on checking [slack][slack] and join
+   the [#nodeoperator](https://oasiscommunity.slack.com/archives/CMUSJCRFA) and
    [#nodeannouncement](https://oasiscommunity.slack.com/archives/CQK5NPXDX)
    channels.
-2. **Weekly updates**: We’ll send a weekly update outlining what to
-   expect in the following week and highlight any other questions/issues that
-   have come up in the community. We’ll share this via email and slack.
+2. **Weekly updates**: We’ll send a weekly update outlining what to expect in
+   the following week and highlight any other questions/issues that have come up
+   in the community. We’ll share this via email and slack.
 3. **Weekly office hours**: We’ll host office hours every Thursday to answer
    questions in real time. Feel free to join as you see useful. We’ll also post
-   all notes from those calls
-   [here][office-hours-doc].
+   all notes from those calls [here][office-hours-doc].
 4. **Weekly leaderboard**: While we don’t have a block explorer just yet, as we
    get something up and running we will share out a weekly static leaderboard so
    you all have a sense of where each node stands in terms of stake and blocks
