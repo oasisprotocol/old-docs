@@ -87,6 +87,7 @@ module.exports = {
             'Node Hardware Recommendations',
           ],
           ['/operators/stake-management', 'Stake Management'],
+          ['/operators/incentives-proposal', 'Network Incentives Proposal'],
           {
             title: 'Maintenance Guides',
             collapsable: true,
