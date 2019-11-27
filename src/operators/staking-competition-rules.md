@@ -45,8 +45,8 @@ There are two basic steps to joining:
 
 ## Competition Kickoff
 
-The competition is expected to start **in early January**. We will give at least 5 day notice to start time so everyone has
-plenty of time to prepare.
+The competition is expected to start **in early January**. We will give at least
+5 day notice to start time so everyone has plenty of time to prepare.
 
 The competition will begin with a new genesis block that includes all
 competitors to ensure each operator has access to funds at the same time. Each
@@ -55,7 +55,7 @@ operator will receive the same amount of test tokens to start the competition.
 5 days before the competition starts we’ll reach out to get your preferred
 public key. Please have this ready.
 
-We will let additional entities join after the start of the competition. 
+We will let additional entities join after the start of the competition.
 This will put you at a disadvantage for the most blocks signed reward but could
 still keep you in the running for best attack and most staked.
 
@@ -64,7 +64,7 @@ still keep you in the running for best attack and most staked.
 The main goal of the Quest is to ensure that the Oasis Network -- and the
 community that runs it -- are ready for a Mainnet launch. Our hope and plan is
 that the challenges we’ve set forward align to this goal as well. Challenges
-will vary in length and token rewards depending on what it is that is being tested. 
+will vary in length and token rewards depending on what it is that is being tested.
 Some more info below by length of challenge.
 
 Before diving into your strategy for all items listed below, we also encourage
