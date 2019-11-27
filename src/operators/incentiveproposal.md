@@ -1,43 +1,36 @@
 # Oasis Network Incentives: A proposal for the network at time of launch
 
-*NOTE: This is a draft proposal and is subject to change pending the outcome of an economic audit, feedback from the community, and the results of our staking competition. Please share your feedback with us here.* 
+*NOTE: This is a draft proposal and is subject to change pending the outcome of an economic audit, feedback from the community, and the results of the Oasis Foundation’s staking competition.* 
 
-Below is a proposal of the initial incentive model for the Oasis Network at the time of Mainnet launch. To submit your feedback and comments to the proposal please reach out to us on [slack](www.oasis-protocol.org/slack) or via [github](https://github.com/oasislabs/docs). 
-When designing and running stress tests, audits, and simulations, the underlying goal has been to develop an incentive model that encourages both the development of a healthy and active developer ecosystem as well as a secure, decentralized network through an engaged and diverse  node operator community.
+Below is a proposal of the initial incentive model for the Oasis Network at the time of Mainnet launch. To submit your feedback and comments to the proposal please reach out to us on [slack](www.oasis-protocol.org/slack) or via [github](https://github.com/oasislabs/docs). When designing and running stress tests, audits, and simulations, the underlying goal has been to develop an incentive model that encourages both the development of a healthy and active developer ecosystem as well as a secure, decentralized network through an engaged and diverse node operator community.
+
+The core focus of this incentive documentation is to outline a proposal for parameters and rewards around staking and delegation. In future documentation we will provide more detail on the proposed roadmap and rewards that expand beyond this activity.
 
 ## Summary:
 
-* **Estimated Rewards: 10-15% APR with higher rewards at network launch and tapering over time.**
+* **Estimated Staking Rewards: 10-15% APR with higher rewards at network launch and tapering over time.**
 * **Slashing: Slash for double-signing only**
-* **Total number of node operators at launch: up to 100 entities**
+* **Number of validators to participate in any given consensus committee (and receive block rewards) at launch: up to 100 validators**
 * **Minimum stake: 100 tokens**
 
-## Key Features of Mainnet at time of Launch
-Oasis aims to launch the network via a phased rollout -- adding more features to each version of the Mainnet with the support and approval of the broader community (more information on governance proposals to come).
-At the time of initial launch, we expect the Oasis Network to focus on a few key features:
-* Staking
-* Delegation
-* A consensus layer that validates transactions from multiple side-chain runtimes, including confidential compute and a number of users of this runtime (more information on usage to come).
+## Overview of the Oasis Consensus Layer
+The Oasis Network is based on the PoS consensus model. Tokens can be self-delegated directly by each node operator or delegated to a node operator by other token holders. While the Oasis Network is designed with a modular architecture that can use any consensus system that satisfies these properties, it currently uses Tendermint PBFT as its consensus algorithm. 
 
-This post focuses on the incentives and system structure for the initial Mainnet launch. In the future, we’ll share additional posts mapping out some thoughts on a potential longer term roadmap, what the architecture could look like, and how the network and other entities like Oasis Labs are thinking about driving usage and volume to the platform.
+At the time of the initial Mainnet launch, node operators will primarily serve as validators for this consensus layer. They will have the ability to sign blocks, earn transaction fees, stake, and receive delegation. Similar to the PoS design implemented by Cosmos, up to 100 validators with the most stake will be active validators participating in the consensus process. 
 
-## More on the Oasis Consensus Algorithm
-The Oasis Network is based on the PoS consensus model. Tokens can be self-delegated directly by each node operator or delegated to a node operator by other token holders. While the Oasis Network is designed with a modular architecture that can use any consensus system that satisfies these properties, it currently uses Tendermint PBFT as its consensus algorithm.
-At the time of the initial Mainnet launch, node operators will primarily serve as validators for this consensus layer. They will have the ability to sign blocks, earn transaction fees, stake, and receive delegation.
-Similar to the PoS design implemented by Cosmos, up to 100 validators with the most stake will be active validators participating in the consensus process. The system will disincentivize bad behavior via slashing for double-signing, as well as via the cost to dominate the network, in terms of the number of staked tokens.  
+The system will disincentivize bad behavior via slashing for double-signing, as well as via the cost to dominate the network, in terms of the number of staked tokens. 
 
-## Nuts and bolts of rewards
+## Nuts and bolts of staking rewards
 
 ### Staking conditions
-As a public, permissionless blockchain platform, our goal is to make the experience of setting up a node as seamless as possible for any member of our community who wants to contribute to the Oasis Network. To that end, we’ve put a lot of thought into ensuring our staking conditions minimize barriers to entry and encourage meaningful engagement on the network. 
-A few key parameters:
-* **Total entities on the network (K)**: Up to 100 entities, with each entity’s node with the highest stake selected 
+As a public, permissionless blockchain platform, our goal is to make the experience of setting up a node as seamless as possible for any member of our community who wants to contribute to the Oasis Network. To that end, we’ve put a lot of thought into ensuring our staking conditions minimize barriers to entry and encourage meaningful engagement on the network. A few key parameters:
+* **Number of validators to participate in any given consensus committee at launch:**: Up to 100 validators
 * **Minimum stake**: 100 tokens
-* **Selection to the consensus committee**: Each entity can only have one node elected to the consensus committee at a time. The probability of selection to the consensus committee is proportional to the stake of all nodes run by one entity.
-* **Annual rewards**: There’s an expectation of ~15% APR for ~6 months (based on the number of blocks produced, so timing could vary), then to 12% and then to 10% by the end of the year. This will all happen over a gradual taper rather than a step function change to avoid creating some sort of cliff.  
-* **Slashing**: At the time of Mainnet launch, the network will only slash for double-signing. Currently, the proposed approach is for the network to take the minimum stake (100 tokens) and freeze the node. Freezing the node is really more of a precaution in order to prevent the node from being over-penalized. The Network will not slash for liveness or uptime at launch
-* **Staking rewards**: The goal initially is to offer rewards that will help bootstrap the network effectively. To start, rewards will be proportional to the stake and awarded on a per-entity basis. In order to be eligible for staking rewards, a node will need to sign at least 90% of blocks in a given epoch.
-* **Unbonding period**: The network will have a ~14 day unbonding period. During this time, staked tokens are at risk of getting slashed for double-signing.
+* **Selection to the consensus committee**:Each entity can only have one node elected to the consensus committee at a time. The probability of selection to the consensus committee is proportional to the stake of all nodes run by one entity.
+* **Annual rewards**: The network is targeted to hit  ~15% APR for ~5-6 months (based on the number of blocks produced, so timing could vary), then to 12% and then to 10% by the end of the year. This will all happen over a gradual taper rather than a step function change to avoid creating some sort of cliff. 
+* **Slashing**: At the time of Mainnet launch, the network will only slash for double-signing. Currently, the proposed approach is for the network to slash the minimum stake amount (100 tokens) and freeze the node. Freezing the node is a precaution in order to prevent the node from being over-penalized. The Network will not slash for liveness or uptime at launch.
+* **Staking rewards**: The goal initially is to offer rewards that will help bootstrap the network effectively. To start, rewards will be proportional to the stake and awarded on a per-entity basis. In order to be eligible for staking rewards, a node would need to sign at least 75% of blocks in a given epoch.
+* **Unbonding period**: The network will have a ~14 day unbonding period. During this time, staked tokens are at risk of getting slashed for double-signing and do not accrue rewards during this time.
 * **Voting power**: During the staking competition, we plan to run various tests to help us determine whether to distribute voting power on the network through a stake-weighted system or to leverage a non-weighted, flat voting approach. Expect more here in the future.
 
 ### Delegation
@@ -46,11 +39,23 @@ As the Oasis Network gets closer to Mainnet, we’ll continue to share with our 
 * **Reward disbursement**: Rewards from delegated funds are distributed directly to the delegator. More specifically, the rewards are automatically added to their stakes (i.e. reinvested), so the rewards will have to go through the ~14 unbonding period.
 
 ### Commission rates
-There is currently no plan to require a minimum or maximum commission rate for delegation, but we will set parameters around the transparency and notification of commission rates. 
-When a node is set up on the Mainnet, it will need to share its current commission rate, as well as the range with which that rate could change (e.g. + / - 10%). Commission rates can be adjusted once per day. 
+There is currently no plan to require a minimum or maximum commission rate for delegation, but we would like to set parameters around the transparency and notification of commission rates. 
+
+When a node is set up on the Mainnet, it will share its current commission rate, as well as the range with which that rate could change (e.g. + / - 10%). Commission rates can be adjusted once per day.
 
 ### Transaction fee distribution
-Most likely, transaction fees will be distributed equally among validators who signed the block containing that specific transaction. 
+Most likely, transaction fees will be distributed equally among validators who signed the block containing that specific transaction.
+
+## Glossary of commonly used terms
+* **Entity**: That’s you! (Or your organization.) On the Oasis network, you’re identified by your public key. Your private key controls your wallet, which maintains a token balance. Each entity can also have a token amount staked, which is a separate balance that permits it to run nodes. See Entities and Key Management for further information.
+* **Node**: This is your computer (VM, bare metal, container, etc.), running the Oasis network software. It’s identified by another public key, separate from your entity public key. On the Oasis network, each node is owned by a single entity. For each node that an entity registered on the network, the entity must have a certain token amount staked.
+* **Staking**: A token amount staked with an entity is separate from the entity’s token balance and contributes to the entity’s eligibility to run nodes. Entities can stake tokens with themselves or with other entities, the latter referred to as delegation.
+* **Consensus committee**: The consensus committee is a group of nodes that the network elects to maintain its state by executing a Byzantine-fault-tolerant (BFT) consensus protocol.
+* **Validator**: A validator is a node participating in the consensus committee. To be eligible to have your node selected as a validator, your entity must be within the “Top K” staked entities. Entities with a node serving as a validator receive staking rewards as well as a share of transaction fees. Each validator has a private key that is used for signing operations during block production and a public key, or Node Identity, used for identification. See Entities and Key Management for further information.
+* **Top K**: The top-ranked entities by stake, whose nodes are eligible to participate in the consensus committee.
+* **Transaction fee**: The reward that a validator receives from processing a transaction that runs on the network (separate from staking rewards).
+* **Commission rate**: The fee that a validator chooses to charge to delegators.
+Unbonding period: A period of time when a validator or delegator wants to stop staking tokens, but cannot move them. This time period is called an unbonding period where crypto assets are not being staked, but are also still frozen.
 
 *****
 For more information and for the latest updates, please visit our website. We also invite you to join our Slack community to share your feedback and help shape the future of our network. 
