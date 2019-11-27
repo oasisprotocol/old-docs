@@ -59,17 +59,24 @@ nodes, protected by this sentry node.
 An example of full `YAML` configuration of a sentry node is below.
 
 Before using this configuration you should collect the following information to
-replace the <code v-pre>{{ var }}</code> variables present in the configuration
-file:
+replace the <code v-pre>{{ var_name }}</code> variables present in the
+configuration file:
 
-- `external_address`: This is the external IP you wish to use when registering
-  this node.
-- `seed_node_address`: This the seed node address of the form `ID@IP:port`.
-  You can find the current Oasis Seed Node address in the [Current Testnet
-  Parameters][params].
-- `validator_tendermint_id`: This is the Tendermint ID of the Oasis validator
-  node that will be protected by the sentry node. This ID can be obtained by
-  running:
+<!--
+The <code v-pre> sections are due to an inability of vuepress to escape template
+characters. We also had feedback that without the {{ }} surrounding the
+variables the documentation was potentially ambigious. Please keep the {{ }} in
+the following section
+-->
+
+- <code v-pre>{{ external_address }}</code>: This is the external IP you wish to
+  use when registering this node.
+- <code v-pre>{{ seed_node_address }}</code>: This the seed node address of the
+  form `ID@IP:port`. You can find the current Oasis Seed Node address in the
+  [Current Testnet Parameters][params].
+- <code v-pre>{{ validator_tendermint_id }}</code>: This is the Tendermint ID of
+  the Oasis validator node that will be protected by the sentry node. This ID
+  can be obtained by running:
   ```
   $ oasis-node debug tendermint show-node-id --datadir /serverdir/node
   ```

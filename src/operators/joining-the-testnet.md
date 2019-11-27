@@ -234,14 +234,21 @@ following YAML file is a basic configuration for a validator node on the
 network.
 
 Before using this configuration you should collect the following information to
-replace the variables present in the configuration file:
+replace the <code v-pre>{{ var_name }}</code> variables present in the
+configuration file:
 
-* `external_address`: This is the external IP you wish to use when
-  registering this node. If you are using a Sentry Node, you should use the
-  public IP of that machine.
+<!--
+The <code v-pre> sections are due to an inability of vuepress to escape template
+characters. We also had feedback that without the {{ }} surrounding the
+variables the documentation was potentially ambigious. Please keep the {{ }} in
+the following section
+-->
 
-* `seed_node_address`:  This the seed node address in the form
-  `<id>@<host>:<port>` this is published [here](./current-testnet-parameters.md)
+* <code v-pre>{{ external_address }}</code>: This is the external IP you wish to
+  use when registering this node. If you are using a Sentry Node, you should use
+  the public IP of that machine.
+* <code v-pre>{{ seed_node_address }}</code>:  This the seed node address in the
+  form `ID@IP:port` this is published [here](./current-testnet-parameters.md)
 
 Create a file, `/serverdir/etc/config.yml`, with the following
 contents:
