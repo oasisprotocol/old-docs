@@ -169,12 +169,11 @@ can tell you that we’ll provide plenty of pre warning beforehand.
 
 ## Resources to learn more
 
-* Read
-  [documentation][setup-docs] on
-  how to get a node set up.
+* Read [documentation][setup-docs] on how to get a node set up.
 * [Incentives proposal][incentives-proposal]
 * [Slack channel][slack]
-* Check out the top open sourced repos including [Oasis Core](https://github.com/oasislabs/oasis-core).
+* Check out the top open sourced repos including [Oasis
+  Core](https://github.com/oasislabs/oasis-core).
 
 [eligibility-rules]: http://www.oasis-protocol.org/grants
 [sign-up-form]: https://oasisfoundation.typeform.com/to/dlcekq
