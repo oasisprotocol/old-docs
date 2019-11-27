@@ -11,7 +11,8 @@ If you joined the Testnet prior to 11/26, use the following steps to upgrade:
 1. See the [Deployment Change
    Log](./current-testnet-parameters.md#2019-11-26-latest) for a list of
    changes. _Please ensure that you update your node configuration._
-1. Start your node
+1. Start your node (you may need to [wait for your node to
+   sync](#check-that-your-node-is-synced))
 :::
 
 ## Prerequisites
@@ -104,10 +105,11 @@ This will generate 3 files in `/localhostdir/entity`
 ### Initializing a Node
 
 A node registers itself to the network when the node starts up. However, in
-order to validate itself, the entity signs a public key associated to the
-node. This allows the node registration to happen without the uploading entity key
-to the internet. To initialize a validator node, take note of the static IP of the server where your node will run, and issue the following commands from
-the `/localhostdir/node` directory.
+order to validate itself, the entity signs a public key associated to the node.
+This allows the node registration to happen without the uploading entity key to
+the internet. To initialize a validator node, take note of the static IP of the
+server where your node will run, and issue the following commands from the
+`/localhostdir/node` directory.
 
 ```bash
 $ export STATIC_IP=<YOUR_STATIC_IP>
@@ -385,12 +387,15 @@ $ oasis-node registry entity list -a unix:/serverdir/node/internal.sock
 
 If this command fails, you'll receive a non-zero exit code and there's a high
 likelihood that you are not connected to the network. However, if it does work
-properly it should respond with output like:
+properly it should respond with output like the following but with potentially
+many more values:
 
 ```
 2317a8eef10e470434411aebac8f1a8c0f1c6a0d35ff53921f8bc70588bb66b2
 8e3873f84f7f2250eb456dc598dc56b812f561137fe41c383128e6c14e0e2e74
 cf3b004bd98f3e1eab92e97c5fa6cbe4d42a00133c515a2440fefaca514a48ff
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ```
 
 Once you get to a node that's connected you can move on to the next section as
@@ -452,12 +457,18 @@ synced. To do so call this command on the server:
 
 ```bash
 $ oasis-node control is-synced \
-  -a unix:/serverdir/node/internal.sock
+  -a unix:/serverdir/node/internal.sock && \
+  echo "You are synced" || echo "You are not synced"
 ```
 
-If the command exits with a status code of `0` then you're fully synced and you
-can continue. If not, you will need to wait until it is before you can move
-forward.
+::: tip NOTE
+The `oasis-node control is-synced` command has no output but returns an exit
+code. The code above adds some sugar to make it a little easier to understand
+due to the lack of output.
+:::
+
+If you're not synced, you will need to wait until your node has synced before
+you can move forward.
 
 ### Generating a Staking (Escrow) Transaction on the `localhost`
 
