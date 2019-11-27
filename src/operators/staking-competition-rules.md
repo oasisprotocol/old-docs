@@ -91,7 +91,7 @@ top 5 attacks based on the criteria above at the end of the competition.
 
 ### Time-based competitions
 
-Time-based competitions will focus on testing specific features and also
+Time-based challenges will focus on testing specific features and also
 incentivizing early community coordination. To the extent we can, we’ll announce
 these rewards in real time. Examples of these competitions include:
 
