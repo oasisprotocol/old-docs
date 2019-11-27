@@ -10,12 +10,17 @@ operations.
 
 ### Downloading the binary
 
-For convenience we provide binaries that have been built by Oasis Labs. It is
-suggested, however, that you build from source yourself in a production
-deployment.
+::: tip NOTE
+We suggest that you [build oasis-node from source][build-source] yourself for
+a production deployment.
+:::
 
-Links to the binaries are provided in the [Current Testnet
-Parameters](./current-testnet-parameters.md) page.
+For convenience, we provide binaries that have been built by Oasis Labs.
+Links to the binaries are provided in the [Current Testnet Parameters][params]
+page.
+
+[params]: ./current-testnet-parameters.md
+[build-source]: #building-from-source
 
 ### Building from source
 
@@ -33,12 +38,13 @@ params].
 
 [core-build]: https://github.com/oasislabs/oasis-core#developing-and-building-the-system
 [`master` branch]: https://github.com/oasislabs/oasis-core/tree/master/
-[params]: ./current-testnet-parameters.md
 
-### Using inside docker
+### Using Docker image
 
-For those that wish to use the Oasis provided docker container, the `oasis-node`
-binary can be accessed by running inside the context of a the
-[oasis-node](https://hub.docker.com/r/oasislabs/oasis-node) docker container.
-While possible to use, we no longer suggest nor do we support usage of the
-built docker containers.
+::: warning DEPRECATED
+We no longer recommend or support using Oasis-provided Docker images.
+:::
+For those who wish to use the Oasis-provided Docker image, the `oasis-node`
+binary can be found inside the [oasis-node][docker] Docker image.
+
+[docker]: https://hub.docker.com/r/oasislabs/oasis-node
