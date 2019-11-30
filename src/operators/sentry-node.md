@@ -326,6 +326,4 @@ tendermint:
   disable_peer_exchange: True
   db:
     backend: boltdb
-  debug:
-    addr_book_lenient: False
 ```
