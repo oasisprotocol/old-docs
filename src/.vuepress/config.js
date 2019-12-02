@@ -86,6 +86,7 @@ module.exports = {
             '/operators/hardware-recommendations',
             'Node Hardware Recommendations',
           ],
+          ['/operators/troubleshooting', 'Troubleshooting Guide'],
           ['/operators/stake-management', 'Stake Management'],
           ['/operators/incentives-proposal', 'Network Incentives Proposal'],
           ['/operators/staking-competition-rules', 'Staking Competition Rules'],
@@ -100,6 +101,7 @@ module.exports = {
               ],
             ],
           },
+
         ],
       },
       {
