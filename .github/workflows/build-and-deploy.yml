@@ -1,0 +1,58 @@
+name: Build and Deploy
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npx prettier -c --trailing-comma=all --single-quote src/.vuepress/config.js
+      - name: Build docs
+        run: cd src && npx vuepress build
+      - name: Fix edit links
+        run: |
+          find src/.vuepress/dist -name "*.html" | xargs sed -i -e 's?/docs/edit/master/?/docs/edit/master/src/?g'
+      - name: Package Rendered Docs
+        run: tar -cvzf rendered-docs.tar.gz -C src/.vuepress/dist .
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: rendered-docs
+          path: rendered-docs.tar.gz
+
+  deploy:
+    # Only deploy on master branch
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: rendered-docs
+
+      - name: Update docs
+        run: |
+          git config --global user.name "nhynes"
+          git config --global user.email "nhynes@oasislabs.com"
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/oasislabs/docs.git --branch gh-pages --depth 1
+          rm -rf docs/*
+          mv rendered-docs/rendered-docs.tar.gz docs/
+          cd docs
+          tar xvf rendered-docs.tar.gz
+          rm rendered-docs.tar.gz
+          git add -A
+          git commit -m "Update docs"
+          git push
+
+      - name: gh-pages build
+        run: |
+          curl -sS \
+            -H "Authorization: token ${{ secrets.HTTP_API_TOKEN }}" \
+            -H "Accept: application/vnd.github.mister-fantastic-preview+json" \
+            -X POST \
+            "https://api.github.com/repos/oasislabs/docs/pages/builds"

@@ -48,16 +48,25 @@ module.exports = {
     ],
     sidebar: [
       '/overview',
-      '/quickstart',
       {
-        title: 'Tutorials',
+        title: 'App Developer Docs',
         collapsable: true,
         children: [
-          ['/tutorials/ballot', 'Beginner: Secret Ballot'],
-          ['/tutorials/messaging', 'Intermediate: Private Chat'],
-          ['/tutorials/web3-intro', 'Getting Started With Web3'],
-          ['/tutorials/deploy-solidity', 'Deploy Solidity Contract: Compound'],
-          ['/tutorials/deploy-vyper', 'Deploy Vyper Contract: Uniswap'],
+          ['/quickstart', 'Quickstart'],
+          {
+            title: 'Tutorials',
+            collapsable: true,
+            children: [
+              ['/tutorials/ballot', 'Beginner: Secret Ballot'],
+              ['/tutorials/messaging', 'Intermediate: Private Chat'],
+              ['/tutorials/web3-intro', 'Getting Started With Web3'],
+              [
+                '/tutorials/deploy-solidity',
+                'Deploy Solidity Contract: Compound',
+              ],
+              ['/tutorials/deploy-vyper', 'Deploy Vyper Contract: Uniswap'],
+            ],
+          },
         ],
       },
       {
@@ -71,12 +80,28 @@ module.exports = {
             '/operators/current-testnet-parameters',
             'Current Testnet Parameters',
           ],
+          ['/operators/sentry-node', 'Sentry Node Architecture'],
           ['/operators/architectural-overview', 'Architectural Overview'],
           [
             '/operators/hardware-recommendations',
             'Node Hardware Recommendations',
           ],
           ['/operators/troubleshooting', 'Troubleshooting Guide'],
+          ['/operators/stake-management', 'Stake Management'],
+          ['/operators/incentives-proposal', 'Network Incentives Proposal'],
+          ['/operators/staking-competition-rules', 'Staking Competition Rules'],
+          {
+            title: 'Maintenance Guides',
+            collapsable: true,
+            children: [
+              ['/operators/maintenance/wiping-node-state', 'Wiping Node State'],
+              [
+                '/operators/maintenance/checking-account-nonce',
+                'Checking your Account nonce',
+              ],
+            ],
+          },
+
         ],
       },
       {
