@@ -5,6 +5,7 @@ assumption of knowledge on the use of basic command line tools.
 
 ::: tip NOTE
 If you joined the Testnet prior to 11/26, use the following steps to upgrade:
+
 1. [Stop your node and wipe state (keep node identity)](./maintenance/wiping-node-state.md)
 1. [Download the current genesis file and `oasis-node` to your
    server](./current-testnet-parameters.md)
@@ -51,15 +52,16 @@ following directories:
   are safest if used on a machine kept disconnected from the internet. The
   directory permissions should be `rwx------`
 * `node` - This will store a node we are calling "node". The name is not
-  important. It simply represents one of your nodes. You can rename it to whatever you
-  wish. The private contents of this directory will be used on the node itself.
+  important. It simply represents one of your nodes. You can rename it to
+  whatever you wish. The private contents of this directory will be used on the
+  node itself.
   You should initialize this information on a system with access to the entity's
   private key. The directory permissions should be `rwx------`
 
 To create the directory structure, use the following command:
 
 ```bash
-$ mkdir -m700 -p {entity,node}
+mkdir -m700 -p {entity,node}
 ```
 
 ### Copying the Genesis File
@@ -67,8 +69,9 @@ $ mkdir -m700 -p {entity,node}
 The latest genesis file can be found [here](./current-testnet-parameters.md).
 You should download the latest `genesis.json` file, copy it to the working
 directory and save its path into an environment variable:
+
 ```bash
-$ export GENESIS_FILE_PATH=/localhostdir/genesis.json
+export GENESIS_FILE_PATH=/localhostdir/genesis.json
 ```
 
 This will be needed later when generating transactions.
@@ -88,8 +91,8 @@ However, it is up to you to determine your own security practices.
 
 To initialize an entity simply run the following from `/localhostdir/entity`:
 
-```
-$ oasis-node registry entity init
+```bash
+oasis-node registry entity init
 ```
 
 This will generate 3 files in `/localhostdir/entity`
@@ -112,8 +115,8 @@ server where your node will run, and issue the following commands from the
 `/localhostdir/node` directory.
 
 ```bash
-$ export STATIC_IP=<YOUR_STATIC_IP>
-$ oasis-node registry node init \
+export STATIC_IP=<YOUR_STATIC_IP>
+oasis-node registry node init \
   --entity /localhostdir/entity \
   --node.consensus_address $STATIC_IP:26656 \
   --node.is_self_signed \
@@ -145,8 +148,8 @@ so that it can properly register itself when the node starts up.
 
 Execute the following command in the `/localhostdir/node` directory:
 
-```
-$ oasis-node registry entity update \
+```bash
+oasis-node registry entity update \
   --datadir /localhostdir/entity \
   --entity.node.descriptor node_genesis.json
 ```
@@ -183,7 +186,7 @@ In the `/serverdir` directory we will create the following subdirectories:
 You can make this directory structure by calling the following command:
 
 ```bash
-$ mkdir -m700 -p /serverdir/{etc,node,node/entity}
+mkdir -m700 -p /serverdir/{etc,node,node/entity}
 ```
 
 #### Copying the Node Artifacts from `/localhostdir`
@@ -302,8 +305,8 @@ genesis:
 # Worker configuration.
 worker:
   registration:
-    # In order for the node to register itself the entity.json of the entity used to
-    # provision the node must be available on the node
+    # In order for the node to register itself the entity.json of the entity
+    # used to provision the node must be available on the node.
     entity: /serverdir/node/entity/entity.json
 
 # Consensus backend.
@@ -372,7 +375,7 @@ process supervisor like [supervisord](http://supervisord.org/),
 [systemd](https://github.com/systemd/systemd), etc.
 
 ```bash
-$ oasis-node --config /serverdir/etc/config.yml
+oasis-node --config /serverdir/etc/config.yml
 ```
 
 ### Verifying the Connection to the Network
@@ -384,7 +387,7 @@ can be used to communicate to the node and query details about the network.
 Run the following command:
 
 ```bash
-$ oasis-node registry entity list -a unix:/serverdir/node/internal.sock
+oasis-node registry entity list -a unix:/serverdir/node/internal.sock
 ```
 
 If this command fails, you'll receive a non-zero exit code and there's a high
@@ -392,7 +395,7 @@ likelihood that you are not connected to the network. However, if it does work
 properly it should respond with output like the following but with potentially
 many more values:
 
-```
+```text
 2317a8eef10e470434411aebac8f1a8c0f1c6a0d35ff53921f8bc70588bb66b2
 8e3873f84f7f2250eb456dc598dc56b812f561137fe41c383128e6c14e0e2e74
 cf3b004bd98f3e1eab92e97c5fa6cbe4d42a00133c515a2440fefaca514a48ff
@@ -458,7 +461,7 @@ Before you can make any transactions you'll have to make sure that node is
 synced. To do so call this command on the server:
 
 ```bash
-$ oasis-node control is-synced \
+oasis-node control is-synced \
   -a unix:/serverdir/node/internal.sock && \
   echo "You are synced" || echo "You are not synced"
 ```
@@ -483,16 +486,16 @@ minimum stake required to register an entity and register a node as a validator
 is 100 tokens. So we will generate an escrow transaction that escrows 100 tokens
 on your own Entity.
 
-```
-$ oasis-node stake account gen_escrow \
-    --genesis.file $GENESIS_FILE_PATH \
-    --entity $ENTITY_DIR_PATH \
-    --stake.escrow.account $ACCOUNT_ID \
-    --stake.amount 100000000000000000000 \
-    --transaction.file $OUTPUT_TX_FILE_PATH \
-    --transaction.fee.gas 1000 \
-    --transaction.fee.amount 1 \
-    --transaction.nonce 0
+```bash
+oasis-node stake account gen_escrow \
+  --genesis.file $GENESIS_FILE_PATH \
+  --entity $ENTITY_DIR_PATH \
+  --stake.escrow.account $ACCOUNT_ID \
+  --stake.amount 100000000000000000000 \
+  --transaction.file $OUTPUT_TX_FILE_PATH \
+  --transaction.fee.gas 1000 \
+  --transaction.fee.amount 1 \
+  --transaction.nonce 0
 ```
 
 The parameters are as follows:
@@ -500,8 +503,8 @@ The parameters are as follows:
 * `$ENTITY_DIR_PATH` - For this guide this would be `/localhostdir/entity/`
 * `$OUTPUT_TX_FILE_PATH` - This is where you wish to output the signed
   transaction file. For this guide we will use `/localhostdir/signed-escrow.tx`
-* `$ACCOUNT_ID` - This is the hex encoding of the Entity Public Key. To derive this you
-  can use the following python3 code:
+* `$ACCOUNT_ID` - This is the hex encoding of the Entity Public Key. To derive
+  this you can use the following python3 code:
 
   ```python
   import binascii, base64
@@ -526,7 +529,7 @@ submit the escrow transaction, however, to save steps we prepare everything
 before hand.
 
 ```bash
-$ oasis-node registry entity gen_register \
+oasis-node registry entity gen_register \
   --genesis.file $GENESIS_FILE_PATH \
   --entity $ENTITY_DIR_PATH \
   --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH \
@@ -552,10 +555,10 @@ transactions:
 3. Call `oasis-node` like so:
 
   ```bash
-  $ oasis-node consensus submit_tx \
+  oasis-node consensus submit_tx \
     --transaction.file /serverdir/signed-escrow.tx \
     -a unix:/serverdir/node/internal.sock
-  $ oasis-node consensus submit_tx \
+  oasis-node consensus submit_tx \
     --transaction.file /serverdir/signed-register.tx \
     -a unix:/serverdir/node/internal.sock
   ```
@@ -572,31 +575,34 @@ Unfortunately, at this time this is a bit of a manual process.
 ### Getting the Node's consensus_pub.pem Identity
 
 ```bash
-$ cat /serverdir/node/consensus_pub.pem
+cat /serverdir/node/consensus_pub.pem
 ```
 
 This will look like:
 
-```
+```text
 -----BEGIN ED25519 PUBLIC KEY-----
 s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=
 -----END ED25519 PUBLIC KEY-----
 ```
 
-We will use `s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=`. As the key to search for.
+We will use `s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=` as the key to search
+for.
 
 ### grepping for the Node's Identity
 
 Finally to see if the node is properly registered, run the command:
 
 ```bash
-$ export NODE_PUB_KEY="s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI="
-$ oasis-node registry node list -v -a unix:/serverdir/node/internal.sock | grep $NODE_PUB_KEY
+export NODE_PUB_KEY="s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI="
+oasis-node registry node list -v -a unix:/serverdir/node/internal.sock | grep $NODE_PUB_KEY
 ```
 
 If `grep` found the key, then you're properly connected!
 
+<!-- markdownlint-disable no-trailing-punctuation -->
 ## You're a Validator!
+<!-- markdownlint-enable no-trailing-punctuation -->
 
 If you've made it this far you've properly connected your node to the network
 and you're now a Validator on the Public Testnet.

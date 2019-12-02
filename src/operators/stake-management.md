@@ -4,6 +4,7 @@ For node operators the `oasis-node` binary offers a command line interface for
 various staking token operations.
 
 The following commands are intended to be run **online**:
+
 * `oasis-node stake info` shows the token information,
 * `oasis-node stake list` lists all accounts with positive balance,
 * `oasis-node stake account info` shows detailed account information,
@@ -13,6 +14,7 @@ filename.
 In addition, the following commands generate transactions and are meant to be
 run offline, because signing transactions requires a private key which **should
 not be accessible** from outside in any way:
+
 * `oasis-node stake account gen_transfer`
 * `oasis-node stake account gen_burn`
 * `oasis-node stake account gen_escrow`
@@ -25,9 +27,9 @@ binary available, a genesis file location stored in an environmental variable `$
 and the private keypair of your entity in a directory `$ENTITY_DIR_PATH`.
 Additionally, we will use `$ADDR` containing the location of the internal socket,
 of the Oasis node, for example
- 
+
 ```bash
-$ export ADDR=unix:/tmp/oasis-net-runner236357163/net-runner/network/client-0/internal.sock
+export ADDR=unix:/tmp/oasis-net-runner236357163/net-runner/network/client-0/internal.sock
 ```
 
 We will provide the `-a $ADDR` parameter to any operation which requires
@@ -62,6 +64,7 @@ $ oasis-node stake list -a $ADDR
 
 There exists one such account `4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35`.
 For more information about the account, run:
+
 ```bash
 $ oasis-node stake account info \
     -a $ADDR \
@@ -70,6 +73,7 @@ $ oasis-node stake account info \
 ```
 
 We notice that:
+
 * `id` stores the Base64-encoded address of the account.
 * `general_balance` is the number of tokens which can be spent by a transfer
   transaction signed by the account's private key.
@@ -85,18 +89,20 @@ Next, we will generate and sign our first transaction. Let's start with a *burn*
 transaction, which destroys the given number of tokens. To generate a
 burn transaction of 2000 tokens, sign and store the transaction to file `b.json`,
 type:
+
 ```bash
-$ oasis-node stake account gen_burn \
-    --genesis.file $GENESIS_FILE_PATH \
-    --entity $ENTITY_DIR_PATH \
-    --stake.transaction.amount 2000 \
-    --stake.transaction.file b.json \
-    --stake.transaction.nonce 0 \
-    --stake.transaction.fee.gas 1000 \
-    --stake.transaction.fee.amount 1
+oasis-node stake account gen_burn \
+  --genesis.file $GENESIS_FILE_PATH \
+  --entity $ENTITY_DIR_PATH \
+  --stake.transaction.amount 2000 \
+  --stake.transaction.file b.json \
+  --stake.transaction.nonce 0 \
+  --stake.transaction.fee.gas 1000 \
+  --stake.transaction.fee.amount 1
 ```
 
 We used the following parameters:
+
 * `--stake.transaction.amount` specifying the number of tokens,
 * `--stake.transaction.file` the output filename of the transaction stored in
 JSON format,
@@ -111,14 +117,16 @@ The above generation and signing of the transaction can be done offline.
 
 To submit our transaction, we need to copy `b.json` to a location accessible by
 the online Oasis node (e.g. via ssh) and run on the server:
+
 ```bash
-$ oasis-node stake account submit \
-    -a $ADDR \
-    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
-    --stake.transaction.file b.json
+oasis-node stake account submit \
+  -a $ADDR \
+  --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
+  --stake.transaction.file b.json
 ```
 
 Beside the node's address, the submit operation above requires:
+
 * `--stake.transaction.file` is the input filename of the transaction,
 * `--stake.account.id` is the staking account which pays the transaction fee and
 serves as an escrow.
@@ -140,26 +148,28 @@ Usually, the new balance is seen immediately, but some transactions (for example
 escrow reclaiming) do not take effect until after a debonding period has elapsed,
 so you might need to wait a few blocks for the balances to update.
 
-:::  
+:::
 
 ## Example: Transferring tokens
 
 Token transfer transactions transfer tokens from the signer's account to the
 given destination account. Let's generate a transfer transaction of 1000 tokens
 to account `5ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35`:
+
 ```bash
-$ oasis-node stake account gen_transfer \
-    --genesis.file $GENESIS_FILE_PATH \
-    --entity $ENTITY_DIR_PATH \
-    --stake.transaction.amount 1000 \
-    --stake.transaction.file t.json \
-    --stake.transaction.nonce 1 \
-    --stake.transfer.destination 5ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
-    --stake.transaction.fee.gas 1000 \
-    --stake.transaction.fee.amount 1
+oasis-node stake account gen_transfer \
+  --genesis.file $GENESIS_FILE_PATH \
+  --entity $ENTITY_DIR_PATH \
+  --stake.transaction.amount 1000 \
+  --stake.transaction.file t.json \
+  --stake.transaction.nonce 1 \
+  --stake.transfer.destination 5ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
+  --stake.transaction.fee.gas 1000 \
+  --stake.transaction.fee.amount 1
 ```
 
 We used similar parameters to the ones used for generating the burn transaction:
+
 * `--stake.transaction.amount` is the number of tokens to transfer,
 * `--stake.transaction.file` is the output filename,
 * `--stake.transaction.nonce` is the incremental nonce. In our case, this is the
@@ -170,14 +180,15 @@ account of tokens.
 Let's submit the transaction stored in `t.json`:
 
 ```bash
-$ oasis-node stake account submit \
-    -a $ADDR \
-    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
-    --stake.transaction.file t.json
+oasis-node stake account submit \
+  -a $ADDR \
+  --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
+  --stake.transaction.file t.json
 ```
 
 Finally let's list all the accounts and their balances by adding `-v` flag for
 increased verbosity:
+
 ```bash
 $ oasis-node stake list -a $ADDR -v
 {"id":"TqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=","general_balance":"99999997000","escrow_balance":"100000000000","nonce":2}
@@ -194,18 +205,19 @@ In the third example we will put 3000 tokens to an escrow account
 reclaim them. First, let's generate an escrow transaction and store it to `e.json`:
 
 ```bash
-$ oasis-node stake account gen_escrow \
-    --genesis.file $GENESIS_FILE_PATH \
-    --entity $ENTITY_DIR_PATH \
-    --stake.transaction.amount 3000 \
-    --stake.transaction.file e.json \
-    --stake.transaction.nonce 2 \
-    --stake.escrow.account 6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
-    --stake.transaction.fee.gas 1000 \
-    --stake.transaction.fee.amount 1
+oasis-node stake account gen_escrow \
+  --genesis.file $GENESIS_FILE_PATH \
+  --entity $ENTITY_DIR_PATH \
+  --stake.transaction.amount 3000 \
+  --stake.transaction.file e.json \
+  --stake.transaction.nonce 2 \
+  --stake.escrow.account 6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
+  --stake.transaction.fee.gas 1000 \
+  --stake.transaction.fee.amount 1
 ```
 
 Let's submit the escrow transaction and list the accounts:
+
 ```bash
 $ oasis-node stake account submit \
     -a $ADDR \
@@ -221,19 +233,21 @@ Notice 3000 tokens have been deducted from the first account's `general_balance`
 and added to an `escrow_balance` of the third account.
 
 We reclaim 3000 escrowed tokens by generating the reclaim escrow transaction:
+
 ```bash
-$ oasis-node stake account gen_reclaim_escrow \
-    --genesis.file $GENESIS_FILE_PATH \
-    --entity $ENTITY_DIR_PATH \
-    --stake.transaction.amount 3000 \
-    --stake.transaction.file r.json \
-    --stake.transaction.nonce 3 \
-    --stake.escrow.account 6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
-    --stake.transaction.fee.gas 1000 \
-    --stake.transaction.fee.amount 1
+oasis-node stake account gen_reclaim_escrow \
+  --genesis.file $GENESIS_FILE_PATH \
+  --entity $ENTITY_DIR_PATH \
+  --stake.transaction.amount 3000 \
+  --stake.transaction.file r.json \
+  --stake.transaction.nonce 3 \
+  --stake.escrow.account 6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
+  --stake.transaction.fee.gas 1000 \
+  --stake.transaction.fee.amount 1
 ```
 
 Let's submit it and in a few moments list the accounts:
+
 ```bash
 $ oasis-node stake account submit \
     -a $ADDR \

@@ -4,8 +4,9 @@ As an operator of a Node on the Oasis Network, it is suggested that you have an
 understanding of the system architecture of the Oasis Network. Here we will
 provide a high level overview of the Oasis Network's architecture. This overview
 is used to provide enough guidance to be useful for the purposes of getting
-started as a Node Operator. Note that not all of these features are available in the Public Testnet, and their design may change in later phases. For more information on our proposed design, see
-[our research papers](https://www.oasis-protocol.org/researchpapers).
+started as a Node Operator. Note that not all of these features are available
+in the Public Testnet, and their design may change in later phases.
+For more information on our proposed design, see [our research papers][papers].
 
 ## Definitions
 
@@ -13,22 +14,20 @@ started as a Node Operator. Note that not all of these features are available in
 
 An Entity is an organization or individual with stake on the network. Each
 Entity has a private key that controls access to the wallet of the Entity. See
-[Entities and Key Management](#entities-and-key-management) for further
-information.
+[Entities and Key Management] for further information.
 
 ### Node
 
 A Node is a device (VM, Bare Metal, Container, etc.) that is participating in a
 committee on the Network. Each Node has a private key that is used for signing
 operations during block production and a public key, or Node Identity, used for
-identification. See [Entities and Key Management](#entities-and-key-management)
-for further information.
+identification. See [Entities and Key Management] for further information.
 
 ### Committee
 
 A Committee is a set of Nodes that are participating in the same service layer
 of the Oasis Network. Committees are described in more detail in the [Modular
-Architecture](#modular-architecture) section.
+Architecture] section.
 
 ## Modular Architecture
 
@@ -46,11 +45,11 @@ different classes Nodes and potentially to different hardware.
 ![Transaction Processing](/operator_images/web3_diagram_v2.png)
 
 In the figure above, we see the flow of transactions in each committee. The
-details of each committee is best described in our [research
-paper](https://www.oasis-protocol.org/researchpapers), but we provide this section here
-as a high level introduction. It should be noted that some aspects of the system
-are yet to be completed. So the testnet that you might deploy in the [Quick
-Start Guide](./quick-start.md) won't yet function as it is described here.
+details of each committee is best described in [our research papers][papers],
+but we provide this section here as a high level introduction.
+It should be noted that some aspects of the system are yet to be completed.
+So the testnet that you might deploy in the [Quick Start Guide] won't yet
+function as it is described here.
 
 #### Registry
 
@@ -87,9 +86,8 @@ The Oasis Network uses three different protocols for communication:
 
 Confidentiality is achieved in the Oasis Network by relying on trusted execution
 environments (TEEs) to secure the execution of any given smart contract.
-Initially, the Oasis Network will utilize [Intel
-SGX](https://software.intel.com/en-us/sgx). As more TEE technologies mature, we
-expect to support more than TEEs than Intel SGX.
+Initially, the Oasis Network will utilize [Intel SGX]. As more TEE technologies
+mature, we expect to support more than TEEs than Intel SGX.
 
 ## Entities and Key Management
 
@@ -106,3 +104,9 @@ key management model for node operators. The model is as follows:
   * A Node is a block producing node on the Oasis Network
   * Each Node's key pair is used for:
     * Signing actions during block production
+
+[papers]: https://www.oasis-protocol.org/researchpapers
+[Entities and Key Management]: #entities-and-key-management
+[Modular Architecture]: #modular-architecture
+[Quick Start Guide]: ./quick-start.md
+[Intel SGX]: https://software.intel.com/en-us/sgx

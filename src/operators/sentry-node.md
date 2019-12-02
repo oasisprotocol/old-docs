@@ -32,8 +32,8 @@ Before following this guide, make sure you've read the [Prerequisites] and
 
 Sentry node identity keys can be initialized with:
 
-```
-$ oasis-node registry node init --entity /localhostdir/entity
+```bash
+oasis-node registry node init --entity /localhostdir/entity
 ```
 
 The generated `tls_identity_cert.pem` (which is the node's TLS cert for
@@ -77,9 +77,11 @@ the following section
 - <code v-pre>{{ validator_tendermint_id }}</code>: This is the Tendermint ID of
   the Oasis validator node that will be protected by the sentry node. This ID
   can be obtained by running:
+
+  ```bash
+  oasis-node debug tendermint show-node-id --datadir /serverdir/node
   ```
-  $ oasis-node debug tendermint show-node-id --datadir /serverdir/node
-  ```
+
   on the validator node.
 
   <!--- TODO: there is probably a different way to get this out of our identity
@@ -162,9 +164,9 @@ Multiple sentry nodes can be provisioned following the above steps.
 
 ## Configuring the Oasis Validator Node
 
-In this setup the Oasis validator node should not be exposed directly on the public
-network. The Oasis validator only needs to be able to connect to its sentry nodes, preferably
-via a private network.
+In this setup the Oasis validator node should not be exposed directly on the
+public network. The Oasis validator only needs to be able to connect to its
+sentry nodes, preferably via a private network.
 
 ### Initializing Validator Node
 
@@ -182,10 +184,10 @@ If you are running multiple sentry nodes, you can specify the
 To initialize a validator node with 2 sentry nodes' external addresses, run the
 following commands from the `/localhostdir/node` directory:
 
-```
-$ export SENTRY1_STATIC_IP=<YOUR_SENTRY1_STATIC_IP>
-$ export SENTRY2_STATIC_IP=<YOUR_SENTRY2_STATIC_IP>
-$ oasis-node registry node init \
+```bash
+export SENTRY1_STATIC_IP=<YOUR_SENTRY1_STATIC_IP>
+export SENTRY2_STATIC_IP=<YOUR_SENTRY2_STATIC_IP>
+oasis-node registry node init \
   --entity /localhostdir/entity \
   --node.consensus_address $SENTRY1_STATIC_IP:26656 \
   --node.consensus_address $SENTRY2_STATIC_IP2:26656 \
@@ -243,9 +245,11 @@ file:
 - `sentry_node_tendermint_id`: This is the Tendermint ID of the sentry node
   that will be configured as a Persistent Peer. This ID can be obtained by
   running:
+
+  ```bash
+  oasis-node debug tendermint show-node-id --datadir /serverdir/node
   ```
-  $ oasis-node debug tendermint show-node-id --datadir /serverdir/node
-  ```
+
   on the sentry node.
 
   <!--- TODO: there is probably a different way to get this out of our identity
@@ -298,8 +302,8 @@ genesis:
 # Worker configuration.
 worker:
   registration:
-    # In order for the node to register itself the entity.json of the entity used to
-    # provision the node must be available on the node
+    # In order for the node to register itself the entity.json of the entity
+    # used to provision the node must be available on the node.
     entity: /serverdir/node/entity/entity.json
   sentry:
     address:
