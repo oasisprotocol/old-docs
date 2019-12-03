@@ -9,20 +9,20 @@ For contracts written in Vyper, see the [Uniswap tutorial](./deploy-vyper.md).
 This tutorial assumes that you have [already installed the Oasis toolchain](./quickstart.html#install-the-oasis-toolchain). 
 Your installation was successful if the following command works without error:
 
-```bash
+```
 oasis --version
 ```
 
 Using the Oasis toolchain, you can run a local blockchain server, just like you can with [`truffle develop`](https://www.trufflesuite.com/docs/truffle/getting-started/using-truffle-develop-and-the-console) or [Ganache](https://github.com/trufflesuite/ganache-cli), as follows:
 
-```bash
+```
 oasis chain
 ```
 
 This command will spawn a local network with 10 accounts (private keys and public addresses) each funded with 100 DEV (Oasis' equivalent of ether). 
 The output will look something like this:
 
-```bash
+```
 2019-09-27 10:54:21,448 INFO  [oasis_chain] Starting Oasis local chain
 Accounts (100 DEV each)
 ==================
@@ -83,7 +83,7 @@ const MNEMONIC = 'range drive remove bleak mule satisfy mandate east lion minimu
 ```
 Make sure you install the HDWallet Provider:
 
-```bash
+```
 npm install truffle-hdwallet-provider
 ```
 
@@ -127,12 +127,12 @@ If your repository is lacking Migrations files, you will need to write someâ€Š-â
 
 Compile your contracts:
 
-```bash
+```
 truffle compile
 ```
 Run your migrations and deploy:
 
-```bash
+```
 truffle migrate
 truffle deploy
 ```

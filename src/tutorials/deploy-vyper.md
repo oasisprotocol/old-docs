@@ -17,19 +17,19 @@ You will need to have installed the Oasis Toolchain and know your public address
 ### Install Vyper
 
 Clone the [Vyper repository](https://github.com/ethereum/vyper).
-```bash
+```
 git clone https://github.com/ethereum/vyper
 cd vyper
 ```
 To retrieve the version that the Uniswap contracts are compatible with, you should reset to a previous version. If you don't have the correct version, you may get compiler errors.
-```bash
+```
 git reset --hard 35038d20bd9946a35261c4c4fbcb27fe61e65f78
 ```
 
 Vyper requires Python version 3.6 or higher. The best way to install vyper is to use `virtualenv` to create a python virtual environment:
 
 First make sure you have Python 3.6 installed, then get your path to python 3.
-```bash
+```
 which python3
 ```
 Start a virtualenv.
@@ -38,7 +38,7 @@ virtualenv -p /path/to/python3.6 my_project
 source my_project/bin/activate
 ```
 Then, run `make` in your `vyper` directory. You may need to use `sudo` if on mac:
-```bash
+```
 sudo make
 ```
 Vyper should be installed now and you should be able to compile contracts.
@@ -54,7 +54,7 @@ vyper uniswap_exchange.vy
 
 Don't forget to deactivate your virtualenv at the end.
 
-```bash
+```
 deactivate
 ```
 

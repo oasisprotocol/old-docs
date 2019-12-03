@@ -14,7 +14,7 @@ The following instructions assume that your `datadir` is defined as
    setup)
 2. Remove blockchain state
 
-    ```bash
+    ```
     rm -rf /serverdir/node/tendermint
     rm -rf /serverdir/node/bleve-tag-index.bleve.db
     rm /serverdir/node/abci-mux-state.bolt.db

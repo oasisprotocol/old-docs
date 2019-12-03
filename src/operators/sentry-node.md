@@ -32,7 +32,7 @@ Before following this guide, make sure you've read the [Prerequisites] and
 
 Sentry node identity keys can be initialized with:
 
-```bash
+```
 oasis-node registry node init --entity /localhostdir/entity
 ```
 
@@ -78,7 +78,7 @@ the following section
   the Oasis validator node that will be protected by the sentry node. This ID
   can be obtained by running:
 
-  ```bash
+  ```
   oasis-node debug tendermint show-node-id --datadir /serverdir/node
   ```
 
@@ -184,7 +184,7 @@ If you are running multiple sentry nodes, you can specify the
 To initialize a validator node with 2 sentry nodes' external addresses, run the
 following commands from the `/localhostdir/node` directory:
 
-```bash
+```
 export SENTRY1_STATIC_IP=<YOUR_SENTRY1_STATIC_IP>
 export SENTRY2_STATIC_IP=<YOUR_SENTRY2_STATIC_IP>
 oasis-node registry node init \
@@ -246,7 +246,7 @@ file:
   that will be configured as a Persistent Peer. This ID can be obtained by
   running:
 
-  ```bash
+  ```
   oasis-node debug tendermint show-node-id --datadir /serverdir/node
   ```
 

@@ -28,7 +28,7 @@ and the private keypair of your entity in a directory `$ENTITY_DIR_PATH`.
 Additionally, we will use `$ADDR` containing the location of the internal socket,
 of the Oasis node, for example
 
-```bash
+```
 export ADDR=unix:/tmp/oasis-net-runner236357163/net-runner/network/client-0/internal.sock
 ```
 
@@ -38,7 +38,7 @@ and `--entity $ENTITY_DIR_PATH` will be used for offline operations.
 
 First, let's check out the native token of our platform:
 
-```bash
+```
 $ oasis-node stake info -a $ADDR
 Name: "Buffycoin"
 Symbol: "BUF"
@@ -57,7 +57,7 @@ are in the *common pool*. Finally we see no staking thresholds for any node kind
 
 Let's list all accounts with positive balance:
 
-```bash
+```
 $ oasis-node stake list -a $ADDR
 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35
 ```
@@ -65,7 +65,7 @@ $ oasis-node stake list -a $ADDR
 There exists one such account `4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35`.
 For more information about the account, run:
 
-```bash
+```
 $ oasis-node stake account info \
     -a $ADDR \
     --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35
@@ -90,7 +90,7 @@ transaction, which destroys the given number of tokens. To generate a
 burn transaction of 2000 tokens, sign and store the transaction to file `b.json`,
 type:
 
-```bash
+```
 oasis-node stake account gen_burn \
   --genesis.file $GENESIS_FILE_PATH \
   --entity $ENTITY_DIR_PATH \
@@ -118,7 +118,7 @@ The above generation and signing of the transaction can be done offline.
 To submit our transaction, we need to copy `b.json` to a location accessible by
 the online Oasis node (e.g. via ssh) and run on the server:
 
-```bash
+```
 oasis-node stake account submit \
   -a $ADDR \
   --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
@@ -133,7 +133,7 @@ serves as an escrow.
 
 Finally, let's check the new balance of the account:
 
-```bash
+```
 $ oasis-node stake account info \
     -a $ADDR \
     --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35
@@ -156,7 +156,7 @@ Token transfer transactions transfer tokens from the signer's account to the
 given destination account. Let's generate a transfer transaction of 1000 tokens
 to account `5ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35`:
 
-```bash
+```
 oasis-node stake account gen_transfer \
   --genesis.file $GENESIS_FILE_PATH \
   --entity $ENTITY_DIR_PATH \
@@ -179,7 +179,7 @@ account of tokens.
 
 Let's submit the transaction stored in `t.json`:
 
-```bash
+```
 oasis-node stake account submit \
   -a $ADDR \
   --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
@@ -189,7 +189,7 @@ oasis-node stake account submit \
 Finally let's list all the accounts and their balances by adding `-v` flag for
 increased verbosity:
 
-```bash
+```
 $ oasis-node stake list -a $ADDR -v
 {"id":"TqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=","general_balance":"99999997000","escrow_balance":"100000000000","nonce":2}
 {"id":"XqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=","general_balance":"1000","escrow_balance":"0","nonce":0}
@@ -204,7 +204,7 @@ In the third example we will put 3000 tokens to an escrow account
 `6ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35` and then
 reclaim them. First, let's generate an escrow transaction and store it to `e.json`:
 
-```bash
+```
 oasis-node stake account gen_escrow \
   --genesis.file $GENESIS_FILE_PATH \
   --entity $ENTITY_DIR_PATH \
@@ -218,7 +218,7 @@ oasis-node stake account gen_escrow \
 
 Let's submit the escrow transaction and list the accounts:
 
-```bash
+```
 $ oasis-node stake account submit \
     -a $ADDR \
     --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
@@ -234,7 +234,7 @@ and added to an `escrow_balance` of the third account.
 
 We reclaim 3000 escrowed tokens by generating the reclaim escrow transaction:
 
-```bash
+```
 oasis-node stake account gen_reclaim_escrow \
   --genesis.file $GENESIS_FILE_PATH \
   --entity $ENTITY_DIR_PATH \
@@ -248,7 +248,7 @@ oasis-node stake account gen_reclaim_escrow \
 
 Let's submit it and in a few moments list the accounts:
 
-```bash
+```
 $ oasis-node stake account submit \
     -a $ADDR \
     --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
