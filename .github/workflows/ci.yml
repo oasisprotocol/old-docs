@@ -14,3 +14,5 @@ jobs:
       - name: Run markdownlint
         # TODO: Expand this to other files in this repo.
         run: npx markdownlint-cli src/operators/
+      - name: Run Prettier in check mode
+        run: npx prettier --check --trailing-comma=all --single-quote src/.vuepress/config.js
