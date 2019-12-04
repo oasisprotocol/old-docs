@@ -60,7 +60,7 @@ following directories:
 
 To create the directory structure, use the following command:
 
-```
+```bash
 mkdir -m700 -p {entity,node}
 ```
 
@@ -70,7 +70,7 @@ The latest genesis file can be found [here](./current-testnet-parameters.md).
 You should download the latest `genesis.json` file, copy it to the working
 directory and save its path into an environment variable:
 
-```
+```bash
 export GENESIS_FILE_PATH=/localhostdir/genesis.json
 ```
 
@@ -91,7 +91,7 @@ However, it is up to you to determine your own security practices.
 
 To initialize an entity simply run the following from `/localhostdir/entity`:
 
-```
+```bash
 oasis-node registry entity init
 ```
 
@@ -114,7 +114,7 @@ the internet. To initialize a validator node, take note of the static IP of the
 server where your node will run, and issue the following commands from the
 `/localhostdir/node` directory.
 
-```
+```bash
 export STATIC_IP=<YOUR_STATIC_IP>
 oasis-node registry node init \
   --entity /localhostdir/entity \
@@ -148,7 +148,7 @@ so that it can properly register itself when the node starts up.
 
 Execute the following command in the `/localhostdir/node` directory:
 
-```
+```bash
 oasis-node registry entity update \
   --datadir /localhostdir/entity \
   --entity.node.descriptor node_genesis.json
@@ -185,7 +185,7 @@ In the `/serverdir` directory we will create the following subdirectories:
 
 You can make this directory structure by calling the following command:
 
-```
+```bash
 mkdir -m700 -p /serverdir/{etc,node,node/entity}
 ```
 
@@ -207,7 +207,7 @@ following files from `/localhostdir/node` to `/serverdir/node` over a secure cha
 
 After copying, make sure that all of these files have `0600` permissions:
 
-```
+```bash
 chmod -R 600 /serverdir/node/*.pem
 ```
 
@@ -347,7 +347,7 @@ yourself in the foot while operating a node. To ensure the proper permissions,
 we suggest running the following to remove all non-owner read/write/execute
 permissions:
 
-```
+```bash
 chmod -R go-r,go-w,go-x /serverdir
 ```
 
@@ -374,7 +374,7 @@ configured to run in the foreground. We suggest you daemonize this with a
 process supervisor like [supervisord](http://supervisord.org/),
 [systemd](https://github.com/systemd/systemd), etc.
 
-```
+```bash
 oasis-node --config /serverdir/etc/config.yml
 ```
 
@@ -386,7 +386,7 @@ can be used to communicate to the node and query details about the network.
 
 Run the following command:
 
-```
+```bash
 oasis-node registry entity list -a unix:/serverdir/node/internal.sock
 ```
 
@@ -460,7 +460,7 @@ node by staking so that you can register your entity and register your node.
 Before you can make any transactions you'll have to make sure that node is
 synced. To do so call this command on the server:
 
-```
+```bash
 oasis-node control is-synced \
   -a unix:/serverdir/node/internal.sock && \
   echo "You are synced" || echo "You are not synced"
@@ -486,7 +486,7 @@ minimum stake required to register an entity and register a node as a validator
 is 100 tokens. So we will generate an escrow transaction that escrows 100 tokens
 on your own Entity.
 
-```
+```bash
 oasis-node stake account gen_escrow \
   --genesis.file $GENESIS_FILE_PATH \
   --entity $ENTITY_DIR_PATH \
@@ -528,7 +528,7 @@ that your node registers properly. You could do this process _after_ you
 submit the escrow transaction, however, to save steps we prepare everything
 before hand.
 
-```
+```bash
 oasis-node registry entity gen_register \
   --genesis.file $GENESIS_FILE_PATH \
   --entity $ENTITY_DIR_PATH \
@@ -554,7 +554,7 @@ transactions:
    `/serverdir/signed-register.tx` on the `server`.
 3. Call `oasis-node` like so:
 
-  ```
+  ```bash
   oasis-node consensus submit_tx \
     --transaction.file /serverdir/signed-escrow.tx \
     -a unix:/serverdir/node/internal.sock
@@ -574,7 +574,7 @@ Unfortunately, at this time this is a bit of a manual process.
 
 ### Getting the Node's consensus_pub.pem Identity
 
-```
+```bash
 cat /serverdir/node/consensus_pub.pem
 ```
 
@@ -593,7 +593,7 @@ for.
 
 Finally to see if the node is properly registered, run the command:
 
-```
+```bash
 export NODE_PUB_KEY="s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI="
 oasis-node registry node list -v -a unix:/serverdir/node/internal.sock | grep $NODE_PUB_KEY
 ```

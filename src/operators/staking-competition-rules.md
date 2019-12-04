@@ -3,7 +3,7 @@
 ![The Quest](/operator_images/the_quest.png)
 
 Welcome to The Quest -- a multi-round staking competition (aka incentivized
-testnet) run on the Oasis Network.
+testnet) run on the Oasis Network. 
 
 ***[Sign up][sign-up-form] for the competition today!***
 
