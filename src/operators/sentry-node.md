@@ -177,23 +177,41 @@ Registry automatically once we redeploy it with new configuration.
 :::
 
 When you are [initializing a validator node][val-init], you should use the
-sentry node's external address in the `--node.consensus_address` flag.
+sentry node's external address and Tendermint ID in the
+`--node.consensus_address` flag.
 If you are running multiple sentry nodes, you can specify the
 `--node.consensus_address` flag multiple times.
 
-To initialize a validator node with 2 sentry nodes' external addresses, run the
+To initialize a validator node with 2 sentry nodes', run the
 following commands from the `/localhostdir/node` directory:
 
 ```bash
+export SENTRY1_CONSENSUS_ID=<YOUR_SENTRY1_CONSENSUS_ID_HEX>
 export SENTRY1_STATIC_IP=<YOUR_SENTRY1_STATIC_IP>
+export SENTRY2_CONSENSUS_ID=<YOUR_SENTRY2_CONSENSUS_ID_HEX>
 export SENTRY2_STATIC_IP=<YOUR_SENTRY2_STATIC_IP>
 oasis-node registry node init \
   --entity /localhostdir/entity \
-  --node.consensus_address $SENTRY1_STATIC_IP:26656 \
-  --node.consensus_address $SENTRY2_STATIC_IP2:26656 \
+  --node.consensus_address $SENTRY1_CONSENSUS_ID@$SENTRY1_STATIC_IP:26656 \
+  --node.consensus_address $SENTRY2_CONSENSUS_ID@$SENTRY2_STATIC_IP:26656 \
   --node.is_self_signed \
   --node.role validator
 ```
+
+::: tip NOTE
+`SENTRY_CONSENSUS_ID`: This is the Consensus ID of the sentry node in hex
+format.
+This ID can be obtained from `consensus_pub.pem`:
+
+```bash
+sed -n 2p /serverdir/node/consensus_pub.pem | base64 -d | hexdump -v -e '/1 "%02x" '
+```
+
+  on the sentry node.
+:::
+
+<!--- TODO: there should probably be a node debug command for getting this
+address --->
 
 [val-init]: ./joining-the-testnet.html#initializing-a-node
 
@@ -251,9 +269,6 @@ file:
   ```
 
   on the sentry node.
-
-  <!--- TODO: there is probably a different way to get this out of our identity
-  files. --->
 
 ```yaml
 ##
