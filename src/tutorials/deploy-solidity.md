@@ -6,7 +6,7 @@ For contracts written in Vyper, see the [Uniswap tutorial](./deploy-vyper.md).
 
 ## Prerequisites
 
-This tutorial assumes that you have [already installed the Oasis toolchain](./quickstart.html#install-the-oasis-toolchain). 
+This tutorial assumes that you have [already installed the Oasis toolchain](/quickstart.html#set-up-the-oasis-sdk). 
 Your installation was successful if the following command works without error:
 
 ```bash
