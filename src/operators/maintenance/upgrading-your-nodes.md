@@ -19,11 +19,11 @@ Parameters](./current-testnet-parameters.md#upgrade-parameters) to contain the
 block height to dump.
 
 ```bash
-$ export HEIGHT_TO_DUMP=<height_to_dump>
-$ oasis-node genesis dump \
-    -a unix:/serverdir/node/internal.sock \
-    --genesis.file /serverdir/etc/upgrade-dump.json \
-    --height $HEIGHT_TO_DUMP
+export HEIGHT_TO_DUMP=<height_to_dump>
+oasis-node genesis dump \
+  -a unix:/serverdir/node/internal.sock \
+  --genesis.file /serverdir/etc/upgrade-dump.json \
+  --height $HEIGHT_TO_DUMP
 ```
 
 ## Stop your node
@@ -44,16 +44,16 @@ fields:
 ### Download the Patch
 
 ```bash
-$ export PATCH_URL=<url_to_patch>
-$ curl -o /serverdir/etc/patch.json $PATCH_URL
+export PATCH_URL=<url_to_patch>
+curl -o /serverdir/etc/patch.json $PATCH_URL
 ```
 
 ### Apply the Patch
 
 ```bash
-$ jq --slurp --sort-keys --compact-output '.[0] * .[1]' \
-    /serverdir/etc/upgrade-dump.json \
-    /serverdir/etc/patch.json > /serverdir/etc/genesis.json
+jq --slurp --sort-keys --compact-output '.[0] * .[1]' \
+  /serverdir/etc/upgrade-dump.json \
+  /serverdir/etc/patch.json > /serverdir/etc/genesis.json
 ```
 
 ## Wiping State
@@ -73,7 +73,7 @@ you should use one. However, to start the node without an office manager you can
 start the `oasis-node` like so:
 
 ```bash
-$ oasis-node --config /serverdir/etc/config.yml
+oasis-node --config /serverdir/etc/config.yml
 ```
 
 ## Cleaning up
@@ -83,5 +83,5 @@ After you're comfortable with your node deployment you should clean up the
 your workspace free of unnecessary files.
 
 ```bash
-$ rm /serverdir/etc/upgrade-dump.json
+rm /serverdir/etc/upgrade-dump.json
 ```
