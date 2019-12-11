@@ -26,7 +26,7 @@ oasis-node genesis dump \
   --height $HEIGHT_TO_DUMP
 ```
 
-## Stop your node
+## Stopping Your Node
 
 This will depend on your process manager. You should kill your `oasis-node`
 process however this is done for your setup.
