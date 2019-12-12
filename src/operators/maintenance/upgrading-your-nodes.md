@@ -76,7 +76,7 @@ start the `oasis-node` like so:
 oasis-node --config /serverdir/etc/config.yml
 ```
 
-## Cleaning up
+## Cleaning Up
 
 After you're comfortable with your node deployment you should clean up the
 `upgrade-dump.json` file. This isn't strictly required, but it is good to keep
