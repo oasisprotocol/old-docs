@@ -1,7 +1,7 @@
 # Handling Network Upgrades
 
 ::: warning WARNING
-Following this guide when there is no software upgrade would result in you
+Following this guide when there is no network upgrade will result in you
 losing your place on the current network.
 :::
 
