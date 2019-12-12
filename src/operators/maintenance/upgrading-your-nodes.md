@@ -1,4 +1,4 @@
-# Upgrading your nodes
+# Handling Network Upgrades
 
 ::: warning WARNING
 Following this guide when there is no software upgrade would result in you
