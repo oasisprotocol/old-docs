@@ -66,7 +66,7 @@ keys if you do it this way.
 Before restarting your node you should wipe tendermint state. The process for
 this is described [here](./wiping-node-state.md#state-wipe-and-keep-node-identity).
 
-## Restarting the node
+## Restarting the Node
 
 This will depend on your process manager. If you don't have a process manager
 you should use one. However, to start the node without an office manager you can
