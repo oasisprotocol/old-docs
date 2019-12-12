@@ -69,7 +69,7 @@ this is described [here](./wiping-node-state.md#state-wipe-and-keep-node-identit
 ## Restarting the Node
 
 This will depend on your process manager. If you don't have a process manager
-you should use one. However, to start the node without an office manager you can
+you should use one. However, to start the node without a process manager you can
 start the `oasis-node` like so:
 
 ```bash
