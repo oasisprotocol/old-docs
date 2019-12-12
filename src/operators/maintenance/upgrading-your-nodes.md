@@ -48,7 +48,7 @@ export PATCH_URL=<url_to_patch>
 curl -o /serverdir/etc/patch.json $PATCH_URL
 ```
 
-### Apply the Patch
+### Applying the Patch
 
 ```bash
 jq --slurp --sort-keys --compact-output '.[0] * .[1]' \
