@@ -16,7 +16,7 @@ Do not stop your `oasis-node` process just yet.
 
 Before an upgrade we will update the [Upgrade
 Parameters](./current-testnet-parameters.md#upgrade-parameters) to specify the
-block height to dump.
+block height at which to dump.
 
 ```bash
 export HEIGHT_TO_DUMP=<height_to_dump>
