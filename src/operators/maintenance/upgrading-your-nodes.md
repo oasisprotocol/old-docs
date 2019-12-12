@@ -41,7 +41,7 @@ fields:
 
 * `
 
-### Download the Patch
+### Downloading the Patch
 
 ```bash
 export PATCH_URL=<url_to_patch>
