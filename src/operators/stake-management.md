@@ -8,7 +8,7 @@ The following commands are intended to be run **online**:
 * `oasis-node stake info` shows the token information,
 * `oasis-node stake list` lists all accounts with positive balance,
 * `oasis-node stake account info` shows detailed account information,
-* `oasis-node stake account submit` submits a pregenerated transaction given a
+* `oasis-node consensus submit_tx` submits a pregenerated transaction given a
 filename.
 
 In addition, the following commands generate transactions and are meant to be
@@ -119,17 +119,14 @@ To submit our transaction, we need to copy `b.json` to a location accessible by
 the online Oasis node (e.g. via ssh) and run on the server:
 
 ```bash
-oasis-node stake account submit \
+oasis-node consensus submit_tx \
   -a $ADDR \
-  --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
-  --stake.transaction.file b.json
+  --transaction.file b.json
 ```
 
 Beside the node's address, the submit operation above requires:
 
-* `--stake.transaction.file` is the input filename of the transaction,
-* `--stake.account.id` is the staking account which pays the transaction fee and
-serves as an escrow.
+* `--transaction.file` is the input filename of the transaction,
 
 Finally, let's check the new balance of the account:
 
@@ -180,10 +177,9 @@ account of tokens.
 Let's submit the transaction stored in `t.json`:
 
 ```bash
-oasis-node stake account submit \
+oasis-node consensus submit_tx \
   -a $ADDR \
-  --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
-  --stake.transaction.file t.json
+  --transaction.file t.json
 ```
 
 Finally let's list all the accounts and their balances by adding `-v` flag for
@@ -219,10 +215,9 @@ oasis-node stake account gen_escrow \
 Let's submit the escrow transaction and list the accounts:
 
 ```bash
-$ oasis-node stake account submit \
+$ oasis-node consensus submit_tx \
     -a $ADDR \
-    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
-    --stake.transaction.file e.json
+    --transaction.file e.json
 $ oasis-node stake list -a $ADDR -v
 {"id":"TqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=","general_balance":"99999994000","escrow_balance":"100000000000","nonce":3}
 {"id":"XqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=","general_balance":"1000","escrow_balance":"0","nonce":0}
@@ -249,10 +244,9 @@ oasis-node stake account gen_reclaim_escrow \
 Let's submit it and in a few moments list the accounts:
 
 ```bash
-$ oasis-node stake account submit \
+$ oasis-node consensus submit_tx \
     -a $ADDR \
-    --stake.account.id 4ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35 \
-    --stake.transaction.file r.json
+    --transaction.file r.json
 $ oasis-node stake list -a $ADDR -v
 {"id":"TqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=","general_balance":"99999997000","escrow_balance":"100000000000","nonce":4}
 {"id":"XqUyj5Q+9vZtqu10yw6Zw7HEX3Ywe0JQA9vHyzY47TU=","general_balance":"1000","escrow_balance":"0","nonce":0}
