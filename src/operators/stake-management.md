@@ -36,13 +36,14 @@ We will provide the `-a $ADDR` parameter to any operation which requires
 connection to the Oasis node. Conversely, `--genesis.file $GENESIS_FILE_PATH`
 and `--signer.dir $ENTITY_DIR_PATH` will be used for offline operations.
 
-The `--signer` flag is used to determine the backend used to sign transactions for offline
-operations. 
-- For a file based signer, use `--signer file` and include the keys in `$ENTITY_DIR_PATH`. This is
-set by default, but is included in all examples to be explicit.
-- For a Ledger based signer, use `--signer ledger` to indicate the use of a Ledger device,
-`--signer.ledger.address` to specify the device by address, and `--signer.ledger.index` to specify
-the address index for the derivation path.
+The `--signer` flag is used to determine the backend used to sign transactions
+for offline operations.
+* For a file based signer, use `--signer file` and include the keys in
+`$ENTITY_DIR_PATH`. This is set by default, but is included in all examples to
+be explicit.
+* For a Ledger based signer, use `--signer ledger` to indicate the use of a
+Ledger device, `--signer.ledger.address` to specify the device by address, and
+`--signer.ledger.index` to specify the address index for the derivation path.
 
 First, let's check out the native token of our platform:
 
