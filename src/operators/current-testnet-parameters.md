@@ -52,7 +52,6 @@ for instructions on how to use these parameters.
       testnet we _may_ release and redeploy a new genesis block that removes
 * [Update Patch Patch](https://raw.githubusercontent.com/oasislabs/public-testnet-artifacts/master/patches/patch-2019-12-17.json)
 
-
 ## Deployment Change Log
 
 ### 2019-11-26 (Latest)
