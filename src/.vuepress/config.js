@@ -99,6 +99,10 @@ module.exports = {
                 '/operators/maintenance/checking-account-nonce',
                 'Checking your Account nonce',
               ],
+              [
+                '/operators/maintenance/handling-network-upgrades',
+                'Handling Network Upgrades',
+              ],
             ],
           },
         ],
