@@ -31,8 +31,8 @@ Parameters](#upgrade-parameters) section.
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
-* [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/af6600b1cc728a2515a0cd3eba8237d4e25249d2):
-  * `af6600b1cc728a2515a0cd3eba8237d4e25249d2`
+* [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/a9a532e6be67512b3e4e581b5a57a97dff5715ca):
+  * `a9a532e6be67512b3e4e581b5a57a97dff5715ca`
   ::: tip NOTE
   For this release we are using a branch `oasis-testnet-p2-2019-12-17` as the
   previous version of the Testnet has some bugs that prevent it from working on
@@ -40,8 +40,8 @@ Parameters](#upgrade-parameters) section.
   branch.
   :::
 * `oasis-node` Binaries:
-  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-linux-amd64.zip)
-  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-macos-amd64.zip)
+  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-linux.tar.gz)
+  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-macos.tar.gz)
 
 ## Upgrade Parameters
 
