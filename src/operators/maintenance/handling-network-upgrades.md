@@ -1,6 +1,9 @@
 # Handling Network Upgrades
 
-***NOTE: From 19:00 UTC Tuesday, December 17 (2019-12-17T19:00:00Z) to 18:59 UTC Wednesday, December 18 (2019-12-18T18:59:59Z) the Oasis Testnet will run through its first coordinated upgrade. Steps on how to upgrade your node during this window are below.***
+***NOTE: From 19:00 UTC Tuesday, December 17 (2019-12-17T19:00:00Z) to 18:59 UTC
+Wednesday, December 18 (2019-12-18T18:59:59Z) the Oasis Testnet will run through
+its first coordinated upgrade. Steps on how to upgrade your node during this
+window are below.***
 
 ::: warning WARNING
 Following this guide when there is no network upgrade will result in you
