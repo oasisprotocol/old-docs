@@ -57,7 +57,12 @@ for instructions on how to use these parameters.
 
 ## Deployment Change Log
 
-### 2019-11-26 (Latest)
+### 2019-12-17 (Latest)
+
+You should only need to do an upgrade as detailed in the [Handling Network
+Upgrades Guide](./maintenance/handling-network-upgrades.md)
+
+### 2019-11-26
 
 #### `/serverdir/etc/config.yml` Required Changes
 
