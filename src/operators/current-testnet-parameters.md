@@ -4,7 +4,9 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
-***From 19:00 UTC Tuesday, December 17 (2019-12-17T19:00:00Z) to 18:59 UTC Wednesday, December 18 (2019-12-18T18:59:59Z) the Oasis Testnet will run through its first coordinated upgrade. Parameters for this network upgrade are below.***
+***From 19:00 UTC Tuesday, December 17 (2019-12-17T19:00:00Z) to 18:59 UTC
+Wednesday, December 18 (2019-12-18T18:59:59Z) the Oasis Testnet will run through
+its first coordinated upgrade. Parameters for this network upgrade are below.***
 
 ::: tip NOTE
 As the release management of our open source repositories improves, we will
