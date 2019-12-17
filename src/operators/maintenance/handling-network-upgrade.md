@@ -18,6 +18,11 @@ Before an upgrade we will update the [Upgrade
 Parameters](./current-testnet-parameters.md#upgrade-parameters) to specify the
 block height at which to dump.
 
+::: warning WARNING
+You must only run the following command _after_ the `HEIGHT_TO_DUMP` block
+height has been reached on the network.
+:::
+
 ```bash
 export HEIGHT_TO_DUMP=<height_to_dump>
 oasis-node genesis dump \
