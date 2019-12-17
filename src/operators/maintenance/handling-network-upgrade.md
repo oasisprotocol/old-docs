@@ -6,7 +6,7 @@ losing your place on the current network.
 :::
 
 The following guide should be used when the network has agreed to do a software
-upgrade for the network.
+upgrade.
 
 ## Dumping Blockchain State
 
