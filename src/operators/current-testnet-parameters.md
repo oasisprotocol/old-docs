@@ -41,7 +41,7 @@ Parameters](#upgrade-parameters) section.
   :::
 * `oasis-node` Binaries:
   * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-linux.tar.gz)
-  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-macos.tar.gz)
+  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-mac.tar.gz)
 
 ## Upgrade Parameters
 
