@@ -19,9 +19,8 @@ upgrade.
 Do not stop your `oasis-node` process just yet.
 :::
 
-Before an upgrade we will update the [Upgrade
-Parameters](./current-testnet-parameters.md#upgrade-parameters) to specify the
-block height at which to dump.
+Before an upgrade we will update the [Upgrade Parameters] to specify the block
+height at which to dump.
 
 ::: warning WARNING
 You must only run the following command _after_ the `HEIGHT_TO_DUMP` block
@@ -43,7 +42,7 @@ process however this is done for your setup.
 
 ## Patching Dumped State
 
-We will provide a state patch [here](../current-testnet-parameters.md) that you
+We will provide a state patch in the [Upgrade Parameters] document that you
 can apply using the `jq` tool. We suggest that you install this on your server
 so that you can do all the upgrade process without having to transfer anything
 onto your local machine. The patched state will update at least the following
@@ -99,3 +98,5 @@ your workspace free of unnecessary files.
 ```bash
 rm /serverdir/etc/upgrade-dump.json
 ```
+
+[Upgrade Parameters]: ./current-testnet-parameters.md#upgrade-parameters
