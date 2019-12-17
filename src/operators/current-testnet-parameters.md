@@ -19,13 +19,9 @@ If you're upgrading your node you should use the [Upgrade
 Parameters](#upgrade-parameters) section.
 :::
 
-* Genesis Document (_No link at this time. This is expected at 2019-12-17T19:00:00Z_):
-  * sha1: `TBD`
-  * sha256: `TBD`
-  ::: warning WARNING
-  The testnet is scheduled to upgrade within 24 hours. We do not suggest
-  starting a new node until after this time.
-  :::
+* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/genesis.json):
+  * sha1: `04c41d95f6856ecf88371929ef15547394ad7e21`
+  * sha256: `67e4ab0112c0bf72799674870f28b5a2b461a9bf566c5aee58aa38a7e4e55aee`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
@@ -61,7 +57,12 @@ for instructions on how to use these parameters.
 
 ## Deployment Change Log
 
-### 2019-11-26 (Latest)
+### 2019-12-17 (Latest)
+
+You should only need to do an upgrade as detailed in the [Handling Network
+Upgrades Guide](./maintenance/handling-network-upgrades.md)
+
+### 2019-11-26
 
 #### `/serverdir/etc/config.yml` Required Changes
 
