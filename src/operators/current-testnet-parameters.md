@@ -53,7 +53,7 @@ for instructions on how to use these parameters.
   * End: **2019-12-18T18:59:59Z**
     * The "_End_" of the window is not something we can enforce unilaterally,
       however, if, for whatever reason, not enough people upgrade on the public
-      testnet we _may_ release and redeploy a new genesis block that removes
+      testnet we _may_ release and redeploy a new genesis block that removes inactive nodes from the validator set.
 * [Update Patch Patch](https://raw.githubusercontent.com/oasislabs/public-testnet-artifacts/master/patches/patch-2019-12-17.json)
 
 ## Deployment Change Log
