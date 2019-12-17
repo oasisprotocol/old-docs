@@ -31,12 +31,14 @@ Parameters](#upgrade-parameters) section.
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
-* [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/9d5e30082a5f3df065fc52a404e048decb9adac9):
+* [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/af6600b1cc728a2515a0cd3eba8237d4e25249d2):
   * `af6600b1cc728a2515a0cd3eba8237d4e25249d2`
-  * Please note, for this release we are using a branch
-    `oasis-testnet-p2-2019-12-17` as the previous version of the testnet has
-    some bugs that prevent it from working on `master` without the temporary fix
-    present in the `oasis-testnet-p2-2019-12-17` branch
+  ::: tip NOTE
+  For this release we are using a branch `oasis-testnet-p2-2019-12-17` as the
+  previous version of the Testnet has some bugs that prevent it from working on
+  `master` without the temporary fix present in the `oasis-testnet-p2-2019-12-17`
+  branch.
+  :::
 * `oasis-node` Binaries:
   * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-linux-amd64.zip)
   * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-macos-amd64.zip)
@@ -55,7 +57,7 @@ for instructions on how to use these parameters.
       however, if, for whatever reason, not enough people upgrade on the public
       testnet we _may_ release and redeploy a new genesis block that removes
       inactive nodes from the validator set.
-* [Update Patch Patch](https://raw.githubusercontent.com/oasislabs/public-testnet-artifacts/master/patches/patch-2019-12-17.json)
+* [Upgrade Patch](https://raw.githubusercontent.com/oasislabs/public-testnet-artifacts/master/patches/patch-2019-12-17.json)
 
 ## Deployment Change Log
 
