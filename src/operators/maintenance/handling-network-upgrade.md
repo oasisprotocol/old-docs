@@ -39,7 +39,11 @@ so that you can do all the upgrade process without having to transfer anything
 onto your local machine. The patched state will update at least the following
 fields:
 
-* `
+* `chain_id` - This is the chain ID of the network
+* `genesis_time` - We will set this so that the genesis time is consistent
+  across all genesis.json files
+* `halt_epoch` - This is the epoch that the node will stop functioning. We set
+  this to intentionally force an upgrade.
 
 ### Downloading the Patch
 
