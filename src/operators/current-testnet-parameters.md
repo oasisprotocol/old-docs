@@ -10,24 +10,48 @@ refer to more human-friendly versions of Oasis Core (and related built
 artifacts) in this document.
 :::
 
-* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/genesis.json):
-  * sha1: `bed77f6433e607f7073a48dbf27f8cf5d9a8c2e1`
-  * sha256: `ee38b53a2e8acd785d279e4c8d3af38b832f120d9a85bf0173e94878f45bc718`
+::: tip NOTE
+If you're upgrading your node you should use the [Upgrade
+Parameters](#upgrade-parameters) section.
+:::
+
+* Genesis Document _No link at this time_:
+  * sha1: `TBD`
+  * sha256: `TBD`
+  ::: warning WARNING
+  The testnet is scheduled to upgrade within 24 hours. We do not suggest
+  starting a new node until after this time.
+  :::
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
 * [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/9d5e30082a5f3df065fc52a404e048decb9adac9):
-  * `9d5e30082a5f3df065fc52a404e048decb9adac9`
+  * `af6600b1cc728a2515a0cd3eba8237d4e25249d2`
+  * Please note, for this release we are using a branch
+    `oasis-testnet-p2-2019-12-17` as the previous version of the testnet has
+    some bugs that prevent it from working on `master` without the temporary fix
+    present in the `oasis-testnet-p2-2019-12-17` branch
 * `oasis-node` Binaries:
-  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/oasis-node-linux-amd64.zip)
-  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/oasis-node-macos-amd64.zip)
-* [Docker image](https://hub.docker.com/layers/oasislabs/oasis-node/master-20191125134702/images/sha256-4e35b3bb8d9116cfcd6ff7d4f3d84e0753f7f441b48dad6d2129eb32897a3f9b):
-  * `oasislabs/oasis-node:master-20191125134702`
-  ::: warning DEPRECATED
-  We no longer recommend or support using Oasis-provided Docker images.
-  :::
+  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-linux-amd64.zip)
+  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-macos-amd64.zip)
+
+## Upgrade Parameters
+
+The following section details on the scheduled upgrade for the network. See the
+[Handling Network Upgrades Guide](./maintenance/handling-network-upgrades.md)
+for instructions on how to use these parameters.
+
+* Block height to dump: **950000**
+* Upgrade Window
+  * Start: **2019-12-17T19:00:00Z**
+  * End: **2019-12-18T18:59:59Z**
+    * The "_End_" of the window is not something we can enforce unilaterally,
+      however, if, for whatever reason, not enough people upgrade on the public
+      testnet we _may_ release and redeploy a new genesis block that removes
+* [Update Patch Patch](https://raw.githubusercontent.com/oasislabs/public-testnet-artifacts/master/patches/patch-2019-12-17.json)
+
 
 ## Deployment Change Log
 
