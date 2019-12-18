@@ -45,8 +45,8 @@ be explicit.
 * For a Ledger based signer, use `--signer ledger` to indicate the use of a
 Ledger device, `--signer.ledger.address` to specify the device by address, and
 `--signer.ledger.index` to specify the address index for the derivation path.
-    * The address to use for the `--signer.ledger.address` flag can be found
-by using the `oasis-node signer ledger list_devices` command. 
+  * The address to use for the `--signer.ledger.address` flag can be found
+by using the `oasis-node signer ledger list_devices` command.
 
 First, let's check out the native token of our platform:
 
