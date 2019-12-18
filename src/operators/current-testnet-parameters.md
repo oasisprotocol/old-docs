@@ -4,34 +4,70 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
+***From 19:00 UTC Tuesday, December 17 (2019-12-17T19:00:00Z) to 18:59 UTC
+Wednesday, December 18 (2019-12-18T18:59:59Z) the Oasis Testnet will run through
+its first coordinated upgrade. Parameters for this network upgrade are below.***
+
 ::: tip NOTE
 As the release management of our open source repositories improves, we will
 refer to more human-friendly versions of Oasis Core (and related built
 artifacts) in this document.
 :::
 
-* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/genesis.json):
-  * sha1: `bed77f6433e607f7073a48dbf27f8cf5d9a8c2e1`
-  * sha256: `ee38b53a2e8acd785d279e4c8d3af38b832f120d9a85bf0173e94878f45bc718`
+::: tip NOTE
+If you're upgrading your node you should use the [Upgrade
+Parameters](#upgrade-parameters) section.
+:::
+
+* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/genesis.json):
+  * sha1: `04c41d95f6856ecf88371929ef15547394ad7e21`
+  * sha256: `67e4ab0112c0bf72799674870f28b5a2b461a9bf566c5aee58aa38a7e4e55aee`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
-* [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/9d5e30082a5f3df065fc52a404e048decb9adac9):
-  * `9d5e30082a5f3df065fc52a404e048decb9adac9`
+* [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/a9a532e6be67512b3e4e581b5a57a97dff5715ca):
+  * `a9a532e6be67512b3e4e581b5a57a97dff5715ca`
+  ::: tip NOTE
+  For this release we are using a branch `oasis-testnet-p2-2019-12-17` as the
+  previous version of the Testnet has some bugs that prevent it from working on
+  `master` without the temporary fix present in the `oasis-testnet-p2-2019-12-17`
+  branch.
+  :::
 * `oasis-node` Binaries:
-  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/oasis-node-linux-amd64.zip)
-  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-11-26/oasis-node-macos-amd64.zip)
-* [Docker image](https://hub.docker.com/layers/oasislabs/oasis-node/master-20191125134702/images/sha256-4e35b3bb8d9116cfcd6ff7d4f3d84e0753f7f441b48dad6d2129eb32897a3f9b):
-  * `oasislabs/oasis-node:master-20191125134702`
+  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-linux.tar.gz)
+  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-mac.tar.gz)
+* [Docker image](https://hub.docker.com/layers/oasislabs/oasis-node/deploy-20191217000001/images/sha256-b8c32855f7ad6ea799faa934d7150b2308072c01d98f2b5edf4067cfb4b9b910)
+  * `oasislabs/oasis-node:deploy-20191217000001`
   ::: warning DEPRECATED
   We no longer recommend or support using Oasis-provided Docker images.
   :::
 
+## Upgrade Parameters
+
+The following section details on the scheduled upgrade for the network. See the
+[Handling Network Upgrades Guide](./maintenance/handling-network-upgrades.md)
+for instructions on how to use these parameters.
+
+* Block height to dump: **950000**
+* Upgrade Window
+  * Start: **2019-12-17T19:00:00Z**
+  * End: **2019-12-18T18:59:59Z**
+    * The "_End_" of the window is not something we can enforce unilaterally,
+      however, if, for whatever reason, not enough people upgrade on the public
+      testnet we _may_ release and redeploy a new genesis block that removes
+      inactive nodes from the validator set.
+* [Upgrade Patch](https://raw.githubusercontent.com/oasislabs/public-testnet-artifacts/master/patches/patch-2019-12-17.json)
+
 ## Deployment Change Log
 
-### 2019-11-26 (Latest)
+### 2019-12-17 (Latest)
+
+You should only need to do an upgrade as detailed in the [Handling Network
+Upgrades Guide](./maintenance/handling-network-upgrades.md)
+
+### 2019-11-26
 
 #### `/serverdir/etc/config.yml` Required Changes
 
