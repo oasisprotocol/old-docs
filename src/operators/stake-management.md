@@ -38,6 +38,7 @@ and `--signer.dir $ENTITY_DIR_PATH` will be used for offline operations.
 
 The `--signer` flag is used to determine the backend used to sign transactions
 for offline operations.
+
 * For a file based signer, use `--signer file` and include the keys in
 `$ENTITY_DIR_PATH`. This is set by default, but is included in all examples to
 be explicit.
