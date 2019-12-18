@@ -139,7 +139,8 @@ server where your node will run, and issue the following commands from the
 ```bash
 STATIC_IP=<YOUR-STATIC-IP>
 oasis-node registry node init \
-  --entity /localhostdir/entity \
+  --signer file \
+  --signer.dir /localhostdir/entity \
   --node.consensus_address $STATIC_IP:26656 \
   --node.is_self_signed \
   --node.role validator
@@ -182,7 +183,7 @@ Execute the following command in the `/localhostdir/node` directory:
 
 ```bash
 oasis-node registry entity update \
-  --datadir /localhostdir/entity \
+  --signer.dir /localhostdir/entity \
   --entity.node.descriptor node_genesis.json
 ```
 
@@ -627,7 +628,8 @@ Then execute the following command:
 ```bash
 oasis-node stake account gen_escrow \
   --genesis.file $GENESIS_FILE_PATH \
-  --entity $ENTITY_DIR_PATH \
+  --signer file \
+  --signer.dir $ENTITY_DIR_PATH \
   --stake.escrow.account $ACCOUNT_ID \
   --stake.amount 100000000000000000000 \
   --transaction.file $OUTPUT_TX_FILE_PATH \
@@ -666,7 +668,8 @@ Then execute the following command:
 ```bash
 oasis-node registry entity gen_register \
   --genesis.file $GENESIS_FILE_PATH \
-  --entity $ENTITY_DIR_PATH \
+  --signer file \
+  --signer.dir $ENTITY_DIR_PATH \
   --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 1 \

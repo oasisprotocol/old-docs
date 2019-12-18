@@ -34,7 +34,17 @@ export ADDR=unix:/tmp/oasis-net-runner236357163/net-runner/network/client-0/inte
 
 We will provide the `-a $ADDR` parameter to any operation which requires
 connection to the Oasis node. Conversely, `--genesis.file $GENESIS_FILE_PATH`
-and `--entity $ENTITY_DIR_PATH` will be used for offline operations.
+and `--signer.dir $ENTITY_DIR_PATH` will be used for offline operations.
+
+The `--signer` flag is used to determine the backend used to sign transactions
+for offline operations.
+
+* For a file based signer, use `--signer file` and include the keys in
+`$ENTITY_DIR_PATH`. This is set by default, but is included in all examples to
+be explicit.
+* For a Ledger based signer, use `--signer ledger` to indicate the use of a
+Ledger device, `--signer.ledger.address` to specify the device by address, and
+`--signer.ledger.index` to specify the address index for the derivation path.
 
 First, let's check out the native token of our platform:
 
@@ -93,7 +103,8 @@ type:
 ```bash
 oasis-node stake account gen_burn \
   --genesis.file $GENESIS_FILE_PATH \
-  --entity $ENTITY_DIR_PATH \
+  --signer file \
+  --signer.dir $ENTITY_DIR_PATH \
   --stake.transaction.amount 2000 \
   --stake.transaction.file b.json \
   --stake.transaction.nonce 0 \
@@ -156,7 +167,8 @@ to account `5ea5328f943ef6f66daaed74cb0e99c3b1c45f76307b425003dbc7cb3638ed35`:
 ```bash
 oasis-node stake account gen_transfer \
   --genesis.file $GENESIS_FILE_PATH \
-  --entity $ENTITY_DIR_PATH \
+  --signer file \
+  --signer.dir $ENTITY_DIR_PATH \
   --stake.transaction.amount 1000 \
   --stake.transaction.file t.json \
   --stake.transaction.nonce 1 \
@@ -203,7 +215,8 @@ reclaim them. First, let's generate an escrow transaction and store it to `e.jso
 ```bash
 oasis-node stake account gen_escrow \
   --genesis.file $GENESIS_FILE_PATH \
-  --entity $ENTITY_DIR_PATH \
+  --signer file \
+  --signer.dir $ENTITY_DIR_PATH \
   --stake.transaction.amount 3000 \
   --stake.transaction.file e.json \
   --stake.transaction.nonce 2 \
@@ -232,7 +245,8 @@ We reclaim 3000 escrowed tokens by generating the reclaim escrow transaction:
 ```bash
 oasis-node stake account gen_reclaim_escrow \
   --genesis.file $GENESIS_FILE_PATH \
-  --entity $ENTITY_DIR_PATH \
+  --signer file \
+  --signer.dir $ENTITY_DIR_PATH \
   --stake.transaction.amount 3000 \
   --stake.transaction.file r.json \
   --stake.transaction.nonce 3 \
