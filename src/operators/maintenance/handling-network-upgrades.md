@@ -28,7 +28,7 @@ height has been reached on the network.
 :::
 
 ```bash
-export HEIGHT_TO_DUMP=<height_to_dump>
+HEIGHT_TO_DUMP=<height_to_dump>
 oasis-node genesis dump \
   -a unix:/serverdir/node/internal.sock \
   --genesis.file /serverdir/etc/upgrade-dump.json \
@@ -57,8 +57,8 @@ fields:
 ### Downloading the Patch
 
 ```bash
-export PATCH_URL=<url_to_patch>
-curl -o /serverdir/etc/patch.json $PATCH_URL
+PATCH_URL=<url_to_patch>
+curl --proto '=https' --tlsv1.2 -sSL $PATCH_URL -o /serverdir/etc/patch.json
 ```
 
 ### Applying the Patch
@@ -78,6 +78,11 @@ keys if you do it this way.
 
 Before restarting your node you should wipe tendermint state. The process for
 this is described [here](./wiping-node-state.md#state-wipe-and-keep-node-identity).
+
+## Upgrading Oasis Core
+
+Before starting your node again, make sure you upgrade your `oasis-node` binary
+to the current version specified in the [Current Testnet Parameters].
 
 ## Restarting the Node
 
@@ -99,4 +104,5 @@ your workspace free of unnecessary files.
 rm /serverdir/etc/upgrade-dump.json
 ```
 
-[Upgrade Parameters]: ./current-testnet-parameters.md#upgrade-parameters
+[Upgrade Parameters]: ./../current-testnet-parameters.md#upgrade-parameters
+[Current Testnet Parameters]: ./../current-testnet-parameters.md
