@@ -10,7 +10,7 @@ the beginning of any network (including Oasis Mainnet), we require that you send
 an Entity Package so that we can create the genesis document for a either
 network.
 
-## Creating an Entity Package
+## Details
 
 To create an entity package you must create a tarball (`.tar.gz`) that contains
 the following files:
