@@ -47,6 +47,9 @@ There are two basic steps to joining:
    will need to sign a waiver as a part of this process. It is linked in the
    signup form.
 
+3. Send us your Entity Package. See: [Creating an Entity
+   Package](./creating-an-entity-package.md)
+
 ## Competition Kickoff
 
 The competition is expected to start **in early January**. We will give at least
