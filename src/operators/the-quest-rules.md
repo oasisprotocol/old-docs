@@ -50,6 +50,9 @@ There are two basic steps to joining:
 3. Send us your Entity Package. See: [Creating an Entity
    Package](./creating-an-entity-package.md)
 
+*Note: If possible, please use the same github handle and
+email address for all 3 steps*
+
 ## Competition Kickoff
 
 The competition is expected to start **in early January**. We will give at least
