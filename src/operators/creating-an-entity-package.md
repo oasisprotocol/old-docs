@@ -31,3 +31,20 @@ cp /localhostdir/entity/*.json package/entity
 cp /localhostdir/node/node_genesis.json package/node
 tar -zcvf entity.tar.gz -C package entity node
 ```
+
+## Submitting Your Entity Package (For The Quest)
+
+To submit your entity package we've created a repository that will consume and
+validate the entity packages used in The Quest.
+
+1. Fork the
+   [oasislabs/the-quest-entities](https://github.com/oasislabs/the-quest-entities)
+   repository.
+2. Add your entity package to the `entities/` directory of the repository as
+   `<your-github-username>-entity.tar.gz`
+3. Once your entity package passes all validation checks we will handle the
+   merging of your pull request. _If there are issues you can always resubmit
+   your entity package._
+
+You can see an example of a submission in [this
+PR](https://github.com/oasislabs/the-quest-entities/pull/2)
