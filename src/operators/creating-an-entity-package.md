@@ -45,7 +45,7 @@ validate the entity packages used in The Quest.
 3. Once your entity package passes all validation checks we will handle the
    merging of your pull request. _If there are issues you can always resubmit
    your entity package._
-   
+
 ***Note: If possible, please use the same github handle to submit your
 entity package and public key***
 
