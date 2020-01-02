@@ -5,7 +5,7 @@
 Welcome to The Quest -- a multi-round staking competition (aka incentivized
 testnet) run on the Oasis Network.The competition will begin on January 15, 2020 at OO:00 UTC.
 
-***[Join the Quest][https://docs.oasis.dev/operators/the-quest-rules.html#how-to-join]***
+***[Join the Quest][get-set-up]***
 
 ## Overview
 
@@ -222,3 +222,4 @@ can tell you that we’ll provide plenty of pre warning beforehand.
 [setup-docs]: ./joining-the-testnet.md
 [grants]: https://www.oasis-protocol.org/grants
 [office-hours-doc]: https://docs.google.com/document/d/1ZnKIHcNPb3dGvP4b6bGrJmwyCjGhcSG2cHkTeEfwSEQ/edit?usp=sharing
+[get-set-up]: https://docs.oasis.dev/operators/the-quest-rules.html#how-to-join
