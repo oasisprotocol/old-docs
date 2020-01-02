@@ -3,7 +3,7 @@
 ![The Quest](/operator_images/the_quest.png)
 
 Welcome to The Quest -- a multi-round staking competition (aka incentivized
-testnet) run on the Oasis Network.The competition will begin on January 15, 2020 at OO:00 UTC.
+testnet) run on the Oasis Network. The competition will begin on **January 15, 2020 at 00:00 UTC**.
 
 ***[Join the Quest][get-set-up]***
 
@@ -43,7 +43,7 @@ email address for all 3 steps*
 
 ## Competition Kickoff
 
-The competition is expected to start **on January 15 at 00:00 UTC**. We will give at least
+The competition is expected to start **January 15 at 00:00 UTC**. We will give at least
 5 day notice to start time so everyone has plenty of time to prepare.
 
 The competition will begin with a new genesis block that includes all
