@@ -41,7 +41,7 @@ verification**. Before joining, be sure to read the official rules
 There are two basic steps to joining:
 
 1. Set up a node on the Oasis Network today. Documentation of how to do so is
-   [here][setup-docs].
+   [here][setup-docs]. **Please only set up one node per entity for the competition.**
 
 2. [Sign up here][sign-up-form]. Note that you
    will need to sign a waiver as a part of this process. It is linked in the
