@@ -3,7 +3,8 @@
 ![The Quest](/operator_images/the_quest.png)
 
 Welcome to The Quest -- a multi-round staking competition (aka incentivized
-testnet) run on the Oasis Network.The competition will begin on January 15, 2020 at OO:00 UTC.
+testnet) run on the Oasis Network.The competition will begin on January 15, 2020
+at OO:00 UTC.
 
 ***[Join the Quest][get-set-up]***
 
@@ -36,15 +37,16 @@ There are three basic steps to joining:
    signup form.
 
 3. Send us your Entity Package. See: [Creating an Entity
-   Package](./creating-an-entity-package.md). **To join the competition's genesis block, you must complete this step by January 13, 2020 at 00:00 UTC**
+   Package](./creating-an-entity-package.md). **To join the competition's
+   genesis block, you must complete this step by January 13, 2020 at 00:00 UTC**
 
 *Note: If possible, please use the same github handle and
 email address for all 3 steps*
 
 ## Competition Kickoff
 
-The competition is expected to start **on January 15 at 00:00 UTC**. We will give at least
-5 day notice to start time so everyone has plenty of time to prepare.
+The competition is expected to start **on January 15 at 00:00 UTC**. We will give
+at least 5 day notice to start time so everyone has plenty of time to prepare.
 
 The competition will begin with a new genesis block that includes all
 competitors to ensure each operator has access to funds at the same time. Each
@@ -68,7 +70,7 @@ We hope to use a staking competition to do a few things:
    used to stake on the Oasis Network Mainnet.
 4. Expand and further empower a community of data privacy advocates around the
    Oasis Network.
-   
+
 ## Types of Challenges
 
 The main goal of The Quest is to ensure that the Oasis Network -- and the

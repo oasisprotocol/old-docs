@@ -77,6 +77,10 @@ module.exports = {
           ['/operators/prerequisites', 'Prerequisites Guide'],
           ['/operators/joining-the-testnet', 'Joining the Testnet'],
           [
+            '/operators/creating-an-entity-package',
+            'Creating an Entity Package',
+          ],
+          [
             '/operators/current-testnet-parameters',
             'Current Testnet Parameters',
           ],
