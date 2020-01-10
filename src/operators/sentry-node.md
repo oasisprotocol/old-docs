@@ -344,5 +344,5 @@ tendermint:
     - "{{ sentry_node_tendermint_id }}@{{ sentry_node_private_ip }}:26656"
   disable_peer_exchange: True
   db:
-    backend: boltdb
+    backend: badger
 ```
