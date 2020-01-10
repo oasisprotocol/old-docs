@@ -32,10 +32,12 @@ There are two basic steps to joining:
 1. [Sign this waiver][sign-up-form].
 
 2. Send us your Entity Package. See: [Creating an Entity
-   Package](./creating-an-entity-package.md). **To join the competition's genesis block, you must complete this step by January 13, 2020 at 00:00 UTC. We suggest only one node per entity for the competition.**
+   Package](./creating-an-entity-package.md). **To join the competition's 
+   genesis block, you must complete this step by January 13, 2020 at 
+   00:00 UTC. We suggest only one node per entity for the competition.**
 
-3. To get ready and prepared, set up a node on the Oasis Network today. Documentation of how to do so is
-   [here][setup-docs]. 
+3. To get ready and prepared, set up a node on the Oasis Network today. 
+   Documentation of how to do so is [here][setup-docs]. 
    
 *Note: If possible, please use the same github handle and
 email address for all 3 steps*
@@ -80,7 +82,8 @@ Before diving into your strategy for all items listed below, we also encourage
 you to read through the [proposed incentive structure][incentives-proposal]
 for the Oasis Network.
 
-If you are in the genesis block and we do not see any activity in the first 24 hours we may restart the genesis block and remove you.
+If you are in the genesis block and we do not see any activity in the first 
+24 hours we may restart the genesis block and remove you.
 
 ### Challenges Spanning the Entire Competition
 
