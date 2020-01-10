@@ -17,8 +17,8 @@ The following instructions assume that your `datadir` is defined as
     ```bash
     rm -rf /serverdir/node/tendermint
     rm -rf /serverdir/node/bleve-tag-index.bleve.db
-    rm /serverdir/node/abci-mux-state.bolt.db
-    rm /serverdir/node/persistent-store.db
+    rm -rf /serverdir/node/abci-mux-state.badger.db
+    rm -rf /serverdir/node/persistent-store.badger.db
     ```
 
 3. Restart the oasis-node server process
