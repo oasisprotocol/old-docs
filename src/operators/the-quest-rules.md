@@ -43,6 +43,18 @@ There are three basic steps to joining:
 *Note: If possible, please use the same github handle and
 email address for all 3 steps*
 
+### Goal of The Quest
+
+We hope to use a staking competition to do a few things:
+
+1. Stress test the beta version of the Oasis Network before it Mainnets and give
+   feedback on what’s working - and what’s not.
+2. Give operators a chance to test drive the network and their setups.
+3. Give a diverse group of operators an opportunity to earn rewards that can be
+   used to stake on the Oasis Network Mainnet.
+4. Expand and further empower a community of data privacy advocates around the
+   Oasis Network.
+
 ## Competition Kickoff
 
 The competition is expected to start **on January 15 at 00:00 UTC**. We will give
@@ -59,18 +71,6 @@ We will let additional entities join after the start of the competition.
 This will put you at a disadvantage for the most blocks signed reward but could
 still keep you in the running for best attack and most staked.
 
-### Goal of The Quest
-
-We hope to use a staking competition to do a few things:
-
-1. Stress test the beta version of the Oasis Network before it Mainnets and give
-   feedback on what’s working - and what’s not.
-2. Give operators a chance to test drive the network and their setups.
-3. Give a diverse group of operators an opportunity to earn rewards that can be
-   used to stake on the Oasis Network Mainnet.
-4. Expand and further empower a community of data privacy advocates around the
-   Oasis Network.
-
 ## Types of Challenges
 
 The main goal of The Quest is to ensure that the Oasis Network -- and the
@@ -82,6 +82,8 @@ Some more info below by length of challenge.
 Before diving into your strategy for all items listed below, we also encourage
 you to read through the [proposed incentive structure][incentives-proposal]
 for the Oasis Network.
+
+If you are in the genesis block and we do not see any activity in the first 24 hours we may restart the genesis block and remove you.
 
 ### Challenges Spanning the Entire Competition
 
