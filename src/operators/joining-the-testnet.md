@@ -404,7 +404,7 @@ tendermint:
     external_address: tcp://{{ external_address }}:26656
 
   db:
-    backend: boltdb
+    backend: badger
   debug:
     addr_book_lenient: false
   # List of seed nodes to connect to.
