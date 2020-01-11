@@ -27,21 +27,32 @@ verification**. Before joining, be sure to read the official rules
 
 ## How to Join
 
-There are three basic steps to joining:
+There are two basic steps to joining:
 
-1. Set up a node on the Oasis Network today. Documentation of how to do so is
-   [here][setup-docs]. **Please only set up one node per entity for the competition.**
+1. [Sign this waiver][sign-up-form].
 
-2. [Sign up here][sign-up-form]. Note that you
-   will need to sign a waiver as a part of this process. It is linked in the
-   signup form.
-
-3. Send us your Entity Package. See: [Creating an Entity
+2. Send us your Entity Package. See: [Creating an Entity
    Package](./creating-an-entity-package.md). **To join the competition's
-   genesis block, you must complete this step by January 13, 2020 at 00:00 UTC**
+   genesis block, you must complete this step by January 13, 2020 at
+   00:00 UTC. We suggest only one node per entity for the competition.**
+
+3. To get ready and prepared, set up a node on the Oasis Network today.
+   Documentation of how to do so is [here][setup-docs].
 
 *Note: If possible, please use the same github handle and
 email address for all 3 steps*
+
+### Goal of The Quest
+
+We hope to use a staking competition to do a few things:
+
+1. Stress test the beta version of the Oasis Network before it Mainnets and give
+   feedback on what’s working - and what’s not.
+2. Give operators a chance to test drive the network and their setups.
+3. Give a diverse group of operators an opportunity to earn rewards that can be
+   used to stake on the Oasis Network Mainnet.
+4. Expand and further empower a community of data privacy advocates around the
+   Oasis Network.
 
 ## Competition Kickoff
 
@@ -59,18 +70,6 @@ We will let additional entities join after the start of the competition.
 This will put you at a disadvantage for the most blocks signed reward but could
 still keep you in the running for best attack and most staked.
 
-### Goal of The Quest
-
-We hope to use a staking competition to do a few things:
-
-1. Stress test the beta version of the Oasis Network before it Mainnets and give
-   feedback on what’s working - and what’s not.
-2. Give operators a chance to test drive the network and their setups.
-3. Give a diverse group of operators an opportunity to earn rewards that can be
-   used to stake on the Oasis Network Mainnet.
-4. Expand and further empower a community of data privacy advocates around the
-   Oasis Network.
-
 ## Types of Challenges
 
 The main goal of The Quest is to ensure that the Oasis Network -- and the
@@ -82,6 +81,9 @@ Some more info below by length of challenge.
 Before diving into your strategy for all items listed below, we also encourage
 you to read through the [proposed incentive structure][incentives-proposal]
 for the Oasis Network.
+
+If you are in the genesis block and we do not see any activity in the first
+24 hours we may restart the genesis block and remove you.
 
 ### Challenges Spanning the Entire Competition
 
@@ -218,7 +220,7 @@ can tell you that we’ll provide plenty of pre warning beforehand.
 * [Sign-up form][sign-up-form]
 
 [eligibility-rules]: https://docsend.com/view/zv5cfia
-[sign-up-form]: https://oasisfoundation.typeform.com/to/dlcekq
+[sign-up-form]: https://app.hellosign.com/s/6M6ym9qh
 [slack]: https://www.oasis-protocol.org/slack
 [incentives-proposal]: ./incentives-proposal.md
 [setup-docs]: ./joining-the-testnet.md
