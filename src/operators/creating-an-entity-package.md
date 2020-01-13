@@ -42,7 +42,8 @@ validate the entity packages used in The Quest.
    repository.
 2. Add your entity package to the `entities/` directory of the repository as
    `<your-github-username>-entity.tar.gz`
-3. Once your entity package passes all validation checks we will handle the
+3. Create a pull request against the master branch of the oasislabs repository.
+   Once your entity package passes all validation checks we will handle the
    merging of your pull request. _If there are issues you can always resubmit
    your entity package._
 
