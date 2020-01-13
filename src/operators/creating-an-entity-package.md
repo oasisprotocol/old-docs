@@ -29,7 +29,7 @@ initialized your entity and node:
 mkdir -p package/entity package/node
 cp /localhostdir/entity/*.json package/entity
 cp /localhostdir/node/node_genesis.json package/node
-tar -zcvf entity.tar.gz -C package entity node
+cd package && tar -zcvf ../entity.tar.gz entity node
 ```
 
 ## Submitting Your Entity Package (For The Quest)
