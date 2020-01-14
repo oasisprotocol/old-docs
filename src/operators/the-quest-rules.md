@@ -98,7 +98,7 @@ If you are in the genesis block and we do not see any activity in the first
   * Impact to network stability
 
 After the attack is complete, we ask you to write up your attack(s) (blog post,
-github repo, etc) and submit it via this form [typeform].
+github repo, etc) and submit it via this [form].
 The Oasis team will review and choose the top 5 attacks based on the criteria
 above at the end of the competition.
 
@@ -222,7 +222,7 @@ can tell you that we’ll provide plenty of pre warning beforehand.
 [eligibility-rules]: https://docsend.com/view/zv5cfia
 [sign-up-form]: https://app.hellosign.com/s/6M6ym9qh
 [slack]: https://www.oasis-protocol.org/slack
-[typeform]: https://oasisfoundation.typeform.com/to/gBwPA0
+[form]: https://oasisfoundation.typeform.com/to/gBwPA0
 [incentives-proposal]: ./incentives-proposal.md
 [setup-docs]: ./joining-the-testnet.md
 [grants]: https://www.oasis-protocol.org/grants
