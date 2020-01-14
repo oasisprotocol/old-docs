@@ -716,14 +716,19 @@ Unfortunately, at this time this is a bit of a manual process.
 ```bash
 NODE_CONSENSUS_ID="$(cat /serverdir/node/consensus_pub.pem | grep -e "-----BEGIN ED25519 PUBLIC KEY-----" -v | grep -e "-----END ED25519 PUBLIC KEY-----" -v)"
 ```
+
 You can view this by running
+
 ```bash
 echo $NODE_CONSENSUS_ID
 ```
+
 This will look like:
+
 ```text
 s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=
 ```
+
 You should search the registry's node list for this ID
 
 #### Searching for the Node's Identity
