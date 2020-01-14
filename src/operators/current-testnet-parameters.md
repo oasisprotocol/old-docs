@@ -4,11 +4,6 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
-::: tip NOTE
-If you're upgrading your node you should use the [Upgrade
-Parameters](#upgrade-parameters) section.
-:::
-
 * [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/genesis.json):
   * sha1: `19477662f02939bd3a12aec09fd517d37cae9e51`
   * sha256: `8badcb8a5a10112790d64efb885c45bf21812f4f4592189e35d2317c7e3c45a6`
@@ -42,9 +37,7 @@ No upgrades at this time.
 
 ### 2020-01-15 (Latest)
 
-#### `/serverdir/etc/config.yml` Required Changes
-
-##### Changed
+**`/serverdir/etc/config.yml` Required Changes**
 
 If you've deployed before, we changed the storage backend from `boltdb` to
 `badger`. See the [Joining the Testnet](./joining-the-testnet.md) Docs for the
