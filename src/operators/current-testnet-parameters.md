@@ -14,12 +14,6 @@ Testnet.
   :::
 * [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/a9a532e6be67512b3e4e581b5a57a97dff5715ca):
   * `a9a532e6be67512b3e4e581b5a57a97dff5715ca`
-  ::: tip NOTE
-  For this release we are using a branch `oasis-testnet-p2-2019-12-17` as the
-  previous version of the Testnet has some bugs that prevent it from working on
-  `master` without the temporary fix present in the `oasis-testnet-p2-2019-12-17`
-  branch.
-  :::
 * `oasis-node` Binaries:
   * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/oasis-node_20.1_linux_amd64.tar.gz)
   * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/oasis-node_20.1_macos_amd64.tar.gz)
