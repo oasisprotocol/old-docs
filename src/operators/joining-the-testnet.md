@@ -715,8 +715,8 @@ Unfortunately, at this time this is a bit of a manual process.
 
 ```bash
 NODE_CONSENSUS_ID="$(cat /serverdir/node/consensus_pub.pem \
-	| grep -e "-----BEGIN ED25519 PUBLIC KEY-----" -v \
-	| grep -e "-----END ED25519 PUBLIC KEY-----" -v)"
+    | grep -e "-----BEGIN ED25519 PUBLIC KEY-----" -v \
+    | grep -e "-----END ED25519 PUBLIC KEY-----" -v)"
 ```
 
 You can view this by running
