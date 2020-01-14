@@ -39,8 +39,10 @@ There are three basic steps to joining:
 3. To get ready and prepared, set up a node on the Oasis Network today.
    Documentation of how to do so is [here][setup-docs].
 
-*Note: If possible, please use the same github handle and
-email address for all 3 steps*
+::: tip NOTE
+If possible, please use the same GitHub handle email address for all 3 steps
+above.
+:::
 
 ### Goal of The Quest
 

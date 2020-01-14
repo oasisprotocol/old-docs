@@ -12,7 +12,7 @@ network.
 
 ## Details
 
-To create an entity package you must create a tarball (`.tar.gz`) that contains
+To create an Entity Package you must create a tarball (`.tar.gz`) that contains
 the following files:
 
 * `entity/entity_genesis.json` - This is the `entity_genesis.json` from the
@@ -20,35 +20,45 @@ the following files:
 * `entity/entity.json` - This is the `entity.json` file from the entity you
   initialized.
 * `node/node_genesis.json` - This is the `node_genesis.json` from the node you
-  initialized. _During genesis creation we will only accept a single node._
+  initialized.
+  ::: tip NOTE
+  During genesis creation we will only accept a single node.
+  :::
 
-The following commands should be executed on your local machine where you
-initialized your entity and node:
+The following commands should be executed on your local system, where you
+[initialized your Entity and Node][Create Your Entity]:
 
 ```shell
 mkdir -p package/entity package/node
 cp /localhostdir/entity/*.json package/entity
 cp /localhostdir/node/node_genesis.json package/node
-tar -zcvf entity.tar.gz -C package entity node
+cd package && tar -zcvf ../<YOUR-GITHUB-USERNAME>-entity.tar.gz entity node
 ```
+
+::: tip NOTE
+If possible, please use the same GitHub handle to submit your Entity Package as
+you used to [sign the waiver to join The Quest].
+:::
 
 ## Submitting Your Entity Package (For The Quest)
 
-To submit your entity package we've created a repository that will consume and
-validate the entity packages used in The Quest.
+To submit your Entity Package, we've created a repository that will consume and
+validate the Entity packages used in The Quest.
 
-1. Fork the
-   [oasislabs/the-quest-entities](https://github.com/oasislabs/the-quest-entities)
-   repository.
-2. Add your entity package to the `entities/` directory of the repository as
-   `<your-github-username>-entity.tar.gz`
-3. Create a pull request against the master branch of the oasislabs repository.
-   Once your entity package passes all validation checks we will handle the
-   merging of your pull request. _If there are issues you can always resubmit
-   your entity package._
-
-*Note: If possible, please use the same github handle to submit your
-entity package and public key*
+1. Fork the [oasislabs/the-quest-entities] repository.
+2. Add your Entity Package to the `entities/` directory of the repository.
+3. Create a pull request against the `master` branch of the
+   [oasislabs/the-quest-entities] repository.
+   Once your Entity Package passes all validation checks we will handle the
+   merging of your pull request.
 
 You can see an example of a submission in [this
-PR](https://github.com/oasislabs/the-quest-entities/pull/2)
+PR](https://github.com/oasislabs/the-quest-entities/pull/2).
+
+::: tip NOTE
+If there are any issues, you can always resubmit your entity package.
+:::
+
+[Create Your Entity]: ./joining-the-testnet.md#creating-your-entity
+[oasislabs/the-quest-entities]: https://github.com/oasislabs/the-quest-entities
+[sign the waiver to join the Quest]: ./the-quest-rules.md
