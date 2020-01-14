@@ -498,7 +498,7 @@ your node is not yet registered as a validator on the Oasis Testnet.
 This step is not necessary if your entity is listed in the Genesis file or
 already have tokens through some other means.
 
-If you jointed the Testnet before we did the latest Genesis dump and restore,
+If you joined the Testnet before we did the latest Genesis dump and restore,
 your entity should already be included in the Genesis file.
 :::
 
@@ -714,26 +714,24 @@ Unfortunately, at this time this is a bit of a manual process.
 #### Getting the Node's consensus_pub.pem Identity
 
 ```bash
-cat /serverdir/node/consensus_pub.pem
+NODE_CONSENSUS_ID="$(cat /serverdir/node/consensus_pub.pem \
+    | grep -e "-----BEGIN ED25519 PUBLIC KEY-----" -v \
+    | grep -e "-----END ED25519 PUBLIC KEY-----" -v)"
+```
+
+You can view this by running
+
+```bash
+echo $NODE_CONSENSUS_ID
 ```
 
 This will look like:
 
 ```text
------BEGIN ED25519 PUBLIC KEY-----
 s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=
------END ED25519 PUBLIC KEY-----
 ```
 
-You should search the registry's node list for this ID, e.g.
-`s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=`, and set it as environment
-variable:
-
-```bash
-NODE_CONSENSUS_ID="<NODE-CONSENSUS-ID>"
-```
-
-replacing `<NODE_CONSENSUS_ID>` with your node's `consensus_pub.pem` identity.
+You should search the registry's node list for this ID
 
 #### Searching for the Node's Identity
 
