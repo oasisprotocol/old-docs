@@ -27,21 +27,12 @@ verification**. Before joining, be sure to read the official rules
 
 ## How to Join
 
-There are three basic steps to joining:
-
-1. [Sign this waiver][sign-up-form].
-
-2. Send us your Entity Package. See: [Creating an Entity
-   Package](./creating-an-entity-package.md). **To join the competition's
-   genesis block, you must complete this step by January 13, 2020 at
-   00:00 UTC. We suggest only one node per entity for the competition.**
-
-3. To get ready and prepared, set up a node on the Oasis Network today.
-   Documentation of how to do so is [here][setup-docs].
+The Quest is now live but you can still join. Just follow these 
+steps to join the testnet [here][setup-docs].
 
 ::: tip NOTE
-If possible, please use the same GitHub handle email address for all 3 steps
-above.
+If possible, please use the same GitHub handle and email address 
+for any form linked in the docs.
 :::
 
 ### Goal of The Quest
@@ -56,21 +47,13 @@ We hope to use a staking competition to do a few things:
 4. Expand and further empower a community of data privacy advocates around the
    Oasis Network.
 
-## Competition Kickoff
+## Competition Start Time
 
-The competition is expected to start **on January 15 at 00:00 UTC**. We will give
-at least 5 day notice to start time so everyone has plenty of time to prepare.
+The competition started **on January 15 at 00:00 UTC**, but you can still
+join using the steps above. 
 
-The competition will begin with a new genesis block that includes all
-competitors to ensure each operator has access to funds at the same time. Each
-operator will receive the same amount of test tokens to start the competition.
-
-5 days before the competition starts we’ll reach out to get your preferred
-public key. Please have this ready.
-
-We will let additional entities join after the start of the competition.
-This will put you at a disadvantage for the most blocks signed reward but could
-still keep you in the running for best attack and most staked.
+When you join, you'll receive the same amount of tokens to start the 
+competition as all nodes.
 
 ## Types of Challenges
 
@@ -87,7 +70,7 @@ for the Oasis Network.
 If you are in the genesis block and we do not see any activity in the first
 24 hours we may restart the genesis block and remove you.
 
-### Challenges Spanning the Entire Competition
+### Top Challenges
 
 * **Most Blocks Signed:** This reward will be given to the top 5 operators based
   on blocks signed. This will be announced at the end of the competition.
@@ -123,8 +106,8 @@ these rewards in real time. Examples of these competitions include:
   we’ll let you know when we’re doing this and may also do a bit more
   unannounced to keep everyone honest :).
 * **Delegation**: For one upgrade we’ll plan to turn delegation on. We’ll do
-  this after rewarding the most staked competition and will then ask people to
-  stress test our delegation mechanisms. More on the challenge later.
+  this **after rewarding the most staked** and will then ask people to
+  stress test our delegation mechanisms. 
 * There may be more like the above. As they come we’ll share our plans and try
   to give you ample time to prepare.
 
