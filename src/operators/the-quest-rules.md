@@ -27,11 +27,11 @@ verification**. Before joining, be sure to read the official rules
 
 ## How to Join
 
-The Quest is now live but you can still join. Just follow these 
+The Quest is now live but you can still join. Just follow these
 steps to join the testnet [here][setup-docs].
 
 ::: tip NOTE
-If possible, please use the same GitHub handle and email address 
+If possible, please use the same GitHub handle and email address
 for any form linked in the docs.
 :::
 
@@ -50,9 +50,9 @@ We hope to use a staking competition to do a few things:
 ## Competition Start Time
 
 The competition started **on January 15 at 00:00 UTC**, but you can still
-join using the steps above. 
+join using the steps above.
 
-When you join, you'll receive the same amount of tokens to start the 
+When you join, you'll receive the same amount of tokens to start the
 competition as all nodes.
 
 ## Types of Challenges
@@ -107,7 +107,7 @@ these rewards in real time. Examples of these competitions include:
   unannounced to keep everyone honest :).
 * **Delegation**: For one upgrade we’ll plan to turn delegation on. We’ll do
   this **after rewarding the most staked** and will then ask people to
-  stress test our delegation mechanisms. 
+  stress test our delegation mechanisms.
 * There may be more like the above. As they come we’ll share our plans and try
   to give you ample time to prepare.
 
