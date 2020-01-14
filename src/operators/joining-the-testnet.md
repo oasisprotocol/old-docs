@@ -1,10 +1,12 @@
 # Joining the Testnet
 
-This guide will cover setting up your nodes on the Public Testnet.
-It assumes some basic knowledge on the use of command line tools.
+This guide will cover setting up your nodes for The Quest, a multi-round staking
+competition (aka incentivized testnet) on the Oasis Network. It assumes some basic
+knowledge on the use of command line tools.
 
 ::: tip NOTE
-If you joined the Testnet prior to 11/26, use the following steps to upgrade:
+If you joined the Testnet prior to 1/15 and you plan to use the same entity for
+The Quest, use the following steps to upgrade:
 
 1. [Stop your node and wipe state while keeping your node's identity][
   wipe-state-keep-id].
@@ -495,11 +497,9 @@ your node is not yet registered as a validator on the Oasis Testnet.
 ## Signing up for Testnet Tokens
 
 ::: tip NOTE
-This step is not necessary if your entity is listed in the Genesis file or
-already have tokens through some other means.
-
-If you jointed the Testnet before we did the latest Genesis dump and restore,
-your entity should already be included in the Genesis file.
+This step is not necessary if you submitted a valid entity package for The Quest
+prior to the start on 1/15--in this case, your entity will be included in the
+Genesis file.
 :::
 
 In order to participate on the Testnet you'll need to have tokens. You'll use
@@ -538,9 +538,6 @@ already been funded.
 
 ::: tip NOTE
  This step is not necessary if your entity is listed in the Genesis file.
-
-If you jointed the Testnet before we did the latest Genesis dump and restore,
-your entity should already be included in the Genesis file.
 :::
 
 ::: warning NOTE
