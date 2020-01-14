@@ -4,24 +4,14 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
-***From 19:00 UTC Tuesday, December 17 (2019-12-17T19:00:00Z) to 18:59 UTC
-Wednesday, December 18 (2019-12-18T18:59:59Z) the Oasis Testnet will run through
-its first coordinated upgrade. Parameters for this network upgrade are below.***
-
-::: tip NOTE
-As the release management of our open source repositories improves, we will
-refer to more human-friendly versions of Oasis Core (and related built
-artifacts) in this document.
-:::
-
 ::: tip NOTE
 If you're upgrading your node you should use the [Upgrade
 Parameters](#upgrade-parameters) section.
 :::
 
-* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/genesis.json):
-  * sha1: `04c41d95f6856ecf88371929ef15547394ad7e21`
-  * sha256: `67e4ab0112c0bf72799674870f28b5a2b461a9bf566c5aee58aa38a7e4e55aee`
+* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/genesis.json):
+  * sha1: `19477662f02939bd3a12aec09fd517d37cae9e51`
+  * sha256: `8badcb8a5a10112790d64efb885c45bf21812f4f4592189e35d2317c7e3c45a6`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
@@ -36,33 +26,31 @@ Parameters](#upgrade-parameters) section.
   branch.
   :::
 * `oasis-node` Binaries:
-  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-linux.tar.gz)
-  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2019-12-17/oasis-node-mac.tar.gz)
-* [Docker image](https://hub.docker.com/layers/oasislabs/oasis-node/deploy-20191217000001/images/sha256-b8c32855f7ad6ea799faa934d7150b2308072c01d98f2b5edf4067cfb4b9b910)
-  * `oasislabs/oasis-node:deploy-20191217000001`
+  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/oasis-node_20.1_linux_amd64.tar.gz)
+  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/oasis-node_20.1_macos_amd64.tar.gz)
+* [Docker image](https://hub.docker.com/layers/oasislabs/oasis-node/master-20200114202942/images/sha256-bdaa9aa5a55f20ba91b0a6730ed59aefb45b8d7dbbf1c406a9934d8ef970abf1)
+  * `oasislabs/oasis-node:master-20200114202942`
   ::: warning DEPRECATED
   We no longer recommend or support using Oasis-provided Docker images.
   :::
 
 ## Upgrade Parameters
 
-The following section details on the scheduled upgrade for the network. See the
-[Handling Network Upgrades Guide](./maintenance/handling-network-upgrades.md)
-for instructions on how to use these parameters.
-
-* Block height to dump: **950000**
-* Upgrade Window
-  * Start: **2019-12-17T19:00:00Z**
-  * End: **2019-12-18T18:59:59Z**
-    * The "_End_" of the window is not something we can enforce unilaterally,
-      however, if, for whatever reason, not enough people upgrade on the public
-      testnet we _may_ release and redeploy a new genesis block that removes
-      inactive nodes from the validator set.
-* [Upgrade Patch](https://raw.githubusercontent.com/oasislabs/public-testnet-artifacts/master/patches/patch-2019-12-17.json)
+No upgrades at this time.
 
 ## Deployment Change Log
 
-### 2019-12-17 (Latest)
+### 2020-01-15 (Latest)
+
+#### `/serverdir/etc/config.yml` Required Changes
+
+##### Changed
+
+If you've deployed before, we changed the storage backend from `boltdb` to
+`badger`. See the [Joining the Testnet](./joining-the-testnet.md) Docs for the
+update.
+
+### 2019-12-17
 
 You should only need to do an upgrade as detailed in the [Handling Network
 Upgrades Guide](./maintenance/handling-network-upgrades.md).
