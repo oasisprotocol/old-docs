@@ -498,7 +498,7 @@ your node is not yet registered as a validator on the Oasis Testnet.
 
 ::: tip NOTE
 This step is not necessary if you submitted a valid entity package for The Quest
-prior to the start on 1/15--in this case, your entity will be included in the
+prior to 2019/01/13 @ 00:00 UTC--in this case, your entity will be included in the
 Genesis file.
 :::
 
