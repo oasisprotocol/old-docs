@@ -106,7 +106,7 @@ these rewards in real time. Examples of these competitions include:
   we’ll let you know when we’re doing this and may also do a bit more
   unannounced to keep everyone honest :).
 * **Delegation**: For one upgrade we’ll plan to turn delegation on. We’ll do
-  this **after rewarding the most staked** and will then ask people to
+  this **after determining the winner(s) for most stake accumulated** and will then ask people to
   stress test our delegation mechanisms.
 * There may be more like the above. As they come we’ll share our plans and try
   to give you ample time to prepare.
