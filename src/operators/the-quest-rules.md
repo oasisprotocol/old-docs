@@ -28,7 +28,7 @@ verification**. Before joining, be sure to read the official rules
 ## How to Join
 
 The Quest is now live but you can still join. Just follow these
-steps to join the testnet [here][setup-docs].
+steps to join the Testnet [here][setup-docs].
 
 ::: tip NOTE
 If possible, please use the same GitHub handle and email address
