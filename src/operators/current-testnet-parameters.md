@@ -12,8 +12,8 @@ Testnet.
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
-* [Oasis Core commit SHA](https://github.com/oasislabs/oasis-core/commit/a9a532e6be67512b3e4e581b5a57a97dff5715ca):
-  * `a9a532e6be67512b3e4e581b5a57a97dff5715ca`
+* [Oasis Core version](https://github.com/oasislabs/oasis-core/releases/tag/v20.1):
+  * git tag: `v20.1`
 * `oasis-node` Binaries:
   * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/oasis-node_20.1_linux_amd64.tar.gz)
   * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/oasis-node_20.1_macos_amd64.tar.gz)
