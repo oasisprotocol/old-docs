@@ -29,7 +29,7 @@ verification**. Before joining, be sure to read the official rules
 ## How to Join
 
 The Quest is now live but you can still join. Just follow these
-steps to join the Testnet [here][setup-docs] and you will be 
+steps to join the Testnet [here][setup-docs] and you will be
 funded after the Network's upgrade on January 23.
 
 ::: tip NOTE
@@ -75,8 +75,8 @@ If you are in the genesis block and we do not see any activity in the first
 ### Top Challenges
 
 * **Most Blocks Signed:** This reward will be given to the top 5 operators based
-  on blocks signed. This will be announced at the end of the competition. For 
-  those not joining late, we'll also offer a reward for most blocks signed
+  on blocks signed. This will be announced at the end of the competition. For
+  those joining late, we'll also offer a reward for most blocks signed
   from nodes joining after January 23.
 * **Best Attacks**: Best attacks is a qualitative reward but certainly one we
   will judge impartially. The goal of this reward is really to see if you can
