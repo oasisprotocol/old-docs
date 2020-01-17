@@ -3,8 +3,9 @@
 ![The Quest](/operator_images/the_quest.png)
 
 Welcome to The Quest -- a multi-round staking competition (aka incentivized
-testnet) run on the Oasis Network.The competition will begin on January 15, 2020
-at OO:00 UTC.
+testnet) run on the Oasis Network. The Quest began on January 15 00:00 UTC.
+**New participants can join during or after the next network upgrade on
+Thursday, January 23 at 00:00 UTC (Wednesday, January 22 at 4:00 pm PST).**
 
 ***[Join the Quest][get-set-up]***
 
@@ -28,7 +29,8 @@ verification**. Before joining, be sure to read the official rules
 ## How to Join
 
 The Quest is now live but you can still join. Just follow these
-steps to join the Testnet [here][setup-docs].
+steps to join the Testnet [here][setup-docs] and you will be
+funded after the Network's upgrade on January 23.
 
 ::: tip NOTE
 If possible, please use the same GitHub handle and email address
@@ -73,7 +75,9 @@ If you are in the genesis block and we do not see any activity in the first
 ### Top Challenges
 
 * **Most Blocks Signed:** This reward will be given to the top 5 operators based
-  on blocks signed. This will be announced at the end of the competition.
+  on blocks signed. This will be announced at the end of the competition. For
+  those joining late, we'll also offer a reward for most blocks signed
+  from nodes joining after January 23.
 * **Best Attacks**: Best attacks is a qualitative reward but certainly one we
   will judge impartially. The goal of this reward is really to see if you can
   hack the system, steal someone’s tokens, cause a sybil attack, etc. Specific
@@ -84,7 +88,8 @@ If you are in the genesis block and we do not see any activity in the first
 
 After the attack is complete, we ask you to write up your attack(s) (blog post,
 github repo, etc) and submit it via this [form].
-The Oasis team will review and choose the top 5 attacks based on the criteria
+
+The Oasis team will review and choose the top 6 attacks based on the criteria
 above at the end of the competition.
 
 ### Time-based Challenges
@@ -144,7 +149,7 @@ time-based challenges noted above) include:
 **Attacks**:
 
 * Best Attack: up to 1,000,000 tokens
-* Top 5 Attacks: up to 500,000 tokens
+* Top 6 Attacks: up to 500,000 tokens
 
 **Most staked**:
 
@@ -155,6 +160,7 @@ time-based challenges noted above) include:
 
 * 1st place: 750,000 tokens
 * Top 5 spots: up to 500,000 tokens
+* 1st place (among nodes joining after January 23): TBD tokens
 
 **Community**:
 
