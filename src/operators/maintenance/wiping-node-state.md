@@ -12,16 +12,16 @@ The following instructions assume that your `datadir` is defined as
 
 1. Stop the `oasis-node` server process (this will depend on your own deployment
    setup)
-2. Remove blockchain state
+2. Remove blockchain state using the `oasis-node unsafe-reset` command
 
     ```bash
-    rm -rf /serverdir/node/tendermint
-    rm -rf /serverdir/node/bleve-tag-index.bleve.db
-    rm -rf /serverdir/node/abci-mux-state.badger.db
-    rm -rf /serverdir/node/persistent-store.badger.db
+    # Do a dry run first to see which files will get deleted.
+    oasis-node unsafe-reset --datadir=/serverdir/node --dry_run --log.level info
+    # Delete.
+    oasis-node unsafe-reset --datadir /serverdir/node --log.level info
     ```
 
-3. Restart the oasis-node server process
+3. Start the oasis-node server process
 
 ## Full State Wipe
 
