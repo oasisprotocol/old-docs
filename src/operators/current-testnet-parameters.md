@@ -12,16 +12,18 @@ Testnet.
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
-* [Oasis Core version](https://github.com/oasislabs/oasis-core/releases/tag/v20.1):
-  * git tag: `v20.1`
-* `oasis-node` Binaries:
-  * [Linux x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/oasis-node_20.1_linux_amd64.tar.gz)
-  * [macOS x86-64](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-15/oasis-node_20.1_macos_amd64.tar.gz)
-* [Docker image](https://hub.docker.com/layers/oasislabs/oasis-node/master-20200114202942/images/sha256-bdaa9aa5a55f20ba91b0a6730ed59aefb45b8d7dbbf1c406a9934d8ef970abf1)
-  * `oasislabs/oasis-node:master-20200114202942`
-  ::: warning DEPRECATED
-  We no longer recommend or support using Oasis-provided Docker images.
+* [Oasis Core] version:
+  * [20.1.1](https://github.com/oasislabs/oasis-core/releases/tag/v20.1.1)
+  ::: tip NOTE
+  The `oasis-node` binary is part of the Oasis Core release.
   :::
+  ::: warning DEPRECATED
+  We no longer recommend or support using Oasis Labs' provided [oasis-node
+  Docker images].
+  :::
+
+[Oasis Core]: https://github.com/oasislabs/oasis-core
+[oasis-node Docker images]: https://hub.docker.com/r/oasislabs/oasis-node/tags
 
 ## Upgrade Parameters
 
