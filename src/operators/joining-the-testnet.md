@@ -5,7 +5,7 @@ competition (aka incentivized testnet) on the Oasis Network. It assumes some bas
 knowledge on the use of command line tools.
 
 ::: tip NOTE
-If you joined the Testnet prior to 2019/01/15 and you plan to use the same entity
+If you joined the Testnet prior to 2020/01/15 and you plan to use the same entity
 for The Quest, use the following steps to upgrade:
 
 1. [Stop your node and wipe state while keeping your node's identity][
