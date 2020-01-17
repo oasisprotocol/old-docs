@@ -5,7 +5,7 @@
 Welcome to The Quest -- a multi-round staking competition (aka incentivized
 testnet) run on the Oasis Network. The Quest began on January 15 00:00 UTC.
 **New participants can join during or after the next network upgrade on
-Wednesday, January 23 at 00:00 UTC (Tuesday, January 22 at 4:00 pm PST).**
+Thursday, January 23 at 00:00 UTC (Wednesday, January 22 at 4:00 pm PST).**
 
 ***[Join the Quest][get-set-up]***
 
