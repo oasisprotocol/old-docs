@@ -63,10 +63,13 @@ curl --proto '=https' --tlsv1.2 -sSL $PATCH_URL -o /serverdir/etc/patch.json
 
 ### Applying the Patch
 
+***NOTICE: This method of upgrading the network no longer works. We will be posting
+instructions about how to patch the genesis document soon.***
+
 ```bash
-jq --slurp --sort-keys --compact-output '.[0] * .[1]' \
-  /serverdir/etc/upgrade-dump.json \
-  /serverdir/etc/patch.json > /serverdir/etc/genesis.json
+~~jq --slurp --sort-keys --compact-output '.[0] * .[1]' \~~
+  ~~/serverdir/etc/upgrade-dump.json \~~
+  ~~/serverdir/etc/patch.json > /serverdir/etc/genesis.json~~
 ```
 
 ## Wiping State
