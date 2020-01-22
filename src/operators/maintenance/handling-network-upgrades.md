@@ -1,6 +1,6 @@
 # Handling Network Upgrades
 
-:::warning NOTE
+::: warning NOTE
 Starting at 00:00 UTC Wednesday, January 23 (2020-01-23T00:00:00Z) the
 Oasis Testnet will run through the first coordinated upgrade of The Quest. Steps
 on how to upgrade your node during this window are below.
