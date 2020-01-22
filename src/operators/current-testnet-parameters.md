@@ -6,7 +6,7 @@ Testnet.
 
 * [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-01-23/genesis.json):
   * sha1: `bcd8eb7cee74969dd7446ec9ac43be2042164c20`
-  * sha256: `5d55558a50ebcd80f6d0738c945a4381051d3a9bb9847b08542509ef317fb1cd`
+  * sha256: `5256e50102ee1f58409b162ced45e0ee8050ef6f34b24b42e1d56f5ed5941d38`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
