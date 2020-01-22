@@ -63,11 +63,13 @@ curl --proto '=https' --tlsv1.2 -sSL $PATCH_URL -o /serverdir/etc/patch.json
 
 ### Applying the Patch
 
-```bash
-jq --slurp --sort-keys --compact-output '.[0] * .[1]' \
-  /serverdir/etc/upgrade-dump.json \
-  /serverdir/etc/patch.json > /serverdir/etc/genesis.json
-```
+::: warning NOTICE
+There used to be instructions here to upgrade using `jq`. However, since JQ has
+a [bug](https://github.com/stedolan/jq/issues/369) where it does not handle very
+large integers correctly, this method no longer works. We will be posting
+instructions about how to manually patch the genesis document during upgrades
+until we have a better solution.
+:::
 
 ## Wiping State
 
