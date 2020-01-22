@@ -39,7 +39,7 @@ for instructions on how to use these parameters.
       however, if, for whatever reason, not enough people upgrade on the public
       testnet we _may_ release and redeploy a new genesis block that removes
       inactive nodes from the validator set.
-* Please download the genesis published in 
+* Please download the genesis published in
   [this release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-01-23)
 
 ## Deployment Change Log
