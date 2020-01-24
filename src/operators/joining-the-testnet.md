@@ -628,7 +628,7 @@ oasis-node stake account gen_escrow \
   --signer file \
   --signer.dir $ENTITY_DIR_PATH \
   --stake.escrow.account $ACCOUNT_ID \
-  --stake.amount 100000000000000000000 \
+  --stake.amount 100000000000 \
   --transaction.file $OUTPUT_TX_FILE_PATH \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 1 \
@@ -638,7 +638,7 @@ oasis-node stake account gen_escrow \
 ::: tip NOTE
 The option `--stake.amount` looks like a very large number, but this is
 actually just an equivalent to 100 tokens on the Testnet as each unit
-value used to track the account balance is 1x10^-18 tokens.
+value used to track the account balance is 1x10^-9 tokens.
 :::
 
 ### Generating Entity Registration Transaction
