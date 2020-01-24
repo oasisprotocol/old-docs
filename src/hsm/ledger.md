@@ -1,7 +1,6 @@
 # Ledger Support
 
-Ledger is one of the HSM platforms that Oasis supports for phase 1 of the
-network.
+Ledger is one of the HSM platforms that Oasis supports for Mainnet Launch.
 
 ## Prerequisites
 
@@ -14,7 +13,7 @@ To use with the Ledger App, install the Ledger application from
 the Ledger Live Manager. You will have to set developer mode to 'on' in order
 to find it.
 
-::: warn NOTE
+::: warning NOTE
 The Oasis Ledger App will not be available for download until after it has been
 approved be Ledger.
 :::
@@ -65,5 +64,6 @@ oasis-node stake account gen_burn \
 ::: note Note
 The `--signer.dir` flag is still necessary for the command to run, but it is
 not used. The specified directory must contain a valid `entity.json` file.
+:::
 
 The transaction fields can be viewed from the Ledger device before confirming.
