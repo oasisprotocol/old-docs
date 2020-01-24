@@ -141,6 +141,13 @@ module.exports = {
           },
         ],
       },
+      {
+        title: 'HSM Support',
+        collapsable: true,
+        children: [
+          ['/hsm/ledger', 'Ledger'],
+        ],
+      },
     ],
     repo: 'oasislabs',
     docsRepo: 'oasislabs/docs',
