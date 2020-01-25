@@ -93,6 +93,7 @@ module.exports = {
           ['/operators/troubleshooting', 'Troubleshooting Guide'],
           ['/operators/stake-management', 'Stake Management'],
           ['/operators/incentives-proposal', 'Network Incentives Proposal'],
+          ['/operators/community-resources', 'Community-Made Resources'],
           ['/operators/the-quest-rules', 'The Quest Rules'],
           {
             title: 'Maintenance Guides',
