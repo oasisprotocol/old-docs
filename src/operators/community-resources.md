@@ -8,6 +8,6 @@ the Oasis Testnet, automate your node deployment, and more.
 - [https://oasis.fish/leaderboard](https://oasis.fish/leaderboard/)
 - [https://oasis.smartstake.io/](https://oasis.smartstake.io/)
 
-## Deployment services **(Coming Soon!)
+## Deployment Services **(Coming Soon!)**
 
-## Monitoring and Alerts **(Coming Soon!)
+## Monitoring and Alerts **(Coming Soon!)**
