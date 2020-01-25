@@ -10,7 +10,7 @@ The guide does not cover setting this infrastructure up.
 Knowledge of [Tendermint's Sentry Node architecture][tm-sentry] is assumed as
 well.
 
-[tm-sentry]: https://cosmos.network/docs/cosmos-hub/validators/security.html#sentry-nodes-ddos-protection
+[tm-sentry]: https://forum.cosmos.network/t/sentry-node-architecture-overview/454
 
 ::: danger
 This is only an example of a Sentry node deployment, and we take no responsibility
@@ -33,28 +33,20 @@ Before following this guide, make sure you've read the [Prerequisites] and
 Sentry node identity keys can be initialized with:
 
 ```bash
-oasis-node registry node init --entity /localhostdir/entity
+oasis-node identity init --datadir /serverdir/node
 ```
 
 The generated `tls_identity_cert.pem` (which is the node's TLS cert for
 securing gRPC connections) needs to be available on any node that will be
-running behind the sentry node.
-
-::: tip NOTE
-We plan to simplify this step in the future so that it won't involve Entity at
-all since Sentry node's identity keys are in no way linked to the Entity
-itself.
-See [Oasis Core #2413](https://github.com/oasislabs/oasis-core/issues/2413) for
-more details.
-:::
+protected by the sentry node.
 
 ### Configuring Sentry Node
 
 An Oasis node can be configured to run as a sentry node by setting the
-`--worker.sentry.enabled` flag. Additionally, the
-`--tendermint.private_peer_id` flag can be used to configure a list of
-Tendermint private peers, which should be set to Tendermint IDs of validator
-nodes, protected by this sentry node.
+`--worker.sentry.enabled` flag. Additionally, the`--tendermint.private_peer_id`
+& `--tendermint.peristent_peer` flags can be used to configure a list of
+Tendermint private peers, which should be set to Tendermint IDs and addresses
+of validator nodes, protected by this sentry node.
 
 An example of full `YAML` configuration of a sentry node is below.
 
@@ -69,8 +61,8 @@ variables the documentation was potentially ambigious. Please keep the {{ }} in
 the following section
 -->
 
-- <code v-pre>{{ external_address }}</code>: This is the external IP you wish to
-  use when registering this node.
+- <code v-pre>{{ external_address }}</code>: This is the external IP on which
+  sentry node will be reachable.
 - <code v-pre>{{ seed_node_address }}</code>: This the seed node address of the
   form `ID@IP:port`. You can find the current Oasis Seed Node address in the
   [Current Testnet Parameters][params].
@@ -86,6 +78,9 @@ the following section
 
   <!--- TODO: there is probably a different way to get this out of our identity
   files. --->
+
+- <code v-pre>{{ validator_private_address }}</code>: This is the (presumably)
+  private address on which validator should be reachable from the sentry node.
 
 [params]: ./current-testnet-parameters.md
 
@@ -156,6 +151,9 @@ tendermint:
   # Sentry node should set validator IDs as private peer IDs.
   private_peer_id:
     - "{{ validator_tendermint_id }}"
+
+  persistent_peer:
+    - "{{ validator_tendermint_id }}@{{ validator_private_address }}:26656"
 ```
 
 ::: tip NOTE
@@ -229,7 +227,7 @@ connecting to any of the seed nodes.
 Tendermint Peer Exchange should be disabled on the validator with the
 `--tendermint.disable_peer_exchange` flag.
 
-Sentry nodes should be configured as Tendermint Persistent-Peers with the
+Sentry nodes can also be configured as Tendermint Persistent-Peers with the
 `--tendermint.persistent_peer` flag.
 
 In addition to the familiar Tendermint setup above, the node needs to be
