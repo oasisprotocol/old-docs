@@ -65,11 +65,10 @@ curl --proto '=https' --tlsv1.2 -sSL $PATCH_URL -o /serverdir/etc/patch.json
 ### Applying the Patch
 
 ::: warning NOTICE
-There used to be instructions here to upgrade using `jq`. However, since JQ has
+There used to be instructions here to upgrade using `jq`. However, since jq has
 a [bug](https://github.com/stedolan/jq/issues/369) where it does not handle very
-large integers correctly, this method no longer works. We will be posting
-instructions about how to manually patch the genesis document during upgrades
-until we have a better solution.
+large integers correctly, this method no longer works. We will be posting an
+updated genesis document during upgrades until we have a better solution.
 :::
 
 ## Wiping State
