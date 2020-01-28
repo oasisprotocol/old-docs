@@ -63,7 +63,7 @@ oasis-node stake account gen_burn \
   --transaction.fee.gas 1000 \
   --transaction.file burn.tx
 ```
-[//]: <> (TODO: Replace this section with one detailing how to extract the entity from the Ledger device, after the tooling is added.
+[//]: <> (TODO: Replace this section with one detailing how to extract the entity from the Ledger device, after the tooling is added.)
 ::: note Note
 The `--signer.dir` flag is still necessary for the command to run, but it is
 not used. The specified directory must contain a valid `entity.json` file. For now,
