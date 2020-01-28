@@ -44,12 +44,34 @@ Oasis App Address : oasis19hpt4y2reqwyfqcd53asjchdqf468chr673y6jn07xjp36w32jlscf
 From now on, we will use the `Oasis App Address` to identify the Ledger device
 we want to use for signing.
 
+## Extracting Entity
+
+Before we can sign anything, we need to extract the public key from the device
+and using it to generate an entity. This will be later used as another check to
+ensure that you are signing with the correct key. Using the address we retrieved
+from the previous section, run the following:
+
+```bash
+oasis-node signer extract \
+  --signer ledger \
+  --signer.dir /path/to/entity \
+  --signer.ledger.address oasis19hpt4y2reqwyfqcd53asjchdqf468chr673y6jn07xjp36w32jlscf0me \
+  --signer.ledger.index 1
+```
+
+This will create an `entity.json` file in `/path/to/entity` that contains the
+public key generated on the device associated with `--signer.ledger.address`,
+derived from a path with an account index of `--signer.ledger.index`. The
+`--signer ledger` flag is important here as it specifies use of a Ledger
+backend.
+
+This command must be run anytime a new account index is to be used, with a
+new `/path/to/entity` provided.
+
 ## Signing Transactions
 
 To sign transactions with the Ledger App, run the `oasis-node stake account
-gen_<transaction_type>` command, and specify the `--signer ledger` and
-`--signer.ledger.address <oasis_app_address>` flags. The
-`--signer.ledger.index` flag can be specified for an alternate account index.
+gen_<transaction_type>` command, and specify the `--signer ledger` flag.
 For example:
 
 ```bash
@@ -63,14 +85,10 @@ oasis-node stake account gen_burn \
   --transaction.fee.gas 1000 \
   --transaction.file burn.tx
 ```
-[//]: <> (TODO: Replace this section with one detailing how to extract the entity from the Ledger device, after the tooling is added.)
-::: note Note
-The `--signer.dir` flag is still necessary for the command to run, but it is
-not used. The specified directory must contain a valid `entity.json` file. For now,
-use this dummy entity.json:
 
-{"id":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=","nodes":null,"allow_entity_signed_nodes":false}
+The `--signer.ledger.address` and `--signer.ledger.index` flags should match
+those provided to the command in the previous section. If the public key of
+the entity in `/path/to/entity` does not match that derived by the Ledger
+device, the command will fail.
 
-:::
-
-The transaction fields can be viewed from the Ledger device before confirming.
+The transaction fields need to be confirmed the Ledger device before signing.
