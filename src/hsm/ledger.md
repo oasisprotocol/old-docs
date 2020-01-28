@@ -54,16 +54,23 @@ For example:
 
 ```bash
 oasis-node stake account gen_burn \
-  --signer.dir entity \
+  --signer.dir /path/to/entity \
   --signer ledger \
   --signer.ledger.address oasis19hpt4y2reqwyfqcd53asjchdqf468chr673y6jn07xjp36w32jlscf0me \
   --signer.ledger.index 1 \
-...
+  --genesis.file $GENESIS_PATH \
+  --transaction.fee.amount 1 \
+  --transaction.fee.gas 1000 \
+  --transaction.file burn.tx
 ```
-
+[//]: <> (TODO: Replace this section with one detailing how to extract the entity from the Ledger device, after the tooling is added.
 ::: note Note
 The `--signer.dir` flag is still necessary for the command to run, but it is
-not used. The specified directory must contain a valid `entity.json` file.
+not used. The specified directory must contain a valid `entity.json` file. For now,
+use this dummy entity.json:
+
+{"id":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=","nodes":null,"allow_entity_signed_nodes":false}
+
 :::
 
 The transaction fields can be viewed from the Ledger device before confirming.
