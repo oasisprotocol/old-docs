@@ -44,15 +44,15 @@ Oasis App Address : oasis19hpt4y2reqwyfqcd53asjchdqf468chr673y6jn07xjp36w32jlscf
 From now on, we will use the `Oasis App Address` to identify the Ledger device
 we want to use for signing.
 
-## Extracting Entity
+## Exporting the Public Key to Entity
 
-Before we can sign anything, we need to extract the public key from the device
+Before we can sign anything, we need to export the public key from the device
 and using it to generate an entity. This will be later used as another check to
 ensure that you are signing with the correct key. Using the address we retrieved
 from the previous section, run the following:
 
 ```bash
-oasis-node signer extract \
+oasis-node signer export \
   --signer ledger \
   --signer.dir /path/to/entity \
   --signer.ledger.address oasis19hpt4y2reqwyfqcd53asjchdqf468chr673y6jn07xjp36w32jlscf0me \
