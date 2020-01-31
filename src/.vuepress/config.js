@@ -108,6 +108,10 @@ module.exports = {
                 '/operators/maintenance/handling-network-upgrades',
                 'Handling Network Upgrades',
               ],
+              [
+                '/operators/maintenance/adding-removing-nodes',
+                'Adding or Removing Nodes',
+              ],
             ],
           },
         ],
