@@ -1,5 +1,29 @@
 # Troubleshooting
 
+## BEFORE YOUR TROUBLESHOOT CHECKLIST
+
+Before you begin troubleshooting we suggest you check all of the following:
+
+* Check that your current binary version is the latest listed on the [current
+  testnet parameters](./current-testnet-parameters.md)
+  * Check the version on your localhost using `oasis-node --version`
+  * Check the version on your server using `oasis-node --version`
+* If upgrading, make sure that you've wiped state (unless that is explicitly not
+  required)
+* If you're doing anything with the entity:
+  * Do you have the latest genesis?
+  * Do you have the correct private key (or ledger device).
+  * If you're signing a transaction:
+    * Do you have enough of an account balance to make the transaction?
+      * Run `oasis-node stake account info`
+    * Are you using the correct nonce?
+      * Run `oasis-node stake account info`
+* If you're generating a transaction:
+  * Do you have the latest genesis?
+* If you're submitting a transaction:
+  * Do you have the latest genesis?
+  * Is your node synced? The transaction will fail to run properly
+
 ## `oasis-node` Binary
 
 ### Building from Source: Go Errors
