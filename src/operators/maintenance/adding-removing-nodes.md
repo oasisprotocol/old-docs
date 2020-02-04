@@ -89,7 +89,7 @@ remove it from the array in the `nodes` field, like so:
 }
 ```
 
-## Updating Your Entity Registration On The Network
+## Updating Your Entity Registration on the Network
 
 Finally, to commit the changes on the network you'll need to generate a
 `register` transaction and submit that transaction to the network.
