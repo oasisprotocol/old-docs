@@ -11,7 +11,7 @@ Before you begin troubleshooting we suggest you check all of the following:
   required)
 * If you're doing anything with the entity:
   * Do you have the latest genesis?
-  * Do you have the correct private key (or ledger device).
+  * Do you have the correct private key (or Ledger device).
   * If you're signing a transaction:
     * Do you have enough of an account balance to make the transaction?
       * Run `oasis-node stake account info`
