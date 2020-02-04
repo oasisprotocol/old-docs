@@ -1,7 +1,6 @@
 # Troubleshooting
 
-## BEFORE YOUR TROUBLESHOOT CHECKLIST
-
+::: danger BEFORE YOU BEGIN TROUBLESHOOTING
 Before you begin troubleshooting we suggest you check all of the following:
 
 * Check that your current binary version is the latest listed on the [current
@@ -23,6 +22,7 @@ Before you begin troubleshooting we suggest you check all of the following:
 * If you're submitting a transaction:
   * Do you have the latest genesis?
   * Is your node synced? The transaction will fail to run properly
+:::
 
 ## `oasis-node` Binary
 
