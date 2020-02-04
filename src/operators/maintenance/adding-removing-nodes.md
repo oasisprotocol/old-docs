@@ -114,7 +114,7 @@ oasis-node registry entity gen_register \
 Once this has exited with a `0` status, you should have a file at
 `$OUTPUT_REGISTER_TX_FILE_PATH`. Upload that file to your server.
 
-### Submitting The Transaction
+### Submitting the Transaction
 
 Run this command on your server:
 
