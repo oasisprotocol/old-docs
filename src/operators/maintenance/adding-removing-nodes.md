@@ -10,7 +10,7 @@ do so, you will need to have at least the following:
 
 The process for adding/removing nodes is similar and has the following steps:
 
-1. Retrieve the most up to date entity descriptor (`entity.json`)
+1. Retrieve your up to date entity descriptor (`entity.json`)
 2. Update your entity descriptor by adding/removing a node
 3. Generate a `register` transaction to update your entity registration on the
    network.
