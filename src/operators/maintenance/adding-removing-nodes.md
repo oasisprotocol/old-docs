@@ -124,7 +124,7 @@ oasis-node consensus submit_tx \
   -a unix:/serverdir/node/internal.sock
 ```
 
-If there are no errors, your entity registration should update and you can run
+If there are no errors, your entity registration should be updated. You can run
 this command to see the changes reflected:
 
 ```bash
