@@ -21,7 +21,7 @@ Before you begin troubleshooting we suggest you check all of the following:
   * Do you have the latest genesis?
 * If you're submitting a transaction:
   * Do you have the latest genesis?
-  * Is your node synced? The transaction will fail to run properly
+  * Is your node synced? If not, the transaction will fail to run properly
 :::
 
 ## `oasis-node` Binary
