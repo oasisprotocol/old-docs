@@ -15,7 +15,7 @@ The process for adding/removing nodes is similar and has the following steps:
 3. Generate a `register` transaction to update your entity registration on the
    network.
 
-## Retrieve Latest Entity Descriptor
+## Retrieving Your Latest Entity Descriptor
 
 To ensure that we do not update your entity descriptor (`entity.json`)
 incorrectly we should get the latest entity descriptor state. For this
