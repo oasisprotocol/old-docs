@@ -13,7 +13,7 @@ Before you begin troubleshooting we suggest you check all of the following:
   * Do you have the latest genesis?
   * Do you have the correct private key (or Ledger device).
   * If you're signing a transaction:
-    * Do you have enough of an account balance to make the transaction?
+    * Do you sufficient account balance to make the transaction?
       * Run `oasis-node stake account info`
     * Are you using the correct nonce?
       * Run `oasis-node stake account info`
