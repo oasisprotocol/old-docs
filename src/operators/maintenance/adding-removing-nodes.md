@@ -36,7 +36,7 @@ oasis-node registry entity list \
 
 ::: tip NOTE
 Due to how the node election process works, only a single node from your entity
-is chosen for any given epoch. Additional nodes will _not_ give you more voting
+can be selected as a validator for any given epoch. Additional nodes will _not_ give you more voting
 power nor will it, inherently, provide high availability to have multiple nodes.
 :::
 
