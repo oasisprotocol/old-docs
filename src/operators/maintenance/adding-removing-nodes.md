@@ -57,7 +57,7 @@ oasis-node registry entity update \
 
 ## To Remove a Node
 
-In order to remove a node requires updating the entity descriptor manually. The
+Removing a node requires updating the entity descriptor manually. The
 entity descriptor file is a simple JSON document that looks something like:
 
 ```json
