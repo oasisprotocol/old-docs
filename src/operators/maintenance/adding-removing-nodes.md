@@ -94,7 +94,7 @@ remove it from the array in the `nodes` field, like so:
 Finally, to commit the changes on the network you'll need to generate a
 `register` transaction and submit that transaction to the network.
 
-### Generating A `register` Transaction
+### Generating a `register` Transaction
 
 Run this command on your localhost (as you need your entity's private key):
 
