@@ -42,7 +42,7 @@ power nor will it, inherently, provide high availability to have multiple nodes.
 
 Adding a node is a simple operation that is directly supported by the
 `oasis-node` binary. For this operation you'll need to have initialized a new
-node and you'll need to have the `node_genesis.json` file in order to add it to
+node, and you'll need to have the `node_genesis.json` file in order to add it to
 the entity descriptor.
 
 Assuming that the `node_genesis.json` is at
