@@ -14,12 +14,29 @@ The following instructions assume that your `datadir` is defined as
    setup)
 2. Remove blockchain state using the `oasis-node unsafe-reset` command
 
-    ```bash
-    # Do a dry run first to see which files will get deleted.
-    oasis-node unsafe-reset --datadir=/serverdir/node --dry_run --log.level info
-    # Delete.
-    oasis-node unsafe-reset --datadir /serverdir/node --log.level info
-    ```
+   ```bash
+   # Do a dry run first to see which files will get deleted.
+   oasis-node unsafe-reset --datadir=/serverdir/node --dry_run --log.level info
+   # Delete.
+   oasis-node unsafe-reset --datadir /serverdir/node --log.level info
+   ```
+
+   ::: tip NOTE
+   `oasis-node` is very strict regarding the ownership of the files.
+   If you encounter the following error:
+
+   ```text
+   common/Mkdir: path '/serverdir/node' has invalid owner: 1000. Expected owner: 0
+   ```
+
+   you need to run the `oasis-node` command as the exact user that owns the
+   files, e.g.:
+
+   ```text
+   sudo --user=#1000 -- oasis-node unsafe-reset --datadir=/serverdir/node --dry_run --log.level info
+   ```
+
+   :::
 
 3. Start the oasis-node server process
 
