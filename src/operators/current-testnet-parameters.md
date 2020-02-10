@@ -51,7 +51,13 @@ for instructions on how to use these parameters.
 
 ### 2019-02-11 (Latest)
 
-**Changed**
+For this upgrade please use the provided Genesis Document
+[here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11).
+Relevant changes to the configuration are detailed below.
+
+#### `/serverdir/etc/config.yml` Required Changes
+
+##### Changed
 
 The `tendermint.seed` field has moved to `tendermint.p2p.seed`
 
@@ -96,7 +102,7 @@ Upgrades Guide](./maintenance/handling-network-upgrades.md).
 
 #### `/serverdir/etc/config.yml` Required Changes
 
-**Changed**
+##### Changed
 
 Format for seed nodes has changed. Previously it only accepted a string. Now it
 supports an array of strings.
@@ -119,7 +125,7 @@ tendermint:
     - "{{ seed_node_address1 }}"
 ```
 
-**Removed**
+##### Removed
 
 This temporary configuration on the initial deployment is no longer necessary.
 These lines have been removed.
