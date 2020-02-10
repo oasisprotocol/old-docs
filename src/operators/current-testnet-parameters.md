@@ -36,20 +36,24 @@ The following section details on the scheduled upgrade for the network. See the
 [Handling Network Upgrades Guide](./maintenance/handling-network-upgrades.md)
 for instructions on how to use these parameters.
 
-* Block height to dump: **93000**
+* Block height to dump: **270000**
 * Upgrade Window
-  * Start: **2020-01-23T00:00:00Z**
-  * End: **2020-01-23T23:59:59Z**
+  * Start: **2020-02-11T17:00:00Z**
+  * End: **2020-02-12T16:59:59Z**
     * The "_End_" of the window is not something we can enforce unilaterally,
       however, if, for whatever reason, not enough people upgrade on the public
       testnet we _may_ release and redeploy a new genesis block that removes
       inactive nodes from the validator set.
 * Please download the genesis document published in
-  [this release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-01-23)
+  [this release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11)
 
 ## Deployment Change Log
 
-### 2019-01-23 (Latest)
+### 2019-02-11 (Latest)
+
+Instructions coming soon!
+
+### 2019-01-23
 
 You should only need to do an upgrade as detailed in the [Handling Network
 Upgrades Guide](./maintenance/handling-network-upgrades.md).
