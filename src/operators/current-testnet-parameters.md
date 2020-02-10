@@ -17,6 +17,11 @@ Testnet.
   ::: tip NOTE
   The `oasis-node` binary is part of the Oasis Core release.
   :::
+  ::: warning WARNING
+  Don't use a newer version of Oasis Core since it likely contains changes that
+  are incompatible with version of Oasis Core used by other nodes in the current
+  Testnet.
+  :::
   ::: warning DEPRECATED
   We no longer recommend or support using Oasis Labs' provided [oasis-node
   Docker images].
