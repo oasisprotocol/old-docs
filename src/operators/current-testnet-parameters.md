@@ -51,7 +51,28 @@ for instructions on how to use these parameters.
 
 ### 2019-02-11 (Latest)
 
-Instructions coming soon!
+**Changed**
+
+The `tendermint.seed` field has moved to `tendermint.p2p.seed`
+
+Old Version:
+
+```yaml
+tendermint:
+  # ... other config
+  seed:
+    - "{{ seed_node_address }}"
+```
+
+New Version:
+
+```yaml
+tendermint:
+  # ... other config
+  p2p:
+    seed:
+      - "{{ seed_node_address }}"
+```
 
 ### 2019-01-23
 
@@ -75,7 +96,7 @@ Upgrades Guide](./maintenance/handling-network-upgrades.md).
 
 #### `/serverdir/etc/config.yml` Required Changes
 
-##### Changed
+**Changed**
 
 Format for seed nodes has changed. Previously it only accepted a string. Now it
 supports an array of strings.
@@ -98,7 +119,7 @@ tendermint:
     - "{{ seed_node_address1 }}"
 ```
 
-##### Removed
+**Removed**
 
 This temporary configuration on the initial deployment is no longer necessary.
 These lines have been removed.

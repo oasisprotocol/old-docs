@@ -410,8 +410,9 @@ tendermint:
     addr_book_lenient: false
   # List of seed nodes to connect to.
   # NOTE: You can add additional seed nodes to this list if you want.
-  seed:
-    - "{{ seed_node_address }}"
+  p2p:
+    seed:
+      - "{{ seed_node_address }}"
 ```
 
 [Sentry Node]: ./sentry-node.md
