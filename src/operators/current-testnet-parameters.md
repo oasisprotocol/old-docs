@@ -55,8 +55,9 @@ Relevant changes to the configuration are detailed below.
 2. [Wipe node state](./maintenance/wiping-node-state.md)
 3. Download the genesis document published in [this
    release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11)
-4. Delete `/serverdir/node/tls_identity.pem`
-5. Delete `/serverdir/node/tls_identity_cert.pem`
+   to the path `/serverdir/etc/genesis.json`.
+4. Delete `/serverdir/node/tls_identity.pem`.
+5. Delete `/serverdir/node/tls_identity_cert.pem`.
 6. Update your `/serverdir/etc/config.yml` per the below instructions.
 7. Download the [oasis-node
    v20.3.1](https://github.com/oasislabs/oasis-core/releases/tag/v20.3.1)
