@@ -385,18 +385,17 @@ consensus:
 tendermint:
   abci:
     prune:
-      # NOTE: If you join the network at a later time, use the following
-      # configuration to speed up the syncing of your node:
-      #
-      # strategy: none
-      #
-      # WARNING: Use this carefully. Turning pruning back on slows you down
-      # again and not turning it on means you will eventually fill all the
+      # WARNING: Use this carefully. Pruning blockchain state is resource intensive.
+      # However, running with pruning disabled means you will eventually fill all
       # storage on your node.
-      # See https://github.com/oasislabs/oasis-core/issues/2432 for more
-      # details.
-      strategy: keep_n
-      num_kept: 86400
+      # See https://github.com/oasislabs/oasis-core/issues/2432 for more details.
+      #
+      # This configuration would cause your node to retain state from only the
+      # latest 86400 blocks:
+      # strategy: keep_n
+      # num_kept: 86400
+      #
+      strategy: none
   core:
     listen_address: tcp://0.0.0.0:26656
 
@@ -411,8 +410,9 @@ tendermint:
     addr_book_lenient: false
   # List of seed nodes to connect to.
   # NOTE: You can add additional seed nodes to this list if you want.
-  seed:
-    - "{{ seed_node_address }}"
+  p2p:
+    seed:
+      - "{{ seed_node_address }}"
 ```
 
 [Sentry Node]: ./sentry-node.md

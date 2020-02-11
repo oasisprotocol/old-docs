@@ -43,10 +43,9 @@ protected by the sentry node.
 ### Configuring Sentry Node
 
 An Oasis node can be configured to run as a sentry node by setting the
-`--worker.sentry.enabled` flag. Additionally, the`--tendermint.private_peer_id`
-& `--tendermint.peristent_peer` flags can be used to configure a list of
-Tendermint private peers, which should be set to Tendermint IDs and addresses
-of validator nodes, protected by this sentry node.
+`worker.sentry.enabled` flag. The `tendermint.sentry.upstream_address`
+flag can be used to configure a list of nodes that will be protected by the
+sentry node.
 
 An example of full `YAML` configuration of a sentry node is below.
 
@@ -66,18 +65,15 @@ the following section
 - <code v-pre>{{ seed_node_address }}</code>: This the seed node address of the
   form `ID@IP:port`. You can find the current Oasis Seed Node address in the
   [Current Testnet Parameters][params].
-- <code v-pre>{{ validator_tendermint_id }}</code>: This is the Tendermint ID of
-  the Oasis validator node that will be protected by the sentry node. This ID
-  can be obtained by running:
+- <code v-pre>{{ validator_tendermint_id }}</code>: This is the Tendermint ID
+  (address) of the Oasis validator node that will be protected by the sentry
+  node. This ID can be obtained by running:
 
   ```bash
-  oasis-node debug tendermint show-node-id --datadir /serverdir/node
+  oasis-node identity tendermint show-node-address --datadir /serverdir/node
   ```
 
   on the validator node.
-
-  <!--- TODO: there is probably a different way to get this out of our identity
-  files. --->
 
 - <code v-pre>{{ validator_private_address }}</code>: This is the (presumably)
   private address on which validator should be reachable from the sentry node.
@@ -148,12 +144,9 @@ tendermint:
 
   seeds: "{{ seed_node_address }}"
 
-  # Sentry node should set validator IDs as private peer IDs.
-  private_peer_id:
-    - "{{ validator_tendermint_id }}"
-
-  persistent_peer:
-    - "{{ validator_tendermint_id }}@{{ validator_private_address }}:26656"
+  sentry:
+    upstream_address:
+      - "{{ validator_tendermint_id }}@{{ validator_private_address }}:26656"
 ```
 
 ::: tip NOTE
@@ -175,18 +168,18 @@ Registry automatically once we redeploy it with new configuration.
 :::
 
 When you are [initializing a validator node][val-init], you should use the
-sentry node's external address and Tendermint ID in the
-`--node.consensus_address` flag.
+sentry node's external address and Consensus ID in the
+`node.consensus_address` flag.
 If you are running multiple sentry nodes, you can specify the
-`--node.consensus_address` flag multiple times.
+`node.consensus_address` flag multiple times.
 
-To initialize a validator node with 2 sentry nodes', run the
+To initialize a validator node with 2 sentry nodes, run the
 following commands from the `/localhostdir/node` directory:
 
 ```bash
-export SENTRY1_CONSENSUS_ID=<YOUR_SENTRY1_CONSENSUS_ID_HEX>
+export SENTRY1_CONSENSUS_ID=<YOUR_SENTRY1_CONSENSUS_ID_B64>
 export SENTRY1_STATIC_IP=<YOUR_SENTRY1_STATIC_IP>
-export SENTRY2_CONSENSUS_ID=<YOUR_SENTRY2_CONSENSUS_ID_HEX>
+export SENTRY2_CONSENSUS_ID=<YOUR_SENTRY2_CONSENSUS_ID_B64>
 export SENTRY2_STATIC_IP=<YOUR_SENTRY2_STATIC_IP>
 oasis-node registry node init \
   --entity /localhostdir/entity \
@@ -197,12 +190,12 @@ oasis-node registry node init \
 ```
 
 ::: tip NOTE
-`SENTRY_CONSENSUS_ID`: This is the Consensus ID of the sentry node in hex
+`SENTRY_CONSENSUS_ID`: This is the Consensus ID of the sentry node in base64
 format.
 This ID can be obtained from `consensus_pub.pem`:
 
 ```bash
-sed -n 2p /serverdir/node/consensus_pub.pem | base64 -d | hexdump -v -e '/1 "%02x" '
+sed -n 2p /serverdir/node/consensus_pub.pem
 ```
 
   on the sentry node.
@@ -220,25 +213,25 @@ enable proxying through its sentry node. Most of these flags should be familiar
 from the Tendermint sentry node architecture.
 
 Since the validator node will not have an external address, the
-`--tendermint.core.external_address` flag should be skipped. Similarly, the
-`--tendermint.seed` flag can be skipped, as the `oasis-node` won't be directly
+`tendermint.core.external_address` flag should be skipped. Similarly, the
+`tendermint.p2p.seed` flag can be skipped, as the `oasis-node` won't be directly
 connecting to any of the seed nodes.
 
 Tendermint Peer Exchange should be disabled on the validator with the
-`--tendermint.disable_peer_exchange` flag.
+`tendermint.p2p.disable_peer_exchange` flag.
 
 Sentry nodes can also be configured as Tendermint Persistent-Peers with the
-`--tendermint.persistent_peer` flag.
+`tendermint.p2p.persistent_peer` flag.
 
 In addition to the familiar Tendermint setup above, the node needs to be
 configured to query sentry nodes for external addresses every time the validator
-preforms a re-registration. This is configured with `--worker.sentry.address`
-and `--worker.sentry.cert_file` flags.
+preforms a re-registration. This is configured with `worker.sentry.address`
+and `worker.sentry.cert_file` flags.
 
-The `--worker.sentry.address` flag should be set to the (private) address of
+The `worker.sentry.address` flag should be set to the (private) address of
 the sentry node's control endpoint.
 
-The `--worker.sentry.cert_file` flag should be set to the sentry node's client
+The `worker.sentry.cert_file` flag should be set to the sentry node's client
 certificate (named `tls_identity_cert.pem` by default) created when
 provisioning the sentry node's identity.
 
@@ -258,12 +251,12 @@ file:
   This certificate needs to be accessible on any node that's connecting to the
   sentry node's control endpoint and is used for securing the communication
   between the validator and the sentry node.
-- `sentry_node_tendermint_id`: This is the Tendermint ID of the sentry node
-  that will be configured as a Persistent Peer. This ID can be obtained by
+- `sentry_node_tendermint_id`: This is the Tendermint ID (address) of the sentry
+  node that will be configured as a Persistent Peer. This ID can be obtained by
   running:
 
   ```bash
-  oasis-node debug tendermint show-node-id --datadir /serverdir/node
+  oasis-node identity tendermint show-node-address --datadir /serverdir/node
   ```
 
   on the sentry node.
@@ -338,9 +331,10 @@ tendermint:
       num_kept: 86400
   core:
     listen_address: tcp://0.0.0.0:26656
-  persistent_peer:
-    - "{{ sentry_node_tendermint_id }}@{{ sentry_node_private_ip }}:26656"
-  disable_peer_exchange: True
+  p2p:
+    persistent_peer:
+      - "{{ sentry_node_tendermint_id }}@{{ sentry_node_private_ip }}:26656"
+    disable_peer_exchange: True
   db:
     backend: badger
 ```
