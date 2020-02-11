@@ -61,11 +61,11 @@ Relevant changes to the configuration are detailed below.
    release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11)
    to the path `/serverdir/etc/genesis.json`.
 4. Delete `/serverdir/node/tls_identity.pem`.
-  * The format for the TLS keys has changed. This will be regenerated on
-    restart.
+    * The format for the TLS keys has changed. This will be regenerated on
+      restart.
 5. Delete `/serverdir/node/tls_identity_cert.pem`.
-  * The format for the TLS keys has changed. This will be regenerated on
-    restart.
+    * The format for the TLS keys has changed. This will be regenerated on
+      restart.
 6. Update your `/serverdir/etc/config.yml` per the below instructions.
 7. Download the [oasis-node
    v20.3.1](https://github.com/oasislabs/oasis-core/releases/tag/v20.3.1)
