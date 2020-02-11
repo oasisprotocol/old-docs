@@ -22,3 +22,7 @@ MD033:
     # for denoting variables.
     # For more details, see: https://github.com/vuejs/vuepress/issues/853.
     - code
+
+MD024:
+  # This allows us to have duplicate headings as long as they're not siblings
+  siblings_only: true

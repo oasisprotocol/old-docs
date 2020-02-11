@@ -30,11 +30,15 @@ Testnet.
 [Oasis Core]: https://github.com/oasislabs/oasis-core
 [oasis-node Docker images]: https://hub.docker.com/r/oasislabs/oasis-node/tags
 
-## Upgrade Parameters
+## Deployment Change Log
 
-The following section details on the scheduled upgrade for the network. See the
-[Handling Network Upgrades Guide](./maintenance/handling-network-upgrades.md)
-for instructions on how to use these parameters.
+### 2019-02-11 (Latest)
+
+For this upgrade please use the provided Genesis Document
+[here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11).
+Relevant changes to the configuration are detailed below.
+
+#### Upgrade Parameters
 
 * Block height to dump: **270000**
 * Upgrade Window
@@ -44,14 +48,44 @@ for instructions on how to use these parameters.
       however, if, for whatever reason, not enough people upgrade on the public
       testnet we _may_ release and redeploy a new genesis block that removes
       inactive nodes from the validator set.
-* Please download the genesis document published in
-  [this release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11)
 
-## Deployment Change Log
+#### Upgrade Procedure
 
-### 2019-02-11 (Latest)
+1. Stop your node
+2. [Wipe node state](./maintenance/wiping-node-state.md)
+3. Download the genesis document published in [this
+   release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11)
+   to the path `/serverdir/etc/genesis.json`.
+4. Delete `/serverdir/node/tls_identity.pem`.
+5. Delete `/serverdir/node/tls_identity_cert.pem`.
+6. Update your `/serverdir/etc/config.yml` per the below instructions.
+7. Download the [oasis-node
+   v20.3.1](https://github.com/oasislabs/oasis-core/releases/tag/v20.3.1)
 
-Instructions coming soon!
+#### `/serverdir/etc/config.yml` Required Changes
+
+##### Changed
+
+The `tendermint.seed` field has moved to `tendermint.p2p.seed`
+
+Old Version:
+
+```yaml
+tendermint:
+  # ... other config
+  seed:
+    - "{{ seed_node_address }}"
+```
+
+New Version:
+
+```yaml
+tendermint:
+  # ... other config
+  p2p:
+    seed:
+      - "{{ seed_node_address }}"
+```
 
 ### 2019-01-23
 
