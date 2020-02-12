@@ -18,7 +18,7 @@ for The Quest, use the following steps to upgrade:
 
 [wipe-state-keep-id]: ./maintenance/wiping-node-state.md##state-wipe-and-keep-node-identity
 [params]: ./current-testnet-parameters.md
-[Deployment Change Log]: ./current-testnet-parameters.md#2019-11-26-latest
+[Deployment Change Log]: ./current-testnet-parameters.md#deployment-change-log
 [check-synced]: #check-that-your-node-is-synced
 
 ## Prerequisites
@@ -288,11 +288,6 @@ You should download the latest `genesis.json` file and copy it to
 
 #### Configuring the Oasis Node
 
-::: warning NOTE
-If you deployed a node on the 2019-11-13 Public Testnet, the configuration has
-changed. Please, update your configuration or your node will fail to connect.
-:::
-
 There are a variety of options available when running an Oasis node. The
 following YAML file is a basic configuration for a validator node on the
 network.
@@ -484,11 +479,11 @@ properly it should respond with output like the following but with potentially
 many more values:
 
 ```text
-2317a8eef10e470434411aebac8f1a8c0f1c6a0d35ff53921f8bc70588bb66b2
-8e3873f84f7f2250eb456dc598dc56b812f561137fe41c383128e6c14e0e2e74
-cf3b004bd98f3e1eab92e97c5fa6cbe4d42a00133c515a2440fefaca514a48ff
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+CVzqFIADD2Ed0khGBNf4Rvh7vSNtrL1ULTkWYQszDpc=
+C5z1jB+FHB/QgtTITr6NKWpUs9QHwD11CG3v8tmuJ0g=
+DPbZomOIleFrvcJBZPl7y/wEB1w9Q569vAbb6Krl9fE=
+DVobZ8bWlOv2J6oHO0uITr5FPO5rIY2irdPNhByprHk=
+D2hqhJcmZnBmhw9TodOdoFPAjmRkpRatANCNHxIDHgA=
 ```
 
 Once you get to a node that's connected you can move on to the next section as
@@ -558,19 +553,17 @@ Before you can make any transactions you'll have to make sure that your node is
 synced. To do so call this command on the server:
 
 ```bash
-oasis-node control is-synced \
-  -a unix:/serverdir/node/internal.sock && \
-  echo "You are synced" || echo "You are not synced"
+oasis-node control is-synced -a unix:/serverdir/node/internal.sock
 ```
 
-::: tip NOTE
-The `oasis-node control is-synced` command has no output but returns an exit
-code. The code above adds some sugar to make it a little easier to understand
-due to the lack of output.
-:::
+If your node is synced, the above command should output:
 
-If you're not synced, you will need to wait until your node has synced before
-you can move forward.
+```text
+node completed initial syncing
+```
+
+If your node is not yet synced, you will need to wait before you can move
+forward.
 
 ### Generating a Staking (Escrow) Transaction on the `localhost`
 
@@ -605,20 +598,11 @@ environment variables:
   transaction.
 
   For this guide, we will use `/localhostdir/signed-escrow.tx`.
-* `ACCOUNT_ID`. The hex encoding of the entity's public key.
+* `ACCOUNT_ID`: Entity's ID (public key).
 
-  To derive this, you can use the following Python 3 code:
-
-  ```python
-  import binascii, base64
-
-  def account_id_from_b64(base64_id):
-      """base64_id can be found in entity.json in the `id` field"""
-      return binascii.hexlify(base64.b64decode(base64_id))
-
-  account_id_from_b64("<YOUR-ENTITY-PUBLIC-KEY>")
-  >>> "deadbeefdeadbeefdeadbeef..."
-  ```
+  ::: tip NOTE
+  You can find your Entity's ID in the `id` field of the `entity.json` file.
+  :::
 
 Then execute the following command:
 
@@ -698,51 +682,22 @@ To do so, follow these steps:
 
 ### Checking that Your Node is Properly Registered
 
-::: tip NOTE
-We understand these instructions for verification need to improve.
-
-Any assistance is welcome :wink:.
-:::
-
 To ensure that your node is properly connected as a validator on the network,
-you can check if you see the node's identity in the registry's node list.
-Unfortunately, at this time this is a bit of a manual process.
-
-#### Getting the Node's consensus_pub.pem Identity
+you can run the following command:
 
 ```bash
-NODE_CONSENSUS_ID="$(cat /serverdir/node/consensus_pub.pem \
-    | grep -e "-----BEGIN ED25519 PUBLIC KEY-----" -v \
-    | grep -e "-----END ED25519 PUBLIC KEY-----" -v)"
+oasis-node registry node is-registered -a unix:/serverdir/node/internal.sock
 ```
 
-You can view this by running
-
-```bash
-echo $NODE_CONSENSUS_ID
-```
-
-This will look like:
+If your node is registered, the above command should output:
 
 ```text
-s+vZ71qeZnlq0HmQSDBiWn2OKcy3fXOuPMu76/5GkUI=
+node is registered
 ```
-
-You should search the registry's node list for this ID
-
-#### Searching for the Node's Identity
-
-To check if the node is properly registered, run the following command:
-
-```bash
-oasis-node registry node list -v -a unix:/serverdir/node/internal.sock | grep $NODE_CONSENSUS_ID
-```
-
-If `grep` found your ID, then you're properly connected!
 
 <!-- markdownlint-disable no-trailing-punctuation -->
 ## You're a Validator!
 <!-- markdownlint-enable no-trailing-punctuation -->
 
-If you've made it this far you've properly connected your node to the network
+If you've made it this far, you've properly connected your node to the network
 and you're now a validator on the Public Testnet.
