@@ -85,7 +85,7 @@ module.exports = {
             'Current Testnet Parameters',
           ],
           ['/operators/sentry-node', 'Sentry Node Architecture'],
-          ['/operators/architectural-overview', 'Architectural Overview'],
+          ['/operators/architecture-overview', 'Architecture Overview'],
           [
             '/operators/hardware-recommendations',
             'Node Hardware Recommendations',
