@@ -85,7 +85,6 @@ management, credit scoring, and financial services industries that Oasis Labs
 expects to provide organic transaction volume to the Oasis Network. No commit
 comments for this range
 
-
 ## Networking Protocols
 
 The Oasis Network uses three different protocols for communication:
@@ -109,7 +108,7 @@ key management model for node operators. The model is as follows:
   * A Node is a block producing node on the Oasis Network
   * Each Node's key pair is used for:
     * Signing actions during block production
- 
+
 ## Definitions
 
 ### Entity
@@ -130,7 +129,6 @@ identification. See [Entities and Key Management] for further information.
 A Committee is a set of Nodes that are participating in the same service layer
 of the Oasis Network. Committees are described in more detail in the [Modular
 Architecture] section.
-
 
 [papers]: https://www.oasis-protocol.org/researchpapers
 [Entities and Key Management]: #entities-and-key-management
