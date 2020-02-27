@@ -87,7 +87,7 @@ If you are in the genesis block and we do not see any activity in the first
     joined after Jan 23, 2020.
 * **Best Attacks**: Best attacks is a qualitative reward but certainly one we
   will judge impartially. The goal of this reward is really to see if you can
-  hack the system, steal someone's tokens, cause a sybil attack, etc. Specific
+  hack the system, steal someone's tokens, cause a Sybil attack, etc. Specific
   criteria we'll consider when making our choice include:
   * Impact to other node operators
   * Impact to network stability
