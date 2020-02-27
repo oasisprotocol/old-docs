@@ -3,7 +3,7 @@
 ::: tip NOTE
 This is a draft proposal and is subject to change pending the outcome of an
 economic audit, feedback from the community, and the results of the Oasis
-Foundation’s staking competition. 
+Foundation’s staking competition.
 :::
 
 Below is a proposal of the initial incentive model for the Oasis Network at the
