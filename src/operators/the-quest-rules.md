@@ -77,7 +77,7 @@ If you are in the genesis block and we do not see any activity in the first
 * **Best Availability:** This is a measure of how well a node operator is
   performing. This reward will be given to the top 5 operators based on both
   blocks signed and blocks proposed. Given the current state of Oasis testnet,
-  we define Best Availability = Blocks Signed + 50 x Blocks Proposed. The
+  we define ``Best Availability = Blocks Signed + 50 x Blocks Proposed``. The
   winners of the reward will be announced at the end of the competition.
 
 * **Blocks Signed:** As we introduce the Best Availability challenge, we will
