@@ -79,21 +79,17 @@ If you are in the genesis block and we do not see any activity in the first
   blocks signed and blocks proposed. Given the current state of Oasis testnet,
   we define ``Best Availability = Blocks Signed + 50 x Blocks Proposed``. The
   winners of the reward will be announced at the end of the competition.
-
   * **Blocks Signed:** As we introduce the Best Availability challenge, we will
     sunset the Most Blocks Signed challenge before we move on to the next phase
     of the competition, where delegation and transfers will be turned on. At
     that point, we will announce the top 5 operators with the most blocks signed
     as well as the special prize for most blocks signed from the nodes who
     joined after Jan 23, 2020.
-
 * **Best Attacks**: Best attacks is a qualitative reward but certainly one we
   will judge impartially. The goal of this reward is really to see if you can
   hack the system, steal someone's tokens, cause a sybil attack, etc. Specific
   criteria we'll consider when making our choice include:
-
   * Impact to other node operators
-
   * Impact to network stability
 
 After your attack has been demonstrated, we ask you to write up your attack(s)
