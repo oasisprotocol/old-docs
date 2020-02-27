@@ -102,7 +102,7 @@ module.exports = {
               ['/operators/maintenance/wiping-node-state', 'Wiping Node State'],
               [
                 '/operators/maintenance/checking-account-nonce',
-                'Checking your Account nonce',
+                "Checking your Account's nonce",
               ],
               [
                 '/operators/maintenance/handling-network-upgrades',
