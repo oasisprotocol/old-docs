@@ -3,7 +3,7 @@
 ::: tip NOTE
 This is a draft proposal and is subject to change pending the outcome of an
 economic audit, feedback from the community, and the results of the Oasis
-Foundation’s staking competition.
+Foundation’s staking competition. 
 :::
 
 Below is a proposal of the initial incentive model for the Oasis Network at the
@@ -18,6 +18,9 @@ The core focus of this incentive documentation is to outline a proposal for
 parameters and rewards around staking and delegation.
 In future documentation we will provide more detail on the proposed roadmap and
 rewards that expand beyond this activity.
+
+_Note that following network launch, all changes to the protocol will be
+determined by the community based on the consensus mechanism of the Oasis network._
 
 [Slack]: https://www.oasis-protocol.org/slack
 [gitHub-docs]: https://github.com/oasislabs/docs
