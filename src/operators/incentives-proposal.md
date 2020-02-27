@@ -19,13 +19,16 @@ parameters and rewards around staking and delegation.
 In future documentation we will provide more detail on the proposed roadmap and
 rewards that expand beyond this activity.
 
+_Note that following network launch, all changes to the protocol will be
+determined by the community based on the consensus mechanism of the Oasis network._
+
 [Slack]: https://www.oasis-protocol.org/slack
 [gitHub-docs]: https://github.com/oasislabs/docs
 
 ## Summary
 
-* **Estimated staking rewards**: 15% APR at launch, tapering to 10% by end of
-  year.
+* **Estimated staking rewards**: 15% annual rewards at launch, tapering to 10%
+  by end of year.
 * **Slashing**: Slash for double-signing only
 * **Number of validators to participate in any given consensus committee (and
   receive staking rewards) at launch**: up to 100 validators
@@ -71,10 +74,10 @@ entry and encourage meaningful engagement on the network. A few key parameters:
   selection to the consensus committee is proportional to the stake of all
   nodes run by one entity.
 
-* **Annual rewards**: The network is targeted to hit ~15% APR at launch (based
-  on the number of blocks produced, so timing could vary) and then taper down
-  to 10% by end of year. This will happen over a gradual taper rather than a
-  step function change to avoid creating some sort of cliff.
+* **Annual rewards**: The network is targeted to hit ~15% annual rewards at
+  launch (based on the number of blocks produced, so timing could vary) and then
+  taper down to 10% by end of year. This will happen over a gradual taper rather
+  than a step function change to avoid creating some sort of cliff.
 
 * **Slashing**: At the time of Mainnet launch, the network will only slash for
   double-signing. The network would slash the minimum stake amount (100 tokens)
