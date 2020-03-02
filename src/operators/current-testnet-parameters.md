@@ -36,7 +36,11 @@ Testnet.
 
 ## Deployment Change Log
 
-### 2019-02-11 (Latest)
+### 2020-03-05 (Upcoming)
+
+Instructions coming soon!
+
+### 2020-02-11 (Latest)
 
 For this upgrade please use the provided Genesis Document
 [here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11).
