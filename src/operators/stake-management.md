@@ -754,7 +754,7 @@ balance.
 
 We can configure our account to take a commission on staking rewards given to
 our node(s).
-The commission rate must be within bounds, which you also configure.
+The commission rate must be within bounds, which we can also configure.
 
 Let's generate a transaction to (i) tell everyone that our bounds allow us to
 set any rate (0%-100%) and that (ii) we'll take 50%.
