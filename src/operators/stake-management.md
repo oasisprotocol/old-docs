@@ -750,6 +750,69 @@ After the debonding period has passed, the network will automatically move our
 escrow account's active debonding balance into our escrow account's active
 balance.
 
+### Amending a commission schedule
+
+We can configure our account to take a commission on staking rewards given to
+our node(s).
+The commission rate must be within bounds, which you also configure.
+
+Let's generate a transaction to (i) tell everyone that our bounds allow us to
+set any rate (0%-100%) and that (ii) we'll take 50%.
+
+We're not allowed to change the commission bounds too close in near future, so
+you'd have to make changes a number of epochs in the future.
+Here we're setting a bound to start on epoch 16.
+An account's default bounds are 0% maximum, so we have to wait until our new
+bounds go into effect to raise our rate to 50%.
+Because of that, we'll specify that our rate also starts on epoch 16.
+
+```bash
+oasis-node stake account gen_amend_commission_schedule \
+  $TX_FLAGS \
+  --stake.commission_schedule.bounds 16/0/100000 \
+  --stake.commission_schedule.rates 16/50000 \
+  --transaction.file tx_amend_commission_schedule.json \
+  --transaction.nonce 4 \
+  --transaction.fee.gas 1000 \
+  --transaction.fee.amount 1
+```
+
+```bash
+oasis-node consensus submit_tx \
+  -a $ADDR \
+  --transaction.file tx_amend_commission_schedule.json
+```
+
+After that, we can [check our account's info], and we should see something like
+this:
+
+```json
+{
+    "general": {
+        ...
+        "nonce": 5
+    },
+    "escrow": {
+        ...
+        "commission_schedule": {
+            "rates": [
+                "start": 16,
+                "rate": "50000",
+            ],
+            "bounds": [
+                "start": 16,
+                "rate_min": "0",
+                "rate_max": "100000"
+            ]
+        }
+    }
+}
+```
+
+To troubleshoot an amendment that's rejected, consult our [compendium of 23
+common ways for a commission schedule amendment to fail][compendium].
+
+
 [Ledger docs]: ../hsm/ledger.md
 [create-entity]: joining-the-testnet.md#creating-your-entity
 [Base flags]: #base-flags
@@ -759,3 +822,4 @@ balance.
 [Common transaction flags]: #common-transaction-flags
 [Account info]: #account-info
 [check our account's info]: #querying-account-info
+[compendium]: https://github.com/oasislabs/oasis-core/blob/0dee03d75b3e8cfb36293fbf8ecaaec6f45dd3a5/go/staking/api/commission_test.go#L61-L610
