@@ -780,6 +780,8 @@ oasis-node stake account gen_amend_commission_schedule \
   --transaction.fee.amount 1
 ```
 
+Rates and minimum/maximum rates are in units of 1/100,000, so `0`, `50000`, and `100000` come out to 0%, 50%, and 100%, respectively.
+
 To submit the generated transaction, we need to copy
 `tx_amend_commission_schedule.json` to the online Oasis node (i.e. the `server`)
 and submit it from there:
