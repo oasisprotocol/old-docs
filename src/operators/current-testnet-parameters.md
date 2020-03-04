@@ -39,7 +39,7 @@ Testnet.
 ### 2020-03-05 (Upcoming)
 
 For this upgrade please use the provided Genesis Document that will be
-published [here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05).
+published [here][release-2020-03-05].
 
 #### Upgrade Parameters
 
@@ -56,11 +56,12 @@ published [here](https://github.com/oasislabs/public-testnet-artifacts/releases/
 
 1. Stop your node
 2. [Wipe node state](./maintenance/wiping-node-state.md)
-3. Download the genesis document that will be published in [this
-   release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05)
+3. Download the genesis document that will be published in [this release][release-2020-03-05]
    to the path `/serverdir/etc/genesis.json`.
 4. Download the [oasis-node
    v20.4](https://github.com/oasislabs/oasis-core/releases/tag/v20.4)
+
+[release-2020-03-05]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05
 
 ### 2020-02-11 (Latest)
 
