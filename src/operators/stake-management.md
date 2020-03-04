@@ -756,8 +756,10 @@ We can configure our account to take a commission on staking rewards given to
 our node(s).
 The commission rate must be within bounds, which we can also configure.
 
-Let's generate a transaction to (i) tell everyone that our bounds allow us to
-set any rate (0%-100%) and that (ii) we'll take 50%.
+Let's generate a transaction to:
+
+* tell everyone that our bounds allow us to set any rate (0% - 100%), and
+* we'll take 50%.
 
 We're not allowed to change the commission bounds too close in near future, so
 you'd have to make changes a number of epochs in the future.
