@@ -780,7 +780,8 @@ oasis-node stake account gen_amend_commission_schedule \
   --transaction.fee.amount 1
 ```
 
-Rates and minimum/maximum rates are in units of 1/100,000, so `0`, `50000`, and `100000` come out to 0%, 50%, and 100%, respectively.
+Rates and minimum/maximum rates are in units of 1/100,000, so `0`, `50000`, and
+`100000` come out to 0%, 50%, and 100%, respectively.
 
 To submit the generated transaction, we need to copy
 `tx_amend_commission_schedule.json` to the online Oasis node (i.e. the `server`)
@@ -818,16 +819,20 @@ this:
 }
 ```
 
-Node operators collect commissions when their node earns a staking reward for delegators.
-A validator node earns a staking reward for participating in the consensus protocol each epoch.
+Node operators collect commissions when their node earns a staking reward for
+delegators.
+A validator node earns a staking reward for participating in the consensus
+protocol each epoch.
 The commission rate is a fraction of the staking reward.
-For example, if our node earns a reward of 0.007 tokens, 0.0035 tokens are added to the escrow pool (increasing the value of our escrow pool shares uniformly), and 0.0035 tokens are given to us (issuing us new shares as if we manually deposited them).
+For example, if our node earns a reward of 0.007 tokens, 0.0035 tokens are added
+to the escrow pool (increasing the value of our escrow pool shares uniformly),
+and 0.0035 tokens are given to us (issuing us new shares as if we manually
+deposited them).
 
 ::: tip
 To troubleshoot an amendment that's rejected, consult our [compendium of 23
 common ways for a commission schedule amendment to fail][compendium].
 :::
-
 
 [Ledger docs]: ../hsm/ledger.md
 [create-entity]: joining-the-testnet.md#creating-your-entity
