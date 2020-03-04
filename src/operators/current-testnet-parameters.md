@@ -43,7 +43,7 @@ published [here][release-2020-03-05].
 
 #### Upgrade Parameters
 
-* Block height to dump: **XXXXXX**
+* Block height to dump: **335400**
 * Upgrade Window
   * Start: **2020-03-05T17:00:00Z**
   * End: **2020-03-06T16:59:59Z**
