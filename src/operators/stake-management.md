@@ -763,7 +763,8 @@ Let's generate a transaction to:
 
 We're not allowed to change the commission bounds too close in near future, so
 we'd have to make changes a number of epochs in the future.
-Here we're setting a bound to start on epoch 16.
+
+In the example, we're setting the bounds to start on epoch 16.
 An account's default bounds are 0% maximum, so we have to wait until our new
 bounds go into effect to raise our rate to 50%.
 Because of that, we'll specify that our rate also starts on epoch 16.
