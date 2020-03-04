@@ -39,7 +39,7 @@ Testnet.
 ### 2020-03-05 (Upcoming)
 
 For this upgrade please use the provided Genesis Document
-[here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11).
+[here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05).
 Relevant changes to the configuration are detailed below.
 
 #### Upgrade Parameters
