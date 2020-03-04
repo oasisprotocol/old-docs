@@ -119,7 +119,7 @@ tendermint:
       - "{{ seed_node_address }}"
 ```
 
-### 2019-01-23
+### 2020-01-23
 
 You should only need to do an upgrade as detailed in the [Handling Network
 Upgrades Guide](./maintenance/handling-network-upgrades.md).
