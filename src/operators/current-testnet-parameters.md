@@ -38,7 +38,30 @@ Testnet.
 
 ### 2020-03-05 (Upcoming)
 
-Instructions coming soon!
+For this upgrade please use the provided Genesis Document that will be
+published [here][release-2020-03-05].
+
+#### Upgrade Parameters
+
+* Block height to dump: **335400**
+* Upgrade Window
+  * Start: **2020-03-05T17:00:00Z**
+  * End: **2020-03-06T16:59:59Z**
+    * The "_End_" of the window is not something we can enforce unilaterally,
+      however, if, for whatever reason, not enough people upgrade on the public
+      testnet we _may_ release and redeploy a new genesis block that removes
+      inactive nodes from the validator set.
+
+#### Upgrade Procedure
+
+1. Stop your node
+2. [Wipe node state](./maintenance/wiping-node-state.md)
+3. Download the genesis document that will be published in [this release][release-2020-03-05]
+   to the path `/serverdir/etc/genesis.json`.
+4. Download the [oasis-node
+   v20.4](https://github.com/oasislabs/oasis-core/releases/tag/v20.4)
+
+[release-2020-03-05]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05
 
 ### 2020-02-11 (Latest)
 
@@ -97,7 +120,7 @@ tendermint:
       - "{{ seed_node_address }}"
 ```
 
-### 2019-01-23
+### 2020-01-23
 
 You should only need to do an upgrade as detailed in the [Handling Network
 Upgrades Guide](./maintenance/handling-network-upgrades.md).
