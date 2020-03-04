@@ -780,6 +780,10 @@ oasis-node stake account gen_amend_commission_schedule \
   --transaction.fee.amount 1
 ```
 
+To submit the generated transaction, we need to copy
+`tx_amend_commission_schedule.json` to the online Oasis node (i.e. the `server`)
+and submit it from there:
+
 ```bash
 oasis-node consensus submit_tx \
   -a $ADDR \
