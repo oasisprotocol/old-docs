@@ -750,6 +750,90 @@ After the debonding period has passed, the network will automatically move our
 escrow account's active debonding balance into our escrow account's active
 balance.
 
+### Amending a commission schedule
+
+We can configure our account to take a commission on staking rewards given to
+our node(s).
+The commission rate must be within bounds, which we can also configure.
+
+Let's generate a transaction to:
+
+* tell everyone that our bounds allow us to set any rate (0% - 100%), and
+* we'll take 50%.
+
+We're not allowed to change the commission bounds too close in near future, so
+we'd have to make changes a number of epochs in the future.
+
+In the example, we're setting the bounds to start on epoch 16.
+An account's default bounds are 0% maximum, so we have to wait until our new
+bounds go into effect to raise our rate to 50%.
+Because of that, we'll specify that our rate also starts on epoch 16.
+
+```bash
+oasis-node stake account gen_amend_commission_schedule \
+  $TX_FLAGS \
+  --stake.commission_schedule.bounds 16/0/100000 \
+  --stake.commission_schedule.rates 16/50000 \
+  --transaction.file tx_amend_commission_schedule.json \
+  --transaction.nonce 4 \
+  --transaction.fee.gas 1000 \
+  --transaction.fee.amount 1
+```
+
+Rates and minimum/maximum rates are in units of 1/100,000, so `0`, `50000`, and
+`100000` come out to 0%, 50%, and 100%, respectively.
+
+To submit the generated transaction, we need to copy
+`tx_amend_commission_schedule.json` to the online Oasis node (i.e. the `server`)
+and submit it from there:
+
+```bash
+oasis-node consensus submit_tx \
+  -a $ADDR \
+  --transaction.file tx_amend_commission_schedule.json
+```
+
+After that, we can [check our account's info], and we should see something like
+this:
+
+```json
+{
+    "general": {
+        ...
+        "nonce": 5
+    },
+    "escrow": {
+        ...
+        "commission_schedule": {
+            "rates": [
+                "start": 16,
+                "rate": "50000",
+            ],
+            "bounds": [
+                "start": 16,
+                "rate_min": "0",
+                "rate_max": "100000"
+            ]
+        }
+    }
+}
+```
+
+Node operators collect commissions when their node earns a staking reward for
+delegators.
+A validator node earns a staking reward for participating in the consensus
+protocol each epoch.
+The commission rate is a fraction of the staking reward.
+For example, if our node earns a reward of 0.007 tokens, 0.0035 tokens are added
+to the escrow pool (increasing the value of our escrow pool shares uniformly),
+and 0.0035 tokens are given to us (issuing us new shares as if we manually
+deposited them).
+
+::: tip
+To troubleshoot an amendment that's rejected, consult our [compendium of 23
+common ways for a commission schedule amendment to fail][compendium].
+:::
+
 [Ledger docs]: ../hsm/ledger.md
 [create-entity]: joining-the-testnet.md#creating-your-entity
 [Base flags]: #base-flags
@@ -759,3 +843,4 @@ balance.
 [Common transaction flags]: #common-transaction-flags
 [Account info]: #account-info
 [check our account's info]: #querying-account-info
+[compendium]: https://github.com/oasislabs/oasis-core/blob/0dee03d75b3e8cfb36293fbf8ecaaec6f45dd3a5/go/staking/api/commission_test.go#L61-L610
