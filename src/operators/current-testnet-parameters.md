@@ -38,9 +38,8 @@ Testnet.
 
 ### 2020-03-05 (Upcoming)
 
-For this upgrade please use the provided Genesis Document
-[here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05).
-Relevant changes to the configuration are detailed below.
+For this upgrade please use the provided Genesis Document that will be
+published [here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05).
 
 #### Upgrade Parameters
 
@@ -57,7 +56,7 @@ Relevant changes to the configuration are detailed below.
 
 1. Stop your node
 2. [Wipe node state](./maintenance/wiping-node-state.md)
-3. Download the genesis document published in [this
+3. Download the genesis document that will be published in [this
    release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05)
    to the path `/serverdir/etc/genesis.json`.
 4. Download the [oasis-node
