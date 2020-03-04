@@ -816,8 +816,10 @@ this:
 }
 ```
 
+::: tip
 To troubleshoot an amendment that's rejected, consult our [compendium of 23
 common ways for a commission schedule amendment to fail][compendium].
+:::
 
 
 [Ledger docs]: ../hsm/ledger.md
