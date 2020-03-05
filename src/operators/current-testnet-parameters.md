@@ -4,22 +4,18 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
-* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-02-11/genesis.json):
-  * sha1: `0ff55ae5b32732edf13c83ab94412a9cf8b86e55`
-  * sha256: `9c13cdc8cfa1c9db2047208a3c05e399486d3d7f9b0209559c91a7031f46804a`
+* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-03-05/genesis.json):
+  * sha1: `641a88d66085dcb8f310a1564227d478ed9a524d`
+  * sha256: `f551c11d6545deecbc26b4973bb0ea04f3f555066ba9739bd175221660f367f1`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
 * [Oasis Core] version:
-  * [20.3.1](https://github.com/oasislabs/oasis-core/releases/tag/v20.3.1)
+  * [20.4](https://github.com/oasislabs/oasis-core/releases/tag/v20.4)
   ::: tip NOTE
   The `oasis-node` binary is part of the Oasis Core release.
-  :::
-  ::: warning WARNING
-  When upgrading from v20.1.2 to v20.3.1 please see the [Deployment Change
-  Log](#deployment-change-log)
   :::
   ::: warning WARNING
   Don't use a newer version of Oasis Core since it likely contains changes that
@@ -36,10 +32,10 @@ Testnet.
 
 ## Deployment Change Log
 
-### 2020-03-05 (Upcoming)
+### 2020-03-05 (Latest)
 
-For this upgrade please use the provided Genesis Document that will be
-published [here][release-2020-03-05].
+For this upgrade please use the provided Genesis Document published
+[here][release-2020-03-05].
 
 #### Upgrade Parameters
 
@@ -56,14 +52,14 @@ published [here][release-2020-03-05].
 
 1. Stop your node
 2. [Wipe node state](./maintenance/wiping-node-state.md)
-3. Download the genesis document that will be published in [this release][release-2020-03-05]
+3. Download the genesis document published in [this release][release-2020-03-05]
    to the path `/serverdir/etc/genesis.json`.
 4. Download the [oasis-node
    v20.4](https://github.com/oasislabs/oasis-core/releases/tag/v20.4)
 
 [release-2020-03-05]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05
 
-### 2020-02-11 (Latest)
+### 2020-02-11
 
 For this upgrade please use the provided Genesis Document
 [here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11).
