@@ -7,7 +7,7 @@ stake._
 
 ## Suggested Minimum Configurations
 
-As noted in the [Architectural Overview](./architectural-overview.md), the Oasis
+As noted in the [Architecture Overview](./architecture-overview.md), the Oasis
 Network is composed of multiple classes of Nodes that participate in different
 committees. The majority of committees have common system configurations for the
 participant Nodes. We suggest the following minimum recommendations:
