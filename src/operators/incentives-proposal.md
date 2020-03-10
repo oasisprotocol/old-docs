@@ -176,7 +176,7 @@ See [Entities and Key Management] for further information.
   stop staking tokens, but cannot move them. During this waiting period, tokens
   do not accrue staking rewards but cannot be withdrawn.
 
-[Entities and Key Management]: ./architectural-overview.html#entities-and-key-management
+[Entities and Key Management]: ./architecture-overview.html#entities-and-key-management
 
 *****
 For more information and for the latest updates, please visit our website.
