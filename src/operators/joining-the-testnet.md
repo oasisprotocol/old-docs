@@ -125,7 +125,7 @@ This will generate three files in `/localhostdir/entity`:
   has been signed with entity's private key, i.e. `entity.pem`.
   This is meant to be shared for inclusion in the Genesis block.
 
-[arch-entity]: ./architectural-overview.md#entities-and-key-management
+[arch-entity]: ./architecture-overview.md#entities-and-key-management
 
 ### Initializing a Node
 
