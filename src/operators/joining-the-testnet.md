@@ -579,8 +579,8 @@ Hence it should never be present on the online `server`.
 :::
 
 For the Testnet, the current minimum stake required to register an entity and
-register a node as a validator is 100 tokens.
-So, we will generate an escrow transaction that escrows 100 tokens on your own
+register a node as a validator is 200 tokens.
+So, we will generate an escrow transaction that escrows 200 tokens on your own
 entity.
 
 ::: tip NOTE
@@ -612,7 +612,7 @@ oasis-node stake account gen_escrow \
   --signer file \
   --signer.dir $ENTITY_DIR_PATH \
   --stake.escrow.account $ACCOUNT_ID \
-  --stake.amount 100000000000 \
+  --stake.amount 200000000000 \
   --transaction.file $OUTPUT_TX_FILE_PATH \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 1 \
@@ -621,7 +621,7 @@ oasis-node stake account gen_escrow \
 
 ::: tip NOTE
 The option `--stake.amount` looks like a very large number, but this is
-actually just an equivalent to 100 tokens on the Testnet as each unit
+actually just an equivalent to 200 tokens on the Testnet as each unit
 value used to track the account balance is 1x10^-9 tokens.
 :::
 
