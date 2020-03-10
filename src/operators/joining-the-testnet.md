@@ -93,7 +93,7 @@ This will be needed later when generating transactions.
 
 ### Initializing an Entity
 
-As described in the [Architectural Overview][arch-entity], an entity is
+As described in the [Architecture Overview][arch-entity], an entity is
 critical to operating nodes on the network as it controls the stake attached to
 a given individual or organization on the network.
 In the future, we will support using entity keys through HSMs to ensure that
