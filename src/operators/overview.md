@@ -21,7 +21,7 @@ If you run into any issues or have a question, you can chat with us in our
 
 ## Quick Navigation
 
-* [Architectural Overview](./architectural-overview.md)
+* [Architecture Overview](./architecture-overview.md)
 * [Hardware Recommendations](./hardware-recommendations.md)
 * [Joining The Testnet](./joining-the-testnet.md)
 * [Current Testnet Parameters](./current-testnet-parameters.md)
