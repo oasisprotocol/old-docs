@@ -177,6 +177,12 @@ turned on):
 
 **Participation**:
 
+* Top 10 Best Availability in March from 3/5 to 3/31: 50,000 tokens
+* Top 11-25 Best Availability in March from 3/5 to 3/31: 25,000 tokens
+* Top 26-50 Best Availability in March from 3/5 to 3/31: 15,000 tokens
+* Top 10 Best Availability in April from 4/1 to 4/30: 50,000 tokens
+* Top 11-25 Best Availability in April from 4/1 to 4/30: 25,000 tokens
+* Top 26-50 Best Availability in April from 4/1 to 4/30: 15,000 tokens
 * All participants (who don't double-sign): 5,000 tokens
 * First 30 entities on the network (who stay through the end with no
   double-signing): 10,000 tokens
