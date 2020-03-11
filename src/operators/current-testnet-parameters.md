@@ -13,7 +13,7 @@ Testnet.
   Feel free to use other seed nodes than the one provided here.
   :::
 * [Oasis Core] version:
-  * [20.4](https://github.com/oasislabs/oasis-core/releases/tag/v20.4)
+  * [20.4]
   ::: tip NOTE
   The `oasis-node` binary is part of the Oasis Core release.
   :::
@@ -34,9 +34,6 @@ Testnet.
 
 ### 2020-03-05 (Latest)
 
-For this upgrade please use the provided Genesis Document published
-[here][release-2020-03-05].
-
 #### Upgrade Parameters
 
 * Block height to dump: **335400**
@@ -50,20 +47,19 @@ For this upgrade please use the provided Genesis Document published
 
 #### Upgrade Procedure
 
-1. Stop your node
-2. [Wipe node state](./maintenance/wiping-node-state.md)
-3. Download the genesis document published in [this release][release-2020-03-05]
-   to the path `/serverdir/etc/genesis.json`.
-4. Download the [oasis-node
-   v20.4](https://github.com/oasislabs/oasis-core/releases/tag/v20.4)
+1. Dump network state at the specified block height.
+2. Download and verify the genesis document published in the [2020-03-05 release].
+3. Stop your node.
+4. [Wipe Node State].
+5. Upgrade `oasis-node` to version [20.4].
+6. Start your node.
 
-[release-2020-03-05]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05
+For a more in-depth explanation, see [Handling Network Upgrades] guide.
+
+[2020-03-05 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05
+[20.4]: https://github.com/oasislabs/oasis-core/releases/tag/v20.4
 
 ### 2020-02-11
-
-For this upgrade please use the provided Genesis Document
-[here](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11).
-Relevant changes to the configuration are detailed below.
 
 #### Upgrade Parameters
 
@@ -78,18 +74,20 @@ Relevant changes to the configuration are detailed below.
 
 #### Upgrade Procedure
 
-1. Stop your node
-2. [Wipe node state](./maintenance/wiping-node-state.md)
-3. Download the genesis document published in [this
-   release](https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11)
-   to the path `/serverdir/etc/genesis.json`.
-4. Delete `/serverdir/node/tls_identity.pem` and
+1. Dump network state at the specified block height.
+2. Download and verify the genesis document published in the [2020-02-11 release].
+3. Stop your node.
+4. [Wipe Node State].
+5. Delete `/serverdir/node/tls_identity.pem` and
    `/serverdir/node/tls_identity_cert.pem`.
     * The format for the TLS keys have changed. This will be regenerated on
       restart.
-5. Update your `/serverdir/etc/config.yml` per the below instructions.
-6. Download the [oasis-node
-   v20.3.1](https://github.com/oasislabs/oasis-core/releases/tag/v20.3.1)
+6. Update your `/serverdir/etc/config.yml` per the below instructions.
+7. Upgrade `oasis-node` to version [20.3.1].
+8. Start your node.
+
+[2020-02-11 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11
+[20.3.1]: https://github.com/oasislabs/oasis-core/releases/tag/v20.3.1
 
 #### `/serverdir/etc/config.yml` Required Changes
 
@@ -119,7 +117,7 @@ tendermint:
 ### 2020-01-23
 
 You should only need to do an upgrade as detailed in the [Handling Network
-Upgrades Guide](./maintenance/handling-network-upgrades.md).
+Upgrades] guide.
 
 ### 2020-01-15
 
@@ -132,7 +130,7 @@ update.
 ### 2019-12-17
 
 You should only need to do an upgrade as detailed in the [Handling Network
-Upgrades Guide](./maintenance/handling-network-upgrades.md).
+Upgrades] guide.
 
 ### 2019-11-26
 
@@ -189,3 +187,6 @@ deployment.
 ### 2019-11-13
 
 This is the initial deployment.
+
+[Wipe Node State]: ./maintenance/wiping-node-state.md#state-wipe-and-keep-node-identity
+[Handling Network Upgrades]: ./maintenance/handling-network-upgrades.md
