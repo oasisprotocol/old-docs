@@ -320,6 +320,28 @@ as appropriate for a given transaction:
 * `--transaction.fee.amount`: Amount of base units we will pay as a fee for a
   transaction.
 
+Note that specifying a transaction's fee amount (via `--transaction.fee.amount`)
+and maximum gas amount (via `--transaction.fee.gas`) implicitly defines the
+_gas price_ (in base units):
+
+```text
+gas_price = fee_amount / gas_amount
+```
+
+Gas price tells how much base units we are willing to pay for one gas unit.
+
+Consensus validators can configure their own _minimum gas price_ (via
+`consensus.tendermint.min_gas_price` configuration flag) and will refuse to
+process transactions that have their gas price set below their minimum gas
+price.
+
+::: tip NOTE
+Currently, there is no mechanism to discover what minimum gas prices are used by
+validators.
+
+For more details, see [Oasis Core #2526].
+:::
+
 ## Example transactions
 
 Let's assume our entity's account is
@@ -419,7 +441,7 @@ oasis-node stake account gen_burn \
   --transaction.file tx_burn.json \
   --transaction.nonce 0 \
   --transaction.fee.gas 1000 \
-  --transaction.fee.amount 1
+  --transaction.fee.amount 2000
 ```
 
 To submit the generated transaction, we need to copy `tx_burn.json` to the
@@ -436,7 +458,7 @@ Let's [check our account's info] again:
 ```json
 {
     "general": {
-        "balance": "478492492765",
+        "balance": "478492490765",
         "nonce": 1
     },
     "escrow": {
@@ -453,8 +475,12 @@ Let's [check our account's info] again:
 }
 ```
 
-We can observe that our account's general balance has decreased for 123 tokens
-and our account's nonce increased to `1`.
+We can observe that:
+
+* Our account's general balance has decreased for 123 tokens and 2000 base
+  units. The latter corresponds to the fee that we specified we will pay for
+  this transaction.
+* Our account's nonce increased to `1`.
 
 ::: warning
 
@@ -512,7 +538,7 @@ oasis-node stake account gen_transfer \
   --transaction.file tx_transfer.json \
   --transaction.nonce 1 \
   --transaction.fee.gas 1000 \
-  --transaction.fee.amount 1
+  --transaction.fee.amount 2000
 ```
 
 To submit the generated transaction, we need to copy `tx_transfer.json` to the
@@ -530,7 +556,7 @@ the destination's):
 ```json
 {
     "general": {
-        "balance": "308492492765",
+        "balance": "308492488765",
         "nonce": 2
     },
     "escrow": {
@@ -567,8 +593,12 @@ the destination's):
 }
 ```
 
-We can observe that 170 tokens have been correctly deducted from our account and
-added to the destination account.
+We can observe that:
+
+* Our general balance decreased for 170 tokens and 2000 base units. The latter
+  corresponds to the fee that we specified we will pay for this transaction.
+* Our account's nonce increased to `2`.
+* Destination account's general balance increased for 170 tokens.
 
 ### Escrowing tokens
 
@@ -585,7 +615,7 @@ oasis-node stake account gen_escrow \
   --transaction.file tx_escrow.json \
   --transaction.nonce 2 \
   --transaction.fee.gas 1000 \
-  --transaction.fee.amount 1
+  --transaction.fee.amount 2000
 ```
 
 To submit the generated transaction, we need to copy `tx_escrow.json` to the
@@ -602,7 +632,7 @@ Let's [check our account's info]:
 ```json
 {
     "general": {
-        "balance": "100492492765",
+        "balance": "100492486765",
         "nonce": 3
     },
     "escrow": {
@@ -619,22 +649,25 @@ Let's [check our account's info]:
 }
 ```
 
-We can observe our general balance decreased for 208 tokens and our escrow
-account's active balance increased for 208 tokens.
+We can observe that:
 
-Take note that the total number of shares in our escrow account's active balance
-increased from 10000000000000 to 10185014125910.
+* Our general balance decreased for 208 tokens and 2000 base units. The latter
+  corresponds to the fee that we specified we will pay for this transaction.
+* Our account's nonce increased to `3`.
+* Our escrow account's active balance increased for 208 tokens.
+* The total number of shares in our escrow account's active balance
+  increased from 10000000000000 to 10185014125910.
 
 When a delegator delegates some amount of tokens to an entity's account,
-the delegator receives the number of shares proportional to the current share
-"price" (in base units) calculated from the total number of base units delegated
-to an entity's account so far and the number of shares issued so far:
+the delegator receives the number of shares proportional to the current
+_share price_ (in base units) calculated from the total number of base units
+delegated to an entity's account so far and the number of shares issued so far:
 
 ```text
 shares_per_base_unit = entity_issued_shares / entity_delegated_base_units
 ```
 
-In our case, the current share "price" (i.e. `shares_per_base_unit`) is
+In our case, the current share price (i.e. `shares_per_base_unit`) is
 10000000000000 / 11242384816640 which is 0.8894909899542729.
 
 For 208 tokens, the amount of newly issued shares is thus 208 \* 10^9 \*
@@ -656,7 +689,7 @@ oasis-node stake account gen_reclaim_escrow \
   --transaction.file tx_reclaim.json \
   --transaction.nonce 3 \
   --transaction.fee.gas 1000 \
-  --transaction.fee.amount 1
+  --transaction.fee.amount 2000
 ```
 
 To submit the generated transaction, we need to copy `tx_reclaim.json` to the
@@ -673,7 +706,7 @@ Let's [check our account's info]:
 ```json
 {
     "general": {
-        "balance": "100492492764",
+        "balance": "100492484765",
         "nonce": 4
     },
     "escrow": {
@@ -692,22 +725,25 @@ Let's [check our account's info]:
 
 We can observe that:
 
-* our escrow account's active number of shares decreased for 357 billion shares
-  to 9828014125910,
-* our escrow account's active balance decreased for 401353137954 base units and
-  is now 11049031678686 base units,
-* our escrow account's debonding balance increased to 401353137954 base units
+* Our general balance decreased for 2000 base units. This corresponds to the fee
+  that we specified we will pay for this transaction.
+* Our account's nonce increased to `4`.
+* Our escrow account's active number of shares decreased for 357 billion shares
+  to 9828014125910.
+* Our escrow account's active balance decreased for 401353137954 base units and
+  is now 11049031678686 base units.
+* Our escrow account's debonding balance increased to 401353137954 base units
   and its number of shares to the same amount.
 
 When a delegator wants to reclaim a certain number of escrowed tokens, the
-base unit "price" (in shares) must be calculated based on the entity's escrow
+_base unit price_ (in shares) must be calculated based on the entity's escrow
 account's current active balance and the number of issued shares:
 
 ```text
 base_units_per_share = entity_delegated_base_units / entity_issued_shares
 ```
 
-In our case, the current base unit "price" (i.e. `base_units_per_share`) is
+In our case, the current base unit price (i.e. `base_units_per_share`) is
 11450384816640 / 10185014125910 which is 1.124238481664054 base unit per share.
 
 For 357 billion shares, the amount of base units that will be reclaimed is thus
@@ -774,7 +810,7 @@ oasis-node stake account gen_amend_commission_schedule \
   --transaction.file tx_amend_commission_schedule.json \
   --transaction.nonce 4 \
   --transaction.fee.gas 1000 \
-  --transaction.fee.amount 1
+  --transaction.fee.amount 2000
 ```
 
 Rates and minimum/maximum rates are in units of 1/100,000, so `0`, `50000`, and
@@ -821,6 +857,7 @@ delegators.
 A validator node earns a staking reward for participating in the consensus
 protocol each epoch.
 The commission rate is a fraction of the staking reward.
+
 For example, if our node earns a reward of 0.007 tokens, 0.0035 tokens are added
 to the escrow pool (increasing the value of our escrow pool shares uniformly),
 and 0.0035 tokens are given to us (issuing us new shares as if we manually
