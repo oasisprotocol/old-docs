@@ -13,7 +13,7 @@ Testnet.
   Feel free to use other seed nodes than the one provided here.
   :::
 * [Oasis Core] version:
-  * [20.4]
+  * [20.4.1]
   ::: tip NOTE
   The `oasis-node` binary is part of the Oasis Core release.
   :::
@@ -51,13 +51,13 @@ Testnet.
 2. Download and verify the genesis document published in the [2020-03-05 release].
 3. Stop your node.
 4. [Wipe Node State].
-5. Upgrade `oasis-node` to version [20.4].
+5. Upgrade `oasis-node` to version [20.4.1].
 6. Start your node.
 
 For a more in-depth explanation, see [Handling Network Upgrades] guide.
 
 [2020-03-05 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05
-[20.4]: https://github.com/oasislabs/oasis-core/releases/tag/v20.4
+[20.4.1]: https://github.com/oasislabs/oasis-core/releases/tag/v20.4.1
 
 ### 2020-02-11
 
