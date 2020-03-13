@@ -64,9 +64,12 @@ This will output something like:
 Total supply: 10000000000000000000
 Common pool: 7999214452933172880
 Staking threshold (entity): 100000000000
-Staking threshold (validator): 100000000000
-Staking threshold (compute): 100000000000
-Staking threshold (storage): 100000000000
+Staking threshold (validator node): 100000000000
+Staking threshold (compute node): 100000000000
+Staking threshold (storage node): 100000000000
+Staking threshold (key manager node): 100000000000
+Staking threshold (compute runtime): 100000000000
+Staking threshold (key manager runtime): 100000000000
 ```
 
 The numbers are listed in base units, 1 token corresponds to 10^9 (i.e. one
@@ -76,7 +79,7 @@ We can observe that the total supply is 10 billion tokens and that almost 8
 billion tokens are in the *common pool*.
 
 Finally, the staking thresholds for all node kinds (entity, validator, compute,
-storage) are 100 tokens.
+storage) and runtime kinds (compute, key manager) are 100 tokens.
 
 ## Account info
 
@@ -142,6 +145,16 @@ This will output all staking information about this particular account, e.g.:
         "commission_schedule": {
             "rates": null,
             "bounds": null
+        },
+        "stake_accumulator": {
+            "claims": {
+                "registry.RegisterEntity": [
+                    0
+                ],
+                "registry.RegisterNode.GKdkhntFqH5b0mXtRR6Q8nz1vcsFDnLyWWuCtmVhwJs=": [
+                    1
+                ]
+            }
         }
     }
 }
@@ -180,6 +193,22 @@ An entity can also charge commission for tokens that are delegated to it.
 The commission schedule rate steps would be defined in
 `escrow.commission_schedule.rates` and the commission rate bound steps would be
 defined in `escrow.commission_schedule.bounds`.
+
+Each escrow account also has a corresponding stake accumulator.
+It stores stake claims for an escrow account and ensures all claims are
+satisfied at any given point.
+Adding a new claim is only possible if all of the existing claims plus the new
+claim can be satisfied.
+
+We can observe that the stake accumulator currently has two claims:
+
+* The first one is for registering an entity. The value it maps to is a list of
+  staking threshold kinds.
+  `0` represents the threshold for registering an entity.
+* The second one is for registering a node with ID
+  `GKdkhntFqH5b0mXtRR6Q8nz1vcsFDnLyWWuCtmVhwJs=`. The value it maps to is again
+  a list of staking threshold kinds.
+  `1` represents the threshold for registering a validator node.
 
 ## Generating and submitting transactions
 
@@ -337,10 +366,7 @@ At the beginning, this outputs:
             "balance": "0",
             "total_shares": "0"
         },
-        "commission_schedule": {
-            "rates": null,
-            "bounds": null
-        }
+        ...
     }
 }
 ```
@@ -422,10 +448,7 @@ Let's [check our account's info] again:
             "balance": "0",
             "total_shares": "0"
         },
-        "commission_schedule": {
-            "rates": null,
-            "bounds": null
-        }
+        ...
     }
 }
 ```
@@ -470,10 +493,7 @@ account's ID):
             "balance": "0",
             "total_shares": "0"
         },
-        "commission_schedule": {
-            "rates": null,
-            "bounds": null
-        }
+        ...
     }
 }
 ```
@@ -522,10 +542,7 @@ the destination's):
             "balance": "0",
             "total_shares": "0"
         },
-        "commission_schedule": {
-            "rates": null,
-            "bounds": null
-        }
+        ...
     }
 }
 ```
@@ -545,10 +562,7 @@ the destination's):
             "balance": "0",
             "total_shares": "0"
         },
-        "commission_schedule": {
-            "rates": null,
-            "bounds": null
-        }
+        ...
     }
 }
 ```
@@ -600,10 +614,7 @@ Let's [check our account's info]:
             "balance": "0",
             "total_shares": "0"
         },
-        "commission_schedule": {
-            "rates": null,
-            "bounds": null
-        }
+        ...
     }
 }
 ```
@@ -640,24 +651,13 @@ generate the following reclaim escrow transaction:
 ```bash
 oasis-node stake account gen_reclaim_escrow \
   $TX_FLAGS \
-  --stake.amount 357000000000 \
+  --stake.shares 357000000000 \
   --stake.escrow.account +yyK5gqJb7x8xPASJZznZk8X8h0ilXuv39ctFYeHlCg= \
   --transaction.file tx_reclaim.json \
   --transaction.nonce 3 \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 1
 ```
-
-::: warning NOTE
-Although the `gen_reclaim_escrow` subcommand currently uses the
-`--stake.amount` flag whose help states that it specifies the amount of tokens
-for the transaction, it actually specifies the amount of shares to reclaim from
-an escrow.
-
-We plan to fix this misleading use of `--stake.amount` flag in near future.
-For more details, see [Oasis Core #2690](
-https://github.com/oasislabs/oasis-core/issues/2690).
-:::
 
 To submit the generated transaction, we need to copy `tx_reclaim.json` to the
 online Oasis node (i.e. the `server`) and submit it from there:
@@ -685,10 +685,7 @@ Let's [check our account's info]:
             "balance": "401353137954",
             "total_shares": "401353137954"
         },
-        "commission_schedule": {
-            "rates": null,
-            "bounds": null
-        }
+        ...
     }
 }
 ```
