@@ -342,6 +342,8 @@ validators.
 For more details, see [Oasis Core #2526].
 :::
 
+[Oasis Core #2526]: https://github.com/oasislabs/oasis-core/issues/2526
+
 ## Example transactions
 
 Let's assume our entity's account is
