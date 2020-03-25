@@ -77,8 +77,18 @@ If you are in the genesis block and we do not see any activity in the first
 * **Best Availability:** This is a measure of how well a node operator is
   performing. This reward will be given to the top 5 operators based on both
   blocks signed and blocks proposed. Given the current state of Oasis testnet,
-  we define ``Best Availability = Blocks Signed + 50 x Blocks Proposed``. The
-  winners of the reward will be announced at the end of the competition.
+  we define
+  ``Best Availability (v2) = Blocks Signed + 50 x Blocks Proposed in Round 0``,
+  meaning the a node only gains the "Blocks Proposed" score when it proposes
+  a block as the first proposer for each block height, and not when filling in
+  for an offline proposer.
+  We use the Best Availability (v2) score on April 1, 2020 and forward,
+  combined with an earlier scoring method, Best Availability (v1), on March 31,
+  2020 and before.
+  We define
+  ``Best Availability (v1) = Blocks Signed + 50 x Blocks Proposed``.
+  
+  The winners of the reward will be announced at the end of the competition.
   * **Blocks Signed:** As we introduce the Best Availability challenge, we will
     sunset the Most Blocks Signed challenge before we move on to the next phase
     of the competition, where delegation and transfers will be turned on. At
@@ -177,12 +187,12 @@ turned on):
 
 **Participation**:
 
-* Top 10 Best Availability in March from 3/5 to 3/31: 50,000 tokens
-* Top 11-25 Best Availability in March from 3/5 to 3/31: 25,000 tokens
-* Top 26-50 Best Availability in March from 3/5 to 3/31: 15,000 tokens
-* Top 10 Best Availability in April from 4/1 to 4/30: 50,000 tokens
-* Top 11-25 Best Availability in April from 4/1 to 4/30: 25,000 tokens
-* Top 26-50 Best Availability in April from 4/1 to 4/30: 15,000 tokens
+* Top 10 Best Availability (v1) in March from 3/5 to 3/31: 50,000 tokens
+* Top 11-25 Best Availability (v1) in March from 3/5 to 3/31: 25,000 tokens
+* Top 26-50 Best Availability (v1) in March from 3/5 to 3/31: 15,000 tokens
+* Top 10 Best Availability (v2) in April from 4/1 to 4/30: 50,000 tokens
+* Top 11-25 Best Availability (v2) in April from 4/1 to 4/30: 25,000 tokens
+* Top 26-50 Best Availability (v2) in April from 4/1 to 4/30: 15,000 tokens
 * All participants (who don't double-sign): 5,000 tokens
 * First 30 entities on the network (who stay through the end with no
   double-signing): 10,000 tokens
