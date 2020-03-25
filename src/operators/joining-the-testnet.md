@@ -694,6 +694,11 @@ If your node is registered, the above command should output:
 node is registered
 ```
 
+If your node is not registered, but you've followed all the steps correctly you
+likely have to wait till the end of the current epoch for your node registration
+to complete. An epoch happens every 200 blocks. At this time, each epoch is
+anywhere from 20-30 mins.
+
 <!-- markdownlint-disable no-trailing-punctuation -->
 ## You're a Validator!
 <!-- markdownlint-enable no-trailing-punctuation -->
