@@ -39,7 +39,6 @@ module.exports = {
     logo: '/logo.svg',
     nav: [
       { text: 'Home', link: 'https://oasislabs.com' },
-      { text: 'Dashboard', link: 'https://dashboard.oasiscloud.io' },
       {
         text: 'Support',
         link:
