@@ -52,15 +52,7 @@ With our recent runtime change to WASM we also have the ability to support langu
 
 This opens the possibility to support languages like C, C++, Java, and Go. 
 
-If you have a specific need for your use-case, please send us a note at devrel@oasislabs.com to help us prioritize.  
-
-#### How do I debug transactions on the network? 
-
-Use Oasis Explorer: https://dashboard.oasiscloud.io/explorer. 
-
-You can search network logs for wallet address or transaction id or a block address. 
-
-For your deployed service, you can also view Logs tab on the dashboard for recent transactions.
+If you have a specific need for your use-case, please send us a note at devrel@oasislabs.com to help us prioritize.
 
 #### Can I write a confidential smart contract in Solidity?
 
