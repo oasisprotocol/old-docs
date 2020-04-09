@@ -45,7 +45,6 @@ const provider = new HDWalletProvider(MNEMONIC, URL);
 
 **Connecting to Oasis Devnet:** To connect to the Oasis Devnet, use the link `wss://web3.devnet.oasiscloud.io/ws`. 
 You will likely want to connect your own account; do this by providing your mnemonic (if you're using an HD wallet), private key, or array of private keys.
-The [Oasis Dashboard](https://dashboard.oasiscloud.io) accounts are not compatible with Web3. 
 
 To keep your mnemonic or private key secret, instead of including them in your code, you may want to input them at runtime as  environment variables.
 
