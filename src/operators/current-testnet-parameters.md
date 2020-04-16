@@ -4,16 +4,16 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
-* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-03-05/genesis.json):
-  * sha1: `641a88d66085dcb8f310a1564227d478ed9a524d`
-  * sha256: `f551c11d6545deecbc26b4973bb0ea04f3f555066ba9739bd175221660f367f1`
+* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-04-16/genesis.json):
+  * sha1: `6ed391fd5b857ec5a0c34da75e70cbe89633cac4`
+  * sha256: `5ea94a17e29ba106d133cd808539cf20371b5823a41ff2cb134e4bdabbdf1604`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
 * [Oasis Core] version:
-  * [20.4.1]
+  * [20.5]
   ::: tip NOTE
   The `oasis-node` binary is part of the Oasis Core release.
   :::
