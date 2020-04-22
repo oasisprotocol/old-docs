@@ -497,10 +497,6 @@ so you might need to wait a few blocks for the balances to update.
 Token transfer transactions transfer tokens from the signer's account to the
 given destination account.
 
-::: tip NOTE
-Token transfer are currently disabled on our Testnet.
-:::
-
 Let's choose a destination account, e.g.
 `A1X90rT/WK4AOTh/dJsUlOqNDV/nXM6ZU+h+blS9pto=`, and [check its current balance][
 check our account's info] (replacing our entity's ID with the destination
