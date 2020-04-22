@@ -32,7 +32,7 @@ Testnet.
 
 ## Deployment Change Log
 
-### 2020-04-16 (Upcoming)
+### 2020-04-16 (Latest)
 
 #### Upgrade Parameters
 
@@ -59,7 +59,7 @@ For a more in-depth explanation, see [Handling Network Upgrades] guide.
 [2020-04-16 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-04-16
 [20.5]: https://github.com/oasislabs/oasis-core/releases/tag/v20.5
 
-### 2020-03-05 (Latest)
+### 2020-03-05
 
 #### Upgrade Parameters
 
