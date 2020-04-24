@@ -77,7 +77,7 @@ Then, in another terminal, run `oasis test`. This will run the services' Cargo
 tests and any TS tests found in the `app/test/` directory.
 
 If everything went well, you should see some text fly by in your `oasis chain`
-terminal, and eventually the test output:
+terminal, and eventually the test output in the other:
 
 ```
  PASS  app/test/greeter.spec.ts
