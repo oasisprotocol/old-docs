@@ -81,7 +81,7 @@ terminal, and eventually the test output:
  PASS  app/test/greeter.spec.ts
   Greeter Test
     ✓ deployed (2ms)
-    ✓ known greeting (2009ms)<Paste>
+    ✓ known greeting (2009ms)
 ```
 
 So far so good!
