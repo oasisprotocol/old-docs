@@ -103,7 +103,7 @@ event: 0xeb15806cbdc28a0e2a310d3224ffdc083b49c07f greeted sample-app!
 ```
 
 You can now connect to the service using
-```
+```typescript
 new Greeter(new Address('0x0fb5b7af405e28263be40c3879f3e1c2ec3cb2db'))
 ```
 and send greetings to all your friends using a spiffy decentralized system that
