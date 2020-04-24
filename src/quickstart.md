@@ -14,74 +14,98 @@ curl --proto '=https' --tlsv1.2 -sSL https://get.oasis.dev | python
 
 Alternatively, pipe into `python - --help` to see installation options.
 
-## Unit Test the "Hello World" Service Using Cargo
+## Create a New Oasis Project from a Template
 
-1. `git clone https://github.com/oasislabs/tutorials`
-2. `cd tutorials/hello-world/service`
-3. `oasis test -- --nocapture`
-
-The test will do the following:
-
-1. Retrieve "Hello World!" in Slovenian
-2. Attempt to retrieve "Hello World!" in Samoan, but fail because it doesn't exist
-3. Attempt to insert a duplicate greeting (this will fail)
-4. Insert "Hello World!" in Samoan
-5. Retrieve "Hello World!"" successfully in Samoan
-
-You should see the following console output:
+Once you've downloaded the latest Oasis SDK, you can create a new project using
 
 ```
-running 1 test
-In Slovenian: "Pozdravljen, svet!"
-In Samoan: None
-Adding "Zeno World!" for "en"
-Err(DuplicateEntry)
-Adding "alofa fiafia i le lalolagi!" for "ws"
-In Samoan: "alofa fiafia i le lalolagi!"
-test tests::test_paths ... ok
-
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+oasis init oasis-quickstart
 ```
 
-Great!
-Now that the tests pass, it's time build the service for deployment and test it on the local chain.
-
-## Integration Test Using the Local Chain
-
-In this step we will use the JavaScript-based test in the test directory.
-This script uses [oasis.js](https://github.com/oasislabs/oasis.js) to interact with either the local chain or Devnet 2.0.
-
-1. `oasis build`
-2. `cd ../app`
-3. Install app dependencies using `oasis build`
-4. In a separate terminal, run the local chain using `oasis chain`
-
-You can now test on the local chain using `oasis test`.
-Note that the `app` tests will run when in a subdirectory of `app`. You will see the following output,
+If you `cd oasis-quickstart` and `ls`, you'll see the following structure
 
 ```
- PASS  test/service.spec.ts (5.965s)
-  HelloWorld Test
+oasis-quickstart
+├── app                  # your TypeScript app
+│   ├── service-clients  # generated TypeScript clients
+│   │   └── greeter.ts   # generated from services/src/bin/greeter.rs
+│   ├── src
+│   │   └── main.ts      # app entrypoint
+│   └── test             # Jest tests
+│       └── greeter.spec.ts
+├── services             # your Oasis platform services
+│   ├── Cargo.toml
+│   └── src
+│       └── bin
+│           └── greeter.rs
+├── Cargo.lock
+├── Cargo.toml
+├── README.md
+├── package.json
+├── tsconfig.json
+└── yarn.lock           # both yarn and npm work. you'll want yarn, though
+```
+
+We'll go into detail on why each file exists in the
+[next tutorial](/tutorials/hello-world.html), but for now, the important bits are
+the TypeScript app in `app/` and the `Greeter` service defined in
+`services/src/bin/greeter.rs`.
+
+"Why Rust and TS" you ask. Well, as great as Rust is–and on that we can all
+agree–TS is great for cross-platform development, so each technology is used
+where it's most apt. For your development convenience, the Oasis SDK
+automatically generates TS service clients. You *could* write the whole thing
+in Rust, but let's save such excitement for another tutorial.
+
+## Build the Quickstart App
+
+The Oasis SDK supports both `yarn` and `npm`, but the quickstart is rather
+opinionated and requires `yarn`, so you'll want to install that separately.
+
+Once that's done, simply run `oasis build` and watch everything get built,
+Rust and TS alike.
+
+## Test the Quickstart App
+
+Strictly speaking, you could have skipped the build step, but it makes for
+a nice exposition. Testing is where things get interesting, though.
+
+First, start a local development chain by running `oasis chain`.
+Then, in another terminal, run `oasis test`. This will run the services' Cargo
+tests and any TS tests found in the `app/test/` directory.
+
+If everything went well, you should see some text fly by in your `oasis chain`
+terminal, and eventually the test output:
+
+```
+ PASS  app/test/greeter.spec.ts
+  Greeter Test
     ✓ deployed (2ms)
-    ✓ known greeting (409ms)
-    ✓ insert new greeting in Samoan (400ms)
-
-Test Suites: 1 passed, 1 total
-Tests:       3 passed, 3 total
+    ✓ known greeting (2009ms)<Paste>
 ```
+
+So far so good!
 
 ## Deploy on Devnet 2.0
 
-You can deploy your service to Devnet 2.0 using `oasis deploy`.
+Now that your service is battle hardened from extensive testing, it's ready
+to deploy to the actual platform!
+You can deploy your service to Devnet 2.0 using `oasis deploy`, which shells out
+to the `deploy` script in the `package.json`.
 When you run that command, with any luck, you'll see something like the following:
 
 ```
-   Deploying hello-world
-         ...
-    Deployed HelloWorld at 0xf8b476862dd4bcaaabb988aa5a459d95e319ac0e
+Deployed Greeter at 0x0fb5b7af405e28263be40c3879f3e1c2ec3cb2db
+Greeter says: Hello, sample-app
+event: 0xeb15806cbdc28a0e2a310d3224ffdc083b49c07f greeted sample-app!
 ```
 
-You can now point an app at `0xf8b476862dd4bcaaabb988aa5a459d95e319ac0e` using the client's [Service.at](https://oasis-labs-oasis-client.readthedocs-hosted.com/en/latest/service.html#service-at) constructor and interact with the spiffy decentralized backend you just deployed!
+You can now connect to the service using
+```
+new Greeter(new Address('0x0fb5b7af405e28263be40c3879f3e1c2ec3cb2db'))
+```
+and send greetings to all your friends using a spiffy decentralized system that
+you just deployed. Nice job!
 
 ## Where to go from here?
 
