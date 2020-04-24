@@ -60,7 +60,9 @@ in Rust, but let's save such excitement for another tutorial.
 ## Build the Quickstart App
 
 The Oasis SDK supports both `yarn` and `npm`, but the quickstart is rather
-opinionated and requires `yarn`, so you'll want to install that separately.
+opinionated and requires `yarn`, so you'll want to install that separately
+using `npm i -g yarn`. This is not installed by default out of respect for
+your computer's hard disk.
 
 Once that's done, simply run `oasis build` and watch everything get built,
 Rust and TS alike.
