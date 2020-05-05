@@ -314,7 +314,7 @@ as appropriate for a given transaction:
 
   ::: tip NOTE
   Currently, gas costs for transactions are set in the genesis file and cannot
-  be changed. Once updating consensus parameters is supported (tracked by
+  be changed. If updating consensus parameters is supported (tracked by
   [Oasis Core #2334]), this will no longer be the case.
   :::
 
