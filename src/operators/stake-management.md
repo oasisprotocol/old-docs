@@ -314,7 +314,8 @@ as appropriate for a given transaction:
 
   ::: tip NOTE
   Currently, gas costs for transactions are set in the genesis file and cannot
-  be changed.
+  be changed. If updating consensus parameters is supported (tracked by
+  [Oasis Core #2334]), this will no longer be the case.
   :::
 
 * `--transaction.fee.amount`: Amount of base units we will pay as a fee for a
@@ -872,6 +873,7 @@ common ways for a commission schedule amendment to fail][compendium].
 [Signer flags]: #signer-flags
 [Checking Your Account nonce]: maintenance/checking-account-nonce.md
 [flags-in-env-var]: #storing-base-and-signer-flags-in-an-environment-variable
+[Oasis Core #2334]: https://github.com/oasislabs/oasis-core/issues/2334
 [Common transaction flags]: #common-transaction-flags
 [Account info]: #account-info
 [check our account's info]: #querying-account-info
