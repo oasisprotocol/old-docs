@@ -12,16 +12,18 @@ Challenge of The Quest. **The May competition will start on May 11 at
 ## Overview
 
 Below are a set of guidelines that we hope will help you prepare for the
-competition. 
+competition.
 
 ### Eligibility for the Competition
 
 We’ve received a number of questions about who can join, and we want to be as
 explicit as we can. We want to have as diverse and broad a community of node
 operators as possible. That said, citizens and residents of certain
-jurisdictions may not be eligible to receive rewards due to legal requirements.
-Your participation and eligibility to receive rewards are also subject to
-**KYC** and depending on your country of residence **accredited investor
+jurisdictions may not be eligible to receive rewards due to legal 
+requirements. 
+
+**Your participation and eligibility to receive rewards are also subject 
+to KYC and depending on your country of residence accredited investor
 verification**. Before joining, be sure to read the official rules
 **[here][eligibility-rules]**.
 
@@ -71,11 +73,11 @@ for the Oasis Network.
 
 ### Current Challenges
   
-* **May Availability Challenge:** Availability is a measure of how well a
-  node operator is performing. The May competition will run from May 11
-  to June 4. 
+* **May Availability Challenge:** Availability is a measure of how well
+  a node operator is performing. The May competition will run from May
+  11 to June 4.
   
-  For May, we define 
+  For May, we define
   ``Best Availability (v3) = Blocks Signed + [to update`
   meaning the entity's score is based on number of blocks proposed as
   the first proposer as a percentage of total possible blocks the entity
@@ -98,14 +100,14 @@ Attack related to delegation and token transfer) based on the criteria above at
 the end of the competition.
   
 ### Previous challenges:
-  * **Blocks Signed:** As we introduce the Best Availability challenge, we will
+ * **Blocks Signed:** As we introduce the Best Availability challenge, we will
     sunset the Most Blocks Signed challenge before we move on to the next phase
     of the competition, where delegation and transfers will be turned on. At
     that point, we will announce the top 5 operators with the most blocks signed
     as well as the special prize for most blocks signed from the nodes who
     joined after Jan 23, 2020.
-    
-  * **Most Stake**: We will run this for about a month of the competition. During
+
+ * **Most Stake**: We will run this for about a month of the competition. During
     this time delegation and transfers will be turned off. Staking will primarily
     be based on your ability to join the consensus committee for block rewards,
     transaction fees (we'll submit transactions of synthetic data through the
@@ -134,7 +136,6 @@ the end of the competition.
   participate through the end of the staking competition without double-signing;
   and for participation on the network for the entirety of the competition
   without double-signing.
-
 
 ### Summary of Rewards
 
@@ -181,9 +182,9 @@ Previous Winners ([winners announced 🎉] [quest-winners]):
 * Top 26-50 Best Availability (v2) in April from 4/1 to 4/30: 15,000 tokens
 
 End of competition rewards:
-* All participants (who don't double-sign): 5,000 tokens
-* First 30 entities on the network (who stay through the end with no
-  double-signing): 10,000 tokens
+* All participants who don't double-sign: 5,000 tokens
+* First 30 entities on the network who stay through the end with no
+  double-signing: 10,000 tokens
 
 ## Communication
 
