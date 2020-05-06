@@ -95,10 +95,9 @@ entry and encourage meaningful engagement on the network. A few key parameters:
   During this time, staked tokens are at risk of getting slashed for
   double-signing and do not accrue rewards during this time.
 
-* **Consensus Voting power**: During the staking competition, we plan to run
-various tests to help us determine whether to distribute consensus voting power
-on the network through a stake-weighted system or to leverage a non-weighted,
-flat voting approach. Expect more here in the future.
+* **Consensus Voting power**: The current voting power mechanism is stake-
+  weighted. In this model, the network will require signatures by validators
+  representing +⅔ of the total stake of the committee to sign a block.
 
 ### Delegation
 
