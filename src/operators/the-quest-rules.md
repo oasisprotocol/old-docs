@@ -1,19 +1,18 @@
-# Rules and Guidelines for The Quest: Round 1
+# Rules and Guidelines for The Quest
 
 ![The Quest](/operator_images/the_quest.png)
 
 Welcome to The Quest -- a multi-round staking competition (aka incentivized
-testnet) run on the Oasis Network. The Quest began on January 15 00:00 UTC.
-**New participants can join during or after the next network upgrade on
-Thursday, January 23 at 00:00 UTC (Wednesday, January 22 at 4:00 pm PST).**
+testnet) run on the Oasis Network. We are currently in the May Availability
+Challenge of The Quest. **The May competition will start on May 11 at
+4pm UTC.**
 
 ***[Join the Quest][get-set-up]***
 
 ## Overview
 
 Below are a set of guidelines that we hope will help you prepare for the
-competition. These guidelines are a framework for how we’re thinking about Round
-1 of the competition. We expect this to span anywhere from 1-2 months in time.
+competition. 
 
 ### Eligibility for the Competition
 
@@ -30,7 +29,7 @@ verification**. Before joining, be sure to read the official rules
 
 The Quest is now live but you can still join. Just follow these
 steps to join the Testnet [here][setup-docs] and you will be
-funded after the Network's upgrade on January 23.
+funded shortly afterwards.
 
 ::: tip NOTE
 If possible, please use the same GitHub handle and email address
@@ -51,8 +50,9 @@ We hope to use a staking competition to do a few things:
 
 ## Competition Start Time
 
-The competition started **on January 15 at 00:00 UTC**, but you can still
-join using the steps above.
+The competition started on January 15 at 00:00 UTC, but you can still
+join using the steps above. **The May Availibility Competition starts on May
+11 at 4pm UTC**.
 
 When you join, you'll receive the same amount of tokens to start the
 competition as all nodes.
@@ -69,73 +69,60 @@ Before diving into your strategy for all items listed below, we also encourage
 you to read through the [proposed incentive structure][incentives-proposal]
 for the Oasis Network.
 
-If you are in the genesis block and we do not see any activity in the first
-24 hours we may restart the genesis block and remove you.
-
-### Top Challenges
-
-* **Best Availability:** This is a measure of how well a node operator is
-  performing. This reward will be given to the top 5 operators based on both
-  blocks signed and blocks proposed. Given the current state of Oasis testnet,
-  we define
-  ``Best Availability (v2) = Blocks Signed + 50 x Blocks Proposed in Round 0``,
-  meaning the a node only gains the "Blocks Proposed" score when it proposes
-  a block as the first proposer for each block height, and not when filling in
-  for an offline proposer.
-  We use the Best Availability (v2) score on April 1, 2020 and forward,
-  combined with an earlier scoring method, Best Availability (v1), on March 31,
-  2020 and before.
-  We define
-  ``Best Availability (v1) = Blocks Signed + 50 x Blocks Proposed``.
+### Current Challenges
   
-  The winners of the reward will be announced at the end of the competition.
+* **May Availability Challenge:** Availability is a measure of how well a
+  node operator is performing. The May competition will run from May 11
+  to June 4. 
+  
+  For May, we define 
+  ``Best Availability (v3) = Blocks Signed + [to update`
+  meaning the entity's score is based on number of blocks proposed as
+  the first proposer as a percentage of total possible blocks the entity
+  is capable of proposing.
+  
+  The winners of the reward will be announced in early June.
+  
+  * **Best Attacks**: Best attacks is a qualitative reward but certainly one we
+  will judge impartially. The goal of this reward is really to see if you can
+  hack the system, steal someone's tokens, cause a Sybil attack, etc. Specific
+  criteria we'll consider when making our choice include:
+  * Impact to other node operators
+  * Impact to network stability
+  
+  After your attack has been demonstrated, we ask you to write up your attack(s)
+(blog post, GitHub repo, etc.) and submit it via this [form].
+
+The Oasis team will review and choose the top 6 attacks (including one Best
+Attack related to delegation and token transfer) based on the criteria above at
+the end of the competition.
+  
+### Previous challenges:
   * **Blocks Signed:** As we introduce the Best Availability challenge, we will
     sunset the Most Blocks Signed challenge before we move on to the next phase
     of the competition, where delegation and transfers will be turned on. At
     that point, we will announce the top 5 operators with the most blocks signed
     as well as the special prize for most blocks signed from the nodes who
     joined after Jan 23, 2020.
-* **Best Attacks**: Best attacks is a qualitative reward but certainly one we
-  will judge impartially. The goal of this reward is really to see if you can
-  hack the system, steal someone's tokens, cause a Sybil attack, etc. Specific
-  criteria we'll consider when making our choice include:
-  * Impact to other node operators
-  * Impact to network stability
+    
+  * **Most Stake**: We will run this for about a month of the competition. During
+    this time delegation and transfers will be turned off. Staking will primarily
+    be based on your ability to join the consensus committee for block rewards,
+    transaction fees (we'll submit transactions of synthetic data through the
+    system at random times to test this) and your ability to hack and steal from
+    others on the network. We will give a week's notice before this portion of the
+    competition ends.
 
-After your attack has been demonstrated, we ask you to write up your attack(s)
-(blog post, GitHub repo, etc.) and submit it via this [form].
-
-The Oasis team will review and choose the top 6 attacks (including one Best
-Attack related to delegation and token transfer) based on the criteria above at
-the end of the competition.
-
-### Time-based Challenges
-
-Time-based challenges will focus on testing specific features and also
-incentivizing early community coordination. Examples of these competitions
-include:
-
-* **Most Stake**: We will run this for about a month of the competition. During
-  this time delegation and transfers will be turned off. Staking will primarily
-  be based on your ability to join the consensus committee for block rewards,
-  transaction fees (we'll submit transactions of synthetic data through the
-  system at random times to test this) and your ability to hack and steal from
-  others on the network. We will give a week's notice before this portion of the
-  competition ends.
-* **System upgrades**: In order to test upgrades -- and community timeliness in
-  supporting them -- we will likely incentivize a few specific upgrade cycles
-  where all who upgrade in a given time period receive a token reward. Initially
-  we'll let you know when we're doing this and may also do a bit more
-  unannounced to keep everyone honest 😃.
-* There may be more like the above. As they come we'll share our plans and try
-  to give you ample time to prepare.
-
-### Other Challenges / Ways to Win Rewards
+### Other Ways to Win Rewards
 
 * **Best team player**: This reward is qualitative and will go to the team that
   is the most engaged and most supportive of the Oasis community during the
   competition. This could include running a seed node, troubleshooting on slack,
   and filing issues, among other things.
+* **[Grants][grants]**: There are a fair number of tokens allocated for
+  [grants][grants]. If you have something you'd like to build, integrate, or add
+  to the network that's node and testnet related, please apply! We're excited to
+  see the network flourish and want to support those who are as well!
 * **Community**: Rewards will be granted to the best community content producer.
   This could anything from a weekly blog recapping the competition to active
   social media engagement to The Quest swag designs, and more. Please be
@@ -147,35 +134,28 @@ include:
   participate through the end of the staking competition without double-signing;
   and for participation on the network for the entirety of the competition
   without double-signing.
-* **[Grants][grants]**: There are a fair number of tokens allocated for
-  [grants][grants]. If you have something you'd like to build, integrate, or add
-  to the network that's node and testnet related, please apply! We're excited to
-  see the network flourish and want to support those who are as well!
+
 
 ### Summary of Rewards
 
 As a whole, the Foundation aims to allot ~1% of total tokens to the various
 rounds of The Quest, across challenge winners, community engagement awards,
 grants, and more. Top rewards (although there may be more based on the
-time-based challenges noted above) include:
+time-based challenges noted above) are below.
+
+All winners to date can be found [here] [quest-winners]
 
 **Attacks**:
 
 * Best Attack: up to 1,000,000 tokens
 * Top 6 Attacks: up to 500,000 tokens
 
-**Best Availability**:
+**Most staked** ([winners announced 🎉] [quest-winners]):
 
 * 1st place: 750,000 tokens
 * Top 5 spots: up to 500,000 tokens
 
-**Most staked** (to be announced before delegation and transfers are turned on):
-
-* 1st place: 750,000 tokens
-* Top 5 spots: up to 500,000 tokens
-
-**Most Blocks Signed** (to be announced before delegation and transfers are
-turned on):
+**Most Blocks Signed** ([winners announced 🎉] [quest-winners]):
 
 * 1st place: 750,000 tokens
 * Top 6 spots (including one who joined after Jan 23): up to 500,000 tokens
@@ -185,14 +165,22 @@ turned on):
 * Best team player: up to 100,000 tokens
 * Community content: up to 100,000 tokens
 
-**Participation**:
+**Availability Participation**:
 
+Current Competition:
+* Top 10 Best Availability (v3) in May from 5/11 to 6/4: 50,000 tokens
+* Top 11-25 Best Availability (v3) in May from 5/11 to 6/4: 25,000 tokens
+* Top 26-50 Best Availability (v3) in May from 5/11 to 6/4: 15,000 tokens
+
+Previous Winners ([winners announced 🎉] [quest-winners]):
 * Top 10 Best Availability (v1) in March from 3/5 to 3/31: 50,000 tokens
 * Top 11-25 Best Availability (v1) in March from 3/5 to 3/31: 25,000 tokens
 * Top 26-50 Best Availability (v1) in March from 3/5 to 3/31: 15,000 tokens
 * Top 10 Best Availability (v2) in April from 4/1 to 4/30: 50,000 tokens
 * Top 11-25 Best Availability (v2) in April from 4/1 to 4/30: 25,000 tokens
 * Top 26-50 Best Availability (v2) in April from 4/1 to 4/30: 15,000 tokens
+
+End of competition rewards:
 * All participants (who don't double-sign): 5,000 tokens
 * First 30 entities on the network (who stay through the end with no
   double-signing): 10,000 tokens
@@ -208,21 +196,19 @@ hear from us:
    channels.
 2. **Weekly updates**: We’ll send a weekly update outlining what to expect in
    the following week and highlight any other questions/issues that have come up
-   in the community. We’ll share this via email and slack.
+   in the community. We’ll share this via email and slack. Sign up [here] [mailing-list].
 3. **Weekly office hours**: We’ll host office hours every Thursday to answer
    questions in real time. Feel free to join as you see useful. We’ll also post
    all notes from those calls [here][office-hours-doc].
-4. **Weekly leaderboard**: While we don’t have a block explorer just yet, as we
-   get something up and running we will share out a weekly static leaderboard so
-   you all have a sense of where each node stands in terms of stake and blocks
-   signed. We’ll share this via email, slack and on our blog.
+4. **Leaderboard**: During Availability Competitions you can find weekly updated
+   leaderboards [here] [quest-winners]
 
 ## Closing Ceremonies
 
 The length of the competition will largely depend on how stable the network
 proves to be, how active you all are, and what we learn about our incentive
 proposal during this competition. So while we can’t share an end date today, we
-can tell you that we’ll provide plenty of pre warning beforehand.
+can tell you that we’ll provide plenty of pre-warning beforehand.
 
 ## Resources to Learn More
 
@@ -233,6 +219,7 @@ can tell you that we’ll provide plenty of pre warning beforehand.
   Core](https://github.com/oasislabs/oasis-core).
 * [Eligibility rules][eligibility-rules]
 * [Sign-up form][sign-up-form]
+* [Newsletter][mailing-list]
 
 [eligibility-rules]: https://docsend.com/view/zv5cfia
 [sign-up-form]: https://app.hellosign.com/s/6M6ym9qh
@@ -243,3 +230,5 @@ can tell you that we’ll provide plenty of pre warning beforehand.
 [grants]: https://www.oasis-protocol.org/grants
 [office-hours-doc]: https://docs.google.com/document/d/1ZnKIHcNPb3dGvP4b6bGrJmwyCjGhcSG2cHkTeEfwSEQ/edit?usp=sharing
 [get-set-up]: https://docs.oasis.dev/operators/the-quest-rules.html#how-to-join
+[mailing-list]: https://oasisfoundation.typeform.com/to/jodFyS
+[quest-winners]: https://docs.google.com/spreadsheets/d/1oHsCC31MW8KuN4eIY_YRD2y8baGewtIC3okYT4H9TGk/edit?usp=sharing
