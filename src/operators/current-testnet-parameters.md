@@ -32,6 +32,31 @@ Testnet.
 
 ## Deployment Change Log
 
+### 2020-05-11 (Upcoming)
+
+* Block height when network stops: **354000**
+* Upgrade Window:
+  * Start: **2020-05-11T16:00:00Z**
+  * End: **2020-05-12T15:59:59Z**
+    * As with previous deploys, the "_End_" of the window is not something we
+      can enforce unilaterally, however, if, for whatever reason, not enough
+      people upgrade on the public testnet we _may_ release and redeploy a new
+      genesis block that removes inactive nodes from the validator set.
+
+#### Upgrade Procedure
+
+1. (Optional) Dump network state at the specified block height.
+2. Download and verify the genesis document published in the [2020-05-11 release].
+3. Stop your node.
+4. [Wipe Node State].
+5. Upgrade `oasis-node` to version [20.6].
+6. Start your node.
+
+For a more in-depth explanation, see [Handling Network Upgrades] guide.
+
+[2020-05-11 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-05-11
+[20.6]: https://github.com/oasislabs/oasis-core/releases/tag/v20.6
+
 ### 2020-04-16 (Latest)
 
 #### Upgrade Parameters
