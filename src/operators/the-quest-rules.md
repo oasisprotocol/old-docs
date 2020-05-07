@@ -80,7 +80,7 @@ for the Oasis Network.
   For May, we define
   ``Best Availability (v3) = Blocks Signed +
   ((Blocks Proposed / Times Selected as Proposer) *
-  Blocks with Node Registered)``,
+  Blocks with Node in Validator Committee)``,
   which requires, among other criteria, for the node to be registered and online
   and signing blocks and proposing blocks, including proposing blocks when
   another node fails to propose a block.
