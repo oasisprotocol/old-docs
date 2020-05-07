@@ -78,10 +78,10 @@ for the Oasis Network.
   11 to June 4.
   
   For May, we define
-  ``Best Availability (v3) = Blocks Signed + [to update`
-  meaning the entity's score is based on number of blocks proposed as
-  the first proposer as a percentage of total possible blocks the entity
-  is capable of proposing.
+  ``Best Availability (v3) = (Blocks Signed / Total Blocks) + (Blocks Proposed / Times Selected as Proposer)``,
+  which requires, among other criteria, for the node to be online and (i)
+  signing blocks and (ii) proposing blocks, including proposing blocks when
+  another node fails to propose a block.
   
   The winners of the reward will be announced in early June.
   
