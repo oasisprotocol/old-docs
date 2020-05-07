@@ -78,7 +78,7 @@ for the Oasis Network.
   11 to June 4.
   
   For May, we define
-  ``Best Availability (v3) = (Blocks Signed / Total Blocks) + 
+  ``Best Availability (v3) = (Blocks Signed / Total Blocks) +
   (Blocks Proposed / Times Selected as Proposer)``,
   which requires, among other criteria, for the node to be online and (i)
   signing blocks and (ii) proposing blocks, including proposing blocks when
@@ -168,14 +168,16 @@ All winners to date can be found [here] [quest-winners]
 * Best team player: up to 100,000 tokens
 * Community content: up to 100,000 tokens
 
-**Availability Participation**
+**Availability Participation**:
 
 Current Competition
+
 * Top 10 Best Availability (v3) in May from 5/11 to 6/4: 50,000 tokens
 * Top 11-25 Best Availability (v3) in May from 5/11 to 6/4: 25,000 tokens
 * Top 26-50 Best Availability (v3) in May from 5/11 to 6/4: 15,000 tokens
 
 Previous Winners ([winners announced 🎉] [quest-winners])
+
 * Top 10 Best Availability (v1) in March from 3/5 to 3/31: 50,000 tokens
 * Top 11-25 Best Availability (v1) in March from 3/5 to 3/31: 25,000 tokens
 * Top 26-50 Best Availability (v1) in March from 3/5 to 3/31: 15,000 tokens
@@ -184,6 +186,7 @@ Previous Winners ([winners announced 🎉] [quest-winners])
 * Top 26-50 Best Availability (v2) in April from 4/1 to 4/30: 15,000 tokens
 
 End of competition rewards
+
 * All participants who don't double-sign: 5,000 tokens
 * First 30 entities on the network who stay through the end with no
   double-signing: 10,000 tokens
