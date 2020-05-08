@@ -97,7 +97,7 @@ entry and encourage meaningful engagement on the network. A few key parameters:
 
 * **Consensus Voting power**: The current voting power mechanism is stake-
   weighted. In this model, the network will require signatures by validators
-  representing +⅔ of the total stake of the committee to sign a block.
+  representing +2/3 of the total stake of the committee to sign a block.
 
 ### Delegation
 
