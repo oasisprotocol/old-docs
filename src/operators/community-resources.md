@@ -7,6 +7,7 @@ the Oasis Testnet, automate your node deployment, and more.
 
 - [https://oasis.fish/leaderboard](https://oasis.fish/leaderboard/)
 - [https://oasis.smartstake.io/](https://oasis.smartstake.io/)
+- [https://oasisscan.com/](https://oasisscan.com/)
 
 ## Deployment Services **(Coming Soon!)**
 
