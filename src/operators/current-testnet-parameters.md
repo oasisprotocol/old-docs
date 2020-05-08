@@ -34,7 +34,7 @@ Testnet.
 
 ### 2020-05-11 (Upcoming)
 
-* Block height when network stops: **354000**
+* Block height when network stops: **353000**
 * Upgrade Window:
   * Start: **2020-05-11T16:00:00Z**
   * End: **2020-05-12T15:59:59Z**
