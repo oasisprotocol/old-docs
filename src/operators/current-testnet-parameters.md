@@ -32,7 +32,7 @@ Testnet.
 
 ## Deployment Change Log
 
-### 2020-05-11 (Upcoming)
+### 2020-05-11 (Latest)
 
 * Block height when network stops: **353000**
 * Upgrade Window:
@@ -60,7 +60,7 @@ For a more in-depth explanation, see [Handling Network Upgrades] guide.
 [20.6]: https://github.com/oasislabs/oasis-core/releases/tag/v20.6
 [20.6 Changelog]: https://github.com/oasislabs/oasis-core/blob/v20.6/CHANGELOG.md#206-2020-05-07
 
-### 2020-04-16 (Latest)
+### 2020-04-16
 
 #### Upgrade Parameters
 
