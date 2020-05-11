@@ -50,12 +50,15 @@ Testnet.
 3. Stop your node.
 4. [Wipe Node State].
 5. Upgrade `oasis-node` to version [20.6].
-6. Start your node.
+6. If you have been using the prometheus metrics on `oasis-node`, these options
+   have changed. Please see the [20.6 Changelog] and update your configuration.
+7. Start your node.
 
 For a more in-depth explanation, see [Handling Network Upgrades] guide.
 
 [2020-05-11 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-05-11
 [20.6]: https://github.com/oasislabs/oasis-core/releases/tag/v20.6
+[20.6 Changelog]: https://github.com/oasislabs/oasis-core/blob/v20.6/CHANGELOG.md#206-2020-05-07
 
 ### 2020-04-16 (Latest)
 
