@@ -4,7 +4,7 @@
 
 Welcome to The Quest -- a multi-round staking competition (aka incentivized
 testnet) run on the Oasis Network. We are currently in the May Availability
-Challenge of The Quest. **The May competition will start on May 11 at
+Challenge of The Quest. **The May competition begins on May 11 at
 4pm UTC.**
 
 ***[Join the Quest][get-set-up]***
@@ -74,7 +74,7 @@ for the Oasis Network.
 ### Current Challenges
   
 * **May Availability Challenge:** Availability is a measure of how well
-  a node operator is performing. The May competition will run from May
+  a node operator is performing. The May competition runs from May
   11 to June 4.
   
   For May, we define
