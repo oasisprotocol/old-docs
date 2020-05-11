@@ -4,16 +4,16 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
-* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-04-16/genesis.json):
-  * sha1: `6ed391fd5b857ec5a0c34da75e70cbe89633cac4`
-  * sha256: `5ea94a17e29ba106d133cd808539cf20371b5823a41ff2cb134e4bdabbdf1604`
+* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-05-11/genesis.json):
+  * sha1: `85ca222cc0756499c4371b62ddbe67d50dc6ec71`
+  * sha256: `d2a9cbe36b018a145ac6f2ccac7613d143bd1a807b4e5c9d69a488d99453f9ab`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
 * [Oasis Core] version:
-  * [20.5]
+  * [20.6]
   ::: tip NOTE
   The `oasis-node` binary is part of the Oasis Core release.
   :::
@@ -32,7 +32,7 @@ Testnet.
 
 ## Deployment Change Log
 
-### 2020-05-11 (Upcoming)
+### 2020-05-11 (Latest)
 
 * Block height when network stops: **353000**
 * Upgrade Window:
@@ -60,7 +60,7 @@ For a more in-depth explanation, see [Handling Network Upgrades] guide.
 [20.6]: https://github.com/oasislabs/oasis-core/releases/tag/v20.6
 [20.6 Changelog]: https://github.com/oasislabs/oasis-core/blob/v20.6/CHANGELOG.md#206-2020-05-07
 
-### 2020-04-16 (Latest)
+### 2020-04-16
 
 #### Upgrade Parameters
 
