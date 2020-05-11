@@ -96,11 +96,11 @@ entry and encourage meaningful engagement on the network. A few key parameters:
   double-signing and do not accrue rewards during this time.
 
 * **Consensus voting power**: The current voting power mechanism is stake-weighted.
-  This means that the consensus voting power of a validator is proportional to its
-  stake. Note that in Tendermint, a validator's opportunities to propose a block
-  in the round-robin block proposer order are also proportional to its voting power.
-  In this model, the network will require signatures by validators representing +2/3
-  of the total stake of the committee to sign a block.
+  This means that the consensus voting power of a validator is proportional to
+  its stake. In this model, the network will require signatures by validators
+  representing +2/3 of the total stake of the committee to sign a block. Note
+  that in Tendermint, a validator's opportunities to propose a block in the
+  round-robin block proposer order are also proportional to its voting power.
 
 ### Delegation
 
