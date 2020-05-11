@@ -169,7 +169,7 @@ All winners to date can be found [here] [quest-winners]
 * Best team player: up to 100,000 tokens
 * Community content: up to 100,000 tokens
 
-**Availability Participation**:
+**Best Availability and Participation**:
 
 Current Competition
 
