@@ -9,6 +9,10 @@ the Oasis Testnet, automate your node deployment, and more.
 - [https://oasis.smartstake.io/](https://oasis.smartstake.io/)
 - [https://oasisscan.com/](https://oasisscan.com/)
 
-## Deployment Services **(Coming Soon!)**
+## Developer Tools
 
-## Monitoring and Alerts **(Coming Soon!)**
+- [Oasis API Server (by Simply VC)](https://github.com/SimplyVC/oasis_api_server)
+
+## Monitoring and Alerts
+
+- [Stats Tool](https://github.com/oasislabs/oasis-core/tree/master/go/extra/stats)
