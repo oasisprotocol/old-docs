@@ -150,9 +150,9 @@ module.exports = {
         fs.writeFile(
           '.vuepress/dist/CNAME',
           'docs.oasis.dev\n',
-          function () { },
+          function () {},
         );
-        fs.writeFile('.vuepress/dist/.nojekyll', '', function () { }); // thx github
+        fs.writeFile('.vuepress/dist/.nojekyll', '', function () {}); // thx github
       };
     });
   },
