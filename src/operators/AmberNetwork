@@ -1,0 +1,72 @@
+# The Oasis Amber Network
+
+## What is it?
+With the Questnet reaching a point of stability, the Amber
+Network is the next phase of the Oasis Network’s path to Mainnet.
+The Oasis Amber Network is a release candidate for Mainnet and
+includes all the core features of the network you can expect
+at Mainnet launch.  This includes:
+ 
+* Fully decentralized consensus layer
+* Staking and delegation
+* Commission rates for node operators
+* Consensus committee with up to 70 validators
+* Multiple Paratimes (parallel runtimes) running compute on
+the network (expect more and more added over time)
+* Fast sync 
+
+##Timing
+
+The Amber Network will kick off in mid-June. We will share the specific start date on June 11. 
+
+## What’s the goal of this network?
+
+This network has been designed primarily for Node Operators
+with tokens from the Questnet as a means to do a final test of the
+Oasis Network code before the Mainnet launch. The network will also
+give very small grants to individuals who want to be wallet testers.
+
+## Joining the Amber Network as a Node Operator
+
+In order to join the Amber Network, you will need AMBER test tokens.
+*(Note: AMBER tokens are test tokens used specifically for this network).* 
+Unlike the Quesnet, there is no faucet to receive tokens so instead you
+can receive tokens in two ways:
+* **Genesis Block**: In the genesis block of the Network Node Operators
+will be given the total amount of tokens they’ve previously earned from
+the Oasis Questnet or via other means (fulfilled grants, etc). You will
+be able to find that amount here after the Questnet ends on June 4.
+* **Delegation** from the Oasis Foundation and Oasis Labs
+(primarily for testing purposes)
+
+Incentives for the Amber Network will be based on this community-proposed
+incentive model and include a few parameters specific to this Network.
+
+## Adding your entity to the genesis block
+
+To ensure that your node is in the genesis block, we will ask that you
+submit a new entity package with fresh keys no later than Monday June 15.
+Note that even if you’ve submitted an entity package in the past,
+we are asking for a new one now.
+
+Entity package instructions can be found [here](docs.oasis.dev).
+
+## Incentives
+
+The Amber Network will be used as a way to provide bonuses in the
+form of delegation from the Oasis Protocol Foundation. The Oasis Protocol
+Foundation will plan to allocate up to 50% of its available tokens based
+on success and staking reward rankings of the Oasis Amber Network as well
+as availability rankings and overall track record. **(NOTE: Delegation is
+contingent on commission rates that are no more than +/- 10% of the 
+weighted median network commission rate)**
+
+## Wallet-Testers Needed
+
+More on this to come soon. 
+
+**Disclaimer: The Amber Network and all associated activities and rewards
+is not available to all participants and eligibility requirements apply.
+For details, see the Program Terms available here. This article does not 
+guarantee anyone the right to participate in the Amber Network or to
+receive rewards.**
