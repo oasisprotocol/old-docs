@@ -61,6 +61,7 @@ module.exports = {
         children: [
           ['/operators/overview', 'Node Operator Overview'],
           ['/operators/prerequisites', 'Prerequisites Guide'],
+          ['/operators/amber-network', 'Amber Network'],
           ['/operators/joining-the-testnet', 'Joining the Testnet'],
           [
             '/operators/creating-an-entity-package',
