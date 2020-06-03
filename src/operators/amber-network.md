@@ -20,12 +20,21 @@ the network (expect more and more added over time)
 The Amber Network will kick off in mid-June. We will share the specific start date
 on June 11.
 
-## What’s the goal of this network
-
+## Goal of Amber
 This network is intended primarily for node operators
 who won tokens in The Quest as a means to do a final test of the
 Oasis Network code before the Mainnet launch. Very small grants
 will also be awarded to individuals who want to test hardware wallets.
+
+## Incentives for Joining
+
+The Amber Network will be used as a way to provide bonuses in the
+form of delegation from the Oasis Protocol Foundation in the forthcoming Mainnet.
+The Oasis Protocol Foundation will plan to delegate up to 50% of its available
+tokens based on successful completion and staking reward rankings from the Oasis
+Amber Network as well as availability rankings and overall track record.
+**(NOTE: Delegation terms to be determined with the
+Oasis Protocol Foundation at the end of the competition.)**
 
 ## Joining the Amber Network as a node operator
 
@@ -53,15 +62,6 @@ you need to regenerate and submit a new one.
 
 Entity package instructions can be found [here](docs.oasis.dev).
 
-## Incentives
-
-The Amber Network will be used as a way to provide bonuses in the
-form of delegation from the Oasis Protocol Foundation in the forthcoming Mainnet.
-The Oasis Protocol Foundation will plan to delegate up to 50% of its available
-tokens based on successful completion and staking reward rankings from the Oasis
-Amber Network as well as availability rankings and overall track record.
-**(NOTE: Delegation is contingent on commission rates that are no more than +/-
-10% of the weighted median network commission rate)**
 
 ## Wallet testers needed
 
@@ -69,6 +69,6 @@ More on this to come soon!
 
 **Disclaimer: The Amber Network and all associated activities and rewards
 are not available to all participants and eligibility requirements apply.
-For details, see the Program Terms available here. This article does not
-guarantee anyone the right to participate in the Amber Network or to
-receive rewards.**
+For details, see the Program Terms available [here](https://docsend.com/view/zv5cfia).
+This article does not guarantee anyone the right to participate in the
+Amber Network or to receive rewards.**
