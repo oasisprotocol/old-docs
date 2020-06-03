@@ -41,7 +41,7 @@ be able to find that amount here after The Quest ends on June 4.
 Incentives for the Amber Network will be based on this community-proposed
 incentive model and include a few parameters specific to this Network.
 
-## Adding your entity to the genesis block
+## Submitting your entity for the genesis block
 
 To ensure that your node is in the genesis block, we will ask that you
 submit a new entity package with fresh keys no later than Monday June 15.
