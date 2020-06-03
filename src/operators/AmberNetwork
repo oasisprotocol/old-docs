@@ -9,7 +9,7 @@ at Mainnet launch.  This includes:
  
 * Fully decentralized consensus layer
 * Staking and delegation
-* Commission rates for node operators
+* Commission management for node operators
 * Consensus committee with up to 70 validators
 * Multiple Paratimes (parallel runtimes) running compute on
 the network (expect more and more added over time)
