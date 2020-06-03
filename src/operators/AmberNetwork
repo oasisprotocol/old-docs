@@ -46,7 +46,7 @@ incentive model and include a few parameters specific to this Network.
 To ensure that your node is in the genesis block, we will ask that you
 submit a new entity package no later than Monday, June 15.
 Note that even if you’ve submitted an entity package in the past,
-we are asking for a new one now.
+you need to regenerate and submit a new one.
 
 Entity package instructions can be found [here](docs.oasis.dev).
 
