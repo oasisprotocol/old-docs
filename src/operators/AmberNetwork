@@ -44,7 +44,7 @@ incentive model and include a few parameters specific to this Network.
 ## Submitting your entity for the genesis block
 
 To ensure that your node is in the genesis block, we will ask that you
-submit a new entity package with fresh keys no later than Monday June 15.
+submit a new entity package no later than Monday, June 15.
 Note that even if you’ve submitted an entity package in the past,
 we are asking for a new one now.
 
