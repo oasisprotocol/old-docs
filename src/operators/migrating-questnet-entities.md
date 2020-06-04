@@ -7,8 +7,8 @@ between The Quest and the Amber Network.
 
 To summarize, the steps required for migration are as follows:
 
-1. Backup all of your entity/node artifacts
-2. Create a set of new node artifacts
+1. Backup all of your entity/node artifacts.
+2. Create a set of new node artifacts.
     * This will effectively delete your old node. While it might be possible to
       use the same keys with the Amber Network, for simplicity's sake, we will
       not include those instructions. If you attempt to do so, it is at your own
@@ -93,6 +93,8 @@ oasis-node registry entity update \
 
 Once you've completed the steps above, follow the guide in [Creating an Entity
 Package] _before the beginning of the Amber Network_.
+
+[Creating an Entity Package]: ./creating-an-entity-package.md
 
 ## Step 5: Update Your Validator
 
