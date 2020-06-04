@@ -41,7 +41,7 @@ make a mistake.
 
 ## Step 2: Create a new set of node artifacts
 
-As explained previously, the node descriptor format has a breaking change
+As explained previously, the node descriptor format has breaking changes
 between The Quest and the Amber Network. To simplify migration, it is best to
 delete the old node artifacts and create new ones. Execute the following
 commands in the `/localhostdir` directory.
