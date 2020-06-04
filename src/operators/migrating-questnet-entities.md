@@ -96,7 +96,7 @@ Package] _before the beginning of the Amber Network_.
 
 [Creating an Entity Package]: ./creating-an-entity-package.md
 
-## Step 5: Update Your Validator
+## Step 5: Update your node
 
 At the time you wish to upgrade your node to participate in the Amber
 Network, you must ensure that the `/localhostdir/node` artifacts are uploaded to
