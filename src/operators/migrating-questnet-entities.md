@@ -89,6 +89,11 @@ oasis-node registry entity update \
   --entity.node.descriptor node_genesis.json
 ```
 
+You may be wondering if you need to remove the old node from the entity. The
+`oasis-node registry entity update` command only include explicitly specified
+node descriptors into the entity descriptor. As we do not specify the old
+`node_genesis.json` here, the old node is removed from the entity.
+
 ## Step 4: Create and submit your Entity Package
 
 Once you've completed the steps above, follow the guide in [Creating an Entity
