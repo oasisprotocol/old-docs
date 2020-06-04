@@ -1,25 +1,24 @@
-# Joining the Testnet
+# Running a Node on the Amber Network
 
-This guide will cover setting up your nodes for The Quest, a multi-round staking
-competition (aka incentivized testnet) on the Oasis Network. It assumes some basic
-knowledge on the use of command line tools.
+This guide will cover setting up your node for the Amber Network, The Oasis
+Amber Network is a release candidate for Mainnet and includes all the core
+features of the network you can expect at Mainnet launch. For more details see
+the [Amber Network] docs.
 
-::: tip NOTE
-If you joined the Testnet prior to 2020/01/15 and you plan to use the same entity
-for The Quest, use the following steps to upgrade:
+This guide assumes some basic knowledge on the use of command line tools.
 
-1. [Stop your node and wipe state while keeping your node's identity][
-  wipe-state-keep-id].
-2. Download the [current genesis file and `oasis-node`][params] to your server.
-3. See the [Deployment Change Log] for a list of changes and ensure that you
-  update your node's configuration.
-4. Start your node (you may need to [wait for your node to sync][check-synced]).
+::: tip DISCLAIMER
+Participating as a node operator in the Amber Network requires AMBER test
+tokens, which will be allocated to operators based on their winnings in The
+Quest. Oasis will not be distributing AMBER test tokens to new node operators.
+See the [Amber Network Rules][Amber Network] for other ways to participate.
 :::
 
 [wipe-state-keep-id]: ./maintenance/wiping-node-state.md##state-wipe-and-keep-node-identity
 [params]: ./current-testnet-parameters.md
 [Deployment Change Log]: ./current-testnet-parameters.md#deployment-change-log
 [check-synced]: #check-that-your-node-is-synced
+[Amber Network]: ./amber-network.md
 
 ## Prerequisites
 
@@ -93,19 +92,23 @@ This will be needed later when generating transactions.
 
 ### Initializing an Entity
 
-As described in the [Architecture Overview][arch-entity], an entity is
-critical to operating nodes on the network as it controls the stake attached to
-a given individual or organization on the network.
-In the future, we will support using entity keys through HSMs to ensure that
-entity keys cannot be easily compromised.
+::: tip NOTE
+If you previously created an entity for The Quest, we ask that you upgrade that
+entity for the Amber Network. [Find the instructions
+here][migrating-questnet-entities].
+:::
+
+As described in the [Architecture Overview][arch-entity], an entity is critical
+to operating nodes on the network as it controls the stake attached to a given
+individual or organization on the network. Once support is available, we suggest
+that you use an HSM or Ledger device to protect your entity private key.
 
 ::: danger
 We strongly suggest that you do not use any entity that is generated with the
 current process on the Mainnet.
 
-During the Public Testnet and staking competition we would also suggest that
-you generate the entity on a system that has no network connection to provide
-rudimentary protection for the entity key.
+We would also suggest that you generate the entity on a system that has no
+network connection to provide rudimentary protection for the entity key.
 However, it is up to you to determine your own security practices.
 :::
 
@@ -125,6 +128,7 @@ This will generate three files in `/localhostdir/entity`:
   has been signed with entity's private key, i.e. `entity.pem`.
   This is meant to be shared for inclusion in the Genesis block.
 
+[migrating-questnet-entities]: ./migrating-questnet-entities.md
 [arch-entity]: ./architecture-overview.md#entities-and-key-management
 
 ### Initializing a Node
@@ -141,7 +145,7 @@ server where your node will run, and issue the following commands from the
 ```bash
 STATIC_IP=<YOUR-STATIC-IP>
 oasis-node registry node init \
-  --signer file \
+  --signer.backend file \
   --signer.dir /localhostdir/entity \
   --node.consensus_address $STATIC_IP:26656 \
   --node.is_self_signed \
@@ -194,7 +198,9 @@ This will update the entity descriptor in `entity.json` and subsequently the
 
 #### Initializing Additional Nodes
 
-At the time of Public Testnet, the network will only have validators and no
+<!-- TODO... what do with this section -->
+
+At the time of Amber Network, the network will only have validators and no
 other committees (no compute, no key management, no storage, etc.).
 
 At this time this documentation does not include instructions for configuring
@@ -488,50 +494,10 @@ D2hqhJcmZnBmhw9TodOdoFPAjmRkpRatANCNHxIDHgA=
 Once you get to a node that's connected you can move on to the next section as
 your node is not yet registered as a validator on the Oasis Testnet.
 
-## Signing up for Testnet Tokens
-
-::: tip NOTE
-This step is not necessary if you submitted a valid entity package for The Quest
-prior to 2019/01/13 @ 00:00 UTC. In this case, your entity will be included in the
-Genesis file.
-:::
-
-In order to participate on the Testnet you'll need to have tokens. You'll use
-these tokens to register your entity and stake on the network.
-
-To get tokens, you'll need to sign up with [this form][tokens-form].
-While filling out the form, it will ask for your entity's public key. This is
-the same as your entity's account ID and can be found in the `id` key of the
-`/localhostdir/entity/entity.json` JSON file.
-
-::: tip EXAMPLE
-
-In the following `entity.json` file, the entity's public key is
-`TszGIrC1X08czcik0DgAnmGPzjf8pfQ47bgrjpTmbro=`.
-
-```json
-{
-  "id": "TszGIrC1X08czcik0DgAnmGPzjf8pfQ47bgrjpTmbro=",
-  "nodes": [
-    "C93lKVNNkca3Oo9m1exiz22NvMBxxYjkyBrt2+eFAds="
-  ],
-  "registration_time": 1573585972,
-  "allow_entity_signed_nodes": false
-}
-```
-
-:::
-
-After filling out the form, wait for an email notifying you that you've been
-funded before moving forward. The following sections assume that you have
-already been funded.
-
-[tokens-form]: https://oasisfoundation.typeform.com/to/dlcekq
-
 ## Staking and Registering
 
 ::: tip NOTE
- This step is not necessary if your entity is listed in the Genesis file.
+This step is not necessary if your entity was fully staked at genesis.
 :::
 
 ::: warning NOTE
@@ -577,7 +543,7 @@ account.
 Hence it should never be present on the online `server`.
 :::
 
-For the Testnet, the current minimum stake required to register an entity and
+The current minimum stake required to register an entity and
 register a node as a validator is 200 tokens.
 So, we will generate an escrow transaction that escrows 200 tokens on your own
 entity.
@@ -608,7 +574,7 @@ Then execute the following command:
 ```bash
 oasis-node stake account gen_escrow \
   --genesis.file $GENESIS_FILE_PATH \
-  --signer file \
+  --signer.backend file \
   --signer.dir $ENTITY_DIR_PATH \
   --stake.escrow.account $ACCOUNT_ID \
   --stake.amount 200000000000 \
@@ -620,7 +586,7 @@ oasis-node stake account gen_escrow \
 
 ::: tip NOTE
 The option `--stake.amount` looks like a very large number, but this is
-actually just an equivalent to 200 tokens on the Testnet as each unit
+actually just an equivalent to 200 tokens on the Amber Network as each unit
 value used to track the account balance is 1x10^-9 tokens.
 :::
 
@@ -648,7 +614,7 @@ Then execute the following command:
 ```bash
 oasis-node registry entity gen_register \
   --genesis.file $GENESIS_FILE_PATH \
-  --signer file \
+  --signer.backend file \
   --signer.dir $ENTITY_DIR_PATH \
   --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH \
   --transaction.fee.gas 1000 \
@@ -699,4 +665,4 @@ node is registered
 <!-- markdownlint-enable no-trailing-punctuation -->
 
 If you've made it this far, you've properly connected your node to the network
-and you're now a validator on the Public Testnet.
+and you're now a validator on the Amber Network.
