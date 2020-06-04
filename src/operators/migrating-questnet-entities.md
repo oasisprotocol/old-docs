@@ -16,7 +16,7 @@ To summarize, the steps required for migration are as follows:
 3. Update your entity with the new node descriptor.
     * This removes the old node descriptor.
 4. Create and submit your Entity Package
-5. Update your validator with the new node artifacts when the Amber Network
+5. Start your node with the new node artifacts when the Amber Network
    starts.
 
 ## Prerequisites
