@@ -248,8 +248,8 @@ Currently, we provide two options for signing transactions:
 
 * Entity's private key stored in a file.
 
-  You will need to create your Entity as described in [Joining the Testnet][
-  create-entity] docs and set the following flags:
+  You will need to create your Entity as described in [Running a Node on the
+  Amber Network][create-entity] docs and set the following flags:
 
   * `--signer file`: Specifies use of the file signer.
 
@@ -868,7 +868,7 @@ common ways for a commission schedule amendment to fail][compendium].
 :::
 
 [Ledger docs]: ../hsm/ledger.md
-[create-entity]: joining-the-testnet.md#creating-your-entity
+[create-entity]: running-node-on-amber-network.md#creating-your-entity
 [Base flags]: #base-flags
 [Signer flags]: #signer-flags
 [Checking Your Account nonce]: maintenance/checking-account-nonce.md
