@@ -73,6 +73,10 @@ module.exports = {
             'Creating an Entity Package',
           ],
           [
+            '/operators/migrating-questnet-entities',
+            'Migrating QuestNet Entities for Amber Network',
+          ],
+          [
             '/operators/current-testnet-parameters',
             'Current Testnet Parameters',
           ],
