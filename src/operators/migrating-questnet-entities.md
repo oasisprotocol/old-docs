@@ -98,6 +98,6 @@ Package] _before the beginning of the Amber Network_.
 
 ## Step 5: Update Your Validator
 
-At the time you wish to upgrade your validator to participate in the Amber
+At the time you wish to upgrade your node to participate in the Amber
 Network, you must ensure that the `/localhostdir/node` artifacts are uploaded to
 your `/serverdir/node` directory.
