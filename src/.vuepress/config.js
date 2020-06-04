@@ -77,7 +77,7 @@ module.exports = {
           ],
           [
             '/operators/migrating-questnet-entities',
-            'Migrating QuestNet Entities for Amber Network',
+            'Migrating Your QuestNet Entity for the Amber Network',
           ],
           [
             '/operators/current-testnet-parameters',
