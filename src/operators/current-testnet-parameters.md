@@ -179,8 +179,7 @@ Upgrades] guide.
 **`/serverdir/etc/config.yml` Required Changes**
 
 If you've deployed before, we changed the storage backend from `boltdb` to
-`badger`. See the [Joining the Testnet](./joining-the-testnet.md) Docs for the
-update.
+`badger`.
 
 ### 2019-12-17
 
