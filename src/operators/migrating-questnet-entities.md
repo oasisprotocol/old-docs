@@ -32,7 +32,7 @@ To summarize, the steps required for migration are as follows:
 [oasis-node-linux]: https://github.com/oasisprotocol/oasis-core/releases/download/v20.7/oasis_core_20.7_linux_amd64.tar.gz
 [oasis-node-macos]: https://github.com/oasisprotocol/oasis-core/releases/download/v20.7/oasis_core_20.7_macos_amd64.tar.gz
 
-## Step 1: Backup all of your entity artifacts
+## Step 1: Backup all of your entity/node artifacts
 
 While this step is not strictly required, the steps in this guide are
 potentially destructive. Please backup the entirety of your
