@@ -196,25 +196,6 @@ oasis-node registry entity update \
 This will update the entity descriptor in `entity.json` and subsequently the
 `entity_genesis.json` file that contains the signed entity descriptor payload.
 
-#### Initializing Additional Nodes
-
-<!-- TODO... what do with this section -->
-
-At the time of Amber Network, the network will only have validators and no
-other committees (no compute, no key management, no storage, etc.).
-
-At this time this documentation does not include instructions for configuring
-anything beyond a single validator.
-
-If you'd like to create more validator nodes, you can simply repeat the process
-above to initialize the artifacts for an additional node, just rename the
-things pertaining to a particular node appropriately.
-
-::: tip NOTE
-Each node will require at least the network-defined minimum staking amount (at
-this time, this is 100 tokens).
-:::
-
 ## Running an Oasis Node on the `server`
 
 ### Setting up the Oasis Node's Working Directory
