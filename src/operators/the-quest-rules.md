@@ -13,11 +13,10 @@ The Quest competition has come to end and we are now kicking off
 the Amber Network, a release candidate for Mainnet. To learn more
 about the Amber Network and how to join go [here](/operators/amber-network.md).
 We are thrilled with the work so many teams have done to make the
-Oasis Network better! 
+Oasis Network better!
 
 A summary of the Questnet by the numbers
 ![roundup](/operator_images/quest_roundup.png)
-
 
 ### The Winners
 
@@ -99,7 +98,6 @@ to be useful for anyone still interested in the Oasis Network, the Amber Network
 3. **Weekly office hours**: We’ll host office hours every Thursday to answer
    questions in real time. Feel free to join as you see useful. We’ll also post
    all notes from those calls [here][office-hours-doc].
-
 
 ## Other Resources
 
