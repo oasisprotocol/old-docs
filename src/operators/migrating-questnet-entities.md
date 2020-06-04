@@ -1,8 +1,8 @@
 # Migrating QuestNet Entities for the Amber Network
 
-For those who have previously participated in The Quest, we ask that you create
+For those who have previously participated in The Quest, you must create
 an entity package for the Amber Network derived from your Quest entity. A
-migration is required due to some breaking changes for the node descriptors used
+migration is required due to breaking changes in the node descriptor format used
 between The Quest and the Amber Network.
 
 To summarize, the steps required for migration are as follows:
