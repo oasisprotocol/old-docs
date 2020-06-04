@@ -1,4 +1,4 @@
-# Migrating QuestNet Entities for the Amber Network
+# Migrating Your QuestNet Entity for the Amber Network
 
 For those who have previously participated in The Quest, you must create
 an entity package for the Amber Network derived from your Quest entity. A
