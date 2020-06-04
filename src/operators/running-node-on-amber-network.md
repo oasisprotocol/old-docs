@@ -93,7 +93,7 @@ This will be needed later when generating transactions.
 ### Initializing an Entity
 
 ::: tip NOTE
-If you previously created an entity for The Quest, we ask that you upgrade that
+If you previously created an entity for The Quest, you need to upgrade that
 entity for the Amber Network. [Find the instructions
 here][migrating-questnet-entities].
 :::
