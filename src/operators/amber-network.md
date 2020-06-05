@@ -40,7 +40,7 @@ rate and no greater than 30% with high uptime performance.)**
 ## Joining the Amber Network as a node operator
 
 In order to join the Amber Network, you will need AMBER test tokens.
-*(Note: AMBER tokens are test tokens used specifically for this network).*
+:: Tip *Note: AMBER tokens are test tokens used specifically for this network).*
 Unlike in the QuestNet, there is no faucet to distribute tokens, so instead you
 can get stake needed to run your node in two ways:
 
