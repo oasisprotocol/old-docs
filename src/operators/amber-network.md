@@ -13,7 +13,7 @@ at Mainnet launch.  This includes:
 * Commission management for node operators
 * Consensus committee with up to 70 validators
 * Multiple ParaTimes (parallel runtimes) running compute on
-the network (expect more and more added over time)
+  the network (expect more and more added over time)
 
 ## Timing
 
