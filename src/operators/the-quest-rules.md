@@ -27,7 +27,7 @@ time-based challenges noted above) are below.
 
 All winners to date can be found [here][quest-winners]
 
-**Attacks** [winners announced 🎉][quest-winners]):
+**Attacks** ([winners announced 🎉][quest-winners]):
 
 * Best Attack: up to 1,000,000 tokens
 * Top 6 Attacks: up to 500,000 tokens
