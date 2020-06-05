@@ -21,6 +21,7 @@ The Amber Network will kick off in mid-June. We will share the specific start da
 on June 11.
 
 ## Goal of Amber
+
 This network is intended primarily for node operators
 who won tokens in The Quest as a means to do a final test of the
 Oasis Network code before the Mainnet launch. Very small grants
@@ -67,8 +68,7 @@ Entity package instructions can be found [here](./creating-an-entity-package.md)
 
 More on this to come soon!
 
-::: warning DISCLAIMER 
-
+::: warning DISCLAIMER
 The Amber Network and all associated activities and rewards
 are not available to all participants and eligibility requirements apply.
 For details, see the Program Terms available [here](https://docsend.com/view/zv5cfia).
