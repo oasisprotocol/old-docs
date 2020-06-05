@@ -68,7 +68,7 @@ end without double-signing: 10,000 tokens
 
 ### What's next
 
-We're now running the Amber Network, the first releasen candidate for Mainnet.
+We're now running the Amber Network, the first release candidate for Mainnet.
 To follow along and get more info go [here](/operators/amber-network.md).
 
 ### Eligibility for the Competition
