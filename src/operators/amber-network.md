@@ -68,8 +68,10 @@ Entity package instructions can be found [here](./creating-an-entity-package.md)
 
 More on this to come soon!
 
-**Disclaimer: The Amber Network and all associated activities and rewards
+::: warning DISCLAIMER 
+The Amber Network and all associated activities and rewards
 are not available to all participants and eligibility requirements apply.
 For details, see the Program Terms available [here](https://docsend.com/view/zv5cfia).
 This article does not guarantee anyone the right to participate in the
-Amber Network or to receive rewards.**
+Amber Network or to receive rewards.
+:::
