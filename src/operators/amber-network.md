@@ -64,9 +64,13 @@ you need to regenerate and submit a new one.
 
 Entity package instructions can be found [here](./creating-an-entity-package.md).
 
-## Wallet testers needed
+## Wallet-testers needed
 
-In addition to running nodes, we’re also looking for community volunteers to test our new Ledger wallet integration. Volunteers have an opportunity to earn more tokens and stress test node operators on the network by delegating your AMBER tokens. Please sign up [here](https://oasisfoundation.typeform.com/to/w3y3qI) if you’re interested. 
+In addition to running nodes, we’re also looking for community volunteers
+to test our new Ledger wallet integration. Volunteers have an opportunity
+to earn more tokens and stress test node operators on the network by delegating
+your AMBER tokens. Please sign up
+[here](https://oasisfoundation.typeform.com/to/w3y3qI) if you’re interested.
 
 ::: warning DISCLAIMER
 The Amber Network and all associated activities and rewards
