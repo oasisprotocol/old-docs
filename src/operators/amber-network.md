@@ -60,7 +60,7 @@ submit a new entity package no later than Monday, June 15.
 Note that even if you’ve submitted an entity package in the past,
 you need to regenerate and submit a new one.
 
-Entity package instructions can be found [here](docs.oasis.dev).
+Entity package instructions can be found [here](./creating-an-entity-package.md).
 
 
 ## Wallet testers needed
