@@ -27,7 +27,7 @@ time-based challenges noted above) are below.
 
 All winners to date can be found [here] [quest-winners]
 
-**Attacks**:
+**Attacks** [winners announced 🎉] [quest-winners]):
 
 * Best Attack: up to 1,000,000 tokens
 * Top 6 Attacks: up to 500,000 tokens
@@ -42,18 +42,12 @@ All winners to date can be found [here] [quest-winners]
 * 1st place: 750,000 tokens
 * Top 6 spots (including one who joined after Jan 23): up to 500,000 tokens
 
-**Community**:
+**Community** [winners announced 🎉] [quest-winners]):
 
 * Best team player: up to 100,000 tokens
 * Community content: up to 100,000 tokens
 
 **Best Availability and Participation**:
-
-Current Competition
-
-* Top 10 Best Availability (v3) in May from 5/11 to 6/4: 50,000 tokens
-* Top 11-25 Best Availability (v3) in May from 5/11 to 6/4: 25,000 tokens
-* Top 26-50 Best Availability (v3) in May from 5/11 to 6/4: 15,000 tokens
 
 Previous Winners ([winners announced 🎉] [quest-winners])
 
@@ -63,12 +57,14 @@ Previous Winners ([winners announced 🎉] [quest-winners])
 * Top 10 Best Availability (v2) in April from 4/1 to 4/30: 50,000 tokens
 * Top 11-25 Best Availability (v2) in April from 4/1 to 4/30: 25,000 tokens
 * Top 26-50 Best Availability (v2) in April from 4/1 to 4/30: 15,000 tokens
+* Top 10 Best Availability (v3) in May from 5/11 to 6/4: 50,000 tokens
+* Top 11-25 Best Availability (v3) in May from 5/11 to 6/4: 25,000 tokens
+* Top 26-50 Best Availability (v3) in May from 5/11 to 6/4: 15,000 tokens
 
-End of competition rewards
+Participation [winners announced 🎉] [quest-winners])
 
-* All participants who don't double-sign: 5,000 tokens
-* First 30 entities on the network who stay through the end with no
-  double-signing: 10,000 tokens
+* All participants who participate in competition from beginning to
+end without double-signing: 10,000 tokens
 
 ### What's next
 
