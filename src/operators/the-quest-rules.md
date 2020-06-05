@@ -25,31 +25,31 @@ rounds of The Quest, across challenge winners, community engagement awards,
 grants, and more. Top rewards (although there may be more based on the
 time-based challenges noted above) are below.
 
-All winners to date can be found [here] [quest-winners]
+All winners to date can be found [here][quest-winners]
 
-**Attacks** [winners announced 🎉] [quest-winners]):
+**Attacks** [winners announced 🎉][quest-winners]):
 
 * Best Attack: up to 1,000,000 tokens
 * Top 6 Attacks: up to 500,000 tokens
 
-**Most staked** ([winners announced 🎉] [quest-winners]):
+**Most staked** ([winners announced 🎉][quest-winners]):
 
 * 1st place: 750,000 tokens
 * Top 5 spots: up to 500,000 tokens
 
-**Most Blocks Signed** ([winners announced 🎉] [quest-winners]):
+**Most Blocks Signed** ([winners announced 🎉][quest-winners]):
 
 * 1st place: 750,000 tokens
 * Top 6 spots (including one who joined after Jan 23): up to 500,000 tokens
 
-**Community** [winners announced 🎉] [quest-winners]):
+**Community** [winners announced 🎉][quest-winners]):
 
 * Best team player: up to 100,000 tokens
 * Community content: up to 100,000 tokens
 
 **Best Availability and Participation**:
 
-Previous Winners ([winners announced 🎉] [quest-winners])
+Previous Winners ([winners announced 🎉][quest-winners])
 
 * Top 10 Best Availability (v1) in March from 3/5 to 3/31: 50,000 tokens
 * Top 11-25 Best Availability (v1) in March from 3/5 to 3/31: 25,000 tokens
@@ -61,7 +61,7 @@ Previous Winners ([winners announced 🎉] [quest-winners])
 * Top 11-25 Best Availability (v3) in May from 5/11 to 6/4: 25,000 tokens
 * Top 26-50 Best Availability (v3) in May from 5/11 to 6/4: 15,000 tokens
 
-Participation [winners announced 🎉] [quest-winners])
+Participation ([winners announced 🎉][quest-winners])
 
 * All participants who participate in competition from beginning to
 end without double-signing: 10,000 tokens
@@ -90,7 +90,7 @@ to be useful for anyone still interested in the Oasis Network, the Amber Network
    channels.
 2. **Weekly updates**: We’ll send a weekly update outlining what to expect in
    the following week and highlight any other questions/issues that have come up
-   in the community. We’ll share this via email and slack. Sign up [here] [mailing-list].
+   in the community. We’ll share this via email and slack. Sign up [here][mailing-list].
 3. **Weekly office hours**: We’ll host office hours every Thursday to answer
    questions in real time. Feel free to join as you see useful. We’ll also post
    all notes from those calls [here][office-hours-doc].
