@@ -27,7 +27,7 @@ who won tokens in The Quest as a means to do a final test of the
 Oasis Network code before the Mainnet launch. Very small grants
 will also be awarded to individuals who want to test hardware wallets.
 
-## Incentives for Joining
+## Incentives for joining
 
 The Amber Network will be used as a way to provide bonuses in the
 form of delegation from the Oasis Protocol Foundation in the forthcoming Mainnet.
