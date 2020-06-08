@@ -60,8 +60,13 @@ module.exports = {
         collapsable: true,
         children: [
           ['/operators/overview', 'Node Operator Overview'],
+          ['/operators/architecture-overview', 'Network Architecture Overview'],
           ['/operators/prerequisites', 'Prerequisites Guide'],
           ['/operators/amber-network', 'Amber Network'],
+          [
+            '/operators/hardware-recommendations',
+            'Node Hardware Recommendations',
+          ],
           ['/operators/joining-the-testnet', 'Joining the Testnet'],
           [
             '/operators/creating-an-entity-package',
@@ -71,17 +76,12 @@ module.exports = {
             '/operators/current-testnet-parameters',
             'Current Testnet Parameters',
           ],
-          ['/operators/sentry-node', 'Sentry Node Architecture'],
-          ['/operators/architecture-overview', 'Architecture Overview'],
-          [
-            '/operators/hardware-recommendations',
-            'Node Hardware Recommendations',
-          ],
-          ['/operators/troubleshooting', 'Troubleshooting Guide'],
           ['/operators/stake-management', 'Stake Management'],
+          ['/operators/sentry-node', 'Sentry Node Architecture'],
           ['/operators/incentives-proposal', 'Network Incentives Proposal'],
-          ['/operators/community-resources', 'Community-Made Resources'],
           ['/operators/the-quest-rules', 'The Quest Rules'],
+          ['/operators/community-resources', 'Community-Made Resources'],
+          ['/operators/troubleshooting', 'Troubleshooting Guide'],
           {
             title: 'Maintenance Guides',
             collapsable: true,
