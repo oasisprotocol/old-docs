@@ -34,7 +34,7 @@ form of delegation from the Oasis Protocol Foundation in the forthcoming Mainnet
 The Oasis Protocol Foundation will plan to delegate up to 50% of its available
 tokens based on successful completion and staking reward rankings from the Oasis
 Amber Network as well as availability rankings and overall track record.
-**(NOTE: Initial delegation will be for at least 6 month and is contingent on
+**(NOTE: Initial delegation will be for at least 6 months and is contingent on
 commission rates that are +/- 10% of the weighted median network commission
 rate and no greater than 30%, and high uptime performance.)**
 
