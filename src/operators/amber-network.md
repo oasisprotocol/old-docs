@@ -48,10 +48,11 @@ can get stake needed to run your node in two ways:
 * **Genesis Block**: In the genesis block of the Amber Network, node operators
 will be allotted the total amount of tokens they’ve previously earned from
 the Oasis QuestNet or via other means (fulfilled grants, etc). You will
-be able to find that amount
-[here](https://docs.google.com/spreadsheets/d/1oHsCC31MW8KuN4eIY_YRD2y8baGewtIC3okYT4H9TGk/edit?usp=sharing) after The Quest ends on June 4.
+be able to find that amount [here][quest-winners] after The Quest ends on June 4.
 * **Delegation** from the Oasis Protocol Foundation and Oasis Labs
 (primarily for testing purposes)
+
+[quest-winners]: https://docs.google.com/spreadsheets/d/1oHsCC31MW8KuN4eIY_YRD2y8baGewtIC3okYT4H9TGk/edit?usp=sharing
 
 Incentives for the Amber Network will be based on this community-proposed
 incentive model and include a few parameters specific to this Network.
