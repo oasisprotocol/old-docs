@@ -36,7 +36,7 @@ tokens based on successful completion and staking reward rankings from the Oasis
 Amber Network as well as availability rankings and overall track record.
 **(NOTE: Initial delegation will be for at least 6 month and is contingent on
 commission rates that are +/- 10% of the weighted median network commission
-rate and no greater than 30% with high uptime performance.)**
+rate and no greater than 30%, and high uptime performance.)**
 
 ## Joining the Amber Network as a node operator
 
