@@ -19,7 +19,7 @@ A summary of the Questnet by the numbers:
 
 * 👍400+ node operators joined the competition
 * 👩‍💻100+ nodes running on the Questnet at any given time
-* 💻5+ network upgrades complete in as little as 45 minutes 
+* 💻5+ network upgrades complete in as little as 45 minutes
 * 🤑10M+ tokens allocated for Mainnet
 * 🎁20+ community grants for network tooling, developer apps, and more
 * 🎉70+ unique competition winners
