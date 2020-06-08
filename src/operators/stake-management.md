@@ -251,7 +251,7 @@ Currently, we provide two options for signing transactions:
   You will need to create your Entity as described in [Running a Node on the
   Amber Network][create-entity] docs and set the following flags:
 
-  * `--signer file`: Specifies use of the file signer.
+  * `--signer.backend file`: Specifies use of the file signer.
 
     ::: tip NOTE
     Currently, `file` is the default signer so you could also omit this flag.
