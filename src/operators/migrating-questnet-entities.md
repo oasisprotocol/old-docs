@@ -90,7 +90,7 @@ oasis-node registry entity update \
 ```
 
 You may be wondering if you need to remove the old node from the entity. The
-`oasis-node registry entity update` command only include explicitly specified
+`oasis-node registry entity update` command includes only explicitly specified
 node descriptors into the entity descriptor. As we do not specify the old
 `node_genesis.json` here, the old node is removed from the entity.
 
