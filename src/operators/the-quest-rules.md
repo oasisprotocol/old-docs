@@ -20,7 +20,7 @@ A summary of the Questnet by the numbers:
 * 👍400+ node operators joined the competition
 * 👩‍💻100+ nodes running on the Questnet at any given time
 * 💻5+ network upgrades complete in as little as 45 minutes
-* 🤑10M+ tokens allocated for Mainnet
+* 🤑12M+ tokens allocated for Mainnet
 * 🎁20+ community grants for network tooling, developer apps, and more
 * 🎉70+ unique competition winners
 
@@ -53,9 +53,9 @@ All winners to date can be found [here][quest-winners]
 * Best team player: up to 100,000 tokens
 * Community content: up to 100,000 tokens
 
-**Best Availability and Participation**:
+**Best Availability and Participation**([winners announced 🎉][quest-winners]):
 
-Previous Winners ([winners announced 🎉][quest-winners])
+* Combined Availability (top 5 positions) from March to May: up to 750,000 tokens
 
 * Top 10 Best Availability (v1) in March from 3/5 to 3/31: 50,000 tokens
 * Top 11-25 Best Availability (v1) in March from 3/5 to 3/31: 25,000 tokens
