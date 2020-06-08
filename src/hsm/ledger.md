@@ -56,7 +56,7 @@ Using the address you retrieved in the [previous section
 
 ```bash
 oasis-node signer export \
-  --signer ledger \
+  --signer.backend ledger \
   --signer.dir /localhostdir/entity/ \
   --signer.ledger.address $OASIS_APP_ADDRESS \
   --signer.ledger.index 1
@@ -70,9 +70,8 @@ connect to any available Ledger device.
 This will create an `entity.json` file in `/localhostdir/entity/` that contains
 the public key generated on the device associated with
 `--signer.ledger.address`, derived from a path with an account index of
-`--signer.ledger.index`.
-The `--signer ledger` flag is important here as it specifies use of the Ledger
-backend.
+`--signer.ledger.index`. The `--signer.backend ledger` flag is important here as
+it specifies use of the Ledger backend.
 
 This command must be run anytime a new account index is to be used, with a
 new `/localhostdir/entity/` provided.

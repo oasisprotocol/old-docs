@@ -232,7 +232,7 @@ Currently, we provide two options for signing transactions:
   You will need to set it up as described in our [Ledger docs] and set the
   following flags:
 
-  * `--signer ledger`: Specifies use of the Ledger signer.
+  * `--signer.backend ledger`: Specifies use of the Ledger signer.
   * `--signer.ledger.address`: The `Oasis App Address` that identifies the
     Ledger device you want to use for signing.
 
@@ -271,7 +271,7 @@ Ledger device address and address index appropriately):
 
 ```bash
 TX_FLAGS="--genesis.file /localhostdir/genesis.json \
-  --signer ledger \
+  --signer.backend ledger \
   --signer.ledger.address oasis19hpt4y2reqwyfqcd53asjchdqf468chr673y6jn07xjp36w32jlscf0me \
   --signer.ledger.index 1 \
   --signer.dir /localhostdir/entity/"
@@ -281,7 +281,7 @@ Or, one could set `TX_FLAGS` like below to use a file signer:
 
 ```bash
 TX_FLAGS="--genesis.file /localhostdir/genesis.json \
-  --signer file \
+  --signer.backend file \
   --signer.dir /localhostdir/entity/"
 ```
 

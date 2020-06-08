@@ -182,7 +182,7 @@ export SENTRY1_STATIC_IP=<YOUR_SENTRY1_STATIC_IP>
 export SENTRY2_CONSENSUS_ID=<YOUR_SENTRY2_CONSENSUS_ID_B64>
 export SENTRY2_STATIC_IP=<YOUR_SENTRY2_STATIC_IP>
 oasis-node registry node init \
-  --signer file \
+  --signer.backend file \
   --signer.dir /localhostdir/entity \
   --node.consensus_address $SENTRY1_CONSENSUS_ID@$SENTRY1_STATIC_IP:26656 \
   --node.consensus_address $SENTRY2_CONSENSUS_ID@$SENTRY2_STATIC_IP:26656 \
