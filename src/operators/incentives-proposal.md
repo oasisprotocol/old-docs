@@ -188,7 +188,7 @@ shape the future of our network.
 If you’re new to Oasis, here are some resources you may find useful:
 
 * [Oasis Foundation Website](https://www.oasis-protocol.org)
-* [Testnet Documentation](https://docs.oasis.dev/operators/joining-the-testnet.html)
+* [Running a Node on the Amber Network](https://docs.oasis.dev/operators/running-node-on-amber-network.html)
 * [Operator Documentation](https://docs.oasis.dev/operators/overview.html)
 * [GitHub](https://www.github.com/oasislabs)
 * [Blog](https://medium.com/oasis-protocol-project)

@@ -21,10 +21,10 @@ Make sure you understand what you are doing.
 ## Prerequisites
 
 Before following this guide, make sure you've read the [Prerequisites] and
-[Joining the Testnet] guides and created your Entity.
+[Running a Node on the Amber Network] guides and created your Entity.
 
 [Prerequisites]: ./prerequisites.md
-[Joining the Testnet]: ./joining-the-testnet.md
+[Running a Node on the Amber Network]: ./running-node-on-amber-network.md
 
 ## Configuring the Oasis Sentry Node
 
@@ -182,7 +182,7 @@ export SENTRY1_STATIC_IP=<YOUR_SENTRY1_STATIC_IP>
 export SENTRY2_CONSENSUS_ID=<YOUR_SENTRY2_CONSENSUS_ID_B64>
 export SENTRY2_STATIC_IP=<YOUR_SENTRY2_STATIC_IP>
 oasis-node registry node init \
-  --signer file \
+  --signer.backend file \
   --signer.dir /localhostdir/entity \
   --node.consensus_address $SENTRY1_CONSENSUS_ID@$SENTRY1_STATIC_IP:26656 \
   --node.consensus_address $SENTRY2_CONSENSUS_ID@$SENTRY2_STATIC_IP:26656 \
@@ -205,7 +205,7 @@ sed -n 2p /serverdir/node/consensus_pub.pem
 <!--- TODO: there should probably be a node debug command for getting this
 address --->
 
-[val-init]: ./joining-the-testnet.html#initializing-a-node
+[val-init]: ./running-node-on-amber-network.html#initializing-a-node
 
 ### Configuring Validator Node
 

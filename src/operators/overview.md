@@ -23,5 +23,5 @@ If you run into any issues or have a question, you can chat with us in our
 
 * [Architecture Overview](./architecture-overview.md)
 * [Hardware Recommendations](./hardware-recommendations.md)
-* [Joining The Testnet](./joining-the-testnet.md)
-* [Current Testnet Parameters](./current-testnet-parameters.md)
+* [Running a Node on the Amber Network](./running-node-on-amber-network.md)
+* [Current Amber Network Parameters](./current-testnet-parameters.md)

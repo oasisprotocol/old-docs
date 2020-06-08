@@ -67,10 +67,17 @@ module.exports = {
             '/operators/hardware-recommendations',
             'Node Hardware Recommendations',
           ],
-          ['/operators/joining-the-testnet', 'Joining the Testnet'],
+          [
+            '/operators/running-node-on-amber-network',
+            'Running a Node on the Amber Network',
+          ],
           [
             '/operators/creating-an-entity-package',
             'Creating an Entity Package',
+          ],
+          [
+            '/operators/migrating-questnet-entities',
+            'Migrating Your QuestNet Entity for the Amber Network',
           ],
           [
             '/operators/current-testnet-parameters',

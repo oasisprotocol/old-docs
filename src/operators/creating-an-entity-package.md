@@ -35,30 +35,28 @@ cp /localhostdir/node/node_genesis.json package/node
 cd package && tar -zcvf ../<YOUR-GITHUB-USERNAME>-entity.tar.gz entity node
 ```
 
-::: tip NOTE
-If possible, please use the same GitHub handle to submit your Entity Package as
-you used to [sign the waiver to join The Quest].
+## Submitting Your Entity Package (For the Amber Network)
+
+::: warning NOTE
+The deadline for Amber Network Entity Packages is 2020-06-15T23:59:00 UTC.
 :::
 
-## Submitting Your Entity Package (For The Quest)
-
 To submit your Entity Package, we've created a repository that will consume and
-validate the Entity packages used in The Quest.
+validate the Entity packages.
 
-1. Fork the [oasislabs/the-quest-entities] repository.
+1. Fork the [oasisprotocol/amber-network-entities] repository.
 2. Add your Entity Package to the `entities/` directory of the repository.
 3. Create a pull request against the `master` branch of the
-   [oasislabs/the-quest-entities] repository.
+   [oasisprotocol/amber-network-entities] repository.
    Once your Entity Package passes all validation checks we will handle the
    merging of your pull request.
 
 You can see an example of a submission in [this
-PR](https://github.com/oasislabs/the-quest-entities/pull/2).
+PR](https://github.com/oasisprotocol/amber-network-entities/pull/1).
 
 ::: tip NOTE
 If there are any issues, you can always resubmit your entity package.
 :::
 
-[Create Your Entity]: ./joining-the-testnet.md#creating-your-entity
-[oasislabs/the-quest-entities]: https://github.com/oasislabs/the-quest-entities
-[sign the waiver to join the Quest]: ./the-quest-rules.md
+[Create Your Entity]: ./running-node-on-amber-network.md#creating-your-entity
+[oasisprotocol/amber-network-entities]: https://github.com/oasisprotocol/amber-network-entities

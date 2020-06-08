@@ -15,8 +15,9 @@ be self-delegated directly by each node operator or delegated to a node operator
 by other token holders. While the Oasis Network is designed with a modular
 architecture that can use any consensus system that satisfies these properties,
 it currently uses [Tendermint](https://github.com/tendermint/tendermint) as its
-consensus algorithm. To run a node yourself you can find information on joining
-the testnet [here](https://docs.oasis.dev/operators/joining-the-testnet.html).
+consensus algorithm. To run a node yourself you can find information on
+operating a node on the Amber Network
+[here](https://docs.oasis.dev/operators/running-node-on-amber-network.html).
 
 Participating in consensus is one of two critical ways that node operators can
 help run and be part of the network. Validators will be able to sign blocks,

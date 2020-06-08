@@ -232,7 +232,7 @@ Currently, we provide two options for signing transactions:
   You will need to set it up as described in our [Ledger docs] and set the
   following flags:
 
-  * `--signer ledger`: Specifies use of the Ledger signer.
+  * `--signer.backend ledger`: Specifies use of the Ledger signer.
   * `--signer.ledger.address`: The `Oasis App Address` that identifies the
     Ledger device you want to use for signing.
 
@@ -248,10 +248,10 @@ Currently, we provide two options for signing transactions:
 
 * Entity's private key stored in a file.
 
-  You will need to create your Entity as described in [Joining the Testnet][
-  create-entity] docs and set the following flags:
+  You will need to create your Entity as described in [Running a Node on the
+  Amber Network][create-entity] docs and set the following flags:
 
-  * `--signer file`: Specifies use of the file signer.
+  * `--signer.backend file`: Specifies use of the file signer.
 
     ::: tip NOTE
     Currently, `file` is the default signer so you could also omit this flag.
@@ -271,7 +271,7 @@ Ledger device address and address index appropriately):
 
 ```bash
 TX_FLAGS="--genesis.file /localhostdir/genesis.json \
-  --signer ledger \
+  --signer.backend ledger \
   --signer.ledger.address oasis19hpt4y2reqwyfqcd53asjchdqf468chr673y6jn07xjp36w32jlscf0me \
   --signer.ledger.index 1 \
   --signer.dir /localhostdir/entity/"
@@ -281,7 +281,7 @@ Or, one could set `TX_FLAGS` like below to use a file signer:
 
 ```bash
 TX_FLAGS="--genesis.file /localhostdir/genesis.json \
-  --signer file \
+  --signer.backend file \
   --signer.dir /localhostdir/entity/"
 ```
 
@@ -868,7 +868,7 @@ common ways for a commission schedule amendment to fail][compendium].
 :::
 
 [Ledger docs]: ../hsm/ledger.md
-[create-entity]: joining-the-testnet.md#creating-your-entity
+[create-entity]: running-node-on-amber-network.md#creating-your-entity
 [Base flags]: #base-flags
 [Signer flags]: #signer-flags
 [Checking Your Account nonce]: maintenance/checking-account-nonce.md
