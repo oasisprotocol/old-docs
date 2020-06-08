@@ -1,5 +1,10 @@
 # Migrating Your QuestNet Entity for the Amber Network
 
+::: warning NOTE
+The deadline for Amber Network Entity Packages is 2020-06-15T23:59:00 UTC. You
+must migrate your entity before then.
+:::
+
 For those who have previously participated in The Quest, you must create
 an entity package for the Amber Network derived from your Quest entity. A
 migration is required due to breaking changes in the node descriptor format used
@@ -25,12 +30,9 @@ To summarize, the steps required for migration are as follows:
   * We are assuming that you had previously followed our setup guides and
     created an entity/node in a directory called `/localhostdir`
 * Your `/localhostdir/entity` containing your `entity.pem` (Your entity private key)
-* oasis-node v20.7
-  * Linux: [oasis-node-linux]
-  * macOS: [oasis-node-macos]
+* [oasis-node v20.7][oasis-node-linux]
 
 [oasis-node-linux]: https://github.com/oasisprotocol/oasis-core/releases/download/v20.7/oasis_core_20.7_linux_amd64.tar.gz
-[oasis-node-macos]: https://github.com/oasisprotocol/oasis-core/releases/download/v20.7/oasis_core_20.7_macos_amd64.tar.gz
 
 ## Step 1: Backup all of your entity/node artifacts
 
