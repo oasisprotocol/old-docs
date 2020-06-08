@@ -62,6 +62,7 @@ module.exports = {
           ['/operators/overview', 'Node Operator Overview'],
           ['/operators/architecture-overview', 'Network Architecture Overview'],
           ['/operators/prerequisites', 'Prerequisites Guide'],
+          ['/operators/amber-network', 'Amber Network'],
           [
             '/operators/hardware-recommendations',
             'Node Hardware Recommendations',
