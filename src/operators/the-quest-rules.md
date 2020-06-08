@@ -15,7 +15,8 @@ about the Amber Network and how to join go [here](/operators/amber-network.md).
 We are thrilled with the work so many teams have done to make the
 Oasis Network better!
 
-A summary of the Questnet by the numbers
+A summary of the Questnet by the numbers:
+
 * 👍400+ node operators joined the competition
 * 👩‍💻100+ nodes running on the Questnet at any given time
 * 💻5+ network upgrades complete in as little as 45 minutes 
