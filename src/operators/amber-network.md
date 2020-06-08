@@ -64,7 +64,7 @@ you need to regenerate and submit a new one.
 
 Entity package instructions can be found [here](./creating-an-entity-package.md).
 
-## Wallet-testers needed
+## Wallet testers needed
 
 In addition to running nodes, we’re also looking for community volunteers
 to test our new Ledger wallet integration. Volunteers have an opportunity
