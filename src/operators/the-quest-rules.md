@@ -16,7 +16,12 @@ We are thrilled with the work so many teams have done to make the
 Oasis Network better!
 
 A summary of the Questnet by the numbers
-![roundup](/operator_images/quest_roundup.png)
+* 👍400+ node operators joined the competition
+* 👩‍💻100+ nodes running on the Questnet at any given time
+* 💻5+ network upgrades complete in as little as 45 minutes 
+* 🤑10M+ tokens allocated for Mainnet
+* 🎁20+ community grants for network tooling, developer apps, and more
+* 🎉70+ unique competition winners
 
 ### The Winners
 
