@@ -5,23 +5,24 @@ The deadline for Amber Network Entity Packages is 2020-06-15T23:59:00 UTC. You
 must migrate your entity before then.
 :::
 
-For those who have previously participated in The Quest, you must create
-an entity package for the Amber Network derived from your Quest entity. A
-migration is required due to breaking changes in the node descriptor format used
-between The Quest and the Amber Network.
+For those who have previously participated in The Quest, you must create an
+entity package for the Amber Network derived from your Quest entity. A migration
+is required due to breaking changes in the entity and node descriptor formats
+used between The Quest and the Amber Network.
 
 To summarize, the steps required for migration are as follows:
 
 1. Backup all of your entity/node artifacts.
-2. Create a set of new node artifacts.
+2. Update your entity descriptor to the latest version.
+3. Create a set of new node artifacts.
     * This will effectively delete your old node. While it might be possible to
       use the same node identity with the Amber Network, for simplicity's sake,
       we will not include those instructions. If you attempt to do so, it is at
       your own discretion.
-3. Update your entity with the new node descriptor.
+4. Update your entity with the new node descriptor.
     * This removes the old node descriptor.
-4. Create and submit your Entity Package
-5. Start your node with the new node artifacts when the Amber Network
+5. Create and submit your Entity Package.
+6. Start your node with the new node artifacts when the Amber Network
    starts.
 
 ## Prerequisites
@@ -41,7 +42,20 @@ potentially destructive. Please backup the entirety of your
 `/localhostdir/entity` and `/localhostdir/node` directories just in case you
 make a mistake.
 
-## Step 2: Create a new set of node artifacts
+## Step 2: Update your entity to the latest version
+
+In order to migrate the entity to the latest version, execute the following
+commands:
+
+```bash
+oasis-node registry entity init \
+    --entity.reuse_signer \
+    --signer.backend file \
+    --signer.dir /localhostdir/entity \
+    --force
+```
+
+## Step 3: Create a new set of node artifacts
 
 As explained previously, the node descriptor format has breaking changes
 between The Quest and the Amber Network. To simplify migration, it is best to
@@ -78,7 +92,7 @@ _should not share_.
 * `tls_identity_cert.pem`: The node's TLS certificate for securing gRPC
   connections.
 
-## Step 3: Update your entity with the new node descriptor
+## Step 4: Update your entity with the new node descriptor
 
 Now that we have initialized a new node, we need to add it to the entity
 descriptor so that it can properly register itself when the node starts up.
@@ -96,14 +110,14 @@ You may be wondering if you need to remove the old node from the entity. The
 node descriptors into the entity descriptor. As we do not specify the old
 `node_genesis.json` here, the old node is removed from the entity.
 
-## Step 4: Create and submit your Entity Package
+## Step 5: Create and submit your Entity Package
 
 Once you've completed the steps above, follow the guide in [Creating an Entity
 Package] _before the beginning of the Amber Network_.
 
 [Creating an Entity Package]: ./creating-an-entity-package.md
 
-## Step 5: Update your node
+## Step 6: Update your node
 
 At the time you wish to upgrade your node to participate in the Amber
 Network, you must ensure that the `/localhostdir/node` artifacts are uploaded to
