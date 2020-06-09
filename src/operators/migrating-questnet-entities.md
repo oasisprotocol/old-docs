@@ -42,7 +42,7 @@ potentially destructive. Please backup the entirety of your
 `/localhostdir/entity` and `/localhostdir/node` directories just in case you
 make a mistake.
 
-## Step 2: Update you entity to the latest version
+## Step 2: Update your entity to the latest version
 
 In order to migrate the entity to the latest version, execute the following
 commands:
