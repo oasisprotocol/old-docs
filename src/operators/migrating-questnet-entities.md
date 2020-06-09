@@ -13,7 +13,7 @@ used between The Quest and the Amber Network.
 To summarize, the steps required for migration are as follows:
 
 1. Backup all of your entity/node artifacts.
-2. Update your entity descriptor to the latest format
+2. Update your entity descriptor to the latest version.
 3. Create a set of new node artifacts.
     * This will effectively delete your old node. While it might be possible to
       use the same node identity with the Amber Network, for simplicity's sake,
