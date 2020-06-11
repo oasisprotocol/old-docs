@@ -101,3 +101,16 @@ The Oasis network is a proof of stake system and we’ll look to community membe
 While our network is not quite ready for node operators, we should be getting there soon! 
 
 If you’re interested in signing up to run a node, please go to [https://oasis-protocol.org/node](https://oasis-protocol.org/node) and we’ll be in touch as soon as we’re ready.
+
+#### How is Enigma Network/Secret Network different from Oasis Network?
+
+Enigma Network now renamed as Secret Network, please go to [https://docs.scrt.network/#/] (https://docs.scrt.network/#/) for more information is a similar protocol which want's to build a better internet. Unlike Oasis which has a blockchain of their own,Enigma is a privacy computation layer. 
+
+Secret Network has a crypto-coin called as secret coin,which is going to be swapped from the existing Enigma coin due to some regulation issues. For more details [https://www.coindesk.com/ico-project-enigma-settles-sec-charges-over-45m-token-sale](https://www.coindesk.com/ico-project-enigma-settles-sec-charges-over-45m-token-sale). Oasis doesn't have a coin which is on the exchange. 
+
+Both provide an off-chain private storage which works on encrypted data,use of Trusted Execution Environment,usage of Cosm-wasm for writing secret/private contracts. Currently both support Rust but Oasis will support Solidity in the future. 
+
+Unlike Secret Network,Oasis allows users to deploy their apps on the blockchain.
+
+#### Other Alternatives to Oasis Networks
+[https://www.owler.com/company/starkware](https://www.owler.com/company/starkware) This website gives an overview of some of the competitors in this space.
