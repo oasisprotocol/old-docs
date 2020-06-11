@@ -87,10 +87,10 @@ _should not share_.
   the genesis file of the network.
 * `p2p.pem`: The node's private key for libp2p. **DO NOT SHARE**
 * `p2p_pub.pem`: The node's public key for libp2p.
-* `sentry_client_tls_identity.pem`: The node's TLS private key for securing gRPC
-  connections. **DO NOT SHARE**
-* `sentry_client_tls_identity_cert.pem`: The node's TLS certificate for securing gRPC
-  connections.
+* `sentry_client_tls_identity.pem`: The node's TLS private key for
+  securing gRPC connections. **DO NOT SHARE**
+* `sentry_client_tls_identity_cert.pem`: The node's TLS certificate for
+  securing gRPC connections.
 
 ## Step 4: Update your entity with the new node descriptor
 
