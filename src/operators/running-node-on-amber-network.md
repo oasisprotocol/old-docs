@@ -175,10 +175,10 @@ The command will generate the following files:
   the genesis file of the network.
 * `p2p.pem`: The node's private key for libp2p. **DO NOT SHARE**
 * `p2p_pub.pem`: The node's public key for libp2p.
-* `tls_identity.pem`: The node's TLS private key for securing gRPC
-  connections. **DO NOT SHARE**
-* `tls_identity_cert.pem`: The node's TLS certificate for securing gRPC
-  connections.
+* `sentry_client_tls_identity.pem`: The node's TLS private key for
+  communicating with sentry nodes. **DO NOT SHARE**
+* `sentry_client_tls_identity_cert.pem`: The node's TLS certificate for
+  communicating with sentry nodes.
 
 #### Adding the Node to the Entity Descriptor
 
@@ -236,8 +236,8 @@ To do so, upload the following files from `/localhostdir/node` to
 * `identity_pub.pem`
 * `p2p.pem`
 * `p2p_pub.pem`
-* `tls_identity.pem`
-* `tls_identity_cert.pem`
+* `sentry_client_tls_identity.pem`
+* `sentry_client_tls_identity_cert.pem`
 
 After copying, make sure that all these files have `0600` permissions, i.e.
 only their owner has `read` and `write` permissions.
