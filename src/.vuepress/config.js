@@ -148,6 +148,7 @@ module.exports = {
     ],
     repo: 'oasislabs',
     docsRepo: 'oasislabs/docs',
+    docsDir: 'src',
     docsBranch: 'master',
     editLinks: true,
     editLinkText: 'Help us improve this page!',
