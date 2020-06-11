@@ -176,9 +176,9 @@ The command will generate the following files:
 * `p2p.pem`: The node's private key for libp2p. **DO NOT SHARE**
 * `p2p_pub.pem`: The node's public key for libp2p.
 * `sentry_client_tls_identity.pem`: The node's TLS private key for
-  securing gRPC connections. **DO NOT SHARE**
+  communicating with sentry nodes. **DO NOT SHARE**
 * `sentry_client_tls_identity_cert.pem`: The node's TLS certificate for
-  securing gRPC connections.
+  communicating with sentry nodes.
 
 #### Adding the Node to the Entity Descriptor
 
