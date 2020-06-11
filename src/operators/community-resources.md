@@ -21,3 +21,4 @@ the Oasis Testnet, automate your node deployment, and more.
 ## Monitoring and Alerts
 
 - [Stats Tool (by Oasis Labs)](https://github.com/oasislabs/oasis-core/tree/master/go/extra/stats)
+- [Panic Monitoring Tool (by Simply VC](https://github.com/SimplyVC/panic_oasis)
