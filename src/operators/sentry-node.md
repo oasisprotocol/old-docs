@@ -78,6 +78,17 @@ the following section
 - <code v-pre>{{ validator_private_address }}</code>: This is the (presumably)
   private address on which validator should be reachable from the sentry node.
 
+- <code v-pre>{{ validator_sentry_client_grpc_public_key }}</code>: This is the
+  public TLS key of the Oasis validator node that will be protected by the
+  sentry node. This public key can be obtained by running:
+
+  ```bash
+   oasis-node identity show-sentry-client-pubkey --datadir /serverdir/node
+  ```
+
+  on the validator node. Note that the above command is only available in
+   `oasis-core` from version 20.8.1 onward.
+
 [params]: ./current-testnet-parameters.md
 
 ```yaml
@@ -134,7 +145,10 @@ worker:
     # IMPORTANT: Only validator nodes protected by the sentry node should have
     # access to this port. This port should not be exposed on the public
     # network.
-    control_port: 9009
+    control:
+      port: 9009
+      authorized_pubkey:
+        - {{ validator_sentry_client_grpc_public_key }}
 
 # Tendermint backend configuration.
 tendermint:
@@ -226,35 +240,46 @@ Sentry nodes can also be configured as Tendermint Persistent-Peers with the
 
 In addition to the familiar Tendermint setup above, the node needs to be
 configured to query sentry nodes for external addresses every time the validator
-preforms a re-registration. This is configured with `worker.sentry.address`
-and `worker.sentry.cert_file` flags.
+preforms a re-registration. This is configured with the `worker.sentry.address`
+flag.
 
-The `worker.sentry.address` flag should be set to the (private) address of
-the sentry node's control endpoint.
+The `worker.sentry.address` flag is of format: `<pubkey>@ip:port`
+where:
 
-The `worker.sentry.cert_file` flag should be set to the sentry node's client
-certificate (named `tls_identity_cert.pem` by default) created when
-provisioning the sentry node's identity.
+- `<pubkey>`: Is the sentry node's TLS public key.
+- `ip:port`: Is the (private) address of the sentry node's control endpoint.
 
 Putting it all together, an example configuration of a validator node in the
 sentry node architecture is given below.
 
 Before using this configuration you should collect the following information to
-replace the <code v-pre>{{ var }}</code> variables present in the configuration
+replace the <code v-pre>{{ var_name }}</code> variables present in the configuration
 file:
 
-- `sentry_node_private_ip`: This is the private IP address of the sentry node
-  over which sentry node should be accessible to the validator.
-- `sentry_node_certificate`: For each sentry node address, a path to its gRPC
-  TLS certificate is required (named `tls_identity_cert.pem` by default).
+<!--
+The <code v-pre> sections are due to an inability of vuepress to escape template
+characters. We also had feedback that without the {{ }} surrounding the
+variables the documentation was potentially ambigious. Please keep the {{ }} in
+the following section
+-->
 
-  This file is generated when provisioning the sentry node.
-  This certificate needs to be accessible on any node that's connecting to the
-  sentry node's control endpoint and is used for securing the communication
-  between the validator and the sentry node.
-- `sentry_node_tendermint_id`: This is the Tendermint ID (address) of the sentry
-  node that will be configured as a Persistent Peer. This ID can be obtained by
-  running:
+- <code v-pre>{{ sentry_node_private_ip }}</code>: This is the private IP
+  address of the sentry node over which sentry node should be accessible to the
+  validator.
+
+- <code v-pre>{{ sentry_node_grpc_public_key }}</code>: This is the sentry
+  node's control endpoint TLS public key. This ID can be obtained by running:
+
+   ```bash
+   oasis-node identity show-tls-pubkey --datadir /serverdir/node
+   ```
+
+   on the sentry node. Note that the above command is only available in
+   `oasis-core` from version 20.8.1 onward.
+
+- <code v-pre>{{ sentry_node_tendermint_id }}</code>: This is the Tendermint ID
+  (address) of the sentry node that will be configured as a Persistent Peer.
+  This ID can be obtained by running:
 
   ```bash
   oasis-node identity tendermint show-node-address --datadir /serverdir/node
@@ -314,9 +339,7 @@ worker:
     entity: /serverdir/node/entity/entity.json
   sentry:
     address:
-      - "{{ sentry_node_private_ip }}:9009"
-    cert_file:
-      - "{{ sentry_node_certificate }}"
+      - "{{ sentry_node_grpc_public_key }}@{{ sentry_node_private_ip }}:9009"
 
 # Consensus backend.
 consensus:
