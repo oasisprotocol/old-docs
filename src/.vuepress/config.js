@@ -90,6 +90,16 @@ module.exports = {
         ],
       },
       {
+        title: 'Wallet Support',
+        collapsable: true,
+        children: [['/hsm/ledger', 'Ledger']],
+      },
+      {
+        title: 'Oasis Core Developer Docs',
+        path:
+          'https://github.com/oasisprotocol/oasis-core/blob/master/docs/index.md',
+      },
+      {
         title: 'App Developer Docs',
         collapsable: true,
         children: [
@@ -139,11 +149,6 @@ module.exports = {
             ],
           },
         ],
-      },
-      {
-        title: 'HSM Support',
-        collapsable: true,
-        children: [['/hsm/ledger', 'Ledger']],
       },
     ],
     repo: 'oasislabs',
