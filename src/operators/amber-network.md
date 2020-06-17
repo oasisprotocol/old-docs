@@ -17,8 +17,7 @@ at Mainnet launch.  This includes:
 
 ## Timing
 
-The Amber Network will kick off in mid-June. We will share the specific start date
-on June 11.
+The Amber Network starts at 2020-06-18T16:00:00Z.
 
 ## Goal of Amber
 
