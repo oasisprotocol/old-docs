@@ -22,7 +22,7 @@ rewards that expand beyond this activity.
 _Note that following network launch, all changes to the protocol will be
 determined by the community based on the consensus mechanism of the Oasis network._
 
-[Slack]: https://www.oasis-protocol.org/slack
+[Slack]: https://oasisprotocol.org/slack
 [gitHub-docs]: https://github.com/oasislabs/docs
 
 ## Summary
@@ -187,7 +187,7 @@ shape the future of our network.
 
 If you’re new to Oasis, here are some resources you may find useful:
 
-* [Oasis Foundation Website](https://www.oasis-protocol.org)
+* [Oasis Foundation Website](https://oasisprotocol.org)
 * [Running a Node on the Amber Network](https://docs.oasis.dev/operators/running-node-on-amber-network.html)
 * [Operator Documentation](https://docs.oasis.dev/operators/overview.html)
 * [GitHub](https://www.github.com/oasislabs)

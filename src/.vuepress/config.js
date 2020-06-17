@@ -25,7 +25,7 @@ module.exports = {
   themeConfig: {
     logo: '/logo.svg',
     nav: [
-      { text: 'Home', link: 'https://oasislabs.com' },
+      { text: 'Home', link: 'https://oasisprotocol.org' },
       {
         text: 'Support',
         link:
@@ -151,7 +151,7 @@ module.exports = {
         ],
       },
     ],
-    repo: 'oasislabs',
+    repo: 'oasisprotocol',
     docsRepo: 'oasislabs/docs',
     docsDir: 'src',
     docsBranch: 'master',

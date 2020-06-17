@@ -7,5 +7,5 @@
   <a href="/overview.html">Learn more about Oasis</a>
 </div>
 
-* [Read the Oasis Labs Blog](https://www.oasislabs.com/blog)
+* [Read the Oasis Protocol Foundation Blog](https://medium.com/oasis-protocol-project)
 * [Watch some Oasis videos](https://www.youtube.com/channel/UC35UFPcZ2F1wjPxhPrSsESQ)

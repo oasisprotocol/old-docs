@@ -80,7 +80,7 @@ Unlike many other proof of stake networks however, we have a different architect
 
 Oasis is a unique platform and is not built on top of Ethereum or any other protocol. 
 
-To learn more about our platform read our [white paper](https://www.oasis-protocol.org/whitepapers)!
+To learn more about our platform read our [white paper](https://oasisprotocol.org/whitepapers)!
 
 #### How does this compare to a private blockchain like Hyperledger?
 
@@ -100,4 +100,4 @@ The Oasis network is a proof of stake system and we’ll look to community membe
 
 While our network is not quite ready for node operators, we should be getting there soon! 
 
-If you’re interested in signing up to run a node, please go to [https://oasis-protocol.org/node](https://oasis-protocol.org/node) and we’ll be in touch as soon as we’re ready.
+If you’re interested in signing up to run a node, please go to [https://oasisprotocol.org/node](https://oasisprotocol.org/node) and we’ll be in touch as soon as we’re ready.
