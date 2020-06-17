@@ -28,8 +28,10 @@ Testnet.
 
 ### 2020-06-18 (Upcoming)
 
-The Amber Network starts at 2020-06-18T16:00:00Z. The genesis document will be
+The [Amber Network] starts at 2020-06-18T16:00:00Z. The genesis document will be
 posted here shortly!
+
+[Amber Network]: ./amber-network
 
 ### 2020-05-11
 
