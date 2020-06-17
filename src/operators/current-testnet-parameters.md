@@ -4,16 +4,14 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
-* [Genesis Document](https://github.com/oasislabs/public-testnet-artifacts/releases/download/2020-05-11/genesis.json):
-  * sha1: `85ca222cc0756499c4371b62ddbe67d50dc6ec71`
-  * sha256: `d2a9cbe36b018a145ac6f2ccac7613d143bd1a807b4e5c9d69a488d99453f9ab`
+* Genesis Document: TBA
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
 * [Oasis Core] version:
-  * [20.6]
+  * [20.8]
   ::: tip NOTE
   The `oasis-node` binary is part of the Oasis Core release.
   :::
@@ -22,17 +20,20 @@ Testnet.
   are incompatible with version of Oasis Core used by other nodes in the current
   Testnet.
   :::
-  ::: warning DEPRECATED
-  We no longer recommend or support using Oasis Labs' provided [oasis-node
-  Docker images].
-  :::
 
-[Oasis Core]: https://github.com/oasislabs/oasis-core
-[oasis-node Docker images]: https://hub.docker.com/r/oasislabs/oasis-node/tags
+[Oasis Core]: https://github.com/oasisprotocol/oasis-core
+[20.8]: https://github.com/oasisprotocol/oasis-core/releases/tag/v20.8
 
 ## Deployment Change Log
 
-### 2020-05-11 (Latest)
+### 2020-06-18 (Upcoming)
+
+The [Amber Network] starts at 2020-06-18T16:00:00Z. The genesis document will be
+posted here shortly!
+
+[Amber Network]: ./amber-network.md
+
+### 2020-05-11
 
 * Block height when network stops: **353000**
 * Upgrade Window:
