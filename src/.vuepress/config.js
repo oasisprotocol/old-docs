@@ -35,27 +35,6 @@ module.exports = {
     sidebar: [
       '/overview',
       {
-        title: 'App Developer Docs',
-        collapsable: true,
-        children: [
-          ['/quickstart', 'Quickstart'],
-          {
-            title: 'Tutorials',
-            collapsable: true,
-            children: [
-              ['/tutorials/ballot', 'Beginner: Secret Ballot'],
-              ['/tutorials/messaging', 'Intermediate: Private Chat'],
-              ['/tutorials/web3-intro', 'Getting Started With Web3'],
-              [
-                '/tutorials/deploy-solidity',
-                'Deploy Solidity Contract: Compound',
-              ],
-              ['/tutorials/deploy-vyper', 'Deploy Vyper Contract: Uniswap'],
-            ],
-          },
-        ],
-      },
-      {
         title: 'Operator Docs',
         collapsable: true,
         children: [
@@ -111,39 +90,65 @@ module.exports = {
         ],
       },
       {
-        title: 'API Reference',
+        title: 'Wallet Support',
+        collapsable: true,
+        children: [['/hsm/ledger', 'Ledger']],
+      },
+      {
+        title: 'Oasis Core Developer Docs',
+        path:
+          'https://github.com/oasisprotocol/oasis-core/blob/master/docs/index.md',
+      },
+      {
+        title: 'App Developer Docs',
         collapsable: true,
         children: [
-          ['https://docs.rs/oasis-std', 'oasis_std'],
+          ['/quickstart', 'Quickstart'],
           {
-            title: 'Web Client',
+            title: 'Tutorials',
             collapsable: true,
             children: [
-              ['/api-reference/client/getting-started', 'Getting Started'],
-              ['/api-reference/client/set-gateway', 'oasis.setGateway'],
-              ['/api-reference/client/deploy', 'oasis.deploy'],
-              ['/api-reference/client/service', 'oasis.Service'],
-              ['/api-reference/client/wallet', 'oasis.Wallet'],
-              ['/api-reference/client/gateways', 'oasis.gateways'],
+              ['/tutorials/ballot', 'Beginner: Secret Ballot'],
+              ['/tutorials/messaging', 'Intermediate: Private Chat'],
+              ['/tutorials/web3-intro', 'Getting Started With Web3'],
               [
-                '/api-reference/client/developer-gateway',
-                'oasis.gateways.Gateway',
+                '/tutorials/deploy-solidity',
+                'Deploy Solidity Contract: Compound',
               ],
-              [
-                '/api-reference/client/web3-gateway',
-                'oasis.gateways.Web3Gateway',
-              ],
-              ['/api-reference/client/workspace', 'oasis.workspace'],
-              ['/api-reference/client/disconnect', 'oasis.disconnect'],
-              ['/api-reference/client/utils', 'oasis.utils'],
+              ['/tutorials/deploy-vyper', 'Deploy Vyper Contract: Uniswap'],
+            ],
+          },
+          {
+            title: 'Oasis SDK API Reference',
+            collapsable: true,
+            children: [
+              ['https://docs.rs/oasis-std', 'oasis_std'],
+              {
+                title: 'Web Client',
+                collapsable: true,
+                children: [
+                  ['/api-reference/client/getting-started', 'Getting Started'],
+                  ['/api-reference/client/set-gateway', 'oasis.setGateway'],
+                  ['/api-reference/client/deploy', 'oasis.deploy'],
+                  ['/api-reference/client/service', 'oasis.Service'],
+                  ['/api-reference/client/wallet', 'oasis.Wallet'],
+                  ['/api-reference/client/gateways', 'oasis.gateways'],
+                  [
+                    '/api-reference/client/developer-gateway',
+                    'oasis.gateways.Gateway',
+                  ],
+                  [
+                    '/api-reference/client/web3-gateway',
+                    'oasis.gateways.Web3Gateway',
+                  ],
+                  ['/api-reference/client/workspace', 'oasis.workspace'],
+                  ['/api-reference/client/disconnect', 'oasis.disconnect'],
+                  ['/api-reference/client/utils', 'oasis.utils'],
+                ],
+              },
             ],
           },
         ],
-      },
-      {
-        title: 'HSM Support',
-        collapsable: true,
-        children: [['/hsm/ledger', 'Ledger']],
       },
     ],
     repo: 'oasislabs',
