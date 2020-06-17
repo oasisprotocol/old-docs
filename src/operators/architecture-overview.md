@@ -131,7 +131,7 @@ A Committee is a set of Nodes that are participating in the same service layer
 of the Oasis Network. Committees are described in more detail in the [Modular
 Architecture] section.
 
-[papers]: https://www.oasis-protocol.org/researchpapers
+[papers]: https://oasisprotocol.org/researchpapers
 [Entities and Key Management]: #entities-and-key-management
 [Modular Architecture]: #modular-architecture
 [Quick Start Guide]: ./quick-start.md

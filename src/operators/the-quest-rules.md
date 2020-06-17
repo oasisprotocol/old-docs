@@ -114,11 +114,11 @@ to be useful for anyone still interested in the Oasis Network, the Amber Network
 
 [eligibility-rules]: https://docsend.com/view/zv5cfia
 [sign-up-form]: https://app.hellosign.com/s/6M6ym9qh
-[slack]: https://www.oasis-protocol.org/slack
+[slack]: https://oasisprotocol.org/slack
 [form]: https://oasisfoundation.typeform.com/to/gBwPA0
 [incentives-proposal]: ./incentives-proposal.md
 [setup-docs]: ./joining-the-testnet.md
-[grants]: https://www.oasis-protocol.org/grants
+[grants]: https://oasisprotocol.org/grants
 [office-hours-doc]: https://docs.google.com/document/d/1ZnKIHcNPb3dGvP4b6bGrJmwyCjGhcSG2cHkTeEfwSEQ/edit?usp=sharing
 [get-set-up]: https://docs.oasis.dev/operators/the-quest-rules.html#how-to-join
 [mailing-list]: https://oasisfoundation.typeform.com/to/jodFyS
