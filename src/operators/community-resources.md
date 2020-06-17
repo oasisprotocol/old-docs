@@ -3,11 +3,12 @@
 Below are a number of community-built tools you can use to monitor
 the Oasis Testnet, automate your node deployment, and more.
 
-## Validator Leaderboards
+## Block Explorers & Validator Leaderboards
 
+- [Oasisscan (by bitcat)](https://oasisscan.com/)
+- [Oasis Monitor (by Everstake)](https://oasismonitor.com/)
 - [Oasis.Fish (by Stakefish)](https://oasis.fish/leaderboard/)
 - [Oasis Smartstake (by Smartstake)](https://oasis.smartstake.io/)
-- [Oasisscan (by bitcat)](https://oasisscan.com/)
 
 ## One-touch Node Deployments
 
