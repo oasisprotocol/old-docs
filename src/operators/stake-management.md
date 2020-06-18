@@ -1,7 +1,7 @@
 # Stake Management
 
 For node operators, the `oasis-node` binary offers a command line interface for
-various staking token operations.
+various staking operations.
 
 The following commands are intended to be run **online** (i.e. on the `server`):
 
@@ -62,14 +62,15 @@ This will output something like:
 
 ```text
 Total supply: 10000000000000000000
-Common pool: 7999214452933172880
+Common pool: 7999217230119682890
+Last block fees: 0
 Staking threshold (entity): 100000000000
-Staking threshold (validator node): 100000000000
-Staking threshold (compute node): 100000000000
-Staking threshold (storage node): 100000000000
-Staking threshold (key manager node): 100000000000
-Staking threshold (compute runtime): 100000000000
-Staking threshold (key manager runtime): 100000000000
+Staking threshold (node-validator): 100000000000
+Staking threshold (node-compute): 100000000000
+Staking threshold (node-storage): 100000000000
+Staking threshold (node-keymanager): 100000000000
+Staking threshold (runtime-compute): 100000000000
+Staking threshold (runtime-keymanager): 100000000000
 ```
 
 The numbers are listed in base units, 1 token corresponds to 10^9 (i.e. one
@@ -78,8 +79,36 @@ billion) base units.
 We can observe that the total supply is 10 billion tokens and that almost 8
 billion tokens are in the *common pool*.
 
-Finally, the staking thresholds for all node kinds (entity, validator, compute,
-storage) and runtime kinds (compute, key manager) are 100 tokens.
+Finally, the staking thresholds for the entity, all node kinds (validator,
+compute, storage) and all runtime kinds (compute, key manager) are 100 tokens.
+
+This means that if you want to register, e.g. an entity with a validator node,
+you need to escrow (i.e. stake) at least 200 tokens.
+
+## Obtaining account address from entity's ID
+
+A staking account address is represented by a truncated hash of a
+corresponding entity's public key, prefixed by a 1 byte address version.
+
+It uses [Bech32 encoding] for text serialization with `oasis` as its human
+readable part (HRP) prefix.
+
+To convert an entity ID (Base64 encoded), e.g.
+`nyjbDRKAXgUkL6CYfJP0WVA0XbF0pAGuvObZNMufgfY=`, to a staking account address,
+run:
+
+```bash
+oasis-node stake pubkey2address \
+  --public_key nyjbDRKAXgUkL6CYfJP0WVA0XbF0pAGuvObZNMufgfY=
+```
+
+This will output the staking account address for the given entity ID:
+
+```text
+oasis1qrvsa8ukfw3p6kw2vcs0fk9t59mceqq7fyttwqgx
+```
+
+[Bech32 encoding]: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki#bech32
 
 ## Account info
 
@@ -89,39 +118,39 @@ To list all accounts with positive balance, run:
 oasis-node stake list -a $ADDR
 ```
 
-This will list all accounts' IDs, e.g.:
+This will list all accounts' addresses, e.g.:
 
 ```text
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
-A1X90rT/WK4AOTh/dJsUlOqNDV/nXM6ZU+h+blS9pto=
-BEcj10gSGUnJULd08jWfbYaMMrqT2rCnxCVrvJdgdiQ=
-BNrK/6GsNTrYT/4qk7pnI6NI/gYV3t+b3KT4bixYMcY=
-CVzqFIADD2Ed0khGBNf4Rvh7vSNtrL1ULTkWYQszDpc=
-Ck7Z5SGgciwGD7VsPIUOejIinePljhA9DLFCE954L0g=
-Cne+0Jngok/d7CEw4ho7iUK+Q729s2LSPbLtqN2PZNs=
-Cyw0yR8PhT7zeekbNE+C38VWHqScS6SRCGCMHLts+zM=
-C5z1jB+FHB/QgtTITr6NKWpUs9QHwD11CG3v8tmuJ0g=
-DFYChJMceD8nNp6ueVUCNEpqGROg7zS7AImn74c9s6s=
-DMLG+Ta/ycWQmYTIwA3kCUyXHUBwwhjvHThNTsHLyYo=
-DPbZomOIleFrvcJBZPl7y/wEB1w9Q569vAbb6Krl9fE=
-DPeFA5/JMSGw+kp2o3bJ2yNq5AUMkiQop+bFP5vc82M=
-DVobZ8bWlOv2J6oHO0uITr5FPO5rIY2irdPNhByprHk=
-DoVToHyHxlHdyt4Kp//R34xisSULeIKaWNofvVEkEPM=
-D2hqhJcmZnBmhw9TodOdoFPAjmRkpRatANCNHxIDHgA=
-Eg+MQjy5m+RbI9ASaXvhX2WrdIJ949I1XIwyEQU/gc4=
-FATFD8gST26YTWtJ4gJnWS1xoKPw7/nQm8bBtm2aedA=
+oasis1qqqfalz4xars9nxn0mjy8fcf9quqg8ml0szm5ped
+oasis1qqqd4wrmk8z9p3hz0vyc6zy3khx3gqnckywyg2s5
+oasis1qqqul8678xs9tnj74x54k8ch2qdh7jveeswqf67j
+oasis1qqzrcyed78mkxmt9qpv3pemsugknnhvnpv8v5vc3
+oasis1qqz0qcmy932p69493qdkszcf9emgl55azys3xr8f
+oasis1qq95xthkg20ra6ue8zyngqkkm92xqkvrms88axkj
+oasis1qq9meupznk90d4lgluvcaqa27ggs55dscc6msc33
+oasis1qq9acq6v5knfmatc9fvuwyzlexs0f7j3uvarusu6
+oasis1qqxqlpfslwuuh5342qnstymyutancj7csucxv2ec
+oasis1qqxmp9lggptm0pt23za7g5cfg2hzspezcumw7c3j
+oasis1qq89qxh538sunk6p2fca487pfsy0ncxk9q4xf2un
+oasis1qq8hgj2yzssawtpfqr8utj6d57k9zvx3wc989kqm
+oasis1qq8atykwecy3p5rnspkweapzz847exaqwyv80wgx
+oasis1qqgv5rxl4w27l89rf4j5dv8392kh42wt35yn0as6
+oasis1qqg0h3mt7klha4w2kxjvsktv5ke6suuwpg8rvpdh
+oasis1qqf3ctyg49tnwclksxun3dzhrv4zuww7hu7w3cul
+oasis1qqfasfrrx2tae50kcy8mcclhp0kqymswsqnqytyg
+oasis1qq2rlaz3yjfk8gtdhnrfkrz5rrxjnnrzeq7mst0r
 
 ... output trimmed ...
 
 ```
 
 To get more information about a particular account, e.g.
-`+yyK5gqJb7x8xPASJZznZk8X8h0ilXuv39ctFYeHlCg=`, run:
+`oasis1qrvsa8ukfw3p6kw2vcs0fk9t59mceqq7fyttwqgx`, run:
 
 ```bash
 oasis-node stake account info \
   -a $ADDR \
-  --stake.account.id +yyK5gqJb7x8xPASJZznZk8X8h0ilXuv39ctFYeHlCg= \
+  --stake.account.address oasis1qrvsa8ukfw3p6kw2vcs0fk9t59mceqq7fyttwqgx \
   | python3 -m json.tool
 ```
 
@@ -130,29 +159,29 @@ This will output all staking information about this particular account, e.g.:
 ```json
 {
     "general": {
-        "balance": "601492492765",
-        "nonce": 0
+        "balance": "376594833237"
     },
     "escrow": {
         "active": {
-            "balance": "11242384816640",
+            "balance": "10528683450039",
             "total_shares": "10000000000000"
         },
         "debonding": {
             "balance": "0",
             "total_shares": "0"
         },
-        "commission_schedule": {
-            "rates": null,
-            "bounds": null
-        },
+        "commission_schedule": {},
         "stake_accumulator": {
             "claims": {
                 "registry.RegisterEntity": [
-                    0
+                    {
+                        "global": "entity"
+                    }
                 ],
-                "registry.RegisterNode.GKdkhntFqH5b0mXtRR6Q8nz1vcsFDnLyWWuCtmVhwJs=": [
-                    1
+                "registry.RegisterNode.9Epy5pYPGa91IJlJ8Ivb5iby+2ii8APXdfQoMZDEIDc=": [
+                    {
+                        "global": "node-validator"
+                    }
                 ]
             }
         }
@@ -163,10 +192,11 @@ This will output all staking information about this particular account, e.g.:
 We can observe that:
 
 * Account's general balance (`general.balance`), the amount of base units that
-  are available to the account owner, is a little more than 601 tokens.
-* Account's nonce (`general.nonce`) is the incremental number that must be
-  unique for each account's transaction. The next transaction should have nonce
-  equal to `0`.
+  are available to the account owner, is ~377 tokens.
+* Account's nonce (`general.nonce`), the incremental number that must be unique
+  for each account's transaction, is omitted. That means there haven't been any
+  transactions made with this account as the source.
+  Therefore, the next transaction should have nonce equal to `0`.
 
 Each account can also serve as an escrow account.
 Escrow accounts are used to keep the funds needed for specific consensus-layer
@@ -181,7 +211,7 @@ debonding period during which the tokens still remain escrowed.
 We can observe that:
 
 * The amount of tokens that are actively bounded to the escrow account (
-  `escrow.active.balance`) is a little more than 11242 tokens.
+  `escrow.active.balance`) is ~10529 tokens.
 * The total number of shares for the tokens actively bounded to the escrow
   account (`escrow.active.total_shares`) is 10 trillion.
 * The amount of tokens that are currently debonding (`escrow.debonding.balance`)
@@ -193,6 +223,7 @@ An entity can also charge commission for tokens that are delegated to it.
 The commission schedule rate steps would be defined in
 `escrow.commission_schedule.rates` and the commission rate bound steps would be
 defined in `escrow.commission_schedule.bounds`.
+For more details, see the [Amending a commission schedule] example.
 
 Each escrow account also has a corresponding stake accumulator.
 It stores stake claims for an escrow account and ensures all claims are
@@ -202,13 +233,36 @@ claim can be satisfied.
 
 We can observe that the stake accumulator currently has two claims:
 
-* The first one is for registering an entity. The value it maps to is a list of
-  staking threshold kinds.
-  `0` represents the threshold for registering an entity.
-* The second one is for registering a node with ID
-  `GKdkhntFqH5b0mXtRR6Q8nz1vcsFDnLyWWuCtmVhwJs=`. The value it maps to is again
-  a list of staking threshold kinds.
-  `1` represents the threshold for registering a validator node.
+* The `registry.RegisterEntity` claim is for registering an entity.
+
+  It needs to satisfy the global threshold (`global`) for registering an entity
+  (`entity`) which is defined by the staking consensus parameters.
+
+  To see the value of the `entity` global staking threshold, run the
+  `oasis-node stake info` command as described in [Common token info] section.
+
+* The `registry.RegisterNode.9Epy5pYPGa91IJlJ8Ivb5iby+2ii8APXdfQoMZDEIDc=` claim
+  is for registering the node with ID
+  `9Epy5pYPGa91IJlJ8Ivb5iby+2ii8APXdfQoMZDEIDc=`.
+
+  It needs to satisfy the global threshold (`global`) for registering a
+  validator node (`node-validator`) which is defined by the staking consensus
+  parameters.
+
+  To see the value of the `node-validator` global staking threshold, run the
+  `oasis-node stake info` command as described in [Common token info] section.
+
+  In addition to the global thresholds, each runtime the node is registering for
+  may define their own thresholds. In case the node is registering for multiple
+  runtimes, it needs to satisfy the sum of thresholds of all the runtimes it is
+  registering for.
+
+  For more details, see [Oasis Core Developer Docs on registering a node].
+
+[Amending a commission schedule]: #amending-a-commission-schedule
+[Common token info]: #common-token-info
+[Oasis Core Developer Docs on registering a node]:
+  https://github.com/oasisprotocol/oasis-core/blob/master/docs/consensus/registry.md#register-node
 
 ## Generating and submitting transactions
 
@@ -241,7 +295,7 @@ Currently, we provide two options for signing transactions:
     Ledger device.
     :::
 
-  * `--signer.ledger.index`: Address index used to derive address
+  * `--signer.ledger.index`: Account index used to derive the staking account
     address on the Ledger device.
   * `--signer.dir`: Path to entity's artifacts directory on the `localhost`,
     e.g. `/localhostdir/entity/`.
@@ -305,12 +359,12 @@ as appropriate for a given transaction:
   `staking.params.gas_costs` consensus parameter.
 
   To obtain its value from the genesis file, run:
-  <!-- markdownlint-disable line-length -->
+
   ```bash
   cat /localhostdir/genesis.json | \
-    python3 -c 'import sys, json; print(json.dumps(json.load(sys.stdin)["staking"]["params"]["gas_costs"], indent=4))'
+    python3 -c 'import sys, json; \
+    print(json.dumps(json.load(sys.stdin)["staking"]["params"]["gas_costs"], indent=4))'
   ```
-  <!-- markdownlint-enable line-length -->
 
   ::: tip NOTE
   Currently, gas costs for transactions are set in the genesis file and cannot
@@ -347,10 +401,9 @@ For more details, see [Oasis Core #2526].
 
 ## Example transactions
 
-Let's assume our entity's account is
-`+yyK5gqJb7x8xPASJZznZk8X8h0ilXuv39ctFYeHlCg=` (the same that we queried for
-info in the [Account info] section) and generate some concrete transactions for
-it.
+Let's assume we have a staking account with address
+`oasis1qr6swa6gsp2ukfjcdmka8wrkrwz294t7ev39nrw6` and generate some concrete
+transactions for it.
 
 ::: tip NOTE
 If you want to follow these examples yourself, make sure you've set the
@@ -358,14 +411,22 @@ If you want to follow these examples yourself, make sure you've set the
 flags in an environment variable][flags-in-env-var] section.
 :::
 
+::: tip NOTE
+To convert your entity's ID to a staking account address, see the
+[Obtaining account address from entity's ID] section.
+:::
+
+[Obtaining account address from entity's ID]:
+  #obtaining-account-address-from-entity-s-id
+
 ### Querying account info
 
-To query our entity's account info, use the following command:
+To query our staking account's information, use the following command:
 
 ```bash
 oasis-node stake account info \
   -a $ADDR \
-  --stake.account.id +yyK5gqJb7x8xPASJZznZk8X8h0ilXuv39ctFYeHlCg= \
+  --stake.account.address oasis1qr6swa6gsp2ukfjcdmka8wrkrwz294t7ev39nrw6 \
   | python3 -m json.tool
 ```
 
@@ -380,7 +441,7 @@ At the beginning, this outputs:
 {
     "general": {
         "balance": "601492492765",
-        "nonce": 0
+        "nonce": 7
     },
     "escrow": {
         "active": {
@@ -398,9 +459,9 @@ At the beginning, this outputs:
 
 We can observe that:
 
-* Account's general balance is a little more than 601 tokens.
-* Account's nonce is `0`.
-* A little more than 11242 tokens are actively bounded to the escrow account.
+* Account's general balance is ~601 tokens.
+* Account's nonce is `7`.
+* ~11242 tokens are actively bounded to the escrow account.
 * The amount of tokens that are currently debonding is 0.
 
 ### Obtaining transactions' gas costs
@@ -408,12 +469,11 @@ We can observe that:
 As explained in the [Common transaction flags] section, we can obtain gas costs
 for different staking transactions from the genesis file by running:
 
-<!-- markdownlint-disable line-length -->
 ```bash
 cat /localhostdir/genesis.json | \
-  python3 -c 'import sys, json; print(json.dumps(json.load(sys.stdin)["staking"]["params"]["gas_costs"], indent=4))'
+  python3 -c 'import sys, json; \
+  print(json.dumps(json.load(sys.stdin)["staking"]["params"]["gas_costs"], indent=4))'
 ```
-<!-- markdownlint-enable line-length -->
 
 For our network, this returns:
 
@@ -430,78 +490,15 @@ Hence, we will need to set the `--transaction.fee.gas` flag, i.e. the maximum
 amount of gas a transaction can spend, in the following transactions to at least
 1000 _gas units_.
 
-### Burning tokens
-
-Let's start with a *burn* transaction which destroys the given number of tokens.
-
-To generate a burn transaction of 123 tokens (i.e. 123 \* 10^9 base units)
-and sign it, run:
-
-```bash
-oasis-node stake account gen_burn \
-  $TX_FLAGS \
-  --stake.amount 123000000000 \
-  --transaction.file tx_burn.json \
-  --transaction.nonce 0 \
-  --transaction.fee.gas 1000 \
-  --transaction.fee.amount 2000
-```
-
-To submit the generated transaction, we need to copy `tx_burn.json` to the
-online Oasis node (i.e. the `server`) and submit it from there:
-
-```bash
-oasis-node consensus submit_tx \
-  -a $ADDR \
-  --transaction.file tx_burn.json
-```
-
-Let's [check our account's info] again:
-
-```json
-{
-    "general": {
-        "balance": "478492490765",
-        "nonce": 1
-    },
-    "escrow": {
-        "active": {
-            "balance": "11242384816640",
-            "total_shares": "10000000000000"
-        },
-        "debonding": {
-            "balance": "0",
-            "total_shares": "0"
-        },
-        ...
-    }
-}
-```
-
-We can observe that:
-
-* Our account's general balance has decreased for 123 tokens and 2000 base
-  units. The latter corresponds to the fee that we specified we will pay for
-  this transaction.
-* Our account's nonce increased to `1`.
-
-::: warning
-
-Usually, the new balance is seen immediately, but some transactions (for example
-escrow reclaiming) do not take effect until after a debonding period has elapsed,
-so you might need to wait a few blocks for the balances to update.
-
-:::
-
 ### Transferring tokens
 
-Token transfer transactions transfer tokens from the signer's account to the
-given destination account.
+Let's start with token transfer transactions which transfer tokens from the
+signer's account to the given destination account.
 
 Let's choose a destination account, e.g.
-`A1X90rT/WK4AOTh/dJsUlOqNDV/nXM6ZU+h+blS9pto=`, and [check its current balance][
-check our account's info] (replacing our entity's ID with the destination
-account's ID):
+`oasis1qr3jc2yfhszpyy0daha2l9xjlkrxnzas0uaje4t3`, and [check its current balance][
+check our account's info] (replacing our account's address with the destination
+account's address):
 
 ```json
 {
@@ -533,9 +530,9 @@ units), from our account to the chosen destination account:
 oasis-node stake account gen_transfer \
   $TX_FLAGS \
   --stake.amount 170000000000 \
-  --stake.transfer.destination A1X90rT/WK4AOTh/dJsUlOqNDV/nXM6ZU+h+blS9pto= \
+  --stake.transfer.destination oasis1qr3jc2yfhszpyy0daha2l9xjlkrxnzas0uaje4t3 \
   --transaction.file tx_transfer.json \
-  --transaction.nonce 1 \
+  --transaction.nonce 7 \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 2000
 ```
@@ -555,8 +552,8 @@ the destination's):
 ```json
 {
     "general": {
-        "balance": "308492488765",
-        "nonce": 2
+        "balance": "431492490765",
+        "nonce": 8
     },
     "escrow": {
         "active": {
@@ -596,7 +593,7 @@ We can observe that:
 
 * Our general balance decreased for 170 tokens and 2000 base units. The latter
   corresponds to the fee that we specified we will pay for this transaction.
-* Our account's nonce increased to `2`.
+* Our account's nonce increased to `8`.
 * Destination account's general balance increased for 170 tokens.
 
 ### Escrowing tokens
@@ -610,9 +607,9 @@ First, let's generate an escrow transaction and store it to `tx_escrow.json`:
 oasis-node stake account gen_escrow \
   $TX_FLAGS \
   --stake.amount 208000000000 \
-  --stake.escrow.account +yyK5gqJb7x8xPASJZznZk8X8h0ilXuv39ctFYeHlCg= \
+  --stake.escrow.account oasis1qr6swa6gsp2ukfjcdmka8wrkrwz294t7ev39nrw6 \
   --transaction.file tx_escrow.json \
-  --transaction.nonce 2 \
+  --transaction.nonce 8 \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 2000
 ```
@@ -631,8 +628,8 @@ Let's [check our account's info]:
 ```json
 {
     "general": {
-        "balance": "100492486765",
-        "nonce": 3
+        "balance": "223492488765",
+        "nonce": 9
     },
     "escrow": {
         "active": {
@@ -652,18 +649,18 @@ We can observe that:
 
 * Our general balance decreased for 208 tokens and 2000 base units. The latter
   corresponds to the fee that we specified we will pay for this transaction.
-* Our account's nonce increased to `3`.
+* Our account's nonce increased to `9`.
 * Our escrow account's active balance increased for 208 tokens.
 * The total number of shares in our escrow account's active balance
   increased from 10000000000000 to 10185014125910.
 
-When a delegator delegates some amount of tokens to an entity's account,
-the delegator receives the number of shares proportional to the current
+When a delegator delegates some amount of tokens to a staking account, the
+delegator receives the number of shares proportional to the current
 _share price_ (in base units) calculated from the total number of base units
-delegated to an entity's account so far and the number of shares issued so far:
+delegated to a staking account so far and the number of shares issued so far:
 
 ```text
-shares_per_base_unit = entity_issued_shares / entity_delegated_base_units
+shares_per_base_unit = account_issued_shares / account_delegated_base_units
 ```
 
 In our case, the current share price (i.e. `shares_per_base_unit`) is
@@ -684,9 +681,9 @@ generate the following reclaim escrow transaction:
 oasis-node stake account gen_reclaim_escrow \
   $TX_FLAGS \
   --stake.shares 357000000000 \
-  --stake.escrow.account +yyK5gqJb7x8xPASJZznZk8X8h0ilXuv39ctFYeHlCg= \
+  --stake.escrow.account oasis1qr6swa6gsp2ukfjcdmka8wrkrwz294t7ev39nrw6 \
   --transaction.file tx_reclaim.json \
-  --transaction.nonce 3 \
+  --transaction.nonce 9 \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 2000
 ```
@@ -705,8 +702,8 @@ Let's [check our account's info]:
 ```json
 {
     "general": {
-        "balance": "100492484765",
-        "nonce": 4
+        "balance": "223492486765",
+        "nonce": 10
     },
     "escrow": {
         "active": {
@@ -726,7 +723,7 @@ We can observe that:
 
 * Our general balance decreased for 2000 base units. This corresponds to the fee
   that we specified we will pay for this transaction.
-* Our account's nonce increased to `4`.
+* Our account's nonce increased to `10`.
 * Our escrow account's active number of shares decreased for 357 billion shares
   to 9828014125910.
 * Our escrow account's active balance decreased for 401353137954 base units and
@@ -735,11 +732,11 @@ We can observe that:
   and its number of shares to the same amount.
 
 When a delegator wants to reclaim a certain number of escrowed tokens, the
-_base unit price_ (in shares) must be calculated based on the entity's escrow
-account's current active balance and the number of issued shares:
+_base unit price_ (in shares) must be calculated based on the escrow account's
+current active balance and the number of issued shares:
 
 ```text
-base_units_per_share = entity_delegated_base_units / entity_issued_shares
+base_units_per_share = account_delegated_base_units / account_issued_shares
 ```
 
 In our case, the current base unit price (i.e. `base_units_per_share`) is
@@ -765,12 +762,11 @@ consensus parameter and is represented as a number of epochs that need to pass.
 
 To obtain its value from the genesis file, run:
 
-<!-- markdownlint-disable line-length -->
 ```bash
 cat /localhostdir/genesis.json | \
-  python3 -c 'import sys, json; print(json.load(sys.stdin)["staking"]["params"]["debonding_interval"])'
+  python3 -c 'import sys, json; \
+  print(json.load(sys.stdin)["staking"]["params"]["debonding_interval"])'
 ```
-<!-- markdownlint-enable line-length -->
 
 For our example network, this returns:
 
@@ -796,6 +792,36 @@ Let's generate a transaction to:
 We're not allowed to change the commission bounds too close in near future, so
 we'd have to make changes a number of epochs in the future.
 
+The commission schedule rules are specified by the
+`staking.params.commission_schedule_rules` consensus parameter.
+
+To obtain its value from the genesis file, run:
+
+```bash
+cat /localhostdir/genesis.json | \
+  python3 -c 'import sys, json; \
+  rules = json.load(sys.stdin)["staking"]["params"]["commission_schedule_rules"]; \
+  print(json.dumps(rules, indent=4))'
+```
+
+For our example network this returns:
+
+```json
+{
+    "rate_change_interval": 1,
+    "rate_bound_lead": 14,
+    "max_rate_steps": 21,
+    "max_bound_steps": 21
+}
+```
+
+This means that we must submit a commission rate bound at least `14` epochs
+in advance (`rate_bound_lead`) and that we can change it on every epoch
+(`rate_change_interval`).
+
+The `max_rate_steps` and `max_bound_steps` determine the maximum number of
+commission rate steps and rate bound steps, respectively.
+
 In the example, we're setting the bounds to start on epoch 16.
 An account's default bounds are 0% maximum, so we have to wait until our new
 bounds go into effect to raise our rate to 50%.
@@ -807,7 +833,7 @@ oasis-node stake account gen_amend_commission_schedule \
   --stake.commission_schedule.bounds 16/0/100000 \
   --stake.commission_schedule.rates 16/50000 \
   --transaction.file tx_amend_commission_schedule.json \
-  --transaction.nonce 4 \
+  --transaction.nonce 11 \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 2000
 ```
@@ -832,7 +858,7 @@ this:
 {
     "general": {
         ...
-        "nonce": 5
+        "nonce": 11
     },
     "escrow": {
         ...
@@ -861,6 +887,80 @@ For example, if our node earns a reward of 0.007 tokens, 0.0035 tokens are added
 to the escrow pool (increasing the value of our escrow pool shares uniformly),
 and 0.0035 tokens are given to us (issuing us new shares as if we manually
 deposited them).
+
+::: tip
+
+It is also possible to set multiple commission rate steps and rate bound steps
+by passing the `--stake.commission_schedule.rates` and
+`--stake.commission_schedule.bounds` CLI flags multiple times.
+
+For example, setting multiple commission rate steps and rate bound steps with:
+
+```bash
+oasis-node stake account gen_amend_commission_schedule \
+  ...
+  --stake.commission_schedule.bounds 32/10000/50000 \
+  --stake.commission_schedule.bounds 64/10000/30000 \
+  --stake.commission_schedule.rates 32/50000 \
+  --stake.commission_schedule.rates 40/40000 \
+  --stake.commission_schedule.rates 48/30000 \
+  --stake.commission_schedule.rates 56/25000 \
+  --stake.commission_schedule.rates 64/20000 \
+  ...
+```
+
+would result in the following commission schedule when [checking a account's
+info][check our account's info]:
+
+```json
+{
+    "general": {
+        ...
+    },
+    "escrow": {
+        ...
+        "commission_schedule": {
+            "rates": [
+                {
+                    "start": 32,
+                    "rate": "50000"
+                },
+                {
+                    "start": 40,
+                    "rate": "40000"
+                },
+                {
+                    "start": 48,
+                    "rate": "30000"
+                },
+                {
+                    "start": 56,
+                    "rate": "25000"
+                },
+                {
+                    "start": 64,
+                    "rate": "20000"
+                }
+            ],
+            "bounds": [
+                {
+                    "start": 32,
+                    "rate_min": "10000",
+                    "rate_max": "50000"
+                },
+                {
+                    "start": 64,
+                    "rate_min": "10000",
+                    "rate_max": "30000"
+                }
+            ]
+        },
+        ...
+    }
+}
+```
+
+:::
 
 ::: tip
 To troubleshoot an amendment that's rejected, consult our [compendium of 23
