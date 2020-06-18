@@ -17,9 +17,9 @@ the Oasis Testnet, automate your node deployment, and more.
 ## Developer Tools
 
 - [Oasis API Server (by Simply VC)](https://github.com/SimplyVC/oasis_api_server)
-- [Rosetta Gateway API (by Oasis Labs)](https://github.com/oasislabs/oasis-core-rosetta-gateway)
+- [Rosetta Gateway (by Oasis Labs)](https://github.com/oasisprotocol/oasis-core-rosetta-gateway)
 
 ## Monitoring and Alerts
 
-- [Stats Tool (by Oasis Labs)](https://github.com/oasislabs/oasis-core/tree/master/go/extra/stats)
+- [Stats Tool (by Oasis Labs)](https://github.com/oasisprotocol/oasis-core/tree/master/go/extra/stats)
 - [Panic Monitoring Tool (by Simply VC](https://github.com/SimplyVC/panic_oasis)

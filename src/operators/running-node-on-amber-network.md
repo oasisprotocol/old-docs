@@ -370,7 +370,6 @@ tendermint:
       # WARNING: Use this carefully. Pruning blockchain state is resource intensive.
       # However, running with pruning disabled means you will eventually fill all
       # storage on your node.
-      # See https://github.com/oasislabs/oasis-core/issues/2432 for more details.
       #
       # This configuration would cause your node to retain state from only the
       # latest 86400 blocks:
@@ -397,7 +396,6 @@ tendermint:
 ```
 
 [Sentry Node]: ./sentry-node.md
-[Oasis Core #2432]: https://github.com/oasislabs/oasis-core/issues/2432
 
 #### Ensuring Proper Permissions
 

@@ -3,7 +3,7 @@
 ## Installing/Using oasis-node
 
 Any time the `oasis-node` binary is referenced, we are referring to the binary
-that is created from the [Oasis Core](https://github.com/oasislabs/oasis-core)
+that is created from the [Oasis Core](https://github.com/oasisprotocol/oasis-core)
 repository's `go/` path. This binary contains both the logic for running an
 Oasis node and also provides a CLI for handling registry and staking
 operations.
@@ -36,8 +36,8 @@ Make sure to use the version specified in the [Current Testnet Parameters][
 params].
 :::
 
-[core-build]: https://github.com/oasislabs/oasis-core#developing-and-building-the-system
-[`master` branch]: https://github.com/oasislabs/oasis-core/tree/master/
+[core-build]: https://github.com/oasisprotocol/oasis-core#developing-and-building-the-system
+[`master` branch]: https://github.com/oasisprotocol/oasis-core/tree/master/
 
 ### Using Docker image
 
