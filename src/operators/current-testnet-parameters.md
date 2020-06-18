@@ -11,7 +11,7 @@ Testnet.
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: warning WARNING
   This seed address may change at the time of deployment. Please follow along
-  the progress on the [#nodeoperators slack]
+  the progress on the [#nodeoperators] slack channel
   :::
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
@@ -34,9 +34,32 @@ Testnet.
 
 ### 2020-06-18 (Upcoming)
 
-The [Amber Network] starts at 2020-06-18T16:00:00Z. The genesis document will be
-posted here shortly!
+The [Amber Network] starts at 2020-06-18T16:00:00Z.
 
+#### Upgrade Procedure
+
+If you were on the quest no major changes configuration are required. However,
+we _may_ change the seed node address. Please stay posted on the
+[#nodeoperators] slack channel.
+
+1. Download and verify the genesis document published in the [2020-06-18 release].
+2. Stop your node.
+3. [Wipe Node State].
+4. Upgrade `oasis-node` to version [20.8].
+5. Start your node.
+
+For a more in-depth explanation, see [Handling Network Upgrades] guide.
+
+:::tip NOTE
+Two `oasis-core` releases have occurred since the end of The Quest. If you are
+doing anything that isn't part of the normal documentation and you see it
+failing, please check the [20.8 Changelog] and [20.7 Changelog].
+:::
+
+[2020-06-18 release]: https://github.com/oasisprotocol/public-testnet-artifacts/releases/tag/2020-06-18
+[20.8]: https://github.com/oasisprotocol/oasis-core/releases/tag/v20.8
+[20.8 Changelog]: https://github.com/oasisprotocol/oasis-core/blob/v20.8/CHANGELOG.md#208-2020-06-16
+[20.7 Changelog]: https://github.com/oasisprotocol/oasis-core/blob/v20.8/CHANGELOG.md#207-2020-06-08
 [Amber Network]: ./amber-network.md
 
 ### 2020-05-11
@@ -249,5 +272,6 @@ deployment.
 
 This is the initial deployment.
 
+[#nodeoperators]: https://oasiscommunity.slack.com/archives/CMUSJCRFA
 [Wipe Node State]: ./maintenance/wiping-node-state.md#state-wipe-and-keep-node-identity
 [Handling Network Upgrades]: ./maintenance/handling-network-upgrades.md
