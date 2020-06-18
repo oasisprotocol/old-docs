@@ -8,11 +8,7 @@ Testnet.
   * sha1: `f4cd7f02becadddd70c9e954d2a90dde7a924ef8`
   * sha256: `bfe72b66b8a2acf82e855978c30fe40372d23e1efb3648fe2aba99868be1ad2a`
 * Oasis Seed Node Address:
-  * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
-  ::: warning WARNING
-  This seed address may change at the time of deployment. Please follow along
-  the progress on the [#nodeoperators] slack channel
-  :::
+  * `9FBCA3364885EBC82BF5BE8156BB4DF0A563BBF6@34.86.145.181:26656`
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
@@ -38,15 +34,13 @@ The [Amber Network] starts at 2020-06-18T16:00:00Z.
 
 #### Upgrade Procedure
 
-If you were on the Quest, no major changes configuration are required. However,
-we _may_ change the seed node address. Please stay posted on the
-[#nodeoperators] slack channel.
-
 1. Download and verify the genesis document published in the [2020-06-18 release].
 2. Stop your node.
 3. [Wipe Node State].
-4. Upgrade `oasis-node` to version [20.8].
-5. Start your node.
+4. Update your `/serverdir/etc/config.yml` with the new seed node address:
+   `9FBCA3364885EBC82BF5BE8156BB4DF0A563BBF6@34.86.145.181:26656`
+5. Upgrade `oasis-node` to version [20.8].
+6. Start your node.
 
 For a more in-depth explanation, see [Handling Network Upgrades] guide.
 
