@@ -38,7 +38,7 @@ The [Amber Network] starts at 2020-06-18T16:00:00Z.
 
 #### Upgrade Procedure
 
-If you were on the quest no major changes configuration are required. However,
+If you were on the Quest, no major changes configuration are required. However,
 we _may_ change the seed node address. Please stay posted on the
 [#nodeoperators] slack channel.
 
