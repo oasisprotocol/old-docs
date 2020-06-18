@@ -38,13 +38,3 @@ params].
 
 [core-build]: https://github.com/oasisprotocol/oasis-core#developing-and-building-the-system
 [`master` branch]: https://github.com/oasisprotocol/oasis-core/tree/master/
-
-### Using Docker image
-
-::: warning DEPRECATED
-We no longer recommend or support using Oasis-provided Docker images.
-:::
-For those who wish to use the Oasis-provided Docker image, the `oasis-node`
-binary can be found inside the [oasis-node][docker] Docker image.
-
-[docker]: https://hub.docker.com/r/oasislabs/oasis-node

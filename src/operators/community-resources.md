@@ -1,7 +1,8 @@
 # Community-Made Resources
 
 Below are a number of community-built tools you can use to monitor
-the Oasis Testnet, automate your node deployment, and more.
+the Oasis Testnet, automate your node deployment, and more. For more information
+on building your own integration, check out the [Oasis Core developer docs](https://github.com/oasisprotocol/oasis-core/blob/master/docs/index.md).
 
 ## Block Explorers & Validator Leaderboards
 
