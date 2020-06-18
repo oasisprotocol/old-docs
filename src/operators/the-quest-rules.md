@@ -107,7 +107,7 @@ to be useful for anyone still interested in the Oasis Network, the Amber Network
 * [Incentives proposal][incentives-proposal]
 * [Slack channel][slack]
 * Check out the top open sourced repos including [Oasis
-  Core](https://github.com/oasislabs/oasis-core).
+  Core](https://github.com/oasisprotocol/oasis-core).
 * [Eligibility rules][eligibility-rules]
 * [Sign-up form][sign-up-form]
 * [Newsletter][mailing-list]

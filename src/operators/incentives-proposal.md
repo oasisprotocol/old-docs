@@ -190,5 +190,5 @@ If you’re new to Oasis, here are some resources you may find useful:
 * [Oasis Foundation Website](https://oasisprotocol.org)
 * [Running a Node on the Amber Network](https://docs.oasis.dev/operators/running-node-on-amber-network.html)
 * [Operator Documentation](https://docs.oasis.dev/operators/overview.html)
-* [GitHub](https://www.github.com/oasislabs)
+* [GitHub](https://www.github.com/oasisprotocol)
 * [Blog](https://medium.com/oasis-protocol-project)

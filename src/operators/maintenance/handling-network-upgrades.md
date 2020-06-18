@@ -209,4 +209,4 @@ After you're comfortable with your node deployment, you can clean up the
 [Deployment Change Log]: ./../current-testnet-parameters.html#deployment-change-log
 [Current Testnet Parameters]: ./../current-testnet-parameters.md
 [state-wipe-keep-id]: ./wiping-node-state.md#state-wipe-and-keep-node-identity
-[Oasis Core #2757]: https://github.com/oasislabs/oasis-core/issues/2757
+[Oasis Core #2757]: https://github.com/oasisprotocol/oasis-core/issues/2757

@@ -343,7 +343,7 @@ validators.
 For more details, see [Oasis Core #2526].
 :::
 
-[Oasis Core #2526]: https://github.com/oasislabs/oasis-core/issues/2526
+[Oasis Core #2526]: https://github.com/oasisprotocol/oasis-core/issues/2526
 
 ## Example transactions
 
@@ -873,8 +873,8 @@ common ways for a commission schedule amendment to fail][compendium].
 [Signer flags]: #signer-flags
 [Checking Your Account nonce]: maintenance/checking-account-nonce.md
 [flags-in-env-var]: #storing-base-and-signer-flags-in-an-environment-variable
-[Oasis Core #2334]: https://github.com/oasislabs/oasis-core/issues/2334
+[Oasis Core #2334]: https://github.com/oasisprotocol/oasis-core/issues/2334
 [Common transaction flags]: #common-transaction-flags
 [Account info]: #account-info
 [check our account's info]: #querying-account-info
-[compendium]: https://github.com/oasislabs/oasis-core/blob/0dee03d75b3e8cfb36293fbf8ecaaec6f45dd3a5/go/staking/api/commission_test.go#L61-L610
+[compendium]: https://github.com/oasisprotocol/oasis-core/blob/0dee03d75b3e8cfb36293fbf8ecaaec6f45dd3a5/go/staking/api/commission_test.go#L61-L610
