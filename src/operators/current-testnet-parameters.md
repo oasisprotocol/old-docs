@@ -4,7 +4,9 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
-* Genesis Document: TBA
+* [Genesis Document](https://github.com/oasisprotocol/public-testnet-artifacts/releases/download/2020-06-18/genesis.json)
+  * sha1: `f4cd7f02becadddd70c9e954d2a90dde7a924ef8`
+  * sha256: `bfe72b66b8a2acf82e855978c30fe40372d23e1efb3648fe2aba99868be1ad2a`
 * Oasis Seed Node Address:
   * `D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656`
   ::: tip NOTE
