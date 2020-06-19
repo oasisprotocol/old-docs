@@ -87,7 +87,7 @@ the following section
   ```
 
   on the validator node. Note that the above command is only available in
-   `oasis-core` from version 20.8.1 onward.
+   `oasis-node` from version 20.8.1 onward.
 
 [params]: ./current-testnet-parameters.md
 
@@ -156,7 +156,11 @@ tendermint:
     listen_address: tcp://0.0.0.0:26656
     external_address: tcp://{{ external_address }}:26656
 
-  seeds: "{{ seed_node_address }}"
+  # List of seed nodes to connect to.
+  # NOTE: You can add additional seed nodes to this list if you want.
+  p2p:
+    seed:
+      - "{{ seed_node_address }}"
 
   sentry:
     upstream_address:
@@ -275,7 +279,7 @@ the following section
    ```
 
    on the sentry node. Note that the above command is only available in
-   `oasis-core` from version 20.8.1 onward.
+   `oasis-node` from version 20.8.1 onward.
 
 - <code v-pre>{{ sentry_node_tendermint_id }}</code>: This is the Tendermint ID
   (address) of the sentry node that will be configured as a Persistent Peer.
