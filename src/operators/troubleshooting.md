@@ -24,76 +24,6 @@ Before you begin troubleshooting we suggest you check all of the following:
   * Is your node synced? If not, the transaction will fail to run properly
 :::
 
-## `oasis-node` Binary
-
-### Building from Source: Go Errors
-
-First, make sure you have go version >=go1.13.0 and protocol buffers installed
-(use `brew install protobuf` on Mac).
-
-Error message example:
-
-```text
-PWD: /home/oasis/oasis-core/go/grpc
-CMD: [protoc -I ./ --go_out=plugins=grpc,paths=source_relative:. common/common.proto]
-protoc-gen-go: program not found or is not executable
---go_out: protoc-gen-go: Plugin failed with status code 1.
-FAILED: exit status 1
-exit status 1
-grpc/generate.go:3: running "go": exit status 1
-```
-
-Resolve this error by ensuring you have `protoc-gen-go` installed and adding
-`$GOPATH/bin` to your path:
-
-Check installation:
-
-```bash
-which protoc-gen-go
-```
-
-Install:
-
-```bash
-go get github.com/golang/protobuf/protoc-gen-go
-```
-
-Add to your path variable:
-
-```bash
-export PATH=$PATH:$GOPATH/bin
-```
-
-If you don't see a helpful error message while building, scroll up to see if
-any additional information was provided.
-
-### Building from Source: Rust Errors
-
-Error message example:
-
-```text
-error[E0412]: cannot find type `ucontext_t` in this scope
-```
-
-Error messages from `rustc` can be ignored; all you need from `oasis-core` are
-the `go` components. In general, avoid trying to build the rust components.
-
-You can use the following command to stick to go:
-
-```bash
-make go
-```
-
-### Alternative: Docker Binary
-
-If you're having lots of trouble building from source, you can try pulling the
-Docker image, then copy the contained binary to your local machine (only works
-on Linux) with the following command:
-
-```bash
-docker cp oasis_node:/oasis/bin/oasis_node
-```
-
 ## Running a Node
 
 ### Invalid Permissions
@@ -193,17 +123,3 @@ The docs are now updated to show that you need to add
 `--stake.transaction.fee.gas` and `--stake.transaction.fee.amount` flags when
 generating your transaction. Note that if you're re-generating a transaction,
 you will need to increment the `--nonce` flag.
-
-### SSH Tunnel
-
-Note that this portion may not be relevant in future versions.
-
-Error message example:
-
-```text
-bind: Cannot assign requested address
-```
-
-This error was encountered while trying to create ssh tunnel from localhost's
-Docker container, and was fixed by making the `oasis-node` binary from source
-instead of using the Docker image.
