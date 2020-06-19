@@ -2,7 +2,10 @@
 
 Below are a number of community-built tools you can use to monitor
 the Oasis Testnet, automate your node deployment, and more. For more information
-on building your own integration, check out the [Oasis Core developer docs](https://github.com/oasisprotocol/oasis-core/blob/master/docs/index.md).
+on building your own integration, check out the [Oasis Core Developer Docs].
+
+[Oasis Core Developer Docs]:
+  https://github.com/oasisprotocol/oasis-core/blob/master/docs/index.md
 
 ## Block Explorers & Validator Leaderboards
 
@@ -18,9 +21,9 @@ on building your own integration, check out the [Oasis Core developer docs](http
 ## Developer Tools
 
 - [Oasis API Server (by Simply VC)](https://github.com/SimplyVC/oasis_api_server)
-- [Rosetta Gateway (by Oasis Labs)](https://github.com/oasisprotocol/oasis-core-rosetta-gateway)
+- [Rosetta Gateway (by Oasis Protocol Foundation)](https://github.com/oasisprotocol/oasis-core-rosetta-gateway)
 
 ## Monitoring and Alerts
 
-- [Stats Tool (by Oasis Labs)](https://github.com/oasisprotocol/oasis-core/tree/master/go/extra/stats)
-- [Panic Monitoring Tool (by Simply VC](https://github.com/SimplyVC/panic_oasis)
+- [Stats Tool (by Oasis Protocol Foundation)](https://github.com/oasisprotocol/oasis-core/tree/master/go/extra/stats)
+- [Panic Monitoring Tool (by Simply VC)](https://github.com/SimplyVC/panic_oasis)
