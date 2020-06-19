@@ -108,6 +108,10 @@ This will output the staking account address for the given entity ID:
 oasis1qrvsa8ukfw3p6kw2vcs0fk9t59mceqq7fyttwqgx
 ```
 
+::: tip NOTE
+You can find your entity's ID in the `id` field of the `entity.json` file.
+:::
+
 [Bech32 encoding]: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki#bech32
 
 ## Account info
