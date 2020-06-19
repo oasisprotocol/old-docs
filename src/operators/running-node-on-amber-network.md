@@ -367,16 +367,10 @@ consensus:
 tendermint:
   abci:
     prune:
-      # WARNING: Use this carefully. Pruning blockchain state is resource intensive.
-      # However, running with pruning disabled means you will eventually fill all
-      # storage on your node.
-      #
-      # This configuration would cause your node to retain state from only the
-      # latest 86400 blocks:
-      # strategy: keep_n
-      # num_kept: 86400
-      #
-      strategy: none
+      strategy: keep_n
+      # Keep ~7 days of data since block production is ~1 block every 6 seconds.
+      # (7*24*3600/6 = 100800)
+      num_kept: 100800
   core:
     listen_address: tcp://0.0.0.0:26656
 

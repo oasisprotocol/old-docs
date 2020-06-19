@@ -152,6 +152,12 @@ worker:
 
 # Tendermint backend configuration.
 tendermint:
+  abci:
+    prune:
+      strategy: keep_n
+      # Keep ~1 hour of data since block production is ~1 block every 6 seconds.
+      # (3600/6 = 600)
+      num_kept: 600
   core:
     listen_address: tcp://0.0.0.0:26656
     external_address: tcp://{{ external_address }}:26656
@@ -356,7 +362,9 @@ tendermint:
   abci:
     prune:
       strategy: keep_n
-      num_kept: 86400
+      # Keep ~7 days of data since block production is ~1 block every 6 seconds.
+      # (7*24*3600/6 = 100800)
+      num_kept: 100800
   core:
     listen_address: tcp://0.0.0.0:26656
   p2p:
