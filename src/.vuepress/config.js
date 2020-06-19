@@ -66,7 +66,6 @@ module.exports = {
           ['/operators/sentry-node', 'Sentry Node Architecture'],
           ['/operators/incentives-proposal', 'Network Incentives Proposal'],
           ['/operators/the-quest-rules', 'The Quest Rules'],
-          ['/operators/community-resources', 'Community-Made Resources'],
           ['/operators/troubleshooting', 'Troubleshooting Guide'],
           {
             title: 'Maintenance Guides',
@@ -93,6 +92,10 @@ module.exports = {
         title: 'Wallet Support',
         collapsable: true,
         children: [['/hsm/ledger', 'Ledger']],
+      },
+      {
+        title: 'Community Tools',
+        path: '/operators/community-resources',
       },
       {
         title: 'Oasis Core Developer Docs',
