@@ -100,16 +100,16 @@ by running:
 oasis-node stake account gen_transfer \
   $TX_FLAGS \
   --stake.amount <AMOUNT-TO-TRANSFER> \
-  --stake.transfer.destination <DESTINATION-ACCOUNT-ID> \
+  --stake.transfer.destination <DESTINATION-ACCOUNT-ADDRESS> \
   --transaction.file tx_transfer.json \
   --transaction.nonce 1 \
   --transaction.fee.gas 1000 \
   --transaction.fee.amount 2000
 ```
 
-where `<AMOUNT-TO-TRANSFER>` and `<DESTINATION-ACCOUNT-ID>` are replaced with
-the amount of tokens to transfer and the id of the transfer's destination
-account, respectively.
+where `<AMOUNT-TO-TRANSFER>` and `<DESTINATION-ACCOUNT-ADDRESS>` are replaced
+with the amount of tokens to transfer and the address of the transfer's
+destination account, respectively.
 
 ::: tip NOTE
 For a more detailed explanation of the transaction flags that were set, see
