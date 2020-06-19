@@ -542,11 +542,10 @@ environment variables:
   transaction.
 
   For this guide, we will use `/localhostdir/signed-escrow.tx`.
-* `ACCOUNT_ID`: Entity's ID (public key).
+* `ACCOUNT_ADDRESS`: Your staking account address.
 
-  ::: tip NOTE
-  You can find your Entity's ID in the `id` field of the `entity.json` file.
-  :::
+  To obtain your staking account address from your Entity's ID, see
+  [Obtaining account address from entity's ID].
 
 Then execute the following command:
 
@@ -555,11 +554,11 @@ oasis-node stake account gen_escrow \
   --genesis.file $GENESIS_FILE_PATH \
   --signer.backend file \
   --signer.dir $ENTITY_DIR_PATH \
-  --stake.escrow.account $ACCOUNT_ID \
+  --stake.escrow.account $ACCOUNT_ADDRESS \
   --stake.amount 200000000000 \
   --transaction.file $OUTPUT_TX_FILE_PATH \
-  --transaction.fee.gas 1000 \
-  --transaction.fee.amount 1 \
+  --transaction.fee.gas 2269 \
+  --transaction.fee.amount 2000 \
   --transaction.nonce 0
 ```
 
@@ -567,7 +566,13 @@ oasis-node stake account gen_escrow \
 The option `--stake.amount` looks like a very large number, but this is
 actually just an equivalent to 200 tokens on the Amber Network as each unit
 value used to track the account balance is 1x10^-9 tokens.
+
+The `--transactions.fee.gas` and `--transaction.fee.amount` options depend on
+the network configuration, see [Stake Management] for details.
 :::
+
+[Obtaining account address from entity's ID]:
+  stake-management.md#obtaining-account-address-from-entity-s-id
 
 ### Generating Entity Registration Transaction
 
@@ -596,10 +601,17 @@ oasis-node registry entity gen_register \
   --signer.backend file \
   --signer.dir $ENTITY_DIR_PATH \
   --transaction.file $OUTPUT_REGISTER_TX_FILE_PATH \
-  --transaction.fee.gas 1000 \
-  --transaction.fee.amount 1 \
+  --transaction.fee.gas 2460 \
+  --transaction.fee.amount 1000 \
   --transaction.nonce 1
 ```
+
+::: tip NOTE
+The `--transactions.fee.gas` and `--transaction.fee.amount` options depend on
+the network configuration, see [Stake Management] for details.
+:::
+
+[Stake Management]: stake-management.html#obtaining-transactions-gas-costs
 
 ### Submitting Your Transactions on the `server`
 
