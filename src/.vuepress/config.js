@@ -42,6 +42,7 @@ module.exports = {
           ['/operators/architecture-overview', 'Network Architecture Overview'],
           ['/operators/prerequisites', 'Prerequisites Guide'],
           ['/operators/amber-network', 'Amber Network'],
+          ['/operators/amber/communitynode.md', 'Community Node Program'],
           [
             '/operators/hardware-recommendations',
             'Node Hardware Recommendations',
