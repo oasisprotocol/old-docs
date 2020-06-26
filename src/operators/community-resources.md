@@ -11,6 +11,7 @@ on building your own integration, check out the [Oasis Core Developer Docs].
 
 - [Oasisscan (by bitcat)](https://oasisscan.com/)
 - [Oasis Monitor (by Everstake)](https://oasismonitor.com/)
+- [Oasis Hubble (by Figment Networks)](https://hubble.figment.network/oasis)
 - [Oasis.Fish (by Stakefish)](https://oasis.fish/leaderboard/)
 - [Oasis Smartstake (by Smartstake)](https://oasis.smartstake.io/)
 
@@ -20,8 +21,10 @@ on building your own integration, check out the [Oasis Core Developer Docs].
 
 ## Developer Tools
 
-- [Oasis API Server (by Simply VC)](https://github.com/SimplyVC/oasis_api_server)
 - [Rosetta Gateway (by Oasis Protocol Foundation)](https://github.com/oasisprotocol/oasis-core-rosetta-gateway)
+- [Oasis API Server (by Simply VC)](https://github.com/SimplyVC/oasis_api_server)
+- [Oasis RPC Proxy (by Figment Networks)](https://github.com/figment-networks/oasis-rpc-proxy)
+- [Oasis Indexer (by Figment Networks)](https://github.com/figment-networks/oasishub-indexer)
 
 ## Monitoring and Alerts
 
