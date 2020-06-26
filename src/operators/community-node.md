@@ -50,3 +50,12 @@ and make our documentation, website, community support, swag options better
 * Join our [slack channel](www.oasisprotocol.org/slack)
 * Follow the network via one of the many community-built
 [block explorers](https://docs.oasis.dev/operators/community-resources.html#block-explorers-validator-leaderboards)
+
+::: warning DISCLAIMER
+The Amber Network and all associated activities and rewards including
+the Community Node Program are not available to all participants and
+eligibility requirements apply.For details, see the Program Terms
+available [here](https://docsend.com/view/zv5cfia). This article does
+not guarantee anyone the right to participate in the Amber Network
+or to receive rewards.
+:::
