@@ -33,29 +33,29 @@ A complete proposal of staking, delegation and the incentives that align to both
 on the consensus layer can be found
 [here](https://docs.oasis.dev/operators/incentives-proposal.html).
 
-## Oasis Network Parallel-Runtimes (ParaTimes)
+## Oasis Network Parallel Runtimes (Paratimes)
 
 In addition to a decentralized Consensus Layer, Oasis will also allow for anyone
-to add their own runtime to the Network. The system was developed this way in
+to add their own parallelizable runtime, or paratime, to the Network. The system was developed this way in
 order to achieve the highest degree of decentralization, while also separating
 consensus from execution — improving network throughput and scalability. In
 addition, supporting parallel runtimes allows for specialized support for
-different workloads. For example, confidential runtimes could mandate that nodes
-to use trusted execution environments, where as a non-confidential runtime would
+different workloads. For example, confidential paratimes could mandate that nodes
+to use trusted execution environments, where as a non-confidential paratime would
 have less restrictive hardware requirements.
 
 In this model, any runtime developer can use the open-sourced [Oasis
 Runtime](https://github.com/oasislabs/oasis-runtime) or any other runtime they
 choose to use. The privacy and confidentiality technologies baked into the Oasis
 Runtime allow it to support confidential smart contract transactions and the use
-to TEEs including Intel SGX and others, but can be used for non-confidential
-smart contracts as well.
+of trusted execution environmeents (TEEs) including Intel SGX and others, 
+but it can be used for non-confidential smart contracts as well.
 
-Key highlights of the Oasis Network ParaTimes:
+Key highlights of the Oasis Network Paratimes:
 
 * **Who can manage a runtime:** Anyone. We welcome you to use the Oasis Runtime
-  code as a base, copy, or add your own existing runtime.
-* **How can validators participate in these runtime:** Runtime developers will
+  code as a base, copy, or add your own existing paratime.
+* **How can validators participate in these runtimes:** Runtime developers will
   be able to specify conditions on the nodes to run compute for their runtime.
   Node operators can make themselves available to runtimes, or, if you’re a
   runtime developer looking for operators, you can find a list of potential
@@ -67,9 +67,9 @@ Key highlights of the Oasis Network ParaTimes:
   on the network; and (2) as a drawdown mechanism to pay for consensus-layer
   transactions.
 
-## An Example of ParaTime: Oasis Labs’ Data Sovereignty Runtime
+## A Paratime Example: Oasis Labs’ Data Sovereignty Runtime
 
-While anyone can build a runtime and add it to the Oasis consensus layer at any
+While anyone can build a paratime and add it to the Oasis consensus layer at any
 time, we also expect that there will be a few up and running at the time of
 Mainnet launch as well.
 
@@ -83,8 +83,7 @@ techniques while the blockchain technology is abstracted away.
 
 Early use cases of this in action include developers in the genomics, hospital
 management, credit scoring, and financial services industries that Oasis Labs
-expects to provide organic transaction volume to the Oasis Network. No commit
-comments for this range
+expects to provide organic transaction volume to the Oasis Network. 
 
 ## Networking Protocols
 
@@ -128,11 +127,13 @@ identification. See [Entities and Key Management] for further information.
 ### Committee
 
 A Committee is a set of Nodes that are participating in the same service layer
-of the Oasis Network. Committees are described in more detail in the [Modular
-Architecture] section.
+of the Oasis Network. Our consensus model is described in more detail in the [Decentralized Consensus Layer] section.
 
 [papers]: https://oasisprotocol.org/researchpapers
 [Entities and Key Management]: #entities-and-key-management
-[Modular Architecture]: #modular-architecture
+<!-- There is currently no Modular Architecture section, so we should either write that or remove the link. 
+We could also add the Modular Architecture section under the Decentralized Consensus Layer section -->
+[Modular Architecture]: #modular-architecture 
+[Decentralized Consensus Layer]: #decentralized-consensus-layer
 [Quick Start Guide]: ./quick-start.md
 [Intel SGX]: https://software.intel.com/en-us/sgx
