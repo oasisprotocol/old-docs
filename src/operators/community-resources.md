@@ -15,6 +15,10 @@ on building your own integration, check out the [Oasis Core Developer Docs].
 - [Oasis.Fish (by Stakefish)](https://oasis.fish/leaderboard/)
 - [Oasis Smartstake (by Smartstake)](https://oasis.smartstake.io/)
 
+## Staking Dashboard
+
+- [Anthem (by Chorus One)](https://anthem.chorus.one/login)
+
 ## One-touch Node Deployments
 
 - [Ankr one-touch deploy (by Ankr)](https://app.ankr.com/apps/deploy?name=oasis-validator&repository=stable&type=chart&version=20.6&appversion=20.6)
