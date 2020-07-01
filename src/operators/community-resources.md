@@ -11,7 +11,7 @@ on building your own integration, check out the [Oasis Core Developer Docs].
 
 - [Oasisscan (by bitcat)](https://oasisscan.com/)
 - [Oasis Monitor (by Everstake)](https://oasismonitor.com/)
-- [Oasis Hubble (by Figment Networks)](https://hubble.figment.network/oasis)
+- [Oasis Hubble (by Figment Networks)](https://hubble.figment.network/oasis/chains/amber)
 - [Oasis.Fish (by Stakefish)](https://oasis.fish/leaderboard/)
 - [Oasis Smartstake (by Smartstake)](https://oasis.smartstake.io/)
 
