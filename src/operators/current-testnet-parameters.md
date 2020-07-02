@@ -13,7 +13,7 @@ Testnet.
   Feel free to use other seed nodes than the one provided here.
   :::
 * [Oasis Core] version:
-  * [20.8]
+  * [20.8.2]
   ::: tip NOTE
   The `oasis-node` binary is part of the Oasis Core release.
   :::
@@ -28,7 +28,22 @@ Testnet.
 
 ## Deployment Change Log
 
-### 2020-06-18 (Upcoming)
+### 2020-07-02 (Latest)
+
+Patch upgrade. This update addresses a security vulnerability in Tendermint
+[described here](https://github.com/tendermint/tendermint/blob/master/CHANGELOG.md#v0336).
+
+#### Upgrade Procedure
+
+**DO NOT WIPE STATE. The genesis is still the [2020-06-18] genesis document.**
+
+1. Shutdown your `oasis-node` process
+2. Upgrade your `oasis-node` to version [20.8.2]
+3. Start your node
+
+[20.8.2]: https://github.com/oasisprotocol/oasis-core/releases/tag/v20.8.2
+
+### 2020-06-18
 
 The [Amber Network] starts at 2020-06-18T16:00:00Z.
 
