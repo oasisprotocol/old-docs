@@ -30,8 +30,8 @@ Testnet.
 
 ### 2020-07-02 (Latest)
 
-Patch upgrade. There is a critical vulnerability in tendermint [described
-here](https://github.com/tendermint/tendermint/blob/master/CHANGELOG.md#v0336).
+Patch upgrade. This update addresses a security vulnerability in Tendermint
+[described here](https://github.com/tendermint/tendermint/blob/master/CHANGELOG.md#v0336).
 
 #### Upgrade Procedure
 
