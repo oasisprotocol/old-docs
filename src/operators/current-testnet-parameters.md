@@ -30,8 +30,9 @@ Testnet.
 
 ### 2020-07-02 (Latest)
 
-Patch upgrade. This update addresses a security vulnerability in Tendermint
-[described here](https://github.com/tendermint/tendermint/blob/master/CHANGELOG.md#v0336).
+Patch upgrade. This update applies fixes for [CVE-2020-15091] in Tendermint.
+
+[CVE-2020-15091]: https://github.com/tendermint/tendermint/security/advisories/GHSA-6jqj-f58p-mrw3
 
 #### Upgrade Procedure
 
