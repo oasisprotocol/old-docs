@@ -36,7 +36,8 @@ Patch upgrade. This update applies fixes for [CVE-2020-15091] in Tendermint.
 
 #### Upgrade Procedure
 
-**DO NOT WIPE STATE. The genesis is still the [2020-06-18] genesis document.**
+**DO NOT WIPE STATE. The genesis is still the [2020-06-18 release] genesis
+document.**
 
 1. Shutdown your `oasis-node` process
 2. Upgrade your `oasis-node` to version [20.8.2]
