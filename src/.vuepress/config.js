@@ -105,7 +105,7 @@ module.exports = {
       },
     ],
     repo: 'oasisprotocol',
-    docsRepo: 'oasislabs/docs',
+    docsRepo: 'oasisprotocol/docs',
     docsDir: 'src',
     docsBranch: 'master',
     editLinks: true,

@@ -97,9 +97,9 @@ failing, please check the [20.8 Changelog] and [20.7 Changelog].
 
 For a more in-depth explanation, see [Handling Network Upgrades] guide.
 
-[2020-05-11 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-05-11
-[20.6]: https://github.com/oasislabs/oasis-core/releases/tag/v20.6
-[20.6 Changelog]: https://github.com/oasislabs/oasis-core/blob/v20.6/CHANGELOG.md#206-2020-05-07
+[2020-05-11 release]: https://github.com/oasisprotocol/public-testnet-artifacts/releases/tag/2020-05-11
+[20.6]: https://github.com/oasisprotocol/oasis-core/releases/tag/v20.6
+[20.6 Changelog]: https://github.com/oasisprotocol/oasis-core/blob/v20.6/CHANGELOG.md#206-2020-05-07
 
 ### 2020-04-16
 
@@ -125,8 +125,8 @@ For a more in-depth explanation, see [Handling Network Upgrades] guide.
 
 For a more in-depth explanation, see [Handling Network Upgrades] guide.
 
-[2020-04-16 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-04-16
-[20.5]: https://github.com/oasislabs/oasis-core/releases/tag/v20.5
+[2020-04-16 release]: https://github.com/oasisprotocol/public-testnet-artifacts/releases/tag/2020-04-16
+[20.5]: https://github.com/oasisprotocol/oasis-core/releases/tag/v20.5
 
 ### 2020-03-05
 
@@ -152,8 +152,8 @@ For a more in-depth explanation, see [Handling Network Upgrades] guide.
 
 For a more in-depth explanation, see [Handling Network Upgrades] guide.
 
-[2020-03-05 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-03-05
-[20.4.1]: https://github.com/oasislabs/oasis-core/releases/tag/v20.4.1
+[2020-03-05 release]: https://github.com/oasisprotocol/public-testnet-artifacts/releases/tag/2020-03-05
+[20.4.1]: https://github.com/oasisprotocol/oasis-core/releases/tag/v20.4.1
 
 ### 2020-02-11
 
@@ -182,8 +182,8 @@ For a more in-depth explanation, see [Handling Network Upgrades] guide.
 7. Upgrade `oasis-node` to version [20.3.1].
 8. Start your node.
 
-[2020-02-11 release]: https://github.com/oasislabs/public-testnet-artifacts/releases/tag/2020-02-11
-[20.3.1]: https://github.com/oasislabs/oasis-core/releases/tag/v20.3.1
+[2020-02-11 release]: https://github.com/oasisprotocol/public-testnet-artifacts/releases/tag/2020-02-11
+[20.3.1]: https://github.com/oasisprotocol/oasis-core/releases/tag/v20.3.1
 
 #### `/serverdir/etc/config.yml` Required Changes
 

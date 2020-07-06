@@ -45,7 +45,7 @@ to use trusted execution environments, where as a non-confidential runtime would
 have less restrictive hardware requirements.
 
 In this model, any runtime developer can use the open-sourced [Oasis
-Runtime](https://github.com/oasislabs/oasis-runtime) or any other runtime they
+Eth/WASI Runtime] or any other runtime they
 choose to use. The privacy and confidentiality technologies baked into the Oasis
 Runtime allow it to support confidential smart contract transactions and the use
 to TEEs including Intel SGX and others, but can be used for non-confidential
@@ -59,13 +59,14 @@ Key highlights of the Oasis Network ParaTimes:
   be able to specify conditions on the nodes to run compute for their runtime.
   Node operators can make themselves available to runtimes, or, if you’re a
   runtime developer looking for operators, you can find a list of potential
-  partners on the [Node Operator
-  Leaderboards](https://github.com/oasislabs/oasis-runtime) as a way to identify
+  partners on the Node Operator Leaderboards as a way to identify
   potential partners.
 * **Paying for transactions:** In order to pay for consensus layer transactions,
   runtime developers will need to provide a deposit used (1) to reserve a spot
   on the network; and (2) as a drawdown mechanism to pay for consensus-layer
   transactions.
+
+[Oasis Eth/WASI Runtime]: https://github.com/oasislabs/oasis-ethwasi-runtime
 
 ## An Example of ParaTime: Oasis Labs’ Data Sovereignty Runtime
 
