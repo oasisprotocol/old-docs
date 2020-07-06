@@ -36,9 +36,9 @@ jobs:
 
       - name: Update docs
         run: |
-          git config --global user.name "nhynes"
-          git config --global user.email "nhynes@oasislabs.com"
-          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/oasislabs/docs.git --branch gh-pages --depth 1
+          git config --global user.name "Oasis Protocol Bot"
+          git config --global user.email "jernej+bot@oasisprotocol.org"
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/oasisprotocol/docs.git --branch gh-pages --depth 1
           rm -rf docs/*
           mv rendered-docs/rendered-docs.tar.gz docs/
           cd docs
@@ -54,4 +54,4 @@ jobs:
             -H "Authorization: token ${{ secrets.HTTP_API_TOKEN }}" \
             -H "Accept: application/vnd.github.mister-fantastic-preview+json" \
             -X POST \
-            "https://api.github.com/repos/oasislabs/docs/pages/builds"
+            "https://api.github.com/repos/oasisprotocol/docs/pages/builds"

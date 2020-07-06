@@ -23,7 +23,7 @@ _Note that following network launch, all changes to the protocol will be
 determined by the community based on the consensus mechanism of the Oasis network._
 
 [Slack]: https://oasisprotocol.org/slack
-[gitHub-docs]: https://github.com/oasislabs/docs
+[gitHub-docs]: https://github.com/oasisprotocol/docs
 
 ## Summary
 
