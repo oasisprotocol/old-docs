@@ -1,6 +1,6 @@
 # Overview
 
-The internet is an amazing platform for innovation, creativity, and free expression.  And yet, its empowering design elements, like the end-to-end principle and global interoperability, have yet to be unleashed in truly transformative ways.  
+The Internet is an amazing platform for innovation, creativity, and free expression. And yet despite its empowering design elements, the Internet has left individual’s with little control or ownership over personal data.
 
 We believe in building new technology that can give us a better Internet experience. One that transforms “users” into edge clients, and enables them to take back control of their data, and their digital experiences.  One that fully respects individual privacy and autonomy, while still supporting amazing apps and services.
 
