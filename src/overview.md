@@ -1,22 +1,39 @@
 # Overview
 
-The Internet is an amazing platform for innovation, creativity, and free expression. And yet despite its empowering design elements, the Internet has left individual’s with little control or ownership over personal data.
-
-We believe in building new technology that can give us a better Internet experience. One that transforms “users” into edge clients, and enables them to take back control of their data, and their digital experiences.  One that fully respects individual privacy and autonomy, while still supporting amazing apps and services.
-
 ## What is the Oasis Network?
 
-The Oasis Network is a proof-of-stake privacy-first, decentralized computational network. 
+The Oasis Network is a privacy-first, decentralized computational
+network.
 
-The Network is designed to overlay the Internet and give users back control of their data, while supporting new privacy-first applications and use-cases. In order to do this, the Oasis Network is designed to provide four critical properties: 
-* Confidentiality & integrity guarantees of data in storage, transit and usage
-* Auditability of state through a decentralized network
-* Versatility of system architecture to adapt and support the full breadth of use-cases on the internet	
-* Utility and performance required to support real-world work loads
+The Oasis Network separates consensus services from computation,
+making the network highly adaptable while providing top-notch performance.
+This unique design has two major core components, the Consensus Layer and
+the ParaTime Layer.
 
-The Oasis Network achieves these four properties through a unique design that separates consensus from computation, while providing a built-in interface for privacy-preserving computation — we call these two components the Consensus layer and the ParaTime layer. Unlike other blockchains, the Oasis Network is unique in its ability to support multiple, parallel runtimes — with the Consensus Layer acting as a hub and decentralized ledger for all runtimes. This structure allows the network to remain incredibly nimble and support specialized computation needs, while still providing strong integrity of actions and a distributed, immutable ledger. 
+* The Consensus Layer: The Consensus Layer is a decentralized set of validator
+nodes that operates a proof-of-stake blockchain.
 
-### FAQ
+* The ParaTime Layer: The ParaTime Layer is a set of parallel runtimes, each
+representing a replicated application with shared state. 
+
+## Top Features
+
+**Confidentiality**
+The Oasis Network is designed to support end-to-end confidentiality and data
+ownership, with built-in key management and support for TEEs like Intel SGX —
+allowing it to support new privacy-preserving Dapps and services.
+
+**Versatility & Resilience**
+The Oasis Network is designed to support a broad range of use cases without
+having to go through hard-forks or large updates — helping ensure it can retain
+its value and utility for many years to come.
+
+**Performance**
+The Oasis Network separates computation from consensus and allows for ParaTimes
+to operate in parallel — avoiding issues like computational backlog that have
+plagued other networks.
+
+## FAQ
 
 #### Are you a proof-of-stake or proof-of-work platform?
 
