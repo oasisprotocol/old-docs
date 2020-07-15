@@ -43,9 +43,9 @@ Unlike many other proof of stake networks however, we have a different architect
 
 #### Is Oasis a unique platform or built on top of Ethereum?
 
-Oasis is a unique Layer 1 platform and is not built on top of Ethereum or any other protocol.
+Oasis is a unique Layer 1 platform and is not built on top of Ethereum.
 
-To learn more about our platform read our [white paper](https://oasisprotocol.org/whitepapers)!
+To learn more about our platform read our [white paper](https://oasisprotocol.org/papers)!
 
 #### How does this compare to a private blockchain like Hyperledger?
 
