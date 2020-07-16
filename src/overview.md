@@ -11,7 +11,7 @@ This unique design has two major core components, the Consensus Layer and
 the ParaTime Layer.
 
 * The Consensus Layer: The Consensus Layer is a decentralized set of validator
-nodes that operates a proof-of-stake blockchain.
+nodes that maintains a proof-of-stake blockchain.
 
 * The ParaTime Layer: The ParaTime Layer is a set of parallel runtimes, each
 representing a replicated application with shared state. 
