@@ -16,7 +16,7 @@ nodes that maintains a proof-of-stake blockchain.
 * The ParaTime Layer: The ParaTime Layer can host multiple parallel runtimes, each
 representing a replicated application with shared state. 
 
-## Top Features
+## Key Features
 
 **Confidentiality**
 The Oasis Network is designed to support end-to-end confidentiality and data
