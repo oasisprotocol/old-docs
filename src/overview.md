@@ -6,7 +6,7 @@ The Oasis Network is a privacy-first decentralized computing
 network.
 
 The Oasis Network separates consensus services from computation,
-making the network highly adaptable while providing top-notch performance.
+making the platform highly adaptable while enabling high-performance computation.
 This unique design has two major core components, the Consensus Layer and
 the ParaTime Layer.
 
