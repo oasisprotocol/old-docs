@@ -70,9 +70,7 @@ entry and encourage meaningful engagement on the network. A few key parameters:
 * **Minimum stake**: 100 tokens
 
 * **Selection to the consensus committee**: Each entity can have at most one
-  node elected to the consensus committee at a time. The probability of
-  selection to the consensus committee is proportional to the stake of all
-  nodes run by one entity.
+  node elected to the consensus committee at a time.
 
 * **Annual rewards**: The network is targeted to hit ~15% annual rewards at
   launch (based on the number of blocks produced, so timing could vary) and then
@@ -124,12 +122,14 @@ notification of commission rates.
 
 When a node sets up on network, it will be able to share its current commission
 rate, as well as the range with which that rate could change (e.g. + / - 10%).
-Commission rates can be adjusted once per day.
+Commission rates can be adjusted once per epoch.
 
 ### Transaction Fee Distribution
 
-Most likely, transaction fees will be distributed equally among validators who
-signed the block containing that specific transaction.
+Most likely, transaction fees will be distributed with about one half awarded
+to the proposer of the block containing that specific transaction, one fourth
+awarded equally among the validators who signed that block, and one fourth
+awarded to the proposer of the next block.
 
 ## Glossary of Commonly Used Terms
 
