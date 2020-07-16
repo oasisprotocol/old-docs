@@ -20,7 +20,7 @@ representing a replicated application with shared state.
 
 **Confidentiality**
 The Oasis Network is designed to support end-to-end confidentiality and data
-ownership, with built-in key management and support for TEEs like Intel SGX —
+ownership, with built-in support for key management and TEEs like Intel SGX —
 allowing it to support new privacy-preserving Dapps and services.
 
 **Versatility & Resilience**
