@@ -2,7 +2,7 @@
 
 ## What is the Oasis Network?
 
-The Oasis Network is a privacy-first, decentralized computational
+The Oasis Network is a privacy-first decentralized computing
 network.
 
 The Oasis Network separates consensus services from computation,
