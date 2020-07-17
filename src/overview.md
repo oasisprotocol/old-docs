@@ -30,8 +30,8 @@ its value and utility for many years to come.
 
 **Performance**
 The Oasis Network separates computation from consensus and allows for ParaTimes
-to operate in parallel — avoiding issues like computational backlog that have
-plagued other networks.
+to operate in parallel — avoiding throughput issues that have plagued other
+networks.
 
 ## FAQ
 
