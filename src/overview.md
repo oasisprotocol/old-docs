@@ -13,8 +13,8 @@ the ParaTime Layer.
 * The Consensus Layer: The Consensus Layer is a decentralized set of validator
 nodes that maintains a proof-of-stake blockchain.
 
-* The ParaTime Layer: The ParaTime Layer can host multiple parallel runtimes, each
-representing a replicated application with shared state. 
+* The ParaTime Layer: The ParaTime Layer can host multiple parallel runtimes,
+each representing a replicated compute environment with shared state. 
 
 ## Key Features
 
