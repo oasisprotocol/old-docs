@@ -4,7 +4,7 @@ The Oasis Network’s Wallet Tester Program makes it easy for Node Operators to 
 
 ## Goal of the program
 
-The Oasis Protocol Foundation set up this program in order to give Node Operators the opportunity to try out transferring AMBER tokens, provide valuable feedback that will help drive forward development for the Oasis wallet, get involved in the broader Oasis Network community, and earn ROSE tokens as a reward for their contributions. 
+The Oasis Protocol Foundation set up this program in order to give Node Operators the opportunity to try out transferring AMBER tokens, provide valuable feedback that will help drive forward development for the Oasis Ledger wallet.
 
 ## Who is eligible
 
@@ -34,11 +34,6 @@ The program is pretty simple:
 ::: warning NOTE
 Throughout the process, please keep a record of each address you send or delegate tokens to, as well as the number of tokens that you transmit. Since the wallet app is still in beta and some errors could arise, please only send a small number of tokens per transaction (1 or 2 tokens per transaction should be enough for testing purposes).
 :::
-
-## Other ways to get involved / Resources
-1. Apply for a non-technical [grant] and make our documentation, website, community support, and swag options better
-2. Join our [Oasis Community Slack]
-3. Follow the network via one of our many community-built [block explorers]
 
 ::: warning DISCLAIMER
 The Oasis wallet app on the Ledger hardware wallet platform and all associated activities and rewards, including the Wallet Tester Program, are not available to all participants, and eligibility requirements apply. For additional details, [see the Amber Network Terms available here]. This article does not guarantee anyone the right to participate in the Wallet Tester Program or to receive rewards. The Wallet Tester Program is currently only available to select Node Operators. Details about a Wallet Tester Program available to a broader range of Oasis Network community members will be shared at a later date. 
