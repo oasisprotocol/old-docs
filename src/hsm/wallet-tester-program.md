@@ -4,7 +4,7 @@ The Oasis Network’s Wallet Tester Program makes it easy for Node Operators to 
 
 ## Goal of the program
 
-The Oasis Protocol Foundation set up this program in order to give Node Operators the opportunity to try out transferring AMBER tokens, provide valuable feedback that will help drive forward development for the Oasis Ledger wallet.
+The Oasis Protocol Foundation set up this program in order to give Node Operators the opportunity to try out transferring AMBER tokens and to provide valuable feedback that will help drive forward development for the Oasis Ledger wallet.
 
 ## Who is eligible
 
