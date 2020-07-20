@@ -45,9 +45,11 @@ accounts on the network.
    transaction.
    * Delegate some AMBER tokens to at least 2 other entities on the network. Delegation
    is equivalent to using an `escrow` transaction to send tokens from your own general
-   subaccount to someone else’s escrow subaccount. [See here] for instructions on how
+   subaccount to someone else’s escrow subaccount. [See here] for 
+   instructions on how
    to generate an `escrow` transaction.
-   * Send some AMBER tokens to at least 2 other accounts on the network. This can be
+   * Send some AMBER tokens to at least 2 other accounts on the network. 
+   This can be
    done by using a `transfer` transaction, [as described here].
    * Confirm all of these actions have been completed successfully (or identify any
    problems that arise) via [this feedback form].
@@ -56,16 +58,20 @@ accounts on the network.
 ::: warning NOTE
 Throughout the process, please keep a record of each address you send or delegate 
 tokens
-to, as well as the number of tokens that you transmit. Since the wallet app is still in
-beta and some errors could arise, please only send a small number of tokens per 
+to, as well as the number of tokens that you transmit. Since the wallet 
+app is still in
+beta and some errors could arise, please only send a small number 
+of tokens per 
 transaction
 (1 or 2 tokens per transaction should be enough for testing purposes).
 :::
 
 ::: warning DISCLAIMER
-The Oasis wallet app on the Ledger hardware wallet platform and all associated activities
+The Oasis wallet app on the Ledger hardware wallet platform and 
+all associated activities
 and rewards, including the Wallet Tester Program, are not available to all participants,
-and eligibility requirements apply. For additional details, [see the Amber Network Terms
+and eligibility requirements apply. For additional details, 
+[see the Amber Network Terms
 available here]. This article does not guarantee anyone the right to participate
 in the Wallet Tester Program or to receive rewards. The Wallet Tester Program is
 currently only available to select Node Operators. Details about a Wallet Tester
