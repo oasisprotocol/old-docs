@@ -1,15 +1,15 @@
 # Wallet Tester Program for Node Operators
 
-The Oasis Network’s Wallet Tester Program makes it easy for Node 
-Operators to get early access to the Oasis wallet app built on 
-top of the Ledger hardware wallet platform. More info on 
+The Oasis Network’s Wallet Tester Program makes it easy for Node
+Operators to get early access to the Oasis wallet app built on
+top of the Ledger hardware wallet platform. More info on
 the program below.
 
 ## Goal of the program
 
-The Oasis Protocol Foundation set up this program in order 
+The Oasis Protocol Foundation set up this program in order
 to give Node Operators the opportunity to try out transferring AMBER
-tokens and to provide valuable feedback that will help drive 
+tokens and to provide valuable feedback that will help drive
 forward development for the Oasis Ledger wallet.
 
 ## Who is eligible
@@ -20,34 +20,34 @@ The Wallet Tester Program is currently available to Node Operators who:
 3. Have a Ledger hardware wallet
 
 ::: tip NOTE
-We hope to expand this program beyond Node Operators 
+We hope to expand this program beyond Node Operators
 in coming weeks. Check back for more information.
 :::
 
 ## How the program works
 
-The program is pretty simple:             
+The program is pretty simple:
 1. Sign up for the Wallet Tester Program by [filling out this form].
 2. Join the #wallet-tester-program channel on our [Oasis Community Slack]
 to troubleshoot and get any of your questions answered.
 3. [Follow the instructions here] to download the Oasis wallet
-app via the Ledger Live app store and set up your Ledger hardware. 
+app via the Ledger Live app store and set up your Ledger hardware.
 4. Verify your Oasis general account has a positive token balance. Instructions
-for [viewing your account info are here]. As part of the testing process, 
-you will be sending and delegating some of your existing tokens to other accounts on the network. 
+for [viewing your account info are here]. As part of the testing process,
+you will be sending and delegating some of your existing tokens to other accounts on the network.
 5. Complete the following steps to test that the Oasis wallet is working as intended:
    * Use the `escrow` transaction to send some AMBER tokens from your own account’s
-   general subaccount to your escrow subaccount. This helps us verify that staking 
+   general subaccount to your escrow subaccount. This helps us verify that staking
    is working correctly. [See here] for instructions on how to generate an `escrow`
-   transaction. 
+   transaction.
    * Delegate some AMBER tokens to at least 2 other entities on the network. Delegation
    is equivalent to using an `escrow` transaction to send tokens from your own general
    subaccount to someone else’s escrow subaccount. [See here] for instructions on how
-   to generate an `escrow` transaction. 
+   to generate an `escrow` transaction.
    * Send some AMBER tokens to at least 2 other accounts on the network. This can be
-   done by using a `transfer` transaction, [as described here]. 
+   done by using a `transfer` transaction, [as described here].
    * Confirm all of these actions have been completed successfully (or identify any
-   problems that arise) via [this feedback form]. 
+   problems that arise) via [this feedback form].
 6. [File issues] and help improve the Oasis wallet experience.
 
 ::: warning NOTE
@@ -65,17 +65,17 @@ available here]. This article does not guarantee anyone the right to participate
 in the Wallet Tester Program or to receive rewards. The Wallet Tester Program is
 currently only available to select Node Operators. Details about a Wallet Tester
 Program available to a broader range of Oasis Network community members will be
-shared at a later date. 
+shared at a later date.
 :::
 
-[filling out this form]: https://oasisfoundation.typeform.com/to/NW4RuTQR 
+[filling out this form]: https://oasisfoundation.typeform.com/to/NW4RuTQR
 [Oasis Community Slack]: http://www.oasisprotocol.org/slack
 [Follow the instructions here]: https://docs.oasis.dev/hsm/ledger.html#prerequisites
 [viewing your account info are here]: https://docs.oasis.dev/operators/stake-management.html#account-info
 [See here]: https://docs.oasis.dev/operators/stake-management.html#escrowing-tokens
 [as described here]: https://docs.oasis.dev/operators/stake-management.html#transferring-tokens
 [this feedback form]: https://oasisfoundation.typeform.com/to/gzezJNFB
-[File issues]: https://github.com/oasisprotocol/oasis-core/issues/new/choose 
+[File issues]: https://github.com/oasisprotocol/oasis-core/issues/new/choose
 [grant]: https://oasisprotocol.org/en/grants
 [block explorers]: https://docs.oasis.dev/operators/community-resources.html#block-explorers-validator-leaderboards
 [see the Amber Network Terms available here]: https://docsend.com/view/zv5cfia
