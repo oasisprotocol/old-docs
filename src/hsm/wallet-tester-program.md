@@ -15,6 +15,7 @@ forward development for the Oasis Ledger wallet.
 ## Who is eligible
 
 The Wallet Tester Program is currently available to Node Operators who:
+
 1. Currently run a node on the Amber Network
 2. Have a balance of AMBER tokens in their account
 3. Have a Ledger hardware wallet
@@ -27,6 +28,7 @@ in coming weeks. Check back for more information.
 ## How the program works
 
 The program is pretty simple:
+
 1. Sign up for the Wallet Tester Program by [filling out this form].
 2. Join the #wallet-tester-program channel on our [Oasis Community Slack]
 to troubleshoot and get any of your questions answered.
