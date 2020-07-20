@@ -36,7 +36,8 @@ to troubleshoot and get any of your questions answered.
 app via the Ledger Live app store and set up your Ledger hardware.
 4. Verify your Oasis general account has a positive token balance. Instructions
 for [viewing your account info are here]. As part of the testing process,
-you will be sending and delegating some of your existing tokens to other accounts on the network.
+you will be sending and delegating some of your existing tokens to other
+accounts on the network.
 5. Complete the following steps to test that the Oasis wallet is working as intended:
    * Use the `escrow` transaction to send some AMBER tokens from your own account’s
    general subaccount to your escrow subaccount. This helps us verify that staking
@@ -53,9 +54,11 @@ you will be sending and delegating some of your existing tokens to other account
 6. [File issues] and help improve the Oasis wallet experience.
 
 ::: warning NOTE
-Throughout the process, please keep a record of each address you send or delegate tokens
+Throughout the process, please keep a record of each address you send or delegate 
+tokens
 to, as well as the number of tokens that you transmit. Since the wallet app is still in
-beta and some errors could arise, please only send a small number of tokens per transaction
+beta and some errors could arise, please only send a small number of tokens per 
+transaction
 (1 or 2 tokens per transaction should be enough for testing purposes).
 :::
 
