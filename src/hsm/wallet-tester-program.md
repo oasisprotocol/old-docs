@@ -48,7 +48,7 @@ accounts on the network.
    subaccount to someone else’s escrow subaccount. [See here] for
    instructions on how
    to generate an `escrow` transaction.
-   * Send some AMBER tokens to at least 2 other accounts on the network. 
+   * Send some AMBER tokens to at least 2 other accounts on the network.
    This can be
    done by using a `transfer` transaction, [as described here].
    * Confirm all of these actions have been completed successfully (or identify any
