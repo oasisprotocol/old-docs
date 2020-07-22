@@ -32,5 +32,4 @@ on building your own integration, check out the [Oasis Core Developer Docs].
 
 ## Monitoring and Alerts
 
-- [Stats Tool (by Oasis Protocol Foundation)](https://github.com/oasisprotocol/oasis-core/tree/master/go/extra/stats)
 - [Panic Monitoring Tool (by Simply VC)](https://github.com/SimplyVC/panic_oasis)
