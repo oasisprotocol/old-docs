@@ -22,6 +22,7 @@ on building your own integration, check out the [Oasis Core Developer Docs].
 ## One-touch Node Deployments
 
 - [Ankr one-touch deploy (by Ankr)](https://app.ankr.com/apps/deploy?name=oasis-validator&repository=stable&type=chart&version=20.6&appversion=20.6)
+- [Bison Trails-managed Validator (by Bison Trails)](https://bisontrails.co/oasis/)
 
 ## Developer Tools
 
