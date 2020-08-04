@@ -36,7 +36,8 @@ on the consensus layer can be found
 ## Oasis Network Parallel Runtimes (Paratimes)
 
 In addition to a decentralized Consensus Layer, Oasis will also allow for anyone
-to add their own parallelizable runtime, or paratime, to the Network. The system was developed this way in
+to add their own parallelizable runtime, or paratime, to the Network. 
+The system was developed this way in
 order to achieve the highest degree of decentralization, while also separating
 consensus from execution — improving network throughput and scalability. In
 addition, supporting parallel runtimes allows for specialized support for
@@ -48,7 +49,7 @@ In this model, any runtime developer can use the open-sourced [Oasis
 Runtime](https://github.com/oasislabs/oasis-runtime) or any other runtime they
 choose to use. The privacy and confidentiality technologies baked into the Oasis
 Runtime allow it to support confidential smart contract transactions and the use
-of trusted execution environmeents (TEEs) including Intel SGX and others, 
+of trusted execution environmeents (TEEs) including Intel SGX and others,
 but it can be used for non-confidential smart contracts as well.
 
 Key highlights of the Oasis Network Paratimes:
@@ -83,7 +84,7 @@ techniques while the blockchain technology is abstracted away.
 
 Early use cases of this in action include developers in the genomics, hospital
 management, credit scoring, and financial services industries that Oasis Labs
-expects to provide organic transaction volume to the Oasis Network. 
+expects to provide organic transaction volume to the Oasis Network.
 
 ## Networking Protocols
 
@@ -127,13 +128,12 @@ identification. See [Entities and Key Management] for further information.
 ### Committee
 
 A Committee is a set of Nodes that are participating in the same service layer
-of the Oasis Network. Our consensus model is described in more detail in the [Decentralized Consensus Layer] section.
+of the Oasis Network. Our consensus model is described in more detail
+in the [Decentralized Consensus Layer] section.
 
 [papers]: https://oasisprotocol.org/researchpapers
 [Entities and Key Management]: #entities-and-key-management
-<!-- There is currently no Modular Architecture section, so we should either write that or remove the link. 
-We could also add the Modular Architecture section under the Decentralized Consensus Layer section -->
-[Modular Architecture]: #modular-architecture 
+[Modular Architecture]: #modular-architecture
 [Decentralized Consensus Layer]: #decentralized-consensus-layer
 [Quick Start Guide]: ./quick-start.md
 [Intel SGX]: https://software.intel.com/en-us/sgx
