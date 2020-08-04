@@ -19,7 +19,7 @@ share your thoughts with us any time.
 ## Developer Resources
 
 * [Github][github]
- 
+
 [slack]: https://join.slack.com/t/oasiscommunity/shared_invite/enQtNjQ5MTA3NTgyOTkzLWIxNTg1ZWZmOTIwNmQ2MTg1YmU0MzgyMzk3OWM2ZWQ4NTQ0ZDJkNTBmMTdlM2JhODllYjg5YmJkODc2NzgwNTg
 [website]: https://oasisprotocol.org
 [blog]: https://medium.com/oasis-protocol-project
