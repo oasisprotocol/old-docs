@@ -4,16 +4,16 @@ This page is meant to be kept up to date with the information from the currently
 released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
-* [Genesis Document](https://github.com/oasisprotocol/public-testnet-artifacts/releases/download/2020-06-18/genesis.json)
-  * sha1: `f4cd7f02becadddd70c9e954d2a90dde7a924ef8`
-  * sha256: `bfe72b66b8a2acf82e855978c30fe40372d23e1efb3648fe2aba99868be1ad2a`
+* [Genesis Document](https://github.com/oasisprotocol/public-testnet-artifacts/releases/download/2020-08-06/genesis.json)
+  * sha1: `TBD`
+  * sha256: `TBD`
 * Oasis Seed Node Address:
-  * `9FBCA3364885EBC82BF5BE8156BB4DF0A563BBF6@34.86.145.181:26656`
+  * `TBD`
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
 * [Oasis Core] version:
-  * [20.8.2]
+  * [20.9]
   ::: tip NOTE
   The `oasis-node` binary is part of the Oasis Core release.
   :::
@@ -24,9 +24,63 @@ Testnet.
   :::
 
 [Oasis Core]: https://github.com/oasisprotocol/oasis-core
-[20.8]: https://github.com/oasisprotocol/oasis-core/releases/tag/v20.8
+[20.9]: https://github.com/oasisprotocol/oasis-core/releases/tag/v20.9
 
 ## Deployment Change Log
+
+### 2020-08-06 (Upcoming)
+
+* Block height when network stops: **717600**
+* Upgrade Window:
+  * Start: **2020-08-06T16:00:00Z**
+  * End: **2020-08-07T15:59:59Z**
+    * As with previous deploys, the "_End_" of the window is not something we
+      can enforce unilaterally, however, if, for whatever reason, not enough
+      people upgrade on the public testnet we _may_ release and redeploy a new
+      genesis block that removes inactive nodes from the validator set.
+
+#### Upgrade Procedure
+
+_Please note, our internal deployment process has changed and the seed node may
+have a different address_
+
+1. Download and verify the genesis document published in the [2020-08-06 release].
+2. Stop your node.
+3. [Wipe Node State].
+4. Update your `config.yml`. See below for configuration changes.
+5. Upgrade `oasis-node` to version [20.9].
+6. Start your node.
+
+#### `config.yml` Changes
+
+Per [configuration
+changes](https://github.com/oasisprotocol/oasis-core/blob/master/CHANGELOG.md#configuration-changes)
+in `oasis-core`. The `tendermint` section of the `config.yml` has been moved
+under the `consensus` section to `consensus.tendermint`.
+
+For example, this configuration:
+
+```yaml
+consensus:
+  validator: True
+
+tendermint:
+  p2p:
+    seed:
+      - "{{ seed_address }}"
+```
+
+Becomes:
+
+```yaml
+consensus:
+  validator: True
+
+  tendermint:
+    p2p:
+      seed:
+        - "{{ seed_address }}"
+```
 
 ### 2020-07-02 (Latest)
 
