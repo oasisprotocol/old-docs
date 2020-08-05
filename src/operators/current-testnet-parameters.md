@@ -47,7 +47,7 @@ have a different address_
 1. Download and verify the genesis document published in the [2020-08-06 release].
 2. Stop your node.
 3. [Wipe Node State].
-4. Update your `/serverdir/etc/config.yml`. See below for configuration changes.
+4. Update your `config.yml`. See below for configuration changes.
 5. Upgrade `oasis-node` to version [20.9].
 6. Start your node.
 
