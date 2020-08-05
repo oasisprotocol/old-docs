@@ -33,16 +33,16 @@ A complete proposal of staking, delegation and the incentives that align to both
 on the consensus layer can be found
 [here](https://docs.oasis.dev/operators/incentives-proposal.html).
 
-## Oasis Network Parallel Runtimes (Paratimes)
+## Oasis Network Parallel Runtimes (ParaTimes)
 
 In addition to a decentralized Consensus Layer, Oasis will also allow for anyone
-to add their own parallelizable runtime, or paratime, to the Network. 
+to add their own parallelizable runtime, or ParaTime, to the Network. 
 The system was developed this way in
 order to achieve the highest degree of decentralization, while also separating
 consensus from execution — improving network throughput and scalability. In
 addition, supporting parallel runtimes allows for specialized support for
-different workloads. For example, confidential paratimes could mandate that nodes
-to use trusted execution environments, where as a non-confidential paratime would
+different workloads. For example, confidential ParaTimes could mandate that nodes
+to use trusted execution environments, where as a non-confidential ParaTime would
 have less restrictive hardware requirements.
 
 In this model, any runtime developer can use the open-sourced [Oasis
@@ -52,10 +52,10 @@ Runtime allow it to support confidential smart contract transactions and the use
 of trusted execution environmeents (TEEs) including Intel SGX and others,
 but it can be used for non-confidential smart contracts as well.
 
-Key highlights of the Oasis Network Paratimes:
+Key highlights of the Oasis Network ParaTimes:
 
 * **Who can manage a runtime:** Anyone. We welcome you to use the Oasis Runtime
-  code as a base, copy, or add your own existing paratime.
+  code as a base, copy, or add your own existing ParaTime.
 * **How can validators participate in these runtimes:** Runtime developers will
   be able to specify conditions on the nodes to run compute for their runtime.
   Node operators can make themselves available to runtimes, or, if you’re a
@@ -68,9 +68,9 @@ Key highlights of the Oasis Network Paratimes:
   on the network; and (2) as a drawdown mechanism to pay for consensus-layer
   transactions.
 
-## A Paratime Example: Oasis Labs’ Data Sovereignty Runtime
+## A ParaTime Example: Oasis Labs’ Data Sovereignty Runtime
 
-While anyone can build a paratime and add it to the Oasis consensus layer at any
+While anyone can build a ParaTime and add it to the Oasis consensus layer at any
 time, we also expect that there will be a few up and running at the time of
 Mainnet launch as well.
 
