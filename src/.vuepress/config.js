@@ -37,21 +37,22 @@ module.exports = {
         title: 'Welcome to Oasis',
         collapsable: true,
         children: [
-           {
-             title: 'Introduction',
-             collapsable: true,
-             children: [
-               ['/overview', 'What is Oasis?'],
-             ]
-           },
-           {
-             title: 'Network Overview',
-             collapsable: true,
-             children: [
-               ['/operators/architecture-overview', 'Network Architecture Overview'],
-             ]
-           },
-        ]
+          {
+            title: 'Introduction',
+            collapsable: true,
+            children: [['/overview', 'What is Oasis?']],
+          },
+          {
+            title: 'Network Overview',
+            collapsable: true,
+            children: [
+              [
+                '/operators/architecture-overview',
+                'Network Architecture Overview',
+              ],
+            ],
+          },
+        ],
       },
       {
         title: 'Run a Node',
@@ -63,40 +64,61 @@ module.exports = {
             children: [
               ['/operators/overview', 'Network Operator Overview'],
               ['/operators/current-testnet-parameters', 'Network Parameters'],
-              ['/operators/hardware-recommendations', 'Node Hardware Recommendations'],
+              [
+                '/operators/hardware-recommendations',
+                'Node Hardware Recommendations',
+              ],
               ['/operators/prerequisites', 'Prerequisites'],
-              ['/operators/running-node-on-amber-network', 'Running a Node on the Amber Network'],
-              ['/operators/creating-an-entity-package', 'Creating an Entity Package'],
+              [
+                '/operators/running-node-on-amber-network',
+                'Running a Node on the Amber Network',
+              ],
+              [
+                '/operators/creating-an-entity-package',
+                'Creating an Entity Package',
+              ],
               ['/operators/stake-management', 'Stake Management'],
               ['/operators/sentry-node', 'Sentry Nodes'],
-            ]
+            ],
           },
           {
             title: 'Node Maintenance',
             collapsable: true,
             children: [
               ['/operators/maintenance/wiping-node-state', 'Wipe Node State'],
-              ['/operators/maintenance/checking-account-nonce', 'Check Your Account\'s Nonce'],
-              ['/operators/maintenance/handling-network-upgrades', 'Handle Network Upgrades'],
-              ['/operators/maintenance/adding-removing-nodes', 'Add or Remove Nodes'],
+              [
+                '/operators/maintenance/checking-account-nonce',
+                "Check Your Account's Nonce",
+              ],
+              [
+                '/operators/maintenance/handling-network-upgrades',
+                'Handle Network Upgrades',
+              ],
+              [
+                '/operators/maintenance/adding-removing-nodes',
+                'Add or Remove Nodes',
+              ],
               ['/operators/troubleshooting', 'Troubleshooting'],
-            ]
+            ],
           },
           {
             title: 'Validator Economics',
             collapsable: true,
             children: [
               ['/operators/incentives-proposal', 'Network Incentives'],
-            ]
+            ],
           },
           {
             title: 'Community Node Program',
             collapsable: true,
             children: [
-              ['/operators/community-node', 'What is the Community Node Program?'],
-            ]
+              [
+                '/operators/community-node',
+                'What is the Community Node Program?',
+              ],
+            ],
           },
-        ]
+        ],
       },
       {
         title: 'Pre-Mainnet Initiatives',
@@ -107,32 +129,32 @@ module.exports = {
             collapsable: true,
             children: [
               ['/operators/amber-network', 'What is the Amber Network?'],
-              ['/operators/running-node-on-amber-network', 'Run a Node on the Amber Network'],
-              ['/operators/migrating-questnet-entities', 'Migrate Your QuestNet Entity for the Amber Network'],
-            ]
+              [
+                '/operators/running-node-on-amber-network',
+                'Run a Node on the Amber Network',
+              ],
+              [
+                '/operators/migrating-questnet-entities',
+                'Migrate Your QuestNet Entity for the Amber Network',
+              ],
+            ],
           },
           {
             title: 'The Quest',
             collapsable: true,
-            children: [
-              ['/operators/the-quest-rules', 'What is The Quest?'],
-            ]
+            children: [['/operators/the-quest-rules', 'What is The Quest?']],
           },
-        ]
+        ],
       },
       {
         title: 'Wallet Support',
         collapsable: true,
-        children: [
-          ['/hsm/ledger', 'Oasis Ledger Wallet'],
-        ]
+        children: [['/hsm/ledger', 'Oasis Ledger Wallet']],
       },
       {
         title: 'Community Resources',
         collapsable: true,
-        children: [
-          ['/operators/community-resources', 'Community Tools'],
-        ]
+        children: [['/operators/community-resources', 'Community Tools']],
       },
       {
         title: 'Oasis Core Developer Docs',
