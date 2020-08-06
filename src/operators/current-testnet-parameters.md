@@ -8,7 +8,7 @@ Testnet.
   * sha1: `06a2664dd48eecbfeafb1e02a47fa50260fc25b8`
   * sha256: `595718edf9a135774c5ffb879515c232835dee22466f3fb83ef99d60d64a700f`
 * Oasis Seed Node Address:
-  * `TBD`
+  * `902521223C5095D74CF97E6CEE86A85038467547@34.86.145.181:26656`
   ::: tip NOTE
   Feel free to use other seed nodes than the one provided here.
   :::
@@ -28,7 +28,7 @@ Testnet.
 
 ## Deployment Change Log
 
-### 2020-08-06 (Upcoming)
+### 2020-08-06 (Latest)
 
 * Block height when network stops: **717600**
 * Upgrade Window:
@@ -82,7 +82,7 @@ consensus:
         - "{{ seed_address }}"
 ```
 
-### 2020-07-02 (Latest)
+### 2020-07-02
 
 Patch upgrade. This update applies fixes for [CVE-2020-15091] in Tendermint.
 
