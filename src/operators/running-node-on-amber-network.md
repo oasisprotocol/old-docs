@@ -363,30 +363,30 @@ consensus:
   # to register as a validator.
   validator: true
 
-# Tendermint backend configuration.
-tendermint:
-  abci:
-    prune:
-      strategy: keep_n
-      # Keep ~7 days of data since block production is ~1 block every 6 seconds.
-      # (7*24*3600/6 = 100800)
-      num_kept: 100800
-  core:
-    listen_address: tcp://0.0.0.0:26656
+  # Tendermint backend configuration.
+  tendermint:
+    abci:
+      prune:
+        strategy: keep_n
+        # Keep ~7 days of data since block production is ~1 block every 6 seconds.
+        # (7*24*3600/6 = 100800)
+        num_kept: 100800
+    core:
+      listen_address: tcp://0.0.0.0:26656
 
-    # The external IP that is used when registering this node to the network.
-    # NOTE: If you are using the Sentry node setup, this option should be
-    # omitted.
-    external_address: tcp://{{ external_address }}:26656
+      # The external IP that is used when registering this node to the network.
+      # NOTE: If you are using the Sentry node setup, this option should be
+      # omitted.
+      external_address: tcp://{{ external_address }}:26656
 
-  db:
-    backend: badger
+    db:
+      backend: badger
 
-  # List of seed nodes to connect to.
-  # NOTE: You can add additional seed nodes to this list if you want.
-  p2p:
-    seed:
-      - "{{ seed_node_address }}"
+    # List of seed nodes to connect to.
+    # NOTE: You can add additional seed nodes to this list if you want.
+    p2p:
+      seed:
+        - "{{ seed_node_address }}"
 ```
 
 [Sentry Node]: ./sentry-node.md
