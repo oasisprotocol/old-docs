@@ -5,8 +5,8 @@ released Testnet. Use the information here to deploy or upgrade your node on the
 Testnet.
 
 * [Genesis Document](https://github.com/oasisprotocol/public-testnet-artifacts/releases/download/2020-08-06/genesis.json)
-  * sha1: `TBD`
-  * sha256: `TBD`
+  * sha1: `06a2664dd48eecbfeafb1e02a47fa50260fc25b8`
+  * sha256: `595718edf9a135774c5ffb879515c232835dee22466f3fb83ef99d60d64a700f`
 * Oasis Seed Node Address:
   * `TBD`
   ::: tip NOTE
