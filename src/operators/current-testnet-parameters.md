@@ -51,6 +51,8 @@ have a different address_
 5. Upgrade `oasis-node` to version [20.9].
 6. Start your node.
 
+[2020-08-06 release]: https://github.com/oasisprotocol/public-testnet-artifacts/releases/tag/2020-08-06
+
 #### `config.yml` Changes
 
 Per [configuration
