@@ -34,5 +34,5 @@ share your thoughts with us any time.
 [github]: https://github.com/oasisprotocol/oasis-core/blob/master/docs/index.md
 [devacc]: https://oasisprotocol.org/devaccelerator
 [grant]: https://oasisprotocol.org/en/grants
-[ambassador]: https://oasisprotocol.org/ambassadors 
+[ambassador]: https://oasisprotocol.org/ambassadors
 [codebase]: https://github.com/oasisprotocol
