@@ -33,70 +33,128 @@ module.exports = {
       },
     ],
     sidebar: [
-      '/overview',
       {
-        title: 'Operator Docs',
+        title: 'Welcome to Oasis',
         collapsable: true,
         children: [
-          ['/operators/overview', 'Node Operator Overview'],
-          ['/operators/architecture-overview', 'Network Architecture Overview'],
-          ['/operators/prerequisites', 'Prerequisites Guide'],
-          ['/operators/amber-network', 'Amber Network'],
-          ['/operators/community-node', 'Community Node Program'],
-          [
-            '/operators/hardware-recommendations',
-            'Node Hardware Recommendations',
-          ],
-          [
-            '/operators/running-node-on-amber-network',
-            'Running a Node on the Amber Network',
-          ],
-          [
-            '/operators/creating-an-entity-package',
-            'Creating an Entity Package',
-          ],
-          [
-            '/operators/migrating-questnet-entities',
-            'Migrating Your QuestNet Entity for the Amber Network',
-          ],
-          [
-            '/operators/current-testnet-parameters',
-            'Current Testnet Parameters',
-          ],
-          ['/operators/stake-management', 'Stake Management'],
-          ['/operators/sentry-node', 'Sentry Node Architecture'],
-          ['/operators/incentives-proposal', 'Network Incentives Proposal'],
-          ['/operators/the-quest-rules', 'The Quest Rules'],
-          ['/operators/troubleshooting', 'Troubleshooting Guide'],
           {
-            title: 'Maintenance Guides',
+            title: 'Introduction',
+            collapsable: true,
+            children: [['/overview', 'What is Oasis?']],
+          },
+          {
+            title: 'Network Overview',
             collapsable: true,
             children: [
-              ['/operators/maintenance/wiping-node-state', 'Wiping Node State'],
               [
-                '/operators/maintenance/checking-account-nonce',
-                "Checking your Account's nonce",
-              ],
-              [
-                '/operators/maintenance/handling-network-upgrades',
-                'Handling Network Upgrades',
-              ],
-              [
-                '/operators/maintenance/adding-removing-nodes',
-                'Adding or Removing Nodes',
+                '/operators/architecture-overview',
+                'Network Architecture Overview',
               ],
             ],
           },
         ],
       },
       {
-        title: 'Wallet Support',
+        title: 'Run a Node',
         collapsable: true,
-        children: [['/hsm/ledger', 'Ledger']],
+        children: [
+          {
+            title: 'Set Up Your Machine',
+            collapsable: true,
+            children: [
+              ['/operators/overview', 'Network Operator Overview'],
+              ['/operators/current-testnet-parameters', 'Network Parameters'],
+              [
+                '/operators/hardware-recommendations',
+                'Node Hardware Recommendations',
+              ],
+              ['/operators/prerequisites', 'Prerequisites'],
+              [
+                '/operators/running-node-on-amber-network',
+                'Running a Node on the Amber Network',
+              ],
+              [
+                '/operators/creating-an-entity-package',
+                'Creating an Entity Package',
+              ],
+              ['/operators/stake-management', 'Stake Management'],
+              ['/operators/sentry-node', 'Sentry Nodes'],
+            ],
+          },
+          {
+            title: 'Node Maintenance',
+            collapsable: true,
+            children: [
+              ['/operators/maintenance/wiping-node-state', 'Wipe Node State'],
+              [
+                '/operators/maintenance/checking-account-nonce',
+                "Check Your Account's Nonce",
+              ],
+              [
+                '/operators/maintenance/handling-network-upgrades',
+                'Handle Network Upgrades',
+              ],
+              [
+                '/operators/maintenance/adding-removing-nodes',
+                'Add or Remove Nodes',
+              ],
+              ['/operators/troubleshooting', 'Troubleshooting'],
+            ],
+          },
+          {
+            title: 'Validator Economics',
+            collapsable: true,
+            children: [
+              ['/operators/incentives-proposal', 'Network Incentives'],
+            ],
+          },
+          {
+            title: 'Community Node Program',
+            collapsable: true,
+            children: [
+              [
+                '/operators/community-node',
+                'What is the Community Node Program?',
+              ],
+            ],
+          },
+        ],
       },
       {
-        title: 'Community Tools',
-        path: '/operators/community-resources',
+        title: 'Pre-Mainnet Initiatives',
+        collapsable: true,
+        children: [
+          {
+            title: 'Amber Network',
+            collapsable: true,
+            children: [
+              ['/operators/amber-network', 'What is the Amber Network?'],
+              [
+                '/operators/running-node-on-amber-network',
+                'Run a Node on the Amber Network',
+              ],
+              [
+                '/operators/migrating-questnet-entities',
+                'Migrate Your QuestNet Entity for the Amber Network',
+              ],
+            ],
+          },
+          {
+            title: 'The Quest',
+            collapsable: true,
+            children: [['/operators/the-quest-rules', 'What is The Quest?']],
+          },
+        ],
+      },
+      {
+        title: 'Wallet Support',
+        collapsable: true,
+        children: [['/hsm/ledger', 'Oasis Ledger Wallet']],
+      },
+      {
+        title: 'Community Resources',
+        collapsable: true,
+        children: [['/operators/community-resources', 'Community Tools']],
       },
       {
         title: 'Oasis Core Developer Docs',
