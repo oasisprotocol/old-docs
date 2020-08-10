@@ -6,7 +6,7 @@ have a general question on how to use and deploy our
 software, please read our Operator Docs or join our
 community Slack. All community members are welcom
 e and encouraged to commit code to the platform.
-Contribution guidelines can be found here [TODO: add link].
+Contribution guidelines can be found [here].
 :::
 
 ## Proposed Governance Model Overview
@@ -133,3 +133,4 @@ our contribution guidelines here].
 [security@oasislabs.com]: mailto:security@oasislabs.com
 [existing issues in our repository]: https://github.com/oasisprotocol/oasis-core/issues
 [review our contribution guidelines here]: https://docs.oasis.dev/operators/contribution-guidelines.html
+[here]: https://docs.oasis.dev/operators/contribution-guidelines.html
