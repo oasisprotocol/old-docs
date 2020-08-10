@@ -1,6 +1,6 @@
 # How to Delegate Your Tokens
 
-## What is a Delegation?
+## What is a Delegation
 
 You can *delegate* your tokens by submitting an
 <code>escrow</code> transaction that deposits a specific
@@ -35,14 +35,14 @@ entity's private key stored in a file.
 You will need to create your Entity as described in [Running a Node on the
 Amber Network][create-entity] docs and set the following flags:
 
-  * `--signer.backend file`: Specifies use of the file signer.
+* `--signer.backend file`: Specifies use of the file signer.
 
-    ::: tip NOTE
-    Currently, `file` is the default signer so you could also omit this flag.
-    :::
+::: tip NOTE
+Currently, `file` is the default signer so you could also omit this flag.
+:::
 
-  * `--signer.dir`: Path to entity's artifacts directory on the `localhost`,
-    e.g. `/localhostdir/entity/`.
+* `--signer.dir`: Path to entity's artifacts directory on the `localhost`,
+e.g. `/localhostdir/entity/`.
 
 An example of an <code>escrow</code> transaction can be found
 in our [node operator stake management doc]. To delegate your
@@ -61,19 +61,19 @@ device, the Ledger device can be used to sign transactions.
 You will need to set it up as described in our [Ledger docs] and set the
 following flags:
 
-  * `--signer.backend ledger`: Specifies use of the Ledger signer.
-  * `--signer.ledger.address`: The `Oasis App Address` that identifies the
-    Ledger device you want to use for signing.
+* `--signer.backend ledger`: Specifies use of the Ledger signer.
+* `--signer.ledger.address`: The `Oasis App Address` that identifies the
+Ledger device you want to use for signing.
 
-    ::: tip NOTE
-    You can omit this flag and `oasis-node` will try to connect to any available
-    Ledger device.
-    :::
+::: tip NOTE
+You can omit this flag and `oasis-node` will try to connect to any available
+Ledger device.
+:::
 
-  * `--signer.ledger.index`: Account index used to derive the staking account
-    address on the Ledger device.
-  * `--signer.dir`: Path to entity's artifacts directory on the `localhost`,
-    e.g. `/localhostdir/entity/`.
+* `--signer.ledger.index`: Account index used to derive the staking account
+address on the Ledger device.
+* `--signer.dir`: Path to entity's artifacts directory on the `localhost`,
+e.g. `/localhostdir/entity/`.
 
 For additional information about signing delegations via a
 Ledger hardwaree device, please see our
@@ -81,11 +81,11 @@ Ledger hardwaree device, please see our
 
 ## Rewards and Slashing
 
-By delegating your tokens to someone else's node, you can earn a 
+By delegating your tokens to someone else's node, you can earn a
 portion of the rewards earned by that node through its participation
 in the Oasis Network. Your delegated tokens can also be slashed if
 that node gets slashed for double signing. You can learn more about
-how rewards and slashing impact delegators in our [incentives document]. 
+how rewards and slashing impact delegators in our [incentives document].
 
 [node operator stake management doc]: https://docs.oasis.dev/operators/stake-management.html#escrowing-tokens
 [incentives document]: https://docs.oasis.dev/operators/incentives-proposal.html
