@@ -30,7 +30,7 @@ command line interface for various staking operations,
 including the <code>escrow</code> operation needed to delegate
 tokens. If you do not have access to or prefer not to use
 a Ledger device, you can sign your transactions with your
-entity's private key stored in a file. 
+entity's private key stored in a file.
 
 You will need to create your Entity as described in [Running a Node on the
 Amber Network][create-entity] docs and set the following flags:
