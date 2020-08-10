@@ -119,6 +119,12 @@ Otherwise, please, first search between [existing
 issues in our repository] and if the issue is
 not reported yet, [file a new one].
 
+## Contributing to the Network
+
+If you are interested in contributing to the Oasis
+Network's codebase or documentation, please [review
+our contribution guidelines here].
+
 [propose it is as a new feature request]: https://github.com/oasisprotocol/oasis-core/issues/new?template=feature_request.md
 [proposing an ADR]: https://github.com/oasisprotocol/oasis-core/blob/master/docs/adr/index.md
 [RFC process]: https://github.com/oasislabs/private-rfcs
@@ -126,3 +132,4 @@ not reported yet, [file a new one].
 [responsible disclosure]: https://en.wikipedia.org/wiki/Responsible_disclosure
 [security@oasislabs.com]: mailto:security@oasislabs.com
 [existing issues in our repository]: https://github.com/oasisprotocol/oasis-core/issues
+[review our contribution guidelines here]: https://docs.oasis.dev/operators/contribution-guidelines.html
