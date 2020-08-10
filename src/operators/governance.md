@@ -43,7 +43,7 @@ progress.
 If the feature is small - a change to a single piece of
 functionality, or an addition that can be expressed clearly
 and succinctly in a few sentences, then the most appropriate
-place to [propose it is as a new feature request] in this 
+place to [propose it is as a new feature request] in this
 repository.
 
 ## Major Feature Requests
@@ -94,7 +94,7 @@ staked in the validator set.
 - **Upgrade.** Node operators autonomously upgrade their
 system to run the new version of the software.
 
-## Urgent Bug Fixes 
+## Urgent Bug Fixes
 
 Urgent bug fixes will primarily be handled off-chain
 to optimize for speed in addressing any issues that
@@ -126,5 +126,3 @@ not reported yet, [file a new one].
 [responsible disclosure]: https://en.wikipedia.org/wiki/Responsible_disclosure
 [security@oasislabs.com]: mailto:security@oasislabs.com
 [existing issues in our repository]: https://github.com/oasisprotocol/oasis-core/issues
-
-
