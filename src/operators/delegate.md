@@ -33,7 +33,7 @@ a Ledger device, you can sign your transactions with your
 entity's private key stored in a file. 
 
 You will need to create your Entity as described in [Running a Node on the
-  Amber Network][create-entity] docs and set the following flags:
+Amber Network][create-entity] docs and set the following flags:
 
   * `--signer.backend file`: Specifies use of the file signer.
 
@@ -59,7 +59,7 @@ For any Oasis Network user with access to a Ledger hardware wallet
 device, the Ledger device can be used to sign transactions.
 
 You will need to set it up as described in our [Ledger docs] and set the
-  following flags:
+following flags:
 
   * `--signer.backend ledger`: Specifies use of the Ledger signer.
   * `--signer.ledger.address`: The `Oasis App Address` that identifies the
@@ -89,3 +89,5 @@ how rewards and slashing impact delegators in our [incentives document].
 
 [node operator stake management doc]: https://docs.oasis.dev/operators/stake-management.html#escrowing-tokens
 [incentives document]: https://docs.oasis.dev/operators/incentives-proposal.html
+[Ledger docs]: ../hsm/ledger.md
+[create-entity]: running-node-on-amber-network.md#creating-your-entity
